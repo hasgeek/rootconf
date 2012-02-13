@@ -7,4 +7,5 @@ test.db
 .pydevproject
 .settings
 .sass-cache
+.webassets-cache
 error.log
