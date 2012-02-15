@@ -1,0 +1,4 @@
+#backimg {
+    background: url(/static/img/back.jpg) no-repeat;
+    top: 100px;
+}
