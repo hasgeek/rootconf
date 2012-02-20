@@ -12,6 +12,9 @@ Installation instructions
 * Install the requirements for rootconf
     pip install -r requirements.txt
 
+* Create a new settings file
+    cp instance/settings-sample.py instance/settings.py
+
 * Run rootconf.
     ./runserver.py
 
