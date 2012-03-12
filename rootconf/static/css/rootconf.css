@@ -2,3 +2,8 @@
  /*   background: url(/static/img/back.jpg) no-repeat;
     top: 100px; */
 }
+
+p {
+    font-size: 18px;
+    line-height: 1.5em;
+}
