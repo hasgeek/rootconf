@@ -3,7 +3,112 @@
     top: 100px; */
 }
 
+body	{
+	background: url(/static/img/bg.png);
+}
+
 p {
     font-size: 18px;
     line-height: 1.5em;
+}
+
+p.date	{
+	text-transform: uppercase;
+	color: #444;
+}
+
+header {
+	background: url(/static/img/bg.png);
+	position: fixed;
+	width: 100%;
+	text-align: center;
+	z-index: 10;
+}
+
+.content	{
+	background: url(/static/img/nav-bg.png) no-repeat bottom;
+	padding: 30px;
+	margin-top: 100px;
+}
+
+.header 	{
+	background: url(/static/img/nav-bg.png) repeat-x bottom;
+}
+
+.header-logo	{
+	background: url(/static/img/logo-header.png) no-repeat;
+	height: 80px;
+}
+
+.hg 	{
+	padding-top: 15px;
+}
+
+nav a	{
+	font-size: 18px;
+	line-height: 5em;
+	padding: 15px;
+	text-shadow:-1px -1px 1px #CCC;
+	color: #333;
+}
+
+nav a:hover	{
+	text-decoration: none;
+	color: #1377ab;	
+}
+
+.header-social .twitter, .header-social .fb	{
+	height: 20px;
+	width: 20px;
+	margin: 10px;
+	margin-top: 35px;
+	background: url(/static/img/twitter.png) no-repeat;
+	float: left;
+}
+.header-social .fb	{
+	background: url(/static/img/fb.png) no-repeat;
+}
+.header-social .twitter:hover, .header-social .fb:hover	{
+	background-position: center bottom;
+}
+
+h2	{
+	color: #777;
+	font-weight: 100;
+	font-size: 30pt;
+	font-family: Helvetica, Arial, sans-serif;
+	padding-bottom: 10px;
+}
+
+.mast	{
+	text-align: center;
+}
+
+.mast h1 {
+	color: #000;
+	font-family: consolas, sans-serif;
+	font-size: 35pt;
+	font-weight: 100;
+}
+
+h3	{
+	color: #d0a41d;
+}
+
+.map {
+	height: 400px;
+	widht: 100%;
+}
+
+#venue .con	{
+	width: 560px;
+	background: url(/static/img/p5black.png) ;
+	position: relative;
+	top: -415px;
+	left: 520px;
+	height: 420px;
+	z-index: 7;
+	color: #FFF;
+	padding: 10px;
+	margin: 0px;
 }

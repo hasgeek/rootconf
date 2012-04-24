@@ -9250,3 +9250,24 @@ if ( typeof define === "function" && define.amd && define.amd.jQuery ) {
 
 
 })( window );
+function scroll(scrollToId){
+    p = $("#" + scrollToId);
+    scrollTo = p.position().top;
+    $('html,body').animate({scrollTop: scrollTo}, 600);   
+  }
+  function cursorAnimation()
+  {
+    $("h1.cursor").animate(
+    {
+      opacity: 0
+    }, "fast", "swing").animate(
+    {
+      opacity: 1
+    }, "fast", "swing");
+  }
+
+  $(document).ready(function()
+  {
+    alert(1);
+    setInterval ( "cursorAnimation()", 600 );
+  });
