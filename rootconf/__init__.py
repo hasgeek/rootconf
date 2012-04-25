@@ -24,5 +24,5 @@ assets.register('js_all', js)
 assets.register('css_all', css)
 
 import rootconf.views
-if environ.get('ROOTCONF_ENV') == 'prod':
+if environ.get('ROOTCONF_ENV') == 'production':
     import rootconf.loghandler
