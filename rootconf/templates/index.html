@@ -113,7 +113,6 @@
 </section>    
 {% endblock %}
 {% block footerscripts %} 
- <script type="text/javascript" src="/static/js/leaflet.js"></script>
 <script>
 
 function scroll(scrollToId)
@@ -131,6 +130,7 @@ function scroll(scrollToId)
 
   $(document).ready(function()
   {
+    $(window).resize(function(){    $('header').css('margin-left', (-($('header').width())/2) + "px");});
     setInterval ( "cursorAnimation()", 1000 );
     $('.full').css('min-height', (window.screen.availHeight - 700) + "px");
     $('header').css('margin-left', (-($('header').width())/2) + "px");
