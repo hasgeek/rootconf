@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
-{% block title %}### rootconf{% endblock %}
+{% block title %}Rootconf Bangalore 2012{% endblock %}
 
  {% block pageheaders %}{% endblock %}
 {% block headerbox %}
-<!-- <header>{% include "baseframe/networkbar.html" -%}</header> -->
 
 <header>
-  <div class="container header">
+  {% include "baseframe/networkbar.html" -%}
+  <div class="container header navbar" id="navbar">
     <div class="row">
-      <div class="span4 header-logo"></div>
+      <div class="span4 header-logo"><span onclick='scroll("home")'><span class="logo1">#</span><span class="logo2">#</span><span class="logo3">#</span>rootconf<span class="cursor">&#9611;</span></span></div>
       <div class="span5">
         <nav>
           <a href="#home" onclick="scroll('home')">home</a>
@@ -27,17 +27,25 @@
 </header>
 {% endblock %}
 {% block content %}
+<section>
   <div class="container">
-      <div class="row content" id="home">
+       <!--<div class="row" id="home">
         <div class="span12">
+          <div class="monitor">
+            <div class="mon1 borrad12"></div>
+            <div class="mon2 borrad12"></div>
+            <div class="mon3 borrad12"></div>
+            <div class="mon4 borrad12"></div>
+            <div class="mon5"></div>
+          </div>
+         
           <div class="mast">
-            <h1>$> rootconf<span class="cursor">_</span></h1>
             <p>Let there be sysadmins</p>
             <p class="date">May 26th, 2012 | Dharamaram College, Bangalore</p>
           </div>
         </div>
-      </div>
-      <div class="row content" style="margin-top: 10px">
+      </div>-->
+      <div class="row content" id="home">
         <div class="span12">
           <h2>About rootconf</h2>
           <p>After last year's <a href="http://phpcloud.hasgeek.com/">Scaling with PHP in the cloud</a>, HasGeek is organizing Rootconf, an annual conference for sysadmins, devops, and BOFHs to share experience and knowledge, to teach, learn, and hangout with friends and colleagues. Rootconf will be held on <strong>May 26th, 2011, at Dharamaram College, Bangalore</strong>.</p>
@@ -73,20 +81,22 @@
         </div><!--/span-->
       </div><!--/row-->
       <div class="row content" id="venue">
-        <div class="span12">
-          <h2 id="location">Venue</h2>
-          <div id="map" class="map"></div>
-          <div class="con">
-            <h3 style="text-transform: uppercase; font-size: 25pt">Dharmaram Vidya Kshetram</h3>
+      </div>
+      <div class="row"><div class="span12"><h2 id="location">Venue</h2></div></div>
+       <div class="row map">
+        <div class="span5">&nbsp;</div>
+        <div class="span6 con">
+        <h3 style="text-transform: uppercase; font-size: 25pt">Dharmaram Vidya Kshetram</h3>
             <p><strong>Christ University Campus</strong>, Bangalore</p><hr />
             <p>Rootconf is set in Dharmaram College's beautiful, tree-filled campus (nothing like the back-to-college feeling). There's three rooms, and plenty of space to Hangout™ in meat-space. You'll love the garden.
           
           To get there, enter Christ University's main entrance gate (the one on the right) and drive straight down to Dharmaram College, within the campus. Christ University is at Dairy Circle, half a kilometre from the Forum Mall.</p><hr />
           <h3><span>WHEN</span> : May 28, 2012</h3>
         </div>
-        </div><!--/span-->
-      </div><!--/row-->
-      <div class="row content" id="hasgeek" style='margin-top: 0px'>
+        <div class="span1">&nbsp;</div>
+          
+        </div>
+      <div class="row content" id="hasgeek">
         <div class="span12">
           <h2 id="abouthg">About HasGeek</h2>
           <p><a href="http://hasgeek.com">HasGeek</a> is a developer-led initiative, and has been un-organising the unconference scene since 2010. HasGeek is an attempt to solve the problem of insipid conferences organised around buzzwords by uninterested, soulless corporate entities who pitch them as company training events or as places for companies to pick up hot developers.</p>
@@ -97,53 +107,43 @@
         </div><!--/span-->
       </div><!--/row-->
     </div>
+</section>    
 {% endblock %}
 {% block footerscripts %} 
  <script type="text/javascript" src="/static/js/leaflet.js"></script>
 <script>
-function scroll(scrollToId){
+
+function scroll(scrollToId)
+{   
     p = $("#" + scrollToId);
     scrollTo = p.position().top;
-    $('html,body').animate({scrollTop: scrollTo}, 600);   
-  }
+    $('html, body').animate({scrollTop: scrollTo}, 600);
+}
+
   function cursorAnimation()
   {
-    $(".cursor").animate(
-    {
-      opacity: 0
-    }, "fast", "swing").animate(
-    {
-      opacity: 1
-    }, "fast", "swing");
+    
+    $(".cursor").animate({opacity: 0}, 200, "swing").animate({opacity: .6}, 400).animate({opacity: 0.6}, 400).animate({opacity:0}, 200);
   }
 
   $(document).ready(function()
   {
-    setInterval ( "cursorAnimation()", 800 );
-    $('.full').css('min-height', (window.screen.availHeight - 580) + "px");
-  });
+    setInterval ( "cursorAnimation()", 1000 );
+    $('.full').css('min-height', (window.screen.availHeight - 700) + "px");
+    $('header').css('margin-left', (-($('header').width())/2) + "px");
 
-  $(function() {
-    var map = new L.Map('map');
-    var cloudmadeUrl = 'http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png',
-        subDomains = ['otile1','otile2','otile3','otile4'],
-        cloudmadeAttrib = '<a href="http://open.mapquest.co.uk" target="_blank">MapQuest</a>, <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> and contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/" target="_blank">CC-BY-SA</a>';
-        var cloudmade = new L.TileLayer(cloudmadeUrl, {maxZoom: 18, attribution: cloudmadeAttrib, subdomains: subDomains});
-
-        var venue = new L.LatLng(12.9334, 77.6050); // geographical point (longitude and latitude)
-        var center = new L.LatLng(12.936, 77.62);
-        var mobile_center = new L.LatLng(12.935, 77.591);
-        map.setView(center, 14).addLayer(cloudmade);
-        if (map.getSize().x < 768) { map.setView(venue,11); } // on smaller screen where map takes full-width
-
-        var venue_marker = new L.Marker(venue);
-        map.addLayer(venue_marker);
-        venue_marker.bindPopup('Dharmaram Vidya Kshetram').openPopup();
-        map.scrollWheelZoom.disable();
-        map.doubleClickZoom.disable();
-        
-        map.on('zoomend', onZoomend);
-        function onZoomend(){ map.setView(venue, map.getZoom()); };
+    /*
+    $(window).bind("scroll", function()
+    {
+      if(window.pageYOffset > 30)
+      {
+        $('#navbar').addClass('navbar-fixed-top');
+      }
+      else
+      {
+        $('#navbar').removeClass('navbar-fixed-top');
+      }
+    });*/
   });
 </script>
 {% endblock %}

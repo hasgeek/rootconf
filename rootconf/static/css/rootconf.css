@@ -1,62 +1,74 @@
-#backimg {
- /*   background: url(/static/img/back.jpg) no-repeat;
-    top: 100px; */
-}
+@font-face { font-family: Inconsolata; src: url(/static/Inconsolata.otf); } 
 
 body	{
-	background: url(/static/img/bg.png);
+	background: url(/static/img/bg.png) #111;
+	color: #DDD;
 }
 
 p {
     font-size: 18px;
     line-height: 1.5em;
 }
-
 p.date	{
 	text-transform: uppercase;
 	color: #444;
 }
 
-header {
-	background: url(/static/img/bg.png);
+header{
 	position: fixed;
+	top: 0;
+	left: 50%;
 	width: 100%;
-	text-align: center;
-	z-index: 10;
+	background: url(/static/img/bg.png) top;
+	color: #222;
 }
 
-.mast	{
-	padding: 30px;
-}
+ footer .footer-inner	{
+ 	background: url(/static/img/nav-bg.png) repeat-x top;	
+ }
+
 .content	{
-	background: url(/static/img/nav-bg.png) no-repeat bottom;
-	margin-top: 100px;
+	background: url(/static/img/nav-bg.png) repeat-x top;	
+	margin-top:139px;
+	padding-top: 10px;
 }
 
-.header 	{
-	background: url(/static/img/nav-bg.png) repeat-x bottom;
-}
 
 .header-logo	{
-	background: url(/static/img/logo-header.png) no-repeat;
-	height: 80px;
+	font-size: 36pt;
+	font-weight: bold;
+	font-family: Inconsolata, Verdana, sans-serif;
+	margin-top: 35px;
+}
+
+.logo1	{
+	color: #816894;
+}
+.logo2	{
+	color: #df5e0e;
+}
+.logo3	{
+	color: #f0a40c;
 }
 
 .hg 	{
 	padding-top: 15px;
 }
 
+a  {color: #ffd200;}
+a:hover  {color: #fff2b4;}
+
 nav a	{
 	font-size: 18px;
 	line-height: 5em;
 	padding: 15px;
-	text-shadow:-1px -1px 1px #CCC;
-	color: #333;
+	text-shadow:-1px -1px 1px #333;
+	color: #DDD;
 }
 
 nav a:hover	{
 	text-decoration: none;
-	color: #1377ab;	
+	color: #000;	
 }
 
 .header-social .twitter, .header-social .fb	{
@@ -74,8 +86,12 @@ nav a:hover	{
 	background-position: center bottom;
 }
 
+a:hover	{
+	text-decoration: none;
+}
+
 h2	{
-	color: #777;
+	color: #FFF;
 	font-weight: 100;
 	font-size: 30pt;
 	font-family: Helvetica, Arial, sans-serif;
@@ -96,21 +112,30 @@ h2	{
 h3	{
 	color: #d0a41d;
 }
-
-.map {
-	height: 400px;
-	widht: 100%;
-}
-
-#venue .con	{
+.con	{
 	width: 560px;
 	background: url(/static/img/p5black.png) ;
-	position: relative;
-	top: -415px;
-	left: 520px;
-	height: 420px;
+	height: 400px;
 	z-index: 7;
 	color: #FFF;
 	padding: 10px;
 	margin: 0px;
+}
+
+.map {
+	height: 400px;
+	overflow: hidden;
+	background: url(/static/img/map.jpg) no-repeat right;
+}
+
+.cursor { opacity: 0.6;
+-moz-opacity: 0.6;
+filter:alpha(opacity=6);};
+
+.header-logo a	{
+	color: #222;
+}
+
+.header-logo a:hover	{
+	text-decoration: none;
 }
