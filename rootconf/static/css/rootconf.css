@@ -139,3 +139,5 @@ filter:alpha(opacity=6);};
 .header-logo a:hover	{
 	text-decoration: none;
 }
+
+@media (max-width: 1225px)
