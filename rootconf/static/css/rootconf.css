@@ -30,7 +30,7 @@ header{
 
 .content	{
 	background: url(/static/img/nav-bg.png) repeat-x top;	
-	margin-top:139px;
+	margin-top:126px;
 	padding-top: 25px;
 }
 
@@ -58,9 +58,10 @@ header{
 a  {color: #ffd200;}
 a:hover  {color: #fff2b4;}
 
+nav{margin-top: 35px;}
+
 nav a	{
 	font-size: 18px;
-	line-height: 5em;
 	padding: 15px;
 	text-shadow:-1px -1px 1px #999;
 	color: #333;
@@ -121,14 +122,68 @@ h3	{
 	left: 0;
 }
 
-.cursor { opacity: 0.6;
--moz-opacity: 0.6;
-filter:alpha(opacity=6);};
-
-.header-logo a	{
-	color: #222;
+.cursor {
+	opacity: 0.6;
+	-moz-opacity: 0.6;
+	filter:alpha(opacity=6);
 }
 
-.header-logo a:hover	{
-	text-decoration: none;
+.mobile-header	{display: none;}
+
+@media (max-width: 767px) {
+	.header-social .fb, .header-social .twitter {
+  	display: none;  	
+  }
+
+  .span4	{
+  	margin-top: 20px;
+  }
+
+  header {position: absolute; top: 0;}
+  .navbar	{ margin-bottom: 0px; }
+
+  nav 	{ margin-top: 5x; padding-left: 0; margin-left: -20px;text-align: center;}
+
+  nav a {
+  	padding: 5px;
+  	font-size: 17px;
+  	padding-top: 0px;
+  }
+
+  .mobile-header {display: inherit;}
+
+  .header-logo	{
+  	padding-top: 25px;
+  	text-align: center;
+  }
+
+  .content:first-child	{margin-top: 178px}
+  .content	{margin-top: 10px}
+  
+  .hg img	{display:none;} 
 }
+
+@media (min-width: 768px) and (max-width: 1200px) { 
+  
+  .header-social .fb, .header-social .twitter {
+  	margin: 5px;
+  	margin-top: 15px;
+  }
+  .navbar	{ margin-bottom: 0px; }
+  nav 	{ margin-top: 15px; padding-left: 0; margin-left: -20px;}
+
+  nav a {
+  	padding: 5px;
+  	font-size: 17px;
+  	padding-top: 0px;
+  }
+
+  .header-logo	{
+  	font-size: 25px;
+  	margin-top: 15px;
+  }
+
+  .content	{margin-top: 87px}
+
+  .hg 	{padding-top: 3px;}
+ }
