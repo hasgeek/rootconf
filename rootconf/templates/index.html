@@ -28,7 +28,7 @@
 {% endblock %}
 {% block content %}
 <section>
-  <div class="container">
+  <div class="container" >
        <!--<div class="row" id="home">
         <div class="span12">
           <div class="monitor">
@@ -45,7 +45,10 @@
           </div>
         </div>
       </div>-->
-      <div class="row content" id="home">
+      <div class="row content"id="home" >
+        <div class="span12" align="center"><img src="/static/img/masthead.png" /></div>
+      </div>
+      <div class="row content" style="margin-top: 10px">
         <div class="span12">
           <h2>About rootconf</h2>
           <p>After last year's <a href="http://phpcloud.hasgeek.com/">Scaling with PHP in the cloud</a>, HasGeek is organizing Rootconf, an annual conference for sysadmins, devops, and BOFHs to share experience and knowledge, to teach, learn, and hangout with friends and colleagues. Rootconf will be held on <strong>May 26th, 2011, at Dharamaram College, Bangalore</strong>.</p>
@@ -112,7 +115,6 @@
 </section>    
 {% endblock %}
 {% block footerscripts %} 
- <script type="text/javascript" src="/static/js/leaflet.js"></script>
 <script>
 
 function scroll(scrollToId)
@@ -130,6 +132,7 @@ function scroll(scrollToId)
 
   $(document).ready(function()
   {
+    $(window).resize(function(){    $('header').css('margin-left', (-($('header').width())/2) + "px");});
     setInterval ( "cursorAnimation()", 1000 );
     $('.full').css('min-height', (window.screen.availHeight - 700) + "px");
     $('header').css('margin-left', (-($('header').width())/2) + "px");
