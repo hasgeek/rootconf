@@ -30,13 +30,12 @@ header{
 .content	{
 	background: url(/static/img/nav-bg.png) repeat-x top;	
 	margin-top:139px;
-	padding-top: 10px;
+	padding-top: 25px;
 }
 
 
 .header-logo	{
 	font-size: 36pt;
-	font-weight: bold;
 	font-family: Inconsolata, Verdana, sans-serif;
 	margin-top: 35px;
 }

@@ -13,8 +13,8 @@
         <nav>
           <a href="#home" onclick="scroll('home')">home</a>
           <a href="#participate" onclick="scroll('participate')">participate</a>
-          <a href="#speak" onclick="scroll('speak')">speak</a>
-          <a href="#sponsor" onclick="scroll('sponsor')">sponsor</a>
+          <a href="#speak" onclick="scroll('participate')">speak</a>
+          <a href="#sponsor" onclick="scroll('participate')">sponsor</a>
           <a href="#venue" onclick="scroll('venue')">venue</a>
         </nav>
       </div>
@@ -62,27 +62,24 @@
         </div>
       </div>
       <div class="row content full" id="participate">
-        <div class="span12">
+        <div class="span4">
           <h2>Participate</h2>
           <p>Get the super early geek tickets now!</p>
           <p>Look at the <a href="http://funnel.hasgeek.com/rootconf">existing proposals.</a></p>
           <p><a class="btn-primary btn-large" target=_blank href="http://rootconf.doattend.com/">Book now &raquo;</a></p>
         </div><!--/span-->
-      </div><!--/row-->
-      <div class="row content full" id="speak">
-        <div class="span12">
+         <div class="span4">
           <h2>Speak</h2>
           <p>Do you have what it takes to speak to fellow sysadmins?</p>
           <p><a class="btn-primary btn-large" target=_blank href="http://funnel.hasgeek.com/rootconf">Propose a Session &raquo;</a></p>
         </div><!--/span-->
-      </div><!--/row-->
-      <div class="row content full" id="sponsor">
-        <div class="span12">
+        <div class="span4">
           <h2>Sponsor</h2>
           <p>Would you or your employer like to sponsor Rootconf? </p>
           <p><a class="btn-primary btn-large" target=_blank href="mailto:kiran@hasgeek.com?cc=nigel@hasgeek.com&subject=Sponsorship%20for%20RootConf">Get in Touch &raquo;</a></p>
         </div><!--/span-->
       </div><!--/row-->
+      
       <div class="row content" id="venue">
       </div>
       <div class="row"><div class="span12"><h2 id="location">Venue</h2></div></div>
@@ -132,7 +129,6 @@ function scroll(scrollToId)
   {
     $(window).resize(function(){    $('header').css('margin-left', (-($('header').width())/2) + "px");});
     setInterval ( "cursorAnimation()", 1000 );
-    $('.full').css('min-height', (window.screen.availHeight - 700) + "px");
     $('header').css('margin-left', (-($('header').width())/2) + "px");
 
     /*
