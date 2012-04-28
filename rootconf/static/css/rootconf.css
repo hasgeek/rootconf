@@ -19,8 +19,9 @@ header{
 	top: 0;
 	left: 50%;
 	width: 100%;
-	background: url(/static/img/bg.png) top;
+	background: url(/static/img/bg_nav.png) top;
 	color: #222;
+	z-index: 100;
 }
 
  footer .footer-inner	{
@@ -61,13 +62,13 @@ nav a	{
 	font-size: 18px;
 	line-height: 5em;
 	padding: 15px;
-	text-shadow:-1px -1px 1px #333;
-	color: #DDD;
+	text-shadow:-1px -1px 1px #999;
+	color: #333;
 }
 
 nav a:hover	{
 	text-decoration: none;
-	color: #000;	
+	color: #555;	
 }
 
 .header-social .twitter, .header-social .fb	{
@@ -130,8 +131,4 @@ filter:alpha(opacity=6);};
 
 .header-logo a:hover	{
 	text-decoration: none;
-}
-
-#venue	{
-	padding-top:20px;
 }
