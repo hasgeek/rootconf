@@ -111,20 +111,13 @@ h2	{
 h3	{
 	color: #d0a41d;
 }
-.con	{
-	width: 560px;
-	background: url(/static/img/p5black.png) ;
-	height: 400px;
-	z-index: 7;
-	color: #FFF;
-	padding: 10px;
-	margin: 0px;
-}
 
 .map {
 	height: 400px;
-	overflow: hidden;
-	background: url(/static/img/map.jpg) no-repeat right;
+	color: #333;
+	position: relative;
+	top: 0;
+	left: 0;
 }
 
 .cursor { opacity: 0.6;
@@ -139,4 +132,6 @@ filter:alpha(opacity=6);};
 	text-decoration: none;
 }
 
-@media (max-width: 1225px)
+#venue	{
+	padding-top:20px;
+}
