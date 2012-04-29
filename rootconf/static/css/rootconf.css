@@ -130,8 +130,41 @@ h3	{
 
 .mobile-header	{display: none;}
 
-@media (max-width: 767px) {
+@media (max-width: 350px)	{
 	.header-social .fb, .header-social .twitter {
+  	display: none;  	
+  }
+
+  .span4	{
+  	margin-top: 20px;
+  }
+
+  header {position: absolute; top: 0;}
+  .navbar	{ margin-bottom: 0px; }
+
+  nav 	{ margin-top: 5x; padding-left: 0; margin-left: -20px;text-align: center;}
+
+  nav a {
+  	padding: 5px;
+  	font-size: 17px;
+  	padding-top: 0px;
+  }
+
+  .mobile-header {display: inherit;}
+
+  .header-logo	{
+  	padding-top: 25px;
+  	text-align: center;
+  }
+
+  .content:first-child	{margin-top: 228px}
+  .content	{margin-top: 10px}
+  
+  .hg img	{display:none;} 
+}
+
+@media (max-width: 767px) and (min-width: 351px){
+  .header-social .fb, .header-social .twitter {
   	display: none;  	
   }
 
