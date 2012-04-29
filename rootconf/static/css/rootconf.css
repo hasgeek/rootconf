@@ -9,6 +9,9 @@ p {
     font-size: 18px;
     line-height: 1.5em;
 }
+
+h1  {color: #e8e9e1;}
+
 p.date	{
 	text-transform: uppercase;
 	color: #444;
@@ -24,7 +27,7 @@ header{
 	z-index: 100;
 }
 
- footer .footer-inner	{
+footer .footer-inner	{
  	background: url(/static/img/nav-bg.png) repeat-x top;	
  }
 
@@ -36,9 +39,13 @@ header{
 
 
 .header-logo	{
-	font-size: 36pt;
-	font-family: Inconsolata, Verdana, sans-serif;
-	margin-top: 35px;
+  height: 35px;
+  font-size: 30pt;
+  font-family: Inconsolata, Verdana, sans-serif;
+  margin-top: 25px;
+  padding-top: 10px;  
+  text-align: center;
+  background: url(/static/img/logo.png) left top no-repeat;
 }
 
 .logo1	{
@@ -90,7 +97,7 @@ nav a:hover	{
 a:hover	{
 	text-decoration: none;
 }
-
+.btn-warning  {color: #000;}
 h2	{
 	color: #FFF;
 	font-weight: 100;
@@ -111,7 +118,7 @@ h2	{
 }
 
 h3	{
-	color: #d0a41d;
+	color: #FFF;
 }
 
 .map {
@@ -127,7 +134,6 @@ h3	{
 	-moz-opacity: 0.6;
 	filter:alpha(opacity=6);
 }
-
 .mobile-header	{display: none;}
 
 @media (max-width: 350px)	{
@@ -157,7 +163,7 @@ h3	{
   	text-align: center;
   }
 
-  .content:first-child	{margin-top: 228px}
+  .content:first-child	{margin-top: 245px;}
   .content	{margin-top: 10px}
   
   .hg img	{display:none;} 
@@ -175,7 +181,7 @@ h3	{
   header {position: absolute; top: 0;}
   .navbar	{ margin-bottom: 0px; }
 
-  nav 	{ margin-top: 5x; padding-left: 0; margin-left: -20px;text-align: center;}
+  nav 	{ margin-top: 0px; padding-left: 0; margin-left: -20px;text-align: center;}
 
   nav a {
   	padding: 5px;
@@ -188,6 +194,13 @@ h3	{
   .header-logo	{
   	padding-top: 25px;
   	text-align: center;
+  	background:none;
+  	display: none;
+  }
+
+  .title {
+  	background: url(/static/img/logo.png) no-repeat;
+  	padding-left: 70px;
   }
 
   .content:first-child	{margin-top: 178px}
@@ -213,8 +226,15 @@ h3	{
 
   .header-logo	{
   	font-size: 25px;
-  	margin-top: 15px;
+  	margin-top: 5px;
+  	text-align: center;
+  	background: none;
   }
+
+  .title	{
+	background: url(/static/img/logo_med.png) no-repeat;
+	padding-left: 44px;
+	}
 
   .content	{margin-top: 87px}
 
