@@ -13,8 +13,8 @@
         <nav>
           <a href="#home" onclick="scroll('home')">home</a>
           <a href="#participate" onclick="scroll('participate')">participate</a>
-          <a href="#speak" onclick="scroll('speak')">speak</a>
-          <a href="#sponsor" onclick="scroll('sponsor')">sponsor</a>
+          <a href="#speak" onclick="scroll('participate')">speak</a>
+          <a href="#sponsor" onclick="scroll('participate')">sponsor</a>
           <a href="#venue" onclick="scroll('venue')">venue</a>
         </nav>
       </div>
@@ -22,6 +22,16 @@
         <a href="http://twitter.com/#!/rootconf" class="twitter"></a><a href="http://www.facebook.com/HasGeek" target="_blank" class="fb"></a>
       </div>
       <div class="span1 hg"><a href="#hasgeek" onclick="scroll('hasgeek')"><img src="/static/img/hg-logo.png" /></a></div>
+    </div>
+    <div class="row mobile-header">
+      <div class="span12 hg-mobile" align="center">
+        <a href="#hasgeek" onclick="scroll('hasgeek')"><img src="/static/img/hg-name.png" /></a>
+      </div>
+      <div class="span12 header-social-mobile">
+        <a href="http://twitter.com/#!/rootconf" class="twitter"></a><a href="http://www.facebook.com/HasGeek" target="_blank" class="fb"></a>
+      </div>
+      
+
     </div>
   </div>
 </header>
@@ -45,8 +55,8 @@
           </div>
         </div>
       </div>-->
-      <div class="row content"id="home" >
-        <div class="span12" align="center"><img src="/static/img/masthead.png" /></div>
+      <div class="row content test" id="home" >
+        <div class="span12" align="center"><img src="/static/img/masthead.png"  class="visible-phone" /></div>
       </div>
       <div class="row content" style="margin-top: 10px">
         <div class="span12">
@@ -64,33 +74,30 @@
         </div>
       </div>
       <div class="row content full" id="participate">
-        <div class="span12">
+        <div class="span4">
           <h2>Participate</h2>
           <p>Get the super early geek tickets now!</p>
           <p>Look at the <a href="http://funnel.hasgeek.com/rootconf">existing proposals.</a></p>
           <p><a class="btn-primary btn-large" target=_blank href="http://rootconf.doattend.com/">Book now &raquo;</a></p>
         </div><!--/span-->
-      </div><!--/row-->
-      <div class="row content full" id="speak">
-        <div class="span12">
+         <div class="span4">
           <h2>Speak</h2>
           <p>Do you have what it takes to speak to fellow sysadmins?</p>
           <p><a class="btn-primary btn-large" target=_blank href="http://funnel.hasgeek.com/rootconf">Propose a Session &raquo;</a></p>
         </div><!--/span-->
-      </div><!--/row-->
-      <div class="row content full" id="sponsor">
-        <div class="span12">
+        <div class="span4">
           <h2>Sponsor</h2>
           <p>Would you or your employer like to sponsor Rootconf? </p>
-          <p><a class="btn-primary btn-large" target=_blank href="mailto:kiran@hasgeek.com?cc=nigel@hasgeek.com&subject=Sponsorship%20for%20RootConf">Get in Touch &raquo;</a></p>
+          <p><a class="btn-primary btn-large" target=_blank href="/static/SponsorKit_rootconf.pdf" target="_blank">Get in Touch &raquo;</a></p>
         </div><!--/span-->
       </div><!--/row-->
-      <div class="row content" id="venue">
-      </div>
-      <div class="row"><div class="span12"><h2 id="location">Venue</h2></div></div>
-       <div class="row map">
-        <div class="span5">&nbsp;</div>
-        <div class="span6 con">
+      
+      <div class="row content" id="venue"><div class="span12"><h2 id="location">Venue</h2></div></div>
+       <div class="row">
+        <div class="span6">
+          <div id="map" class="map"></div>
+        </div>
+        <div class="span6">
         <h3 style="text-transform: uppercase; font-size: 25pt">Dharmaram Vidya Kshetram</h3>
             <p><strong>Christ University Campus</strong>, Bangalore</p><hr />
             <p>Rootconf is set in Dharmaram College's beautiful, tree-filled campus (nothing like the back-to-college feeling).</p>
@@ -100,9 +107,7 @@
             <p><a href="http://goo.gl/maps/jYyv">View location in Google Maps</a></p>
           <h3><span>WHEN</span> : May 26, 2012</h3>
         </div>
-        <div class="span1">&nbsp;</div>
-          
-        </div>
+      </div>
       <div class="row content" id="hasgeek">
         <div class="span12">
           <h2 id="abouthg">About HasGeek</h2>
@@ -119,38 +124,44 @@
 {% block footerscripts %} 
 <script>
 
+$(function() {
+  var map = new L.Map('map');
+  var cloudmadeUrl = 'http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png',
+      subDomains = ['otile1','otile2','otile3','otile4'],
+      cloudmadeAttrib = '<a href="http://open.mapquest.co.uk" target="_blank">MapQuest</a>, <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> and contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/" target="_blank">CC-BY-SA</a>';
+      var cloudmade = new L.TileLayer(cloudmadeUrl, {maxZoom: 18, attribution: cloudmadeAttrib, subdomains: subDomains});
+
+      var venue = new L.LatLng(12.9334, 77.6050); // geographical point (longitude and latitude)
+      var center = new L.LatLng(12.936, 77.62);
+      var mobile_center = new L.LatLng(12.935, 77.591);
+      map.setView(center, 14).addLayer(cloudmade);
+      if (map.getSize().x < 768) { map.setView(venue,14); } // on smaller screen where map takes full-width
+
+      var venue_marker = new L.Marker(venue);
+      map.addLayer(venue_marker);
+      venue_marker.bindPopup('Dharmaram Vidya Kshetram').openPopup();
+      map.scrollWheelZoom.disable();
+      map.doubleClickZoom.disable();
+      
+      map.on('zoomend', onZoomend);
+      function onZoomend(){ map.setView(venue, map.getZoom()); };
+});
+
 function scroll(scrollToId)
 {   
     p = $("#" + scrollToId);
     scrollTo = p.position().top;
     $('html, body').animate({scrollTop: scrollTo}, 600);
 }
-
-  function cursorAnimation()
-  {
-    
-    $(".cursor").animate({opacity: 0}, 200, "swing").animate({opacity: .6}, 400).animate({opacity: 0.6}, 400).animate({opacity:0}, 200);
-  }
-
-  $(document).ready(function()
-  {
-    $(window).resize(function(){    $('header').css('margin-left', (-($('header').width())/2) + "px");});
-    setInterval ( "cursorAnimation()", 1000 );
-    $('.full').css('min-height', (window.screen.availHeight - 700) + "px");
-    $('header').css('margin-left', (-($('header').width())/2) + "px");
-
-    /*
-    $(window).bind("scroll", function()
-    {
-      if(window.pageYOffset > 30)
-      {
-        $('#navbar').addClass('navbar-fixed-top');
-      }
-      else
-      {
-        $('#navbar').removeClass('navbar-fixed-top');
-      }
-    });*/
-  });
+function cursorAnimation()
+{ 
+  $(".cursor").animate({opacity: 0}, 200, "swing").animate({opacity: .6}, 400).animate({opacity: 0.6}, 400).animate({opacity:0}, 200);
+}
+$(document).ready(function()
+{
+  $(window).resize(function(){    $('header').css('margin-left', (-($('header').width())/2) + "px");});
+  setInterval ( "cursorAnimation()", 1000 );
+  $('header').css('margin-left', (-($('header').width())/2) + "px");
+});
 </script>
 {% endblock %}

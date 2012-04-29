@@ -19,7 +19,7 @@ configureapp(app, 'ROOTCONF_ENV')
 app.register_blueprint(baseframe)
 assets = Environment(app)
 js = Bundle(baseframe_js, 'js/leaflet.js')
-css = Bundle(baseframe_css, 'css/rootconf.css', 'css/monitor.css')
+css = Bundle(baseframe_css, 'css/rootconf.css', 'css/monitor.css', 'css/leaflet.css')
 assets.register('js_all', js)
 assets.register('css_all', css)
 

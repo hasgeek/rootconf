@@ -19,8 +19,9 @@ header{
 	top: 0;
 	left: 50%;
 	width: 100%;
-	background: url(/static/img/bg.png) top;
+	background: url(/static/img/bg_nav.png) top;
 	color: #222;
+	z-index: 100;
 }
 
  footer .footer-inner	{
@@ -29,14 +30,13 @@ header{
 
 .content	{
 	background: url(/static/img/nav-bg.png) repeat-x top;	
-	margin-top:139px;
-	padding-top: 10px;
+	margin-top:126px;
+	padding-top: 25px;
 }
 
 
 .header-logo	{
 	font-size: 36pt;
-	font-weight: bold;
 	font-family: Inconsolata, Verdana, sans-serif;
 	margin-top: 35px;
 }
@@ -58,17 +58,18 @@ header{
 a  {color: #ffd200;}
 a:hover  {color: #fff2b4;}
 
+nav{margin-top: 35px;}
+
 nav a	{
 	font-size: 18px;
-	line-height: 5em;
 	padding: 15px;
-	text-shadow:-1px -1px 1px #333;
-	color: #DDD;
+	text-shadow:-1px -1px 1px #999;
+	color: #333;
 }
 
 nav a:hover	{
 	text-decoration: none;
-	color: #000;	
+	color: #555;	
 }
 
 .header-social .twitter, .header-social .fb	{
@@ -112,15 +113,6 @@ h2	{
 h3	{
 	color: #d0a41d;
 }
-.con	{
-	width: 560px;
-	background: url(/static/img/p5black.png) ;
-	height: 400px;
-	z-index: 7;
-	color: #FFF;
-	padding: 10px;
-	margin: 0px;
-}
 
 .con p {
     font-size: 16px;
@@ -132,20 +124,74 @@ h3	{
 
 .map {
 	height: 400px;
-	overflow: hidden;
-	background: url(/static/img/map.jpg) no-repeat right;
+	color: #333;
+	position: relative;
+	top: 0;
+	left: 0;
 }
 
-.cursor { opacity: 0.6;
--moz-opacity: 0.6;
-filter:alpha(opacity=6);};
-
-.header-logo a	{
-	color: #222;
+.cursor {
+	opacity: 0.6;
+	-moz-opacity: 0.6;
+	filter:alpha(opacity=6);
 }
 
-.header-logo a:hover	{
-	text-decoration: none;
+.mobile-header	{display: none;}
+
+@media (max-width: 767px) {
+	.header-social .fb, .header-social .twitter {
+  	display: none;  	
+  }
+
+  .span4	{
+  	margin-top: 20px;
+  }
+
+  header {position: absolute; top: 0;}
+  .navbar	{ margin-bottom: 0px; }
+
+  nav 	{ margin-top: 5x; padding-left: 0; margin-left: -20px;text-align: center;}
+
+  nav a {
+  	padding: 5px;
+  	font-size: 17px;
+  	padding-top: 0px;
+  }
+
+  .mobile-header {display: inherit;}
+
+  .header-logo	{
+  	padding-top: 25px;
+  	text-align: center;
+  }
+
+  .content:first-child	{margin-top: 178px}
+  .content	{margin-top: 10px}
+  
+  .hg img	{display:none;} 
 }
 
-@media (max-width: 1225px)
+@media (min-width: 768px) and (max-width: 1200px) { 
+  
+  .header-social .fb, .header-social .twitter {
+  	margin: 5px;
+  	margin-top: 15px;
+  }
+  .navbar	{ margin-bottom: 0px; }
+  nav 	{ margin-top: 15px; padding-left: 0; margin-left: -20px;}
+
+  nav a {
+  	padding: 5px;
+  	font-size: 17px;
+  	padding-top: 0px;
+  }
+
+  .header-logo	{
+  	font-size: 25px;
+  	margin-top: 15px;
+  }
+
+  .content	{margin-top: 87px}
+
+  .hg 	{padding-top: 3px;}
+ }
