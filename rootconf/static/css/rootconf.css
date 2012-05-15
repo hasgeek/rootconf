@@ -255,3 +255,31 @@ h3	{
 .schedule thead th { text-align: center; }
 .schedule table tbody tr:hover td { background: #787777; }
 .schedule td, .schedule th { padding: 0.75em 1em 1.5em; border: 1px solid #A19FA0;}
+.videos { margin-top: 3em; }
+.session-video { margin-bottom: 1.5em; }
+.session-video a { display: block; }
+.session-video a:hover { text-decoration: none; }
+.session-video a:hover .thumbnail { outline: 0.5em solid #E3E3E3; outline-color: rgba(0,0,0,0.1); }
+.session-video a:hover h4 { color: #F0A40C; }
+.session-video h4 {
+	font-weight: 500;
+	color: black;
+	margin-top: 0;
+}
+.session-video h5 {
+	margin: 0.5em 0;
+	color: gray;
+/*	font-size: 0.786em;*/
+	font-weight: 500;
+	text-transform: uppercase;
+}
+.session-video h5 a { display: inline; }
+.session-video .thumbnail {
+	border: none;
+	padding: 0;
+	margin-left: 0;
+	margin-right: 16px;
+	-webkit-box-shadow: 1px 1px 1px #BBB;
+	   -moz-box-shadow: 1px 1px 1px #BBB;
+	        box-shadow: 1px 1px 1px #BBB;
+}
