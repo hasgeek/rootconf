@@ -14,7 +14,7 @@
           <a href="#home" onclick="scroll('home')">home</a>
           <a href="#participate" onclick="scroll('participate')">participate</a>
           <a href="#schedule" onclick="scroll('schedule')">talks</a>
-          <a href="#sponsor" onclick="scroll('participate')">sponsor</a>
+          <a href="#sponsors" onclick="scroll('sponsors')">sponsors</a>
           <a href="#venue" onclick="scroll('venue')">venue</a>
         </nav>
       </div>
@@ -97,6 +97,34 @@
         </div><!--/span-->
       </div><!--/row-->
       
+      <div class="row content" id="sponsors">
+        <div class="span12"><h2>Sponsors</h2></div>
+        </div><!--/row-->
+        <div class="row">
+            <article class="open hsponsor span2">
+            <p class="logo"><a data-toggle="modal" href="#sponsor-e2enetworks"><img alt="E2E Networks" src="{{ url_for('static', filename='img/sponsors/e2enetworks.png') }}"></a></p>
+            </article>
+            <article class="open hsponsor span2">
+            <p class="logo"><img alt="Become a Sponsor" src="http://placehold.it/192x150/E3E3E3/666&amp;text=You"></p>
+            </article>
+
+      <div class="modal fade sponsor-box" id="sponsor-e2enetworks">
+        <div class="modal-header">
+          <a class="close" data-dismiss="modal">&times;</a>
+          <h3>E2E Networks</h3>
+        </div>
+        <div class="modal-body">
+          <p><em>Low latency cloud hosting in India</em></p>
+          <p><a class="sponsor-exit" href="http://e2enetworks.com">E2E Networks Private Limited</a> is India’s first homegrown cloud computing hosting venture. An exciting blend of cutting-edge technology, world class talent, highly skilled managed services and a commitment to bringing low latency hosting at a reasonable price. E2E is one of India’s fastest growing hosting companies, with a number of industry-leading customers in its portfolio. E2E works for both small custom testbeds for web applications still in development or multi-location, multi-terabyte, multi-gigabit deployments for some of the busiest Indian web verticals.</p>
+          <p>E2E hosts HasGeek’s websites, including this website. 
+        </div>
+        <div class="modal-footer">
+          <a href="http://www.e2enetworks.com/" class="btn btn-primary sponsor-exit">Visit E2E</a>
+          <a data-dismiss="modal" class="btn">Close</a>
+        </div>
+      </div>
+      </div><!--/row-->
+
     <div class="row content" id="schedule">
       <div class="span12"><h2 id="talks">Selected Talks</h2></div>
     </div>
