@@ -10,3 +10,5 @@ test.db
 .webassets-cache
 error.log
 fabfile.py
+rootconf-packed.css
+baseframe-packed.js
