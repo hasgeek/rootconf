@@ -30,7 +30,6 @@
       <div class="span12 header-social-mobile">
         <a href="http://twitter.com/#!/rootconf" class="twitter"></a><a href="http://www.facebook.com/HasGeek" target="_blank" class="fb"></a>
       </div>
-      
 
     </div>
   </div>
@@ -48,7 +47,6 @@
             <div class="mon4 borrad12"></div>
             <div class="mon5"></div>
           </div>
-         
           <div class="mast">
             <p>Let there be sysadmins</p>
             <p class="date">May 26th, 2012 | Dharamaram College, Bangalore</p>
@@ -101,12 +99,31 @@
         <div class="span12"><h2>Sponsors</h2></div>
         </div><!--/row-->
         <div class="row">
+            <article class="open hsponsor hsponsor-gold span2">
+            <p class="logo"><a data-toggle="modal" href="#sponsor-flipkart"><img alt="Flipkart" src="{{ url_for('static', filename='img/sponsors/flipkart.png') }}"></a></p>
+            </article>
             <article class="open hsponsor span2">
             <p class="logo"><a data-toggle="modal" href="#sponsor-e2enetworks"><img alt="E2E Networks" src="{{ url_for('static', filename='img/sponsors/e2e.png') }}"></a></p>
             </article>
             <article class="open hsponsor span2">
             <p class="logo"><img alt="Become a Sponsor" src="{{ url_for('static', filename='img/you.gif') }}"></p>
             </article>
+
+	  <div class="modal fade" id="sponsor-flipkart">
+        <div class="modal-header">
+          <a class="close" data-dismiss="modal">&times;</a>
+          <h3>Flipkart</h3>
+        </div>
+		<div class="modal-body">
+		  <p><a class="sponsor-exit" href="http://flipkart.com">Flipkart.com</a>, India's largest e-commerce brand for physical goods, started with books in 2007, and entered the consumer electronics category with the launch of mobile phones, in September 2010. 
+		  <p>Since then, it has grown rapidly with the introduction of innovative features like Cash on Delivery (CoD), 30 day replacement guarantee and its own delivery network. Today, the portfolio is spread across 12 categories - from books to music, mobiles, computers, cameras, home and kitchen appliances, TV and home theatre systems, personal and healthcare products, stationery items and lifestyle products like perfumes, watches and health and beauty products. In addition to these, Flipkart has also made a foray into the emerging digital content market with the recent launch of Flyte, the digital music store.</a>
+		  <p>Flipkart is rapidly expanding its network of warehouses, distribution centers, procurement operations and 24/7 customer support teams. The company has its own delivery network in 37 cities and is set to expand this in the current financial year. With a team of around 4,800 members, the company operates from offices and warehouses in seven Indian cities.</p>
+        </div>
+        <div class="modal-footer">
+          <a href="http://flipkart.com/" class="btn btn-primary sponsor-exit">Visit Flipkart</a>
+          <a data-dismiss="modal" class="btn">Close</a>
+        </div>
+      </div>
 
       <div class="modal fade" id="sponsor-e2enetworks">
         <div class="modal-header">
@@ -115,15 +132,16 @@
         </div>
         <div class="modal-body">
           <p><em>Low latency cloud hosting in India</em></p>
-          <p><a class="sponsor-exit" href="http://e2enetworks.com">E2E Networks Private Limited</a> is India’s first homegrown cloud computing hosting venture. An exciting blend of cutting-edge technology, world class talent, highly skilled managed services and a commitment to bringing low latency hosting at a reasonable price. E2E is one of India’s fastest growing hosting companies, with a number of industry-leading customers in its portfolio. E2E works for both small custom testbeds for web applications still in development or multi-location, multi-terabyte, multi-gigabit deployments for some of the busiest Indian web verticals.</p>
-          <p>E2E hosts HasGeek’s websites, including this website. 
+          <p><a class="sponsor-exit" href="http://e2enetworks.com">E2E Networks Private Limited</a> is India's first homegrown cloud computing hosting venture. An exciting blend of cutting-edge technology, world class talent, highly skilled managed services and a commitment to bringing low latency hosting at a reasonable price. E2E is one of India's fastest growing hosting companies, with a number of industry-leading customers in its portfolio. E2E works for both small custom testbeds for web applications still in development or multi-location, multi-terabyte, multi-gigabit deployments for some of the busiest Indian web verticals.</p>
+          <p>E2E hosts HasGeek's websites, including this website.
         </div>
         <div class="modal-footer">
           <a href="http://www.e2enetworks.com/" class="btn btn-primary sponsor-exit">Visit E2E</a>
           <a data-dismiss="modal" class="btn">Close</a>
         </div>
       </div>
-      </div><!--/row-->
+
+  </div><!--/row-->
 
     <div class="row content" id="schedule">
       <div class="span12"><h2 id="talks">Selected Talks</h2></div>
