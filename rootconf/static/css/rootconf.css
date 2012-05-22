@@ -325,7 +325,7 @@ h3	{
 .hsponsor-platinum .logo { height: 250px; line-height: 250px; }
 .hsponsor-gold .logo 	{ height: 100px; line-height: 100px; }
 .hsponsor-silver .logo	{ height: 100px; line-height: 100px; }
-.hsponsor-community .logo{ height: 50px;  line-height: 50px;  }
+.hsponsor-community .logo{ height: 100px;  line-height: 50px;  }
 .hsponsor-platinum:after { content: "Platinum"; }
 .hsponsor-gold:after		{ content: "Gold"; }
 .hsponsor-silver:after	{ content: "Silver"; }
