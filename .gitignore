@@ -12,3 +12,4 @@ error.log
 fabfile.py
 rootconf-packed.css
 baseframe-packed.js
+baseframe-packed.css
