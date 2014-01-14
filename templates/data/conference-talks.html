@@ -1,0 +1,473 @@
+{%
+  set types = {
+      'app-demos' : {
+        'title'     : 'App Demos'
+    }
+    , 'business' : {
+        'title' : 'Business'
+    }
+    , 'gaming' : {
+        'title' : 'Gaming'
+    }
+    , 'systems' : {
+        'title' : 'Systems'
+    }
+    , 'ux' : {
+        'title' : 'UX'
+    }
+  }
+%}
+{%
+  set talks = [
+    {
+        'id'          : 'differentiations-for-developers-on-android-ecosystem'
+      , 'title'       : 'Keynote - Differentiations for Developers on Android Ecosystem'
+      , 'speaker'     : 'Narendra Bhandari'
+      , 'designation' : 'Director for Asia Pacific of the Intel Software and Services Group'
+      , 'type'        : 'business'
+      , 'blurb'       : '<p>Today some of the biggest challenges in front of Android Application Developers are - Differentiation, unique WOW experience, Productivity and Cross Platform compatibility. In this keynote you will get to know, how developers should address these challenges with effective tool sets, understanding of differentiation vectors and planning for cross platform/device deployment. You will also get to experience few examples and demoes of differentiation vectors to highlight a path developer should explore to be successful.</p>'
+      , 'link'        : 'conference#differentiations-for-developers-on-android-ecosystem'
+      , 'photo'       : 'https://images.hasgeek.com/embed/file/858e09c26beb4a4c966a98b6c3fe7799'
+      , 'funnel'      : 'https://funnel.hasgeek.com/droidcon2013/955-differentiations-for-developers-on-android-ecosyst'
+      , 'featured'    : true
+    }
+    , {
+        'id'          : 'woome-app-demo'
+      , 'title'       : 'WooMe App Demo'
+      , 'speaker'     : 'Sanju Rapheal'
+      , 'designation' : 'Co-founder and Chief Operating Oficer of WooMe'
+      , 'type'        : 'app-demos'
+      , 'blurb'       : '<p>Problems with the current Tv viewing: <br>- Non targetted and Non engaging <br>- No interactive shows, Movie trailers or Ads <br>- No additional and exclusive content for engaging the Audience</p><p>WooMe is a mobile app for ultimate Live TV Interaction and Engagement on your Smart phones and Tablets. WooMe App listens to the audio from TV, Youtube and online to recognize the program, Movie or Ads you are watching and brings exclusive offers and content such as Videos,Images, Vote/Poll, Trivia and Contest. We have a patent pending audio technology which enables you to tag whatever you are watching and get exclusive offers and content relevant to the program you are watching. WooMe also enables you to interact with friends and other people watching the same programs instantly, making it a virtual living room.</p>'
+      , 'link'        : 'conference#woome-app-demo'
+      , 'photo'       : 'https://images.hasgeek.com/embed/file/3cc53376ead945d085c6e839840e0dd7'
+      , 'funnel'      : 'https://funnel.hasgeek.com/droidcon2013/914-woome-app-demo'
+      , 'featured'    : true
+    }
+    ,  {
+        'id'          : 'dalvik-vm-deep-dive-into-what-makes-the-android-apps-run'
+      , 'title'       : 'Dalvik VM - Deep dive into what makes the Android apps run'
+      , 'speaker'     : 'Satyam Kandula'
+      , 'designation' : 'Eclipse Committer and Co-founder/CTO of Little Eye Labs'
+      , 'type'        : 'systems'
+      , 'blurb'       : "<p>Android\'s Dalvik VM is the engine on which all Android apps run. Its that normally silent and occasionally noisy backbone that Android developers take for granted. This talk will take you through a journey of the Davlik VM and understand the inner workings of it (as much as you can in a 45-60 minute talk :)). How the Dalvik VM architected, how is it different from a traditional Java VM, what is the process architecture, the Android bootup process sequence (never heard of Zygote? Dont worry, you will know more after the talk).And along the way understand things that you, as an app developer, can do to take advantage of the VM's architecture and behaviour.</p>"
+      , 'link'        : 'conference#dalvik-vm-deep-dive-into-what-makes-the-android-apps-run'
+      , 'photo'       : 'https://images.hasgeek.com/embed/file/46992bf644c54ae7b000c5cdafbf72e0'
+      , 'funnel'      : 'https://funnel.hasgeek.com/droidcon2013/911-dalvik-vm-deep-dive-into-what-makes-the-android-ap'
+      , 'featured'    : true
+    }
+    , {
+        'id'          : 'lessons-learnt-by-porting-our-game-engine-from-ios-to-android'
+      , 'title'       : 'Lessons learnt by porting our game engine from iOS to Android'
+      , 'speaker'     : 'Manish Mathai'
+      , 'designation' : 'Game Programmer at Rolocule Games'
+      , 'type'        : 'gaming'
+      , 'blurb'       : "<p>Talk about lessons learned while porting our proprietary game engine - roloengine to android. Rolocule\'s Award winning game Flick Tennis would be used as a case study.</p><p>What do you do when decide to port you hand-woven, custom engine powered 3D iOS game to Android? You roll up your sleeves and get down and dirty with the Android ecosystem, of course. Here we will talk about some of the modules &amp; systems we touched during our 5-month journey through the porting process. Some of them are :- OpenGL, OpenAL, NDK &amp; JNI &amp; C++, Android GUI</p>"
+      , 'link'        : 'conference#lessons-learnt-by-porting-our-game-engine-from-ios-to-android'
+      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/79ea375d663a4723ad507ea30477c971_w300_h300.jpeg'
+      , 'funnel'      : 'https://funnel.hasgeek.com/droidcon2013/908-lessons-learnt-by-porting-our-game-engine-from-ios'
+      , 'featured'    : true
+    }
+    , {
+        'id'          : 'volley-with-okhttp-a-deadly-ultrafast-network-application'
+      , 'title'       : 'Volley with OkHttp: A Deadly Ultrafast Network Application'
+      , 'speaker'     : 'Bhaskar Gupta'
+      , 'designation' : 'Technical Lead at MakeMyTrip.com'
+      , 'type'        : 'systems'
+      , 'blurb'       : '<p>Volley, is an excellent library that implements best practices, design patterns and framework to build fast, async and cachable Android applications. OkHttp is the android client of SPYDY. There is very less documentation around Volley, hence the objective is to become aware of how to use Volley and customize it along with OkHttp.</p><p>Http is the modern protocol of network applications. The presentation starts with introduction of OkHttp library (which is an HTTP &amp; SPDY client for Android and Java applications) and Volley library (which is fast, easy async and caching framework for network calls, used by PlayStore). Then, we will walk through detail hands-on of how it works, common patterns that work well with them, and how to use the libraries and build easy, fast android applications. It will cover a comparison of tasks and amount of code of Async tasks you need to write before Volley and after you have these framework.Then, You will learn to build a sample application that have both OkHttp and Volley together and run a Rest based client to call a JSON response. We will deep dive in caching framework of Volley and touch upon image loading framework and caching of the same. This will be along with a walk-through of how you can load images from network in parallel in ListView. We\'ll conclude by discussing how to build an app with Volley and OkHttp or port your app to Volley.</p>'
+      , 'link'        : 'conference#volley-with-okhttp-a-deadly-ultrafast-network-application'
+      , 'photo'       : 'https://images.hasgeek.com/embed/file/8d94c8a2db19422d93d8f40cecf6b929'
+      , 'funnel'      : 'https://funnel.hasgeek.com/droidcon2013/907-volley-with-okhttp-a-deadly-ultrafast-network-appl'
+      , 'preview'     : 'https://hasgeek.tv/droidconin/2013-previews/768-volley-with-okhttp-a-deadly-ultrafast-network-application'
+      , 'featured'    : true
+    }
+    , {
+        'id'          : 'airgol-capture-and-share-your-moments-live-as-they-happen-using-android-phone'
+      , 'title'       : 'AirGol - Capture and share your moments LIVE! as they happen using Android phone'
+      , 'speaker'     : 'Nitin Gupta'
+      , 'designation' : 'Founder and CEO at AirGol.com'
+      , 'type'        : 'app-demos'
+      , 'blurb'       : '<p>Demonstrate an innovative way of using an Android powered smartphone to enable LIVE video broadcasting and sharing of events/moments as they happen or later anytime!</p><p>AirGol turn your moments into sweet little movies. It offers a free iPhone and Android app to capture up to 5 minutes of videos and share with friends/family LIVE as it happens or later anytime. Records as you shoot so that you do not have to upload. Full privacy to keep videos public or private. Stores on cloud for access anytime anywhere. Apply effects, theme, music to convert videos into creative movies in few clicks. Works offline without internet allowing users to sync videos anytime.</p>'
+      , 'link'        : 'conference#airgol-capture-and-share-your-moments-live-as-they-happen-using-android-phone'
+      , 'photo'       : 'https://images.hasgeek.com/embed/file/fe827e22042b4d878bb3eca56a376ecf'
+      , 'funnel'      : 'https://funnel.hasgeek.com/droidcon2013/903-airgol-capture-and-share-your-moments-live-as-they'
+      , 'featured'    : true
+    }
+    , {
+        'id'          : 'building-apps-for-the-smartwatch-2'
+      , 'title'       : 'Building apps for the SmartWatch 2'
+      , 'speaker'     : 'Jonas Hellström'
+      , 'designation' : 'Developer Support Engineer, Sony Mobile Communications'
+      , 'type'        : 'systems'
+      , 'blurb'       : '<p>This session is about how you can make use of the Smart Extension API to create your own SmartWatch 2 compatible apps. We will cover the SmartWatch 2\'s specs and capabilities. You will be guided through the required steps for registering your own extension, get it running on the watch and how to publish it properly on Google Play for easier discoverability. We will also take a look at things you can do to make the most use of the SmartWatch 2 and optimize your implementation.</p>'
+      , 'link'        : 'conference#building-apps-for-the-smartwatch-2'
+      , 'photo'       : 'https://images.hasgeek.com/embed/file/8d9652c849be4151a3b6aa31ed00cd70'
+      , 'funnel'      : 'https://funnel.hasgeek.com/droidcon2013/870-building-apps-for-the-smartwatch-2'
+      , 'featured'    : true
+    }
+    , {
+        'id'          : 'developing-augmented-reality-android-application'
+      , 'title'       : 'Developing Augmented Reality Android Application'
+      , 'speaker'     : 'Samarth Shah'
+      , 'designation' : 'Systems Engineer at Infosys Labs'
+      , 'type'        : 'gaming'
+      , 'blurb'       : '<p>In todays digital world, Augmented Reality is one of those buzz word that people have heard but they don\'t know how to work/develop on it. This talk will serve as starting point for developing great AR application different from ~867563 applications available in AppStore, This talk will be divided in two parts:<br /><strong>i. Warming Up:</strong><br>In this section , I will provide brief introduction on Unity3d and Vuforia SDK. It will be followed by "how to set up development environment"<br><strong>ii. Develop AR application</strong><br>This section will be the crux of the talk. I will give small tutorial on how to get started for developing AR Android application by developing one AR application. It will be followed by demonstration of really cool AR applications.</p>'
+      , 'link'        : 'conference#developing-augmented-reality-android-application'
+      , 'photo'       : 'https://images.hasgeek.com/embed/file/3ec2afc271644fbbb634d3efd2bd9576'
+      , 'funnel'      : 'https://funnel.hasgeek.com/droidcon2013/869-developing-augmented-reality-android-application'
+      , 'preview'     : 'https://hasgeek.tv/droidconin/2013-previews/769-developing-augmented-reality-android-application'
+      , 'featured'    : true
+    }
+    , {
+        'id'          : 'making-mobile-web-services-that-dont-suck'
+      , 'title'       : 'Making Mobile Web Services that Don’t Suck'
+      , 'speaker'     : 'Christopher Neugebauer'
+      , 'designation' : 'Android developer at Asdeq Labs'
+      , 'type'        : 'systems'
+      , 'blurb'       : '<p>This talk looks designing web service APIs that embrace the restrictions and limitations of mobile networks: how mobile networks differ from fixed networks, how to take advantage of these differences, and how to make your API useful to developers of mobile apps.</p><p>One of the biggest benefits of the mobile app revolution is the ability to present information from the internet in new and exciting ways. Behind every app that relies on online data is an online service which, if implemented well, will make it super-easy to let your app access everything it needs. Unfortunately, not every web service does this well. In this presentation, we’ll be looking into design principles for web APIs with a focus on making things not suck for mobile app developers. A particular focus will be on making services that are robust in the face of unreliable network access.</p>'
+      , 'link'        : 'conference#making-mobile-web-services-that-dont-suck'
+      , 'photo'       : 'https://images.hasgeek.com/embed/file/266b85366e254ffb986f874ee0941c87'
+      , 'funnel'      : 'https://funnel.hasgeek.com/droidcon2013/861-making-mobile-web-services-that-dont-suck'
+      , 'preview'     : 'https://hasgeek.tv/droidconin/2013-previews/766-making-mobile-web-services-that-dont-suck'
+      , 'featured'    : true
+    }
+    , {
+        'id'          : 'portable-logic-native-ui'
+      , 'title'       : 'Portable Logic/Native UI'
+      , 'speaker'     : 'Christopher Neugebauer'
+      , 'designation' : 'Android developer at Asdeq Labs'
+      , 'type'        : 'systems'
+      , 'blurb'       : '<p>The conventional wisdom on producing applications that run on both iOS and Android says that to make the best possible experience for both platforms, you\u2019ll need to write a completely separate application for each platform.</p><p>The conventional wisdom, of course, thinks that the only important task in mobile applications is to make a pretty UI. This ignores all the hard work that goes into writing application logic. With a bit of up-front design work, it\u2019s possible to get your important application logic running on multiple operating systems.</p><p>This talk looks at separating application logic and UI from two separate angles. The first half of the talk re-introduces the concepts of separation of concerns. Then we\u2019ll look at approaches to building portable core code that runs on multiple systems, and ways to design your apps to take advantage of this. This includes code patterns, tools, and a tiny bit of hard-earned experience from a product that successfully uses this approach.</p>'
+      , 'link'        : 'conference#portable-logic-native-ui'
+      , 'photo'       : ''
+      , 'funnel'      : 'https://funnel.hasgeek.com/droidcon2013/860-portable-logic-native-ui'
+      , 'featured'    : true
+    }
+    , {
+        'id'          : 'uber-do-you-love-your-transport'
+      , 'title'       : 'Uber - Do you LOVE your transport?'
+      , 'speaker'     : 'Akshay BD'
+      , 'designation' : 'Community Manager at Uber, Bangalore'
+      , 'type'        : 'app-demos'
+      , 'blurb'       : '<p><ol><li>A demo of the Uber on-demand, techonology app. <br>Uber is a technology company that seamlessly connects riders to local, licensed, professional drivers. The Uber app lets you leave your car at home and request a safe, reliable and stylish ride within minutes. You can track the arrival of your ride and you\'ll receive a text message when the car arrives. Payments are automatic and hassle free and there’s no need to tip. The credit card on file is charged at the end of the ride and you\'ll get an email receipt detailing your trip. In just three years, our popular mobile app has made nearly 48 cities in 19 countries around the globe more accessible to residents and visitors alike while helping tens of thousands of partner drivers grow their small businesses. We debuted in four cities in the last few weeks alone -- Bangalore, Dubai, Cape Town and Shanghai with many more to come.</li>
+      <li>Process and data we use to make this possible</li>
+      <li>Community engagement to build a brand identity</li></ol></p>'
+      , 'link'        : 'conference#uber-do-you-love-your-transport'
+      , 'photo'       : 'https://images.hasgeek.com/embed/file/2224a41392dd4a6c957f4d594eeca487'
+      , 'funnel'      : 'https://funnel.hasgeek.com/droidcon2013/894-uber-do-you-love-your-transport'
+      , 'featured'    : true
+    }
+    , {
+        'id'          : 'learnings-on-mobile-strategy'
+      , 'title'       : 'What we are learning on mobile strategy'
+      , 'speaker'     : 'Rohit Bhat'
+      , 'designation' : 'Associate at Sequoia Capital'
+      , 'type'        : 'business'
+      , 'blurb'       : '<p>Share our learnings and thoughts on mobile strategy. Helpful for attendees looking to build mobile focussed businesses.</p><p>A startup\'s mobile strategy is increasingly critical to its success. At Sequoia, we have been fortunate to partner with entrepreneurs who have successfully leveraged the mobile platform. In these journeys, we have also made several mistakes and learnt from them. We hope to share some of these learnings and success stories. We hope these would come in handy as participants of this conference look to build mobile focussed businesses.</p>'
+      , 'link'        : 'conference#learnings-on-mobile-strategy'
+      , 'photo'       : 'https://images.hasgeek.com/embed/file/1f412fca74f94fdeabcee00df6545b80'
+      , 'funnel'      : 'https://funnel.hasgeek.com/droidcon2013/944-learnings-on-mobile-strategy'
+      , 'featured'    : true
+    }
+    , {
+        'id'          : 'haptik-an-app-that-makes-conversing-with-companies-not-suck'
+      , 'title'       : 'Haptik, an app that makes conversing with companies not suck'
+      , 'speaker'     : 'Raveesh Bhalla'
+      , 'designation' : 'Lead Engineer and Interaction Designer at Haptik'
+      , 'type'        : 'app-demos'
+      , 'blurb'       : '<p>Haptik was born out of a personal need when we realized we were using text communication more than any other application on our phones, but still had to use voice for brands and services we use. We also realized that it\’s generally a pain to find any information related to such companies, and would like to be more in the loop on their products. We asked a few friends and advisers, and they agreed. We asked some more, and they agreed too.</p>'
+      , 'link'        : 'conference#haptik-an-app-that-makes-conversing-with-companies-not-suck'
+      , 'photo'       : 'https://images.hasgeek.com/embed/file/a56cc6cab1d74d0f9aee36a098535b84'
+      , 'funnel'      : 'https://funnel.hasgeek.com/droidcon2013/933-haptik-an-app-that-makes-conversing-with-companies'
+      , 'featured'    : true
+    }
+    , {
+        'id'          : 'to-android-with-love'
+      , 'title'       : 'To Android, with Love'
+      , 'speaker'     : 'Ramprakash R'
+      , 'designation' : 'Sr. Design Strategist at Khosla Labs'
+      , 'type'        : 'ux'
+      , 'blurb'       : '<p>The evolution of Android over the last few years has been interesting – from a mobile phone OS to a platform that spans across mobile use cases, wearables (Glass), and even space exploration - http://googlemobile.blogspot.in/2010/12/android-in-spaaaace.html</p><p>This very thought that a platform can scale beyond a simple mobile phone to a system of intelligence has brought tremendous potential to its design, technology and social impact.</p><p>Here, I\'d like to focus on design; my talk would broadly cover the following topics:<ol><li>Caring for the process — thinking beyond design delivery</li><li>Detailing — from evaulating metrics to emotions</li></ol></p>'
+      , 'link'        : 'conference#to-android-with-love'
+      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/4f77a122ec844bd294db17275f420c2e.jpeg'
+      , 'funnel'      : 'hhttps://funnel.hasgeek.com/droidcon2013/924-to-android-with-love'
+      , 'featured'    : true
+    }
+    , {
+        'id'          : 'happay-indias-first-social-mobile-payment-platform'
+      , 'title'       : 'HAPPAY - India\'s first social mobile payment platform'
+      , 'speaker'     : 'Anshul Rai'
+      , 'designation' : 'Co-Founder &amp; CEO of HAPPAY'
+      , 'type'        : 'app-demos'
+      , 'blurb'       : '<p>HAPPAY is India\'s first social mobile payment platform that let you pay your friends or merchants with few clicks on your phone in a Simple, Fast &amp; Secure way. It makes your life easier, without worrying for exact change. HAPPAY is bank agnostic and network agnostic, so you can load money into HAPPAY from any of your Indian bank accounts or credit cards and can send money to anyone, either to their HAPPAY wallet or to their bank account. HAPPAY being network agnostic, not tied to any particular network operator makes it more popular among friends. Will talk in detail, how HAPPAY has helped its users to solve their real pain point.</p>'
+      , 'link'        : 'conference#happay-indias-first-social-mobile-payment-platform'
+      , 'photo'       : 'https://images.hasgeek.com/embed/file/c4e49f93790c475bb33904d9e4689365'
+      , 'funnel'      : 'https://funnel.hasgeek.com/droidcon2013/927-happay-indias-first-social-mobile-payment-platform'
+      , 'featured'    : true
+    }
+    , {
+        'id'          : 'ola-amigos-here-comes-the-droid-on-wheels'
+      , 'title'       : 'Ola amigos, here comes the Droid on Wheels'
+      , 'speaker'     : 'Sangharsh Boudhh'
+      , 'designation' : 'Software Engineer at Olacabs'
+      , 'type'        : 'app-demos'
+      , 'blurb'       : '<p>Share the experience and technical challenges we at Olacabs had while developing our fleet tracking and dispatch system with affordable and scalable hardware like Android devices.</p><p>Additionally we would like to cover:<ol><li>“One Touch booking” via our publicly available Olacabs app</li><li>Relevant back-end engineering</li></ol></p>'
+      , 'link'        : 'conference#ola-amigos-here-comes-the-droid-on-wheels'
+      , 'photo'       : 'https://images.hasgeek.com/embed/file/618cec783e2f4376b672c56e049ebc5e'
+      , 'funnel'      : 'https://funnel.hasgeek.com/droidcon2013/926-ola-amigos-here-comes-the-droid-on-wheels'
+      , 'featured'    : true
+    }
+    , {
+        'id'          : 'optimize-performance-in-android-apps'
+      , 'title'       : 'Optimize Performance in Android Apps'
+      , 'speaker'     : 'Sriram Ramani'
+      , 'designation' : 'Mobile Firefox Engineer at Mozilla'
+      , 'type'        : 'systems'
+      , 'blurb'       : '<p>Developing Android apps is easy. Making them perform better is a bit hard. The idea of this session is to showcase the lessons learnt from making the Firefox for Android run faster. From custom views to shaders to overdraws, the session will be filled with tips and tricks to make apps run at 60fps.</p><p>The session will showcase apps like Firefox, Facebook and Twitter in 3D, and use them as examples to understand and relate to the problems</p>'
+      , 'link'        : 'conference#optimize-performance-in-android-apps'
+      , 'photo'       : 'https://images.hasgeek.com/embed/file/a67b454fb7ef4f0e885653b2795b7044'
+      , 'funnel'      : 'https://funnel.hasgeek.com/droidcon2013/913-optimize-performance-in-android-apps'
+      , 'featured'    : true
+    }
+    , {
+        'id'          : 'freemium-game-design'
+      , 'title'       : 'Freemium Game Design'
+      , 'speaker'     : 'Nilesh Jahagirdar'
+      , 'designation' : 'Co-Founder and CEO at Light of Hand'
+      , 'type'        : 'gaming'
+      , 'blurb'       : '<p>Having a cool game with some fun mechanics is no longer enough for building a mobile gaming business. The freemium model allows developers the opportunity to optimize revenue, and hopefully build a sustainable business. However, freemium games are incredibly hard to do, and require a whole new approach to game design and depth, segmentation of users, and offering them unique experiences based on their interaction with the game, and so on. This session will cover key strategies to use when building a successful freemium game, along with pitfalls to avoid, and so on.</p>'
+      , 'link'        : 'conference#freemium-game-design'
+      , 'photo'       : 'https://images.hasgeek.com/embed/file/660e43dd3cb84b5b98a749850f159770'
+      , 'funnel'      : 'https://funnel.hasgeek.com/droidcon2013/912-freemium-game-design'
+      , 'featured'    : true
+    }
+    , {
+        'id'          : 'designing-the-user-experience-for-complex-layered-apps'
+      , 'title'       : 'Designing the User Experience for complex layered apps'
+      , 'speaker'     : 'Anusha Jayanti'
+      , 'designation' : 'Product Architect with Dexetra'
+      , 'type'        : 'ux'
+      , 'blurb'       : '<p>A layered approach to making information heavy apps consumable. This session will be about building an app which is functionally rich, by bringing the right features to the forefront.</p><p>Going beyond single screen dessert apps to layered and complex apps. How to present information in a layered consumable format. How can we build complex apps like Evernote, Google+, Facebook mobile first, and still maintain clarity and simplicity. I will be talking about<ul>
+        <li>Information layering</li>
+        <li>Information hierarchy, tools to build information architecture for mobile applications</li>
+        <li>Designing interactions and wireframes based on information hierarchy</li>
+        <li>Setting expectations and context for information</li>
+        <li>Creating the right zero state user experience</li>
+        <li>Examples of information heavy applications that got it right</li>
+        <li>Best practices</li>
+      </ul></p>'
+      , 'link'        : 'conference#designing-the-user-experience-for-complex-layered-apps'
+      , 'photo'       : 'https://images.hasgeek.com/embed/file/dbb8c9892af44c7f8d8d300d837d4130'
+      , 'funnel'      : 'https://funnel.hasgeek.com/droidcon2013/890-designing-the-user-experience-for-complex-layered-'
+      , 'featured'    : true
+    }
+    , {
+        'id'          : 'lxc-on-android-running-ics-and-jellybean-simultaneously-on-same-hardware'
+      , 'title'       : 'LXC on Android (Running ICS and Jellybean simultaneously on same hardware)'
+      , 'speaker'     : 'Kumar Sukhani'
+      , 'designation' : 'Tools Engineer at Imagination Technologies'
+      , 'type'        : 'systems'
+      , 'blurb'       : '<p>Running ICS and Jellybean simultaneously on same hardware using light weight virtualization called Linux Containers. Using same technique we can run any Linux based OS (Android, Ubuntu, Firefox OS, etc) on phone simultaneously.</p><p>LXC is a full proof mechanism for operating system level virtualization in Linux. We have done changes in Android Linux kernel so that we can run Android OS as an LXC container. Using same model, we can run multiple and different Linux based Operating systems like Ubuntu, Firefox OS, simultaneously on the same hardware.</p>'
+      , 'link'        : 'conference#lxc-on-android-running-ics-and-jellybean-simultaneously-on-same-hardware'
+      , 'photo'       : 'https://images.hasgeek.com/embed/file/0ae1f24113684f7db27055deafc2180d'
+      , 'funnel'      : 'https://funnel.hasgeek.com/droidcon2013/889-lxc-on-android-running-ics-and-jellybean-simultane'
+      , 'preview'     : 'https://hasgeek.tv/droidconin/2013-previews/767-lxc-on-android'
+      , 'featured'    : true
+    }
+    , {
+        'id'          : 'india-against-spam-social-change-through-android-app'
+      , 'title'       : 'India Against Spam - Social change through Android app'
+      , 'speaker'     : 'Deepak Jharodia'
+      , 'designation' : 'Technical Leader at STMicroelectronics'
+      , 'type'        : 'app-demos'
+      , 'blurb'       : '<p>Creating an app is easy. Getting it to masses is difficult. Especially if you are a single-developer outfit. Moreover, this is an app for social change, you don\'t plan to make money out of it. So, there are no marketing dollars you can spend. Hoow do you promote this app then? How do you meet user expectations?</p><p>Find the app here: <a href="https://play.google.com/store/apps/details?id=com.deepakj.smspam">https://play.google.com/store/apps/details?id=com.deepakj.smspam</a> Be sure to check out reviews.</p>'
+      , 'link'        : 'conference#india-against-spam-social-change-through-android-app'
+      , 'photo'       : 'https://images.hasgeek.com/embed/file/2725d1a9504f4cadb09aabd8be2cd1a9'
+      , 'funnel'      : 'https://funnel.hasgeek.com/droidcon2013/868-india-against-spam-social-change-through-android-a'
+      , 'featured'    : true
+    }
+    , {
+        'id'          : 'loading-downloading-rendering-and-performance-bottlenecks'
+      , 'title'       : 'Loading, Downloading, Rendering and Performance Bottlenecks - The Other Side of Usability'
+      , 'speaker'     : 'Garima Sharma'
+      , 'designation' : 'Application Developer at ThoughtWorks'
+      , 'type'        : 'ux'
+      , 'blurb'       : '<p>Usability is combination of Learnability, Efficiency, Memorability, Error handling and Satisfaction. One should focus on these aspects when building a smart app. Usability is a very important criterion which decides whether an application will click or just fade away.</p><p>The term usability implies a focus on assessing and making recommendations towards making the app smooth, responsive, consistent and optimised in memory and battery usage than it does on design. But most of our focus gets engaged in UI design to some extent, particularly design of wire-frames or other prototypes. That focus is also important but an equal amount of focus must be given to these two.</p><p>In this session you’ll learn how to solve this problem by concentrating on the basics at every stage of developing your app. We’ll focus on an app which is functionally complete but lacks good user experience. We’ll identify of the major bottlenecks with respect to performance and usability, resolve them step by step, and by the end of the session come up with a version of the same app which is lighter, faster, more usable and better looking.</p>'
+      , 'link'        : 'conference#loading-downloading-rendering-and-performance-bottlenecks'
+      , 'photo'       : 'https://images.hasgeek.com/embed/file/2e9b93d32a3c43f5a342d4a080d4a03a'
+      , 'funnel'      : 'https://funnel.hasgeek.com/droidcon2013/839-loading-downloading-rendering-and-performance-bott'
+      , 'featured'    : true
+    }
+    , {
+        'id'          : 'creating-an-offers-based-x-promo-framework'
+      , 'title'       : 'Creating an Offers Based X-Promo Framework'
+      , 'speaker'     : 'Amit Shukla'
+      , 'designation' : 'Developer at Tiny Mogul Games'
+      , 'type'        : 'gaming'
+      , 'blurb'       : '<p>An offerwall essentially incentivizes users of a particular app to do certain activities within the app or in another app. </p><p>Creating an offers based X-Promo framework across multiple apps (all on android but made using native and other engines) is a challenge, especially if it allows offers based on multiple currency types - talk time, in-game currency, coupons, etc. </p><p>Using 3rd party solutions is not always optimal for a specific use case. More importantly, having multiple currency types is not always a possibility. </p><p>The talk will cover aspects of the client side and server side implementation of this framework.</p>'
+      , 'link'        : 'conference#creating-an-offers-based-x-promo-framework'
+      , 'photo'       : ''
+      , 'funnel'      : 'https://funnel.hasgeek.com/droidcon2013/954-creating-an-offers-based-x-promo-framework'
+      , 'featured'    : true
+    }
+    , {
+        'id'          : 'understand-the-guts-of-an-android-app-through-reverse-engineering'
+      , 'title'       : 'Understand the guts of an android app through reverse engineering'
+      , 'speaker'     : 'Anshul Singhle'
+      , 'designation' : 'Associate Director - Technology at PingStripe, Inc.'
+      , 'type'        : 'systems'
+      , 'blurb'       : '<p><ul><li>Understand what the guts of an android app look like.</li><li>Learn some differences between the Dalvik VM and a JVM.</li><li>See some reverse engineering in action (which is a great way to learn stuff), and watch me inject my monitoring code into an arbitrary android app</li></ul></p>'
+      , 'link'        : 'conference#understand-the-guts-of-an-android-app-through-reverse-engineering'
+      , 'photo'       : 'https://images.hasgeek.com/embed/file/2a5dc158e0d740529d9f08539c40d592'
+      , 'funnel'      : 'https://funnel.hasgeek.com/droidcon2013/812-understand-the-guts-of-an-android-app-through-reve'
+      , 'featured'    : true
+    }
+    , {
+        'id'          : 'android-platform-security-concepts-attacks-guidelines'
+      , 'title'       : 'Android Platform Security - Concepts, Attacks, Guidelines'
+      , 'speaker'     : 'Arun Joseph'
+      , 'designation' : 'Android Developer at Texas Instruments'
+      , 'type'        : 'systems'
+      , 'blurb'       : '<p>The session will focus at exploring the security architecture and features of Android( JellyBean 4.3) from a platfrom builders perspective. Android security is multi-layered and more robust than traditional Linux. This talk covers in-depth analysis of various security features introduced till JellyBean 4.3.</p><p>Answers what users and developers can expect from this security framework and how to tune different security controls.</p><p>This talk also covers some of the famous Android security attacks</p><p><ul><li>FROST</li><li>Android MasterKeys Vulnerability</li></ul></p><p>Finally, how platform builders like Texas Instruments enhance security of Android.<ul><li>Enabling Hardware Cryptography Accelerators</li><li>Enabling Hardware Random Number Generators</li></ul></p>'
+      , 'link'        : 'conference#android-platform-security-concepts-attacks-guidelines'
+      , 'funnel'      : 'https://funnel.hasgeek.com/droidcon2013/929-android-platform-security-concepts-attacks-guideli'
+      , 'featured'    : true
+    }   
+    , {
+        'id'          : 'launching-your-app-on-the-amazon-appstore'
+      , 'title'       : 'Launching your app on the Amazon Appstore'
+      , 'speaker'     : 'Parag Gupta'
+      , 'designation' : 'Head of Amazon AppStore for Android, India'
+      , 'type'        : 'business'
+      , 'blurb'       : '<p>In this session learn how with AWS, you can accelerate your time to market and reduce your investment in infrastructure costs, e.g. security, reliability, scalability, and flexibility. Also understand how the Amazon Appstore lets you engage with millions of global users by listing your mobile / HTML5 applications and deploying features like GameCircle, InApp Purchasing, and Mobile Associates API.</p>'
+      , 'link'        : 'conference#launching-your-app-on-the-amazon-appstore'
+      , 'photo'       : 'https://images.hasgeek.com/embed/file/015145a0fbb14674856c0eef3cab9f7e'
+      , 'funnel'      : 'https://funnel.hasgeek.com/droidcon2013/956-launching-your-app-on-the-amazon-appstore-sponsore'
+      , 'featured'    : true
+    }
+    , {
+        'id'          : 'write-once-and-deploy-to-multiple-platforms-using-intel-xdk'
+      , 'title'       : 'Write once and deploy to multiple platforms using Intel XDK'
+      , 'speaker'     : 'Raghavendra Ural'
+      , 'designation' : 'Technical Evangelist at Intel Corporation'
+      , 'type'        : 'systems'
+      , 'blurb'       : '<p><ol><li>Educate developers on need of cross platform applications in today\'s world.</li><li>How to get started building cross platform applications using single codebase.</li></ol></p><p>Hybrid mobile apps are increasingly dominating the app world today. In this session, you will learn how to develop, test and deploy to all major platforms with single code base using Intel XDK. Using this tool, you can write code in HTML5, test on various form factors and package your app for various platforms like Google Android, Apple iOS, Amazon Kindle, Facebook, Windows 8 and other app stores.</p>'
+      , 'link'        : 'conference#write-once-and-deploy-to-multiple-platforms-using-intel-xdk'
+      , 'photo'       : 'https://images.hasgeek.com/embed/file/ba5ddcdc3b514178994671c41c5c201e'
+      , 'funnel'      : 'https://funnel.hasgeek.com/droidcon2013/900-write-once-and-deploy-to-multiple-platforms-using-'
+      , 'featured'    : true
+    }
+
+  ]
+%}
+{%
+  set paneldiscussions = [
+      {
+        'id'          : 'move-fast-break-things-or-polish-the-back-of-the-chest-of-drawers'
+      , 'title'       : 'Move fast, break things or Polish the back of the chest of drawers?'
+      , 'panelists'   : [
+          {
+            'speaker'     : 'Satyajeet Singh'
+          , 'designation' : 'Sr Product Manager, Cleartrip Mobile'
+          , 'photo'       : 'https://images.hasgeek.com/embed/file/228d3a96bc6c4325b7fedef13271ce88'
+          }
+        , {
+            'speaker'     : 'ThiyagaRajan M'
+          , 'designation' : 'Innovation Leader &amp; Manager, Intuit'
+          , 'photo'       : 'https://images.hasgeek.com/embed/file/f0a70bff18e14dec8cd54f164d5b5cbf'
+          }
+        , {
+            'speaker'     : 'Kavin Mittal'
+          , 'designation' : 'Head of Product Strategy at Bharti Softbank &amp; Hike'
+          , 'photo'       : 'https://images.hasgeek.com/embed/file/9245dc218b72440e965afdee0bb1e836'
+          }
+        , {
+            'speaker'     : 'Leena SN'
+          , 'designation' : 'Head of Engineering at Multunus'
+          , 'photo'       : 'https://images.hasgeek.com/embed/file/7d37efa268e343588ddd0a94b248ec61'
+          }
+        , {
+            'speaker'     : 'Aravind Krishnaswamy'
+          , 'designation' : 'Co-Founder, Levitum (Panel Moderator)'
+          , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/17dea0ac0fde445da7d5d2a096f22a24.jpeg'
+          }
+        ] 
+      , 'type'        : 'business'
+      , 'blurb'       : '<p>This topic is a moderated panel discussion.<blockquote class="italic">"Move fast and break things. Unless you are breaking stuff, you are not moving fast enough.",<br>(Mark Zuckerberg)</blockquote>Agree or Disagree?</p><p><blockquote class="italic">"When you are a carpenter making a beautiful chest of drawers, you’re not going to use a piece of plywood > on the back..."<br>(Steve Jobs)</blockquote>Agree or Disagree?</p><p><ol><li>Lets discuss how you build and release your app (versus typical web dev cycles)?</li>
+      <li>What\'s the process you follow?</li>
+      <li>How often do you release?</li>
+      <li>What are the tradeoffs you have to make for ensuring adequate velocity?</li>
+      <li>How you do you know when too broken is bad?</li>
+      <li>How do you apply A/B testing results? Beta channel feedback? Phased rollouts?</li></ol></p>'
+      , 'link'        : 'conference#move-fast-break-things-or-polish-the-back-of-the-chest-of-drawers'
+      , 'funnel'      : 'https://funnel.hasgeek.com/droidcon2013/880-panel-move-fast-break-things-or-polish-the-back-of'
+      , 'featured'    : true
+    }
+  , {
+        'id'          : 'how-should-i-prep-for-my-app-launch'
+      , 'title'       : 'How should I prep for my app launch?'
+      , 'panelists'   : [
+          {
+            'speaker'     : 'Nischal Shetty'
+          , 'designation' : 'Founder, JustUnfollow'
+          , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/72c9beda6276480dafa0380af1a9a1a1_w300_h300.jpeg'
+          }
+        , {
+            'speaker'     : 'Varun Krishnan'
+          , 'designation' : 'CEO &amp; Founder, FoneArena.com'
+          , 'photo'       : 'https://images.hasgeek.com/embed/file/afd9025177b14de88846e7a3c70eb875'
+          }
+        , {
+            'speaker'     : 'Satyajeet Singh'
+          , 'designation' : 'Sr Product Manager, Cleartrip Mobile'
+          , 'photo'       : 'https://images.hasgeek.com/embed/file/228d3a96bc6c4325b7fedef13271ce88'
+          }
+        , {
+            'speaker'     : 'Raghu Mohan'
+          , 'designation' : 'HackerEarth (Panel Moderator)'
+          , 'photo'       : 'https://images.hasgeek.com/embed/file/aadf9b086ac24662985d5dd2b0a1a887'
+          }
+        ] 
+      , 'type'        : 'business'
+      , 'blurb'       : '<p>This is a moderated panel discussion. <br>How important is your app launch? What are the different things you need to ensure you check off on your list during the build up to your app launch to ensure that things go well?</p>'
+      , 'link'        : 'conference#how-should-i-prep-for-my-app-launch'
+      , 'funnel'      : 'https://funnel.hasgeek.com/droidcon2013/879-panel-how-should-i-prep-for-my-app-launch'
+      , 'featured'    : true
+    }
+    , {
+        'id'          : 'android-the-elephant-in-the-room-monetization-models'
+      , 'title'       : 'Android &amp; The Elephant in the Room - Monetization Models'
+      , 'panelists'   : [
+           {
+            'speaker'     : 'Kavin Mittal'
+          , 'designation' : 'Head of Product Strategy at Bharti Softbank &amp; Hike'
+          , 'photo'       : 'https://images.hasgeek.com/embed/file/9245dc218b72440e965afdee0bb1e836'
+          }
+        , {
+            'speaker'     : 'Nischal Shetty'
+          , 'designation' : 'Founder, JustUnfollow'
+          , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/72c9beda6276480dafa0380af1a9a1a1_w300_h300.jpeg'
+          }
+        , {
+            'speaker'     : 'Asim Pereira'
+          , 'designation' : 'App Entrepreneur'
+          , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/144915b1e62c40088345c4dcf342dbd7_w300_h300.jpeg'
+          }
+        , {
+            'speaker'     : 'Vishal Anand'
+          , 'designation' : 'Chief Product Officer, NewsHunt'
+          , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/9438a14a141048eeb5d6ded1b0654537_w300_h300.jpeg'
+          }
+        , {
+            'speaker'     : 'Aravind Krishnaswamy'
+          , 'designation' : 'Co-Founder, Levitum (Panel Moderator)'
+          , 'photo'       : 'https://images.hasgeek.com/embed/file/17dea0ac0fde445da7d5d2a096f22a24'
+          }
+        ] 
+      , 'type'        : 'business'
+      , 'blurb'       : '<p>This is a moderated panel discussion. <br>Lets discuss the elephant in the room - the challenges with monetizing Android apps. Lets discuss monetization strategies that are working, and gain insights from the panel on new approaches that could open up in the future.</p>'
+      , 'link'        : 'conference#android-the-elephant-in-the-room-monetization-models'
+      , 'funnel'      : 'https://funnel.hasgeek.com/droidcon2013/877-panel-android-the-elephant-in-the-room-monetizatio'
+      , 'featured'    : true
+    }
+  ]
+%}

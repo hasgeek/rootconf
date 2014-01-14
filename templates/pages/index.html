@@ -1,0 +1,48 @@
+{% extends theme('layouts/page.html') %}
+{% from theme("data/conference-schedule-day1.html") import schedule as schedule_day1 %}
+{% from theme("data/conference-schedule-day2.html") import schedule as schedule_day2 %}
+{%
+  set page = {
+      'title'               : ''
+    , 'description'         : ''
+    , 'sections'            : [      
+       ('event-themes',          'white')
+      , ('tickets',              'white')
+      , ('past-highlights',           'white')
+      , ('venue-summary',             'white')
+      , ('sponsors-summary',          'white')
+    ]
+  }
+%}
+{% block navtype %}
+<div id="nav-home">
+{% endblock %}
+
+{% block banner %}
+<header class="masthead-home">
+  <div id="lamp">
+    <div id="wire"></div>
+      <div id="holder"></div>
+      <div id="bulb"></div>
+      <div id="light"></div>
+  </div>
+  <div class="display-board text-center">
+    <h2 class="white extrabold all-lower extralarge push-one-top">
+      <div class="link line2 title-type">rootconf</div>
+      <p class="tiny">Conference on devops &amp; cloud infrastructure</p>
+    </h2>
+    
+    <div class="intro row-fluid prose prose-type thin space-two-top">
+      <div class="line4 white thin">18 - 19 April 2014&nbsp;&nbsp;|&nbsp;&nbsp;Bangalore</div>
+    </div>
+  </div> 
+  <div id="mast-img"></div> 
+  <div id="mast-floor">
+    <div class="masthead-test">
+    <!-- <img src="{{ theme_static('img/floor.jpg')}}" alt=""> -->
+    <img src="https://imgee.s3.amazonaws.com/imgee/8322dd44f8d246a98bdf6b6f3b006191.jpeg" alt="">
+  </div>
+  </div> 
+  
+</header>
+{% endblock %}
