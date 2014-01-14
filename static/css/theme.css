@@ -56,7 +56,7 @@ a.link-silent   { border-bottom: none; }
 .fill-silver    { background-color: rgba(0, 0, 0, 0.1); color: #333;}
 .fill-bronze    { background-color: rgba(140, 120, 83, 0.1); color: #333;}
 
-.fill-lines45  { background-color: #ccc; background-image: url('../img/line-45.jpg'); background-repeat: repeat;}
+.fill-lines45  { background-color: #ccc; background-image: url('https://imgee.s3.amazonaws.com/imgee/17ea613f386a43b99fec4a19c06bbb23.jpeg'); background-repeat: repeat;}
 
 .fade-red-to-dark {
     background-image: -webkit-linear-gradient(top,       #BB3311 20%, #121212);
