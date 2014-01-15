@@ -13,13 +13,13 @@ em,
 .prose-type     { font-family: "Adelle", serif; }
 */
 
-
 body            { font-family: 'Quando', adobe-caslon-pro, "Adobe Caslon Pro", serif; }
 .title-type { font-family: brandon-grotesque, "Brandon Grotesque", "Gill Sans", "Gill Sans MT", sans-serif; }
 i,
 em,
 .prose-type     { font-family: adobe-caslon-pro, "Adobe Caslon Pro", serif; }
 
+.board-type{ font-family: "Oswald", serif; }
 
 /*  Scale  */
 
@@ -139,6 +139,9 @@ abbr {
   font-size: 18px;
   letter-spacing: 0.05em;
   color: #333;
+}
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus{
+    color: #000;
 }
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
     font-family: inherit;

@@ -45,8 +45,8 @@ a.link-silent   { border-bottom: none; }
 .fill-black     { background-color: #000000 !important; color: #EEE; }
 .fill-silver-hud{ background-color: rgba(255,255,255,0.65) !important; color: #222; }
 .fill-red       { background-color: #BB3311 !important; color: #FCF3F3; }
-.fill-green     { background-color: #EFEFEF !important; color: #FCF3F3; }
-.fill-yellow     { background-color: #B49B33 !important; color: #333; }
+.fill-green     { background-color: green !important; color: #FCF3F3; }
+.fill-yellow     { background-color: yellow !important; color: #333; }
 .fill-lightyellow{ background-color: rgba(180, 155, 51, 0.2) !important; color: #333; }
 .fill-redgray   { background-color: #EFE7E6 !important; color: #222020; }
 .fill-greengray { background-color: #E5E5E5 !important; color: #222020; } /*#789733*/
@@ -60,20 +60,30 @@ a.link-silent   { border-bottom: none; }
 .fill-bronze    { background-color: rgba(140, 120, 83, 0.1); color: #333;}
 
 .fill-lines45  { 
-    background-color: #ccc; 
+    background-color: #FFF; 
     background-image: url('https://imgee.s3.amazonaws.com/imgee/17ea613f386a43b99fec4a19c06bbb23.jpeg'); 
     background-repeat: repeat;
 }
 .fill-wall  { 
-    background-color: #ccc; 
+    background-color: #FFF; 
     background-image: url('https://imgee.s3.amazonaws.com/imgee/bc23c217c59b4d888441cdde47308fc8.jpeg'); 
     background-repeat: repeat;
 }
+.fill-wall-pattern  { 
+    background-color: #FFF; 
+    background-image: url('https://imgee.s3.amazonaws.com/imgee/4b69933257084a9980f30f9a037a8871.jpeg'); 
+    background-repeat: repeat;
+}
 .fill-brick  { 
-    background-color: #ccc; 
+    background-color: #FFF; 
     background-image: url('https://imgee.s3.amazonaws.com/imgee/be288675a9594c6fb0316f5765ce8c17.jpeg'); 
     background-repeat: repeat;
     background-size: 6%;
+}
+.fill-lines90  { 
+    background-color: #FFF; 
+    background-image: url('https://imgee.s3.amazonaws.com/imgee/3a02dfb5be2e4c7198853ed105b3824e.jpeg'); 
+    background-repeat: repeat;
 }
 
 .fade-red-to-dark {

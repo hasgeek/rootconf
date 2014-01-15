@@ -192,6 +192,30 @@
   z-index: 20;
   margin-top: 30px;
 }
+
+.notice-board{
+  border: 3px solid #444;
+  border-radius: 5px;
+  width: 250px;
+  text-align: center;
+}
+.caution-line{
+  height: 10px;
+  background: yellow;
+  border-bottom: 1px solid #444;
+}
+.board-hanger {
+  width: 20px;
+  height: 30px;
+  background-color: #000;
+  display: block;
+  margin: 0 auto 0 125px;
+}
+.board{
+  margin-right: 50px;
+  margin-top: -180px;
+}
+
 #mast-floor{
   /*background-image: url('../img/floor.jpg');*/
   height: 200px;
@@ -423,8 +447,8 @@
     .venue-home .country-level p { margin-top: 0; }
 }
 .js .venue-home {
-    border-top:    1px solid #833;
-/*    border-bottom: 1px solid #000;*/
+    border-top:    5px solid #444;
+    border-bottom: 5px solid #444;
     position: relative;
     padding: 0;
 /*    padding: 1.5rem;*/
@@ -446,7 +470,7 @@
     color: black;
 }
 .js .leaflet-map a { border-bottom: none; }
-.js .venue-home .city-level    { width: 65%; }
+.js .venue-home .city-level    { width: 65%; border-left: 1px solid #444;}
 .js .venue-home .country-level { width: 35%; float: left; }
 @media (max-width: 767px) {
     .js .venue-home { padding: 0; }
@@ -594,7 +618,7 @@
 }
 
 .page-footer {
-    background-color: #000 !important;
+    /*background-color: #000 !important;*/
     /*background-image: url(../img/2012-stage.jpg);*/
 /*    background-position: bottom center;
     background-repeat: no-repeat;
@@ -989,6 +1013,8 @@ li.event-node{
   margin-right: auto;
   background-size: 100% 100%;
   border: 15px solid rgba(0,0,0, 0.1);
+}
+.box-inside-shadow{
   box-shadow: inset 1px 1px 4px rgba(0,0,0,0.4);
   -moz-box-shadow: inset 1px 1px 4px rgba(0,0,0,0.4);
   -webkit-box-shadow: inset 1px 1px 4px rgba(0,0,0,0.4);
@@ -1092,6 +1118,17 @@ li.event-node{
 
   background-color: transparent;
   background-image: url('https://imgee.s3.amazonaws.com/imgee/10370770790f48ecb098eff9bfc35971.jpeg');
+  background-repeat: repeat-x;
+}
+.box-border{
+  display: block;
+  height: 12px;
+  width: 100%;
+  position: relative;
+  margin-bottom: -5px;
+
+  background-color: transparent;
+  background-image: url('https://imgee.s3.amazonaws.com/imgee/8ae9b7c71d4b4874bbaf50d094cbc918.jpeg');
   background-repeat: repeat-x;
 }
 .shelf{
