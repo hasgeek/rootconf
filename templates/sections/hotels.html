@@ -1,3 +1,4 @@
+<div class="box-border"></div>
 <section id="hotels" class="push-two clearfix{% if background %} fill-{{ background }}{% endif %}">
 
   <div class="row-fluid container">
@@ -7,7 +8,7 @@
     {% with %}
       {% from theme("data/hotels.html") import types, items %}
 
-      <div class="table-responsive">
+      <div class="table-responsive fill-white">
         <table class="table table-bordered">
           <thead>
             <tr>
@@ -18,14 +19,14 @@
               <th>Type</th>
             </tr>
           </thead>
-          <tbody class="tiny prose prose-type unstyled">
+          <tbody class="tiny prose prose-type semibold unstyled">
             {% for item in items  %}         
                 <tr class="fill-{% if item.type == 'special-offer' %}blue{% elif item.type == 'budget' %}bronze{% elif item.type == 'delux' %}silver{% elif item.type == 'luxury' %}gold{% endif %}">             
                   <td class="bold secondary-prose semibold" colspan="4">{{ item.title }}</td>
-                  <td>{{ item.address|safe }} <br><a class="yellow" target="_blank" href="http://{{ item.link }}">{{ item.link }}</a></td>
+                  <td>{{ item.address|safe }} <br><span class="blue">{{ item.link|safe }}</span></td>
                   <td>{{ item.contact|safe }}</td>              
-                  <td>{{ item.distance }} km</td>
-                  <td>{% for t in types %}{% if item.type == t.id %}{{ t.title }}<br><small>[{{ t.rate }}]</small>{% endif %}{% endfor %}</td>
+                  <td>{% if item.distance %}{{ item.distance }} km{% endif %}</td>
+                  <td>{% for t in types %}{% if item.type == t.id %}{{ t.title|safe }}{% endif %}{% endfor %}</td>
                 </tr>        
             {% endfor %}
           </tbody>
@@ -34,3 +35,4 @@
     {% endwith %}
   </div>
 </section>
+<div class="box-border"></div>

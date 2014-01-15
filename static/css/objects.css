@@ -373,7 +373,7 @@
 
 .banner h1    { float: left; width: 4.5rem; margin: .5rem auto 0 -.5rem; }
 .banner .logo {
-    background: url('https://images.hasgeek.com/embed/file/63caa7d2f3df4c7d8222b68e9861a6ca?size=320x240') no-repeat scroll center center;
+    background: url('https://imgee.s3.amazonaws.com/imgee/a5ab91885e9e4a4a8f9a84a892cb387b.png') no-repeat scroll center center;
     background-size: contain;
     height: 0;
     width: 100%;
@@ -437,7 +437,7 @@
 }
 
 .banner-internal .logo {
-    background: url('https://images.hasgeek.com/embed/file/63caa7d2f3df4c7d8222b68e9861a6ca?size=320x240') no-repeat scroll center center;
+    background: url('https://imgee.s3.amazonaws.com/imgee/a5ab91885e9e4a4a8f9a84a892cb387b.png') no-repeat scroll center center;
     background-size: contain;
     height: 0;
     width:       5.5rem;
@@ -985,6 +985,14 @@ li.event-node{
 #site-nav .nav>li>a{
   padding: 15px 28px;
 }
+.navbar-inverse .navbar-nav>.dropdown>a:hover .caret{
+  border-top-color: #444;
+  border-bottom-color: #444;
+}
+.navbar-inverse .navbar-nav>.open>a .caret, .navbar-inverse .navbar-nav>.open>a:hover .caret, .navbar-inverse .navbar-nav>.open>a:focus .caret {
+  border-top-color: #FFF;
+  border-bottom-color: #FFF;
+}
 
 @media screen and (min-width: 992px) and (max-width: 1200px){
   .navigation-menu li{
@@ -1332,7 +1340,7 @@ li.event-node{
 }
 
 .navbar-nav>li>.dropdown-menu{
-  background-color: #222;
+  background-color: #FFF;
   margin-top: -1px;
 }
 .dropdown-menu>li>a{
@@ -1340,13 +1348,23 @@ li.event-node{
   padding-top: 8px;
   padding-bottom: 8px;
   font-size: 16px;
+  border-left: 5px solid #FFF;
 }
 .dropdown-menu>li>a:focus, .dropdown-menu>li>a:active{
-  background-color: #9793AD;
-  color: #333;
+  background-color: #CCC;
+  color: #FFF;
 }
 .dropdown-menu>li>a:hover{
-  background-color: #B49B33;
+  border-left: 5px solid #444;
+  color: #000;
+  background-color: #CCCCCC;
+}
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+    background-color: #444;
+    color: #FFFFFF;
+}
+.navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
+    color: #444444;
 }
 
 .info-box{
