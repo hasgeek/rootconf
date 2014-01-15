@@ -31,6 +31,9 @@ a.link-silent   { border-bottom: none; }
 .green          { color: #000000 !important; }
 .white          { color: #FFFFFF !important; }
 .faded          { color: rgba(255,255,255,.8) !important; }
+.light-orange   { color: #F0A40C !important;}
+.dark-orange    { color: #DF5E0E !important;}
+.violet         { color: #816894 !important;}
 
 .blue-bg        { background: #46425A; padding: 0 5px 0 5px;}
 .shadow-text-white   { text-shadow: 1px 1px 3px rgba(0,0,0,0.2); }
@@ -56,7 +59,21 @@ a.link-silent   { border-bottom: none; }
 .fill-silver    { background-color: rgba(0, 0, 0, 0.1); color: #333;}
 .fill-bronze    { background-color: rgba(140, 120, 83, 0.1); color: #333;}
 
-.fill-lines45  { background-color: #ccc; background-image: url('https://imgee.s3.amazonaws.com/imgee/17ea613f386a43b99fec4a19c06bbb23.jpeg'); background-repeat: repeat;}
+.fill-lines45  { 
+    background-color: #ccc; 
+    background-image: url('https://imgee.s3.amazonaws.com/imgee/17ea613f386a43b99fec4a19c06bbb23.jpeg'); 
+    background-repeat: repeat;
+}
+.fill-wall  { 
+    background-color: #ccc; 
+    background-image: url('https://imgee.s3.amazonaws.com/imgee/bc23c217c59b4d888441cdde47308fc8.jpeg'); 
+    background-repeat: repeat;
+}
+.fill-brick  { 
+    background-color: #ccc; 
+    background-image: url('https://imgee.s3.amazonaws.com/imgee/be288675a9594c6fb0316f5765ce8c17.jpeg'); 
+    background-repeat: repeat;
+}
 
 .fade-red-to-dark {
     background-image: -webkit-linear-gradient(top,       #BB3311 20%, #121212);

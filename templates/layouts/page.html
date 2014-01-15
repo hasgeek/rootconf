@@ -108,7 +108,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="/2013/">### Rootconf</a>
+    <a class="navbar-brand" href="/2013/"><span class="violet">#</span><span class="dark-orange">#</span><span class="light-orange">#</span>&nbsp;Rootconf</a>
   </div>
 
   <!-- Collect the nav links, forms, and other content for toggling -->
@@ -183,19 +183,6 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.6.3/leaflet.js"></script>
 <script type="text/javascript" src="//maps.stamen.com/js/tile.stamen.js?v1.2.4"></script>
 
- <script type="text/javascript">
-    function initialize() {
-        var layers = ["toner", "terrain", "watercolor"];
-        for (var i = 0; i < layers.length; i++) {
-            var layer = layers[i];
-            var map = new L.Map(layer, {
-                center: new L.LatLng(37.8, -122.4),
-                zoom: 10
-            });
-            map.addLayer(new L.StamenTileLayer(layer));
-        }
-    }
-</script>
 
 {%- if _theme %}
   {% assets "js_" + _theme -%}
