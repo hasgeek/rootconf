@@ -73,6 +73,7 @@ a.link-silent   { border-bottom: none; }
     background-color: #ccc; 
     background-image: url('https://imgee.s3.amazonaws.com/imgee/be288675a9594c6fb0316f5765ce8c17.jpeg'); 
     background-repeat: repeat;
+    background-size: 6%;
 }
 
 .fade-red-to-dark {
