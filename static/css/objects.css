@@ -548,7 +548,7 @@
 @media (min-height: 725px) { .js .venue-home .leaflet-map { height: 725px; } }
 @media (min-height: 800px) { .js .venue-home .leaflet-map { height: 800px; } }
 
-.video-thumbnail{
+.video-thumbnail, .photo-thumbnail{
   margin: 10px;
   padding: 15px;
   border-width:15px;
@@ -876,50 +876,15 @@ li.event-node{
   width: 100%;
   overflow: hidden;
   z-index: 9;
-  border-radius: 50%;
+  /*border-radius: 50%;*/
   display: block;
-  transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
 }
 .img-wrapper{
   border: 13px solid rgba(255, 255, 255, 0.1);
   display: block;
-  border-radius: 50%;
-  width: 70%;
+  /*border-radius: 50%;*/
   margin-left: auto;
   margin-right: auto;
-  transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-}
-@keyframes cycle{
-  0%{
-    transform: none;
-  }
-}
-
-@-moz-keyframes cycle{
-  0%{
-    -moz-transform: none;
-  }
-}
-
-@-webkit-keyframes cycle{
-  0%{
-    -webkit-transform: none;
-  }
-}
-
-.img-wrapper:hover{
-  transform: none;
-  -moz-transform: none;
-  -webkit-transform: none;
-}
-.img-wrapper:hover > .photo{
-  transform: none;
-  -moz-transform: none;
-  -webkit-transform: none;
 }
 
 .featured-speakers h5{

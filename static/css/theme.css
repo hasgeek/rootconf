@@ -28,7 +28,7 @@ a.link-silent   { border-bottom: none; }
 .gray           { color: #AAAAAA !important; }
 .light          { color: #EEEEEE !important; }
 .red            { color: #E55252 !important; }
-.green          { color: #000000 !important; }
+.green          { color: rgb(104, 167, 37)!important; }
 .white          { color: #FFFFFF !important; }
 .faded          { color: rgba(255,255,255,.8) !important; }
 .light-orange   { color: #F0A40C !important;}
