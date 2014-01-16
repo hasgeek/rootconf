@@ -1,0 +1,465 @@
+{% from "baseframe/components.html" import networkbar with context -%}
+
+<!DOCTYPE html>
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9">     <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" class="no-js{%- if config['DEBUG'] %} wf-active{% endif %}">        <!--<![endif]-->
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+<title>Rootconf 2012</title>
+
+{%- if _theme %}
+  {% assets "css_" + _theme -%}
+    <link rel="stylesheet" href="{{ ASSET_URL }}"/>
+  {% endassets -%}
+{%- endif %}
+
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" />
+<link rel="stylesheet" href="/_baseframe/css/networkbar.css">
+
+{%- if config['DEBUG'] %}
+  <link rel="stylesheet" href="{{ theme_static('css/fonts.css') }}">
+{%- else %}
+  <script type="text/javascript" src="//use.typekit.net/ewq6otu.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+{%- endif %}
+
+</head>
+<body>
+
+<header>
+  <div>
+  {% block networkbar %}
+    {{ networkbar(siteid='events', login=false) }}
+  {% endblock %}
+</div>
+  <div class="container header navbar" id="navbar">
+    <div class="row">
+      <div class="span4 header-logo" onclick='scroll("home")'><span class="title">rootconf<span class="cursor">&#9611;</span></span></div>
+      <div class="span5">
+        <nav>
+          <a href="#home" onclick="scroll('home')">home</a>
+          <a href="#participate" onclick="scroll('participate')">participate</a>
+          <a href="#sponsors" onclick="scroll('sponsors')">sponsors</a>
+          <a href="#schedule" onclick="scroll('schedule')">talks</a>
+          <a href="#venue" onclick="scroll('venue')">venue</a>
+        </nav>
+      </div>
+      <div class="span2 header-social">
+        <a href="http://twitter.com/#!/rootconf" class="twitter"></a><a href="http://www.facebook.com/HasGeek" target="_blank" class="fb"></a>
+      </div>
+      <div class="span1 hg"><a href="#hasgeek" onclick="scroll('hasgeek')"><img src="{{ theme_static('img/hg-logo.png')}}" /></a></div>
+    </div>
+    <div class="row mobile-header">
+      <div class="span12 hg-mobile" align="center">
+        <a href="#hasgeek" onclick="scroll('hasgeek')"><img src="{{ theme_static('img/hg-logo_2.png')}}" /></a>
+      </div>
+      <div class="span12 header-social-mobile">
+        <a href="http://twitter.com/#!/rootconf" class="twitter"></a><a href="http://www.facebook.com/HasGeek" target="_blank" class="fb"></a>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+{% block content %}
+<section>
+  <div class="container" >
+       <!--<div class="row" id="home">
+        <div class="span12">
+          <div class="monitor">
+            <div class="mon1 borrad12"></div>
+            <div class="mon2 borrad12"></div>
+            <div class="mon3 borrad12"></div>
+            <div class="mon4 borrad12"></div>
+            <div class="mon5"></div>
+          </div>
+          <div class="mast">
+            <p>Let there be sysadmins</p>
+            <p class="date">May 26th, 2012 | Dharamaram College, Bangalore</p>
+          </div>
+        </div>
+      </div>-->
+      <div class="row content" id="home" >
+        <div class="span12" align="center"><img src="{{ theme_static('img/masthead.png')}}"  class="visible-phone" /></div>
+      </div>
+      <div class="row" >
+        <div class="span12" align="center"><h1>WHEN : MAY 26, 2012<br />VENUE : DHARMARAM VIDYA KSHETRAM, BANGALORE</h1></div>
+      </div>
+      <div class="row content" style="margin-top: 10px">
+        <div class="span12">
+          <h2>About rootconf</h2>
+          <p>After last year's <a href="http://phpcloud.hasgeek.com/">Scaling with PHP in the cloud</a>, HasGeek is organizing Rootconf, an annual conference for sysadmins, devops, and BOFHs to share experience and knowledge, to teach, learn, and hangout with friends and colleagues. Rootconf will be held on <strong>May 26th, 2012, at Dharamaram College, Bangalore</strong>.</p>
+          <p>If you're a Sysadmin, come over, share your experience, and crack a joke about Perl.</p>
+          <h3>Configuration Deployment/Management</h3>
+          <p>Have a lot of servers? How do you manage your herd? Share and learn the tricks of configuration management with your fellow server cowboys/girls. Talk about your organization!</p>
+          <h3>Performance Tuning ("But does it scale?") </h3>
+          <p>Dealing with a high-traffic operations and your server is not performing as well as expected? Do you know how to squeeze the last inch of performance out of your server? This track will focus on showing you how!</p>
+          <h3>Security</h3>
+          <p>Securing access to your server can be a daunting task. Come and talk about how you do it.</p>
+          <h3>Virtualization and Cloud</h3>
+          <p>Do you run your own cloud? Do you use virtualization? We'd love to hear about it!</p>
+          <h3>Monitoring</h3>
+          <p>How do you get to know of fires? How do you use the various packages around? Share your monitoring methods and learn new ones from others.</p>
+        </div>
+      </div>
+      <div class="row content full" id="participate">
+        <div class="span4">
+          <h2>Participate</h2>
+          <p>Get the tickets now!</p>
+          <p>Look at the <a href="http://funnel.hasgeek.com/rootconf">existing proposals.</a></p>
+          <p><a class="btn-warning btn-large" target=_blank href="http://rootconf.doattend.com/">Book now</a></p>
+        </div><!--/span-->
+         <div class="span4">
+          <h2>Speak</h2>
+          <p>Do you have what it takes to speak to fellow sysadmins?</p>
+          <p><a class="btn-warning btn-large" target=_blank href="http://funnel.hasgeek.com/rootconf">Propose a Session</a></p>
+        </div><!--/span-->
+        <div class="span4">
+          <h2>Sponsor</h2>
+          <p>Would you or your employer like to sponsor Rootconf? </p>
+          <p><a class="btn-warning btn-large" target=_blank href="/static/SponsorKit_rootconf.pdf" target="_blank">Get in Touch</a></p>
+        </div><!--/span-->
+      </div><!--/row-->
+      
+      <div class="row content" id="sponsors">
+        <div class="span12"><h2>Sponsors</h2></div>
+        </div><!--/row-->
+        <div class="row">
+            <article class="open hsponsor hsponsor-gold span2">
+            <p class="logo"><a data-toggle="modal" href="#sponsor-flipkart"><img alt="Flipkart" src="{{ theme_static('img/sponsors/flipkart2.png')}}"></a></p>
+            </article>
+            <article class="open hsponsor hsponsor-silver span2">
+            <p class="logo"><a data-toggle="modal" href="#sponsor-directi"><img alt="Directi" src="{{ theme_static('img/sponsors/media.jpg')}}"></a></p>
+            </article>
+            <article class="open hsponsor hsponsor-community span2">
+            <p class="logo"><a data-toggle="modal" href="#sponsor-e2enetworks"><img alt="E2E Networks" src="{{ theme_static('img/sponsors/e2e.png')}}"></a></p>
+            </article>
+            <article class="open hsponsor span2">
+            <p class="logo"><img alt="Become a Sponsor" src="{{ theme_static('img/you.gif')}}"></p>
+            </article>
+
+    <div class="modal fade" id="sponsor-flipkart">
+        <div class="modal-header">
+          <a class="close" data-dismiss="modal">&times;</a>
+          <h3>Flipkart</h3>
+        </div>
+    <div class="modal-body">
+      <p><a class="sponsor-exit" href="http://flipkart.com">Flipkart.com</a>, India's largest e-commerce brand for physical goods, started with books in 2007, and entered the consumer electronics category with the launch of mobile phones, in September 2010. 
+      <p>Since then, it has grown rapidly with the introduction of innovative features like Cash on Delivery (CoD), 30 day replacement guarantee and its own delivery network. Today, the portfolio is spread across 12 categories - from books to music, mobiles, computers, cameras, home and kitchen appliances, TV and home theatre systems, personal and healthcare products, stationery items and lifestyle products like perfumes, watches and health and beauty products. In addition to these, Flipkart has also made a foray into the emerging digital content market with the recent launch of Flyte, the digital music store.</a>
+      <p>Flipkart is rapidly expanding its network of warehouses, distribution centers, procurement operations and 24/7 customer support teams. The company has its own delivery network in 37 cities and is set to expand this in the current financial year. With a team of around 4,800 members, the company operates from offices and warehouses in seven Indian cities.</p>
+        </div>
+        <div class="modal-footer">
+          <a href="http://flipkart.com/" class="btn btn-primary sponsor-exit">Visit Flipkart</a>
+          <a data-dismiss="modal" class="btn">Close</a>
+        </div>
+      </div>
+
+      <div class="modal fade" id="sponsor-directi">
+        <div class="modal-header">
+          <a class="close" data-dismiss="modal">&times;</a>
+          <h3>Media.net</h3>
+        </div>
+        <div class="modal-body">
+      <p><a class="sponsor-exit" href="http://media.net">Media.net</a> is a leading global contextual advertising company that provides a wide range of advertising and traffic monetization solutions to a substantial and diversified client base. With more than 400 employees across 3 continents, Media.net has one of the largest teams worldwide building a global contextual advertising business.</p>
+      <p>Directi develops game-changing Web 2.0 Products using myriad technologies, diverse platforms and latest application paradigms. Our products are used by millions of users from over 200 countries.  Directi businesses rank amongst the fastest growing businesses worldwide in their corresponding industry segments.</p>
+      <p>The combined product portfolio of various Directi businesses include communication and collaboration apps, context analysis engines,  Large scale billing and provisioning platforms, traffic monetization solutions, DNS management products, Linux and windows server management software and much more.</p>
+      <p>These are "internet-scale" solutions for the core components of the global web and they deal with millions of domains, billions of DNS and HTTP requests on a daily basis.</p>
+        </div>
+        <div class="modal-footer">
+          <a href="http://media.net/" class="btn btn-primary sponsor-exit">Visit Media.net</a>
+          <a href="http://directi.com/" class="btn btn-primary sponsor-exit">Visit Directi</a>
+          <a data-dismiss="modal" class="btn">Close</a>
+        </div>
+      </div>
+
+      <div class="modal fade" id="sponsor-e2enetworks">
+        <div class="modal-header">
+          <a class="close" data-dismiss="modal">&times;</a>
+          <h3>E2E Networks</h3>
+        </div>
+        <div class="modal-body">
+          <p><em>Low latency cloud hosting in India</em></p>
+          <p><a class="sponsor-exit" href="http://e2enetworks.com">E2E Networks Private Limited</a> is India's first homegrown cloud computing hosting venture. An exciting blend of cutting-edge technology, world class talent, highly skilled managed services and a commitment to bringing low latency hosting at a reasonable price. E2E is one of India's fastest growing hosting companies, with a number of industry-leading customers in its portfolio. E2E works for both small custom testbeds for web applications still in development or multi-location, multi-terabyte, multi-gigabit deployments for some of the busiest Indian web verticals.</p>
+          <p>E2E hosts HasGeek's websites, including this website.
+        </div>
+        <div class="modal-footer">
+          <a href="http://www.e2enetworks.com/" class="btn btn-primary sponsor-exit">Visit E2E</a>
+          <a data-dismiss="modal" class="btn">Close</a>
+        </div>
+      </div>
+
+  </div><!--/row-->
+
+    <div class="row content" id="schedule">
+      <div class="span12"><h2 id="talks">Schedule</h2></div>
+    </div>
+    <div class="row">
+    <div class="span4">
+        <article class="session-video clearfix">
+            <a href="http://www.youtube.com/watch?v=JBqVtdzvpos">
+            <p class="thumbnail span2"><img alt="Thumbnail" src="http://img.youtube.com/vi/JBqVtdzvpos/mqdefault.jpg"></p>
+            <h4>Continuous Integration made fun with Jenkins & Hubot</h4>
+            </a>
+            <h5>Sameer Segal</h5>
+        </article>
+        <article class="session-video clearfix">
+            <a href="http://www.youtube.com/watch?v=2cEY4i9YtzI">
+            <p class="thumbnail span2"><img alt="Thumbnail" src="http://img.youtube.com/vi/2cEY4i9YtzI/mqdefault.jpg"></p>
+            <h4>Puppet in Stand Alone Mode or Why Config management is useful for 0+ systems</h4>
+            </a>
+            <h5>Sarguru Nathan</h5>
+        </article>
+    </div>
+    <div class="span4">
+        <article class="session-video clearfix">
+            <a href="http://www.youtube.com/watch?v=kZ-kVqdpiZM">
+            <p class="thumbnail span2"><img alt="Thumbnail" src="http://img.youtube.com/vi/kZ-kVqdpiZM/mqdefault.jpg"></p>
+            <h4>Securing a Linux Web Server in 10 Steps or Less</h4>
+            </a>
+            <h5>Akash Mahajan</h5>
+        </article>
+    </div>
+    <div class="span4">
+        <article class="session-video clearfix">
+            <a href="http://www.youtube.com/watch?v=3SiaDBulImY">
+            <p class="thumbnail span2"><img alt="Thumbnail" src="http://img.youtube.com/vi/3SiaDBulImY/mqdefault.jpg"></p>
+            <h4>Virtualization with KVM (and Libvirt)</h4>
+            </a>
+            <h5>Kashyap Chamarthy</h5>
+        </article>
+    </div>
+    </div>
+    <div class="row schedule">
+      <div class="span12">
+        <table>
+          <tr>
+      <th>Time</th>
+            <th>R1</th>
+            <th>R2</th>
+            <th>R3</th>
+      </tr>
+        <tr>
+        <td class="time">09:00 - 09:45</td>
+      <td colspan="3">Registrations and Sign-in</td>
+      </tr>
+      <tr>
+      <td class="time">09:45 - 10:00</td>
+      <td colspan="3">Introductions</td>
+      </tr>
+      <tr>
+      <td class="time">10:00 - 10:45</td>
+      <td>
+        <h4><a href="http://funnel.hasgeek.com/rootconf/293-using-delicious-chef-recipes-to-automate-provisioning-of-cloud-server-and-quality-fabric-for-deployment">Using Delicious Chef Recipes, to automate provisioning of cloud server and quality Fabric for deployment. </a></h4>
+        <p>Saket Bhushan</p>
+      </td>
+      <td>
+        <h4><a href="http://funnel.hasgeek.com/rootconf/333-creating-provisioning-cloud-resources-with-aws-cloudformation">Creating & Provisioning Cloud Resources with AWS CloudFormation</a></h4>
+        <p>Janakiram MSV</p>
+      </td>
+      <td>
+        <h4><a href="http://funnel.hasgeek.com/rootconf/340-optimizing-lamphp-applications">Optimizing LAMPhp Applications</a></h4>
+        <p>Piyush Goel</p>
+      </td>
+      </tr>
+      <tr>
+      <td class="time">10:45 - 11:15</td>
+      <td colspan="3">Break</td>
+      </tr>
+      <tr>
+      <td class="time">11:15 - 12:00</td>
+      <td>
+        <h4><a href="http://funnel.hasgeek.com/rootconf/329-securing-a-linux-web-server-in-10-steps-or-less">Securing a Linux Web Server in 10 Steps or Less</a></h4>
+        <p>Akash Mahajan</p>
+      </td>
+      <td>
+        <h4><a href="http://funnel.hasgeek.com/rootconf/294-puppet-in-stand-alone-mode-or-why-config-management-is-useful-for-0-systems">Puppet in Stand Alone Mode or Why Config management is useful for 0+ systems</a></h4>
+        <p>Sarguru Nathan</p>
+      </td>
+      <td>
+        <h4><a href="http://funnel.hasgeek.com/rootconf/313-performance-tuning-101-an-introduction-to-performance-tuning-an-application-in-managed-environment">Performance Tuning 101 - An introduction to performance tuning an application in managed environment</a></h4>
+        <p>Janmejay Singh and Pavan K S</p>
+      </td>
+      </tr>
+      <tr>
+      <td class="time">12:00 - 12:45</td>
+      <td>
+        <h4><a href="http://funnel.hasgeek.com/rootconf/334-a-cloud-braindump">A Cloud "Braindump"</a></h4>
+        <p>Gopal V</p>
+      </td>
+      <td>
+        <h4><a href="http://funnel.hasgeek.com/rootconf/314-build-your-own-storage-device-san">Build your own Storage Device (SAN)</a></h4>
+        <p>Sriram Narayanan</p>
+      </td>
+      <td>
+        <h4><a href="http://funnel.hasgeek.com/rootconf/308-zero-touch-drupal-deployment-with-features-jenkins-aegir-git-fabric-and-drush">Zero-touch Drupal deployment with Features, Jenkins, Aegir, Git, Fabric and Drush</a></h4>
+        <p>Kaustubh Srikanth</p>
+      </td>
+      </tr>
+      <tr>
+      <td class="time">12:45 - 14:00</td>
+      <td colspan="3">Lunch</td>
+      </tr>
+      <tr>
+      <td class="time">14:00 - 14:45</td>
+      <td>
+        <h4><a href="http://funnel.hasgeek.com/rootconf/345-real-time-distributed-monitoring-execution-and-alert-using-ganglia-and-nagios">Real-time distributed monitoring, execution and alert using Ganglia and Nagios</a></h4>
+        <p>Gaurav</p>
+      </td>
+      <td>
+        <h4><a href="http://funnel.hasgeek.com/rootconf/288-continuous-integration-made-fun-with-jenkins-hubot-gtalk">Continuous Integration made fun with Jenkins & Hubot (+ Gtalk)</a></h4>
+        <p>Sameer Segal</p>
+      </td>
+      <td>
+        <h4><a href="http://funnel.hasgeek.com/rootconf/292-cloud-meets-fog-puppet-a-story-of-version-controlled-infrastructure">Cloud Meets Fog & Puppet, A Story of Version Controlled Infrastructure</a></h4>
+        <p>Habeeb Rahman</p>
+      </td>
+      </tr>
+      <tr>
+      <td class="time">14:45 - 15:30</td>
+      <td>
+        <h4><a href="http://funnel.hasgeek.com/rootconf/339-nginx-tips-and-tricks">Nginx - Tips and Tricks.</a></h4>
+        <p>Harish S</p>
+      </td>
+      <td>
+        <h4><a href="http://funnel.hasgeek.com/rootconf/296-virtualization-with-kvm-and-libvirt">Virtualization with KVM (and Libvirt)</a></h4>
+        <p>Kashyap Chamarthy</p>
+      </td>
+      <td>
+        <h4><a href="http://funnel.hasgeek.com/rootconf/324-openshift-deployments-for-the-rest-of-us">Openshift: Deployments for the rest of us</a></h4>
+        <p>Anurag</p>
+      </td>
+      </tr>
+      <tr>
+      <td class="time">15:30 - 16:00</td>
+      <td colspan="3">Break</td>
+      </tr>
+      <tr>
+      <td class="time">16:00 - 16:45</td>
+      <td>
+        <h4><a href="http://funnel.hasgeek.com/rootconf/321-develop-test-deploy-distribute">Develop, Test, Deploy, Distribute</a></h4>
+        <p>Medhamsh and Swetha</p>
+      </td>
+      <td>
+        <h4><a href="http://funnel.hasgeek.com/rootconf/301-automated-and-adaptive-infrastructure-monitoring-using-chef-nagios-and-graphite">Automated and Adaptive Infrastructure Monitoring using Chef, Nagios and Graphite</a></h4>
+        <p>Pratima Singh</p>
+      </td>
+      <td>
+        <h4><a href="http://funnel.hasgeek.com/rootconf/335-create-your-own-cloud-using-a-small-perl-script">Create your own Cloud using a small Perl script</a></h4>
+        <p>Pankaj Kaushal</p>
+      </td>
+      </tr>
+      <tr>
+      <td class="time">16:45 - 17:30</td>
+      <td>
+        <h4><a href="http://funnel.hasgeek.com/rootconf/332-varanid-distributed-resilient-and-scalable-alerting">Varanid: distributed, resilient and scalable alerting</a></h4>
+        <p>Biju Chacko</p>
+      </td>
+      <td>
+        <h4><a href="http://funnel.hasgeek.com/rootconf/331-make-your-servers-sing-using-mcollective">Make your servers sing using MCollective</a></h4>
+        <p>Mohit Chawla</p>
+      </td>
+      <td>
+        <h4><a href="http://funnel.hasgeek.com/rootconf/304-high-performant-virtualization-using-openvz">High performant virtualization using OpenVZ</a></h4>
+        <p>Nilesh B</p>
+      </td>
+    </tr>
+    <tr>
+      <td class="time">17:30 - 18:00</td>
+      <td colspan="3">Feedback</td>
+    </tr>
+        </table>
+      </div>
+    </div>
+
+
+      <div class="row content" id="venue"><div class="span12"><h2 id="location">Venue</h2></div></div>
+       <div class="row">
+        <div class="span6">
+          <div id="map" class="map"></div>
+        </div>
+        <div class="span6">
+        <h3 style="text-transform: uppercase; font-size: 25pt">Dharmaram Vidya Kshetram</h3>
+            <p><strong>Christ University Campus</strong>, Bangalore</p><hr />
+            <p>Rootconf is set in Dharmaram College's beautiful, tree-filled campus (nothing like the back-to-college feeling).</p>
+            <p>To get there, enter Christ University’s main entrance gate on Marigowda Road and drive straight down to Dharmaram Vidya Kshetram, within the campus.
+            Christ University is at Dairy Circle, half a kilometre from the Forum mall. Rootconf is in DVK's Theology block, behind the main auditorium.
+            If you are approaching from Dairy Circle, drive up to Hosur Road for a U-turn. The campus has sufficient parking space.</p>
+            <p><a href="http://goo.gl/maps/jYyv">View location in Google Maps</a></p>
+          <h3><span>WHEN</span> : May 26, 2012</h3>
+        </div>
+      </div>
+      <div class="row content" id="hasgeek">
+        <div class="span12">
+          <h2 id="abouthg">About HasGeek</h2>
+          <p><a href="http://hasgeek.com">HasGeek</a> is a developer-led initiative, and has been un-organising the unconference scene since 2010. HasGeek is an attempt to solve the problem of insipid conferences organised around buzzwords by uninterested, soulless corporate entities who pitch them as company training events or as places for companies to pick up hot developers.</p>
+
+          <p>We are attempting to build a new space, a space that is genuinely respectful of the communities and topics that we choose to engage with. We want to be a space for developers who are as excited as us about technology and the possibilities that it creates, not to be a recruitment fair (though we hope you do find partnership possibilities at our events).</p>
+        
+          <p>We are community-driven – check out our speaker-selection funnel, where you decide what talks to listen to by voting up or down – and small – there are just a handful of us running the show. We are doing this because this is what we love: bringing a whole bunch of us geeks together, sharing our interests and expertise and hanging out later over beverage of choice.</p>
+        </div><!--/span-->
+      </div><!--/row-->
+    </div>
+</section>    
+{% endblock %}
+
+{%- if _theme %}
+  {% assets "js_" + _theme -%}
+    <script src="{{ ASSET_URL }}"></script>
+  {% endassets -%}
+{%- endif %}
+
+
+{% block footerscripts %} 
+<script>
+
+$(function() {
+  var map = new L.Map('map');
+  var cloudmadeUrl = 'http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png',
+      subDomains = ['otile1','otile2','otile3','otile4'],
+      cloudmadeAttrib = '<a href="http://open.mapquest.co.uk" target="_blank">MapQuest</a>, <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> and contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/" target="_blank">CC-BY-SA</a>';
+      var cloudmade = new L.TileLayer(cloudmadeUrl, {maxZoom: 18, attribution: cloudmadeAttrib, subdomains: subDomains});
+
+      var venue = new L.LatLng(12.9334, 77.6050); // geographical point (longitude and latitude)
+      var center = new L.LatLng(12.936, 77.62);
+      var mobile_center = new L.LatLng(12.935, 77.591);
+      map.setView(center, 14).addLayer(cloudmade);
+      if (map.getSize().x < 768) { map.setView(venue,14); } // on smaller screen where map takes full-width
+
+      var venue_marker = new L.Marker(venue);
+      map.addLayer(venue_marker);
+      venue_marker.bindPopup('Dharmaram Vidya Kshetram').openPopup();
+      map.scrollWheelZoom.disable();
+      map.doubleClickZoom.disable();
+      
+      map.on('zoomend', onZoomend);
+      function onZoomend(){ map.setView(venue, map.getZoom()); };
+});
+
+function scroll(scrollToId)
+{   
+    p = $("#" + scrollToId);
+    scrollTo = p.position().top;
+    $('html, body').animate({scrollTop: scrollTo}, 600);
+}
+function cursorAnimation()
+{ 
+  $(".cursor").animate({opacity: 0}, 200, "swing").animate({opacity: .6}, 400).animate({opacity: 0.6}, 400).animate({opacity:0}, 200);
+}
+$(document).ready(function()
+{
+  $(window).resize(function(){    $('header').css('margin-left', (-($('header').width())/2) + "px");});
+  setInterval ( "cursorAnimation()", 1000 );
+  $('header').css('margin-left', (-($('header').width())/2) + "px");
+});
+</script>
+{% endblock %}
+
+</body>
+</html>
