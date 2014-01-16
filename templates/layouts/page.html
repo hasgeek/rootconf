@@ -48,7 +48,7 @@
 {%- endif %}
 
 </head>
-<body class="fill-greengray" onload="initialize()">
+<body class="fill-greengray">
 
 <div class="fill-silver">
   {% block networkbar %}
@@ -204,15 +204,6 @@ if (location.hostname == 'droidcon.in') {
         $('#nav-inner').removeClass('navbar-fixed-top');
       }
     });
-</script>
-<script type="text/javascript">
-  Modernizr.mq('only screen and (min-width: 768px)'){
-    $(".popover-right").popover({ placement: 'left', animation: true, trigger: 'hover'});
-    $(".popover-left").popover({ placement: 'right', animation: true, trigger: 'hover'});
-  } 
-</script>
-<script>
-  new gnMenu( document.getElementById( 'gn-menu' ) );
 </script>
 {% block footerscripts %}{% endblock %}
 <!-- Prompt IE 6 users to install Chrome Frame. -->
