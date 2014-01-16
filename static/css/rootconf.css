@@ -29,7 +29,15 @@ header{
 
 footer .footer-inner	{
  	background: url(../img/nav-bg.png) repeat-x top;	
+ 	padding-top: 20px;
  }
+footer {
+	clear: both;
+	position: relative;
+	min-height: 55px;
+	display: block;
+	text-align: center;
+}
 
 .content	{
 	background: url(../img/nav-bg.png) repeat-x top;	
