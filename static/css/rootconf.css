@@ -1,8 +1,9 @@
-@font-face { font-family: Inconsolata; src: url(/static/Inconsolata.otf); } 
+@font-face { font-family: Inconsolata; src: url(../Inconsolata.otf); } 
 
 body	{
 	background: url(../img/bg.png) #111;
 	color: #DDD;
+	font-family: "Source Sans Pro", sans-serif;
 }
 
 p {
@@ -10,7 +11,32 @@ p {
     line-height: 1.5em;
 }
 
+strong {
+  font-weight: 600;
+}
+
 h1  {color: #e8e9e1;}
+
+h1 {
+  font-size: 25px;
+  line-height: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 22px;
+  line-height: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 18px;
+  line-height: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 
 p.date	{
 	text-transform: uppercase;
@@ -20,7 +46,6 @@ p.date	{
 header{
 	position: fixed;
 	top: 0;
-	left: 50%;
 	width: 100%;
 	background: url(../img/bg_nav.png) top;
 	color: #222;
@@ -37,6 +62,7 @@ footer {
 	min-height: 55px;
 	display: block;
 	text-align: center;
+	margin-top: 15px;
 }
 
 .content	{
@@ -86,6 +112,9 @@ nav a:hover	{
 	text-decoration: none;
 	color: #555;	
 }
+
+.navbar	{ padding-top: 2px;}
+
 
 .header-social .twitter, .header-social .fb	{
 	height: 20px;
@@ -162,7 +191,7 @@ h3	{
   }
 
   header {position: absolute; top: 0;}
-  .navbar	{ margin-bottom: 0px; }
+  .navbar	{ margin-bottom: 0px;}
 
   nav 	{ margin-top: 5x; padding-left: 0; margin-left: -20px;text-align: center;}
 

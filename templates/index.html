@@ -461,9 +461,7 @@ function cursorAnimation()
 }
 $(document).ready(function()
 {
-  $(window).resize(function(){    $('header').css('margin-left', (-($('header').width())/2) + "px");});
   setInterval ( "cursorAnimation()", 1000 );
-  $('header').css('margin-left', (-($('header').width())/2) + "px");
 });
 </script>
 {% endblock %}

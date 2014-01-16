@@ -9268,6 +9268,5 @@ function scroll(scrollToId){
 
   $(document).ready(function()
   {
-    alert(1);
     setInterval ( "cursorAnimation()", 600 );
   });
