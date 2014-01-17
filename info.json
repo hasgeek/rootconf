@@ -19,6 +19,7 @@
         ],
         "assets_js": [
             "js/vendor/bootstrap.min.js",
+            "js/vendor/tile.stamen.js",
             "js/maps.js"
         ]
     }
