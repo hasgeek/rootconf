@@ -1,8 +1,8 @@
 {% extends theme('layouts/page.html') %}
 {%
   set page = {
-      'title'       : 'Blog'
-    , 'description' : 'Blog for Rootconf 2014'
+      'title'       : node.title + ' — Blog'
+    , 'description' : 'Blog for Rootconf ' + (node.folder.name if node.folder.name != 'blog' else '')
     , 'sections'    : [
         ('blog-post', 'white')
       , ('sponsors-summary','brick')
