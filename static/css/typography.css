@@ -13,13 +13,14 @@ em,
 .prose-type     { font-family: "Adelle", serif; }
 */
 
-body            { font-family: 'Quando', adobe-caslon-pro, "Adobe Caslon Pro", serif; }
-.title-type { font-family: brandon-grotesque, "Brandon Grotesque", "Gill Sans", "Gill Sans MT", sans-serif; }
+body                   { font-family: 'Varela', sans-serif; }
+.logo, .prose-type     { font-family: 'Inconsolata', serif; }
+/*.title-type { font-family: brandon-grotesque, "Brandon Grotesque", "Gill Sans", "Gill Sans MT", sans-serif; }
 i,
 em,
 .prose-type     { font-family: adobe-caslon-pro, "Adobe Caslon Pro", serif; }
 
-.board-type{ font-family: "Oswald", serif; }
+.board-type{ font-family: "Oswald", serif; }*/
 
 /*  Scale  */
 
@@ -83,6 +84,7 @@ abbr {
 
 .all-caps       { text-transform: uppercase;    }
 .all-lower      { text-transform: lowercase;    }
+.all-capitalize { text-transform: capitalize;    }
 .small-caps     { font-variant: small-caps;     }
 .strike         { text-decoration: line-through;}
 .no-underline   { text-decoration: none;        }

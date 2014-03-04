@@ -9,24 +9,15 @@
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 legible-prose prose prose-type">
 			    <ul class="space-half-top text-center list-space-line list-plain link-silent row">
 			{% endif %}
-			      <li class="col-lg-6 col-lg-offset-0 col-md-6 col-md-offset-0 col-sm-4 col-sm-offset-1 col-xs-12 col-xs-offset-0 text-center">
-			      	<div class="photo-thumbnail fill-white">
-			      		<div class="row">
-			      			<div class="col-lg-6 col-md-6">
-			      				<span class="img-wrapper">
-						          <img class="photo" src="{{ item.photo }}">
-						        </span>
-			      			</div>
-			      			<div class="col-lg-6 col-md-6">
-			      				<h3>{{ item.name }}</h3>
-						        <h5>{{ item.designation|safe }}</h5>
-						        <h4 class="yellow shadow-text-white"><a target="_blank" href="https://twitter.com/{{ item.twitter }}">@{{ item.twitter }}</a></h4>
-			      			</div>
-			      		</div>
-			      		
-				        
+			      <li class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-xs-offset-0 text-center">
+			      	<div class="photo-thumbnail">
+	      				<div class="img-wrapper">
+				          <img class="photo" src="{{ item.photo }}">
+				        </div>
+	      				<h3>{{ item.name }}</h3>
+				        <h5>{{ item.designation|safe }}</h5>
+				        <h4 class="yellow shadow-text-white"><a target="_blank" href="https://twitter.com/{{ item.twitter }}">@{{ item.twitter }}</a></h4>
 			      	</div>
-			        
 			      </li>
 			{% if loop.last %}
 			    </ul>
@@ -36,4 +27,3 @@
 		{%- endfor %}
 	</div>
 </section>
-<div class="box-border"></div>

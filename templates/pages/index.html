@@ -8,9 +8,11 @@
     , 'sections'            : [      
        ('event-themes',          'white')
       , ('tickets',              'white')
-      , ('past-highlights',           'white')
+      , ('past-highlights',           'dark')
+      , ('funnel-proposals',              'white')
       , ('venue-summary',             'white')
-      , ('sponsors-summary',          'brick')
+      , ('editorial-panel',          'white')
+      , ('sponsors-summary',          'dark')
     ]
   }
 %}
@@ -26,30 +28,31 @@
       <div id="bulb"></div>
       <div id="light"></div>
   </div>
-  <div class="flushright board">
-    <div class="board-hanger"></div>
-    <div class="notice-board clearboth">
-      <div class="caution-line border-one clearboth"></div>
-      <a href="http://rootconf.doattend.com/" target="_blank"><div class="text-center clearboth pad-1q regular-prose bold push-1q fill-white black board-type all-caps">Buy Ticket</div></a>
-    </div>
-  </div>
+  
   <div class="display-board text-center">
-    <h2 class="white extrabold all-lower extralarge push-one-top">
-      <div class="link line2 title-type">rootconf</div>
-      <p class="tiny space-1q-top">Conference on devops &amp; cloud infrastructure</p>
-    </h2>
-    
-    <div class="intro row-fluid prose prose-type thin space-line-top">
-      <div class="line4 white thin">16 - 19 April 2014&nbsp;&nbsp;|&nbsp;&nbsp;Bangalore</div>
+    <div class="white extralarge push-two-top">
+      <div class="link line2 text-center title-type push-half-top">
+        <div class="logo"><img src="https://imgee.s3.amazonaws.com/imgee/769dc463009d4cf09be7352c8c7b3628.png" width="80px" alt="###">rootconf</div><div id="blink-wrapper"><span id="blink"></span></div>
+      </div>
+      <p class="tiny prose-type space-half-top">Conference &amp; Workshops on DevOps and Cloud Infrastructure</p>
     </div>
+    
+    <div class="intro row-fluid prose prose-type thin space-half-top">
+      <div class="regular white thin">16 - 19 April 2014&nbsp;&nbsp;|&nbsp;&nbsp;Bangalore</div>
+    </div>
+    <!-- <ul class="space-3q-top nospace-ul">
+      <li class="inline-block"><a href="" class="button button-mini button-yellow">Workshops tickets<br>Rs. 4000</a></li>
+      <li class="inline-block"><a href="" class="button button-mini button-yellow">Conference tickets<br>Rs. 3000</a></li>
+    </ul> -->
   </div> 
   <div id="mast-img"></div> 
   <div id="mast-floor">
     <div class="masthead-test">
     <!-- <img src="{{ theme_static('img/floor.jpg')}}" alt=""> -->
-    <img src="https://imgee.s3.amazonaws.com/imgee/8322dd44f8d246a98bdf6b6f3b006191.jpeg" alt="">
+    <img src="https://imgee.s3.amazonaws.com/imgee/ae4c466819ce4701bbdb851b8988ed1e.jpeg" alt="">
   </div>
   </div> 
+  
   
 </header>
 {% endblock %}
