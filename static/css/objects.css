@@ -4,12 +4,14 @@
     background: #B79A49;
     color: #FFF;
     line-height: 1.4;
-    padding: 0.5em 1.5em 0.5em;
+    padding: 0.5em 1.5em 0.4em;
     text-transform: uppercase;
     text-align: center;
     border-radius: 0.25em;
-    border: 0;
+    border-bottom: 3px solid #9B7F30;
 }
+a.button:hover  { background-color: #9B7F30; border-bottom-color: #6E5C29; }
+.button-inactive{ background-color: #E0DFDF; border-bottom-color: #C3C3C3; }
 .button-mini    { padding: 0.2em 0.6em; }
 .button-yellow  { background: #F0A40C; color: #000;}
 .button:focus   { text-decoration: none; }
