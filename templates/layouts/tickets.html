@@ -10,11 +10,11 @@
         </thead>
         <tbody>
           {% for ticket in items -%}
-            <tr>
+            <tr class="{% if ticket.open==true %}fill-white{% endif %}">
               <td class="bold regular-prose">{{ ticket.type }}</td>
               <td>{{ ticket.package | safe }}</td>
               <td class="bold regular-prose">&#8377;{{ ticket.price }}</td>
-              <td><{% if ticket.open==false %}span{% else %}a href="#"{% endif %} class="button{% if ticket.open==false %} button-inactive{% endif %}">{{ ticket.msg|safe }}</{% if ticket.open==false %}span{% else %}a{% endif %}></td>
+              <td><{% if ticket.open==false %}span{% else %}a href="http://rootconf.doattend.com/"{% endif %} class="button{% if ticket.open==false %} button-inactive{% endif %}">{{ ticket.msg|safe }}</{% if ticket.open==false %}span{% else %}a{% endif %}></td>
             </tr>
           {%- endfor %}
         </tbody>
