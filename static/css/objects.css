@@ -17,6 +17,20 @@ a.button:hover  { background-color: #9B7F30; border-bottom-color: #6E5C29; }
 .button:focus   { text-decoration: none; }
 .button:active  { box-shadow: inset 0 0 10px #000; }
 
+.bg-circle {
+  background-color: #475668;
+  border-radius: 50%; 
+  display: inline-block;
+  padding: 0.5em 0.6em;
+  text-align: center;
+}
+.bg-circle>i{
+  height: 1em;
+  width: 1em;
+  text-align: center;
+  color: rgb(172, 151, 91);
+}
+
 .separated-links + .separated-links:before {
     content: '•';
     margin: 0 .4rem;
