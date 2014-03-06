@@ -40,6 +40,7 @@ a.link-silent   { border-bottom: none; }
 .block-shadow-light { box-shadow: 0 1px 5px rgba(0,0,0,0.1);}
 
 .fill-white     { background-color: #FFFFFF !important; color: #444; }
+.fill-gray      { background-color: #F7F9F9 !important; color: #444; }
 .fill-dark      { background-color: #1B1B24 !important; color: #EEE; }
 .fill-violet    { background-color: #4A3B4F !important; color: #EEE; }
 .fill-dark-hud  { background-color: rgba(0,0,0,0.65) !important; color: #EEE; }
