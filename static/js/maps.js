@@ -29,15 +29,14 @@ $(function initLeaflets() {
             , scrollWheelZoom: options.scrollWheelZoom
         });
         
-        /*L.tileLayer('http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png', {
+        L.tileLayer('http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png', {
               maxZoom: options.maxZoom
             , attribution: options.attribution
             , subdomains: options.subdomains
-        }).addTo(map);*/
-        map.addLayer(new L.StamenTileLayer("toner"));
+        }).addTo(map);
+        
         
         marker = new L.marker(options.marker).addTo(map);
         if (options.label) marker.bindPopup(options.label).openPopup();
     })
 });
-
