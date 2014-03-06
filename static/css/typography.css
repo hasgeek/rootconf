@@ -135,12 +135,16 @@ abbr {
     font-size: 2.04em;
 }
 
-.navbar .nav>li>a, .navbar-brand{
+.navbar-brand.nav>li>a, .navbar-brand{
   /*font-family: 'Oswald', sans-serif;*/
   /*text-transform: uppercase;*/
   font-size: 18px;
   letter-spacing: 0.05em;
   color: #333;
+}
+.navbar-brand.nav .caret, .navbar-brand.nav a:hover .caret{  
+  border-top-color: #333;
+  border-bottom-color: #333;
 }
 .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus{
     color: #000;
