@@ -1,11 +1,11 @@
 {% extends theme('layouts/page.html') %}
 {%
   set page = {
-      'title'       : 'Blog'
-    , 'description' : 'Blog for Droidcon India 2013'
+      'title'       : node.title + ' — Blog'
+    , 'description' : 'Blog for Rootconf ' + (node.folder.name if node.folder.name != 'blog' else '')
     , 'sections'    : [
-        ('blog-post', '')
-      , ('sponsors-summary','blue')
+        ('blog-post', 'white')
+      , ('sponsors-summary','brick')
     ]
   }
 %}

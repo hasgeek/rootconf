@@ -1,20 +1,38 @@
 <section class="blog push-two clearfix{% if background %} fill-{{ background }}{% endif %}">
   <div class="container">
     <div class="row-fluid space-two-bottom">
-      <h2 class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center extralarge all-caps">Blog</h2>
+      <h2 class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">{{ node.title }}</h2>
     </div>
     {% set exists = [] %}
+    <div class="row-fluid col-lg-4 col-md-4 col-sm-4 col-xs-4 pull-right">
+      {% if node.folder.name != 'blog' %}
+        {% set funnel = [] %}
+        {% for _node in node.parent.nodes %}
+          {% if _node.type == 'funnel_link' %}
+            {% if funnel.append(_node) %}{% endif %}
+          {% endif %}
+        {% endfor %}
+        {% if funnel %}
+          <h4>Latest Proposals</h4>
+          <ul>
+            {% for proposal in funnel[0].proposals()[:5] %}
+              <li>
+                <a href="{{ proposal['url'] }}" title="{{ proposal['title'] }}">{{ proposal['title'] }}</a><br>
+                <small class="xs">by {{ proposal['proposer'] }}<br>Votes: {{ proposal['votes'] }} &middot; Comments: {{ proposal['comments'] }}</small>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endif %}
+    </div>
     {% for post in feed() -%}
-      {% if post.folder.name == '2013' %}
+      {% if node.folder.name == 'blog' or node.folder == post.folder %}
         {% if exists.append(1) %}{% endif %}
         <div class="row-fluid">
-          <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-1 col-lg-1 col-md-1 col-sm-2 col-xs-3">
-            <div class="post-date pull-right fill-green text-center">{{ post.published_at|shortdate }}<br>{{ post.folder.name }}</div>
-          </div>
-          <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
             <div class="post space-two-bottom">       
               <div class="post-title legible semibold"><a href="{{ url_for('node', folder=post.folder.name, node=post.name) }}">{{ post.title }}</a></div>
-              <p class="space-half-top green">by <strong>{{ post.author or post.user.fullname }}</strong> &middot; </p>
+              <p class="byline">by <strong>{{ post.author or post.user.fullname }}</strong> &middot; {{ post.published_at|datetime }}{% if node.folder.name == 'blog' and post.folder.name != 'blog' %} &middot; Edition: {{ post.folder.name }}{% endif %}</p>
               <div class="secondary-prose ">{{ post.description }}</div>
             </div>
           </div> 
