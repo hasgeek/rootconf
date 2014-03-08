@@ -31,7 +31,7 @@
         <div class="row-fluid">
           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
             <div class="post space-two-bottom">       
-              <div class="post-title legible semibold"><a href="{{ url_for('node', folder=post.folder.name, node=post.name) }}">{{ post.title }}</a></div>
+              <div class="post-title legible semibold"><a class="link-silent green space-1q-bottom" href="{{ url_for('node', folder=post.folder.name, node=post.name) }}">{{ post.title }}</a></div>
               <p class="byline">by <strong>{{ post.author or post.user.fullname }}</strong> &middot; {{ post.published_at|datetime }}{% if node.folder.name == 'blog' and post.folder.name != 'blog' %} &middot; Edition: {{ post.folder.name }}{% endif %}</p>
               <div class="secondary-prose ">{{ post.description }}</div>
             </div>
