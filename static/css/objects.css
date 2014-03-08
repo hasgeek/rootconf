@@ -1,16 +1,16 @@
 
 .button {
     display: inline-block;
-    background: #B79A49;
+    background: #3FBA70;
     color: #FFF;
     line-height: 1.4;
     padding: 0.5em 1.5em 0.4em;
     text-transform: uppercase;
     text-align: center;
     border-radius: 0.25em;
-    border-bottom: 3px solid #9B7F30;
+    border-bottom: 3px solid #359E5E;
 }
-a.button:hover  { background-color: #9B7F30; border-bottom-color: #6E5C29; }
+a.button:hover  { background-color: #359E5E; border-bottom-color: #2C874F; }
 .button-inactive{ background-color: #E0DFDF; border-bottom-color: #C3C3C3; }
 .button-mini    { padding: 0.2em 0.6em; }
 .button-yellow  { background: #F0A40C; color: #000;}
@@ -18,7 +18,6 @@ a.button:hover  { background-color: #9B7F30; border-bottom-color: #6E5C29; }
 .button:active  { box-shadow: inset 0 0 10px #000; }
 
 .bg-circle {
-  background-color: #475668;
   border-radius: 50%; 
   display: inline-block;
   padding: 0.5em 0.6em;
@@ -28,7 +27,6 @@ a.button:hover  { background-color: #9B7F30; border-bottom-color: #6E5C29; }
   height: 1em;
   width: 1em;
   text-align: center;
-  color: rgb(172, 151, 91);
 }
 
 .separated-links + .separated-links:before {
@@ -503,7 +501,7 @@ a.button:hover  { background-color: #9B7F30; border-bottom-color: #6E5C29; }
 }
 
 .banner-internal .logo {
-    background: url('https://imgee.s3.amazonaws.com/imgee/a5ab91885e9e4a4a8f9a84a892cb387b.png') no-repeat scroll center center;
+    background: url('https://imgee.s3.amazonaws.com/imgee/769dc463009d4cf09be7352c8c7b3628.png') no-repeat scroll center center;
     background-size: contain;
     height: 0;
     width:       5.5rem;
@@ -571,8 +569,6 @@ a.button:hover  { background-color: #9B7F30; border-bottom-color: #6E5C29; }
     .venue-home .country-level p { margin-top: 0; }
 }
 .js .venue-home {
-    border-top:    5px solid #444;
-    border-bottom: 5px solid #444;
     position: relative;
     padding: 0;
 /*    padding: 1.5rem;*/
@@ -919,7 +915,7 @@ li.event-node{
   display: block;
 }
 .img-wrapper{
-  border: 13px solid rgba(255, 255, 255, 0.1);
+  border: 13px solid rgba(0,0,0, 0.1) !important;
   display: block;
   /*border-radius: 50%;*/
   margin-left: auto;
@@ -929,7 +925,7 @@ li.event-node{
 .featured-speakers h5{
   line-height: 20px;
 }
-.program-committee .prose.prose-type a{
+.prose.prose-type a{
   text-decoration: none;
 }
 
