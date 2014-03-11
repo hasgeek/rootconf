@@ -14,3 +14,6 @@
     ]
   }
 %}
+{% if not node.content %}
+  {% if page['sections'].pop(2) %}{% endif %}
+{% endif %}
