@@ -1,0 +1,9 @@
+{% with %}
+  {% from theme("data/runup-events.html") import items %}
+  {% set event = items[node.properties['event_id']|int] %}
+  {% set venue_id = node.properties['venue'] %}
+  {% if venue_id %}
+    {% from theme("data/venues/%s.html" % venue_id) import venue %}
+    {% if venue %}{% include theme("layouts/runup-venue.html") %}{% endif %}
+  {% endif %}
+{% endwith %}

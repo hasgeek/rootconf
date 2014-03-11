@@ -1,0 +1,32 @@
+{% set event = items[node.properties['event_id']|int] %}
+{% with %}
+    {% set venue_id = node.properties['venue'] %}
+    {% if venue_id %}
+        {% from theme("data/venues/%s.html" % venue_id) import venue %}
+    {% endif %}
+    <section class="runup-event push-two clearfix{% if background %} fill-{{ background }}{% endif %}">
+        <div class="container">
+            <div class="row-fluid">
+                {% set title = [] %}
+                {% if venue and venue.title %}
+                    {% if title.append(venue.title) %}{% endif %}
+                    {% if venue.subtitle %}
+                        {% if title.append(venue.subtitle) %}{% endif %}
+                    {% endif %}
+                {% endif %}
+                {% set title = ", ".join(title) %}
+                <h2 class="col-lg-12 col-md-12 col-sm-12 col-xs-12">Runup Event: {{ event.title }}</h2>
+                {% if event.when or title %}
+                    <h3 class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        {{ event.when }}
+                        {% if event.when and title %}&nbsp;&nbsp;|&nbsp;&nbsp;{% endif %}
+                        {{ title }}
+                    </h3>
+                {% endif %}
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <p>{{ node.description }}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endwith %}

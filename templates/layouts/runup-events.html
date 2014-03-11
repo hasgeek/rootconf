@@ -15,7 +15,7 @@
 			    		<div class="content">
 			    			<div class="legible-prose">{% if item.link %}<a href="{{ item.link }}">{% endif %}{{ item.title }}{% if item.link %}</a>{% endif %}</div>
 						    <div class="secondary-prose space-1q-top space-half-bottom">{{ item.venue }}</div>
-						    <p>{{ item.blurb }}</p>
+						    <p>{{ item.blurb|safe }}</p>
 			    		</div>
 			  		</li>
 				{%- endfor %}
