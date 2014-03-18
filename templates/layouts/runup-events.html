@@ -9,13 +9,13 @@
 	    			<li class="event-node">
 	    				<div class="radio {% if item.timeline == 'past' %}theme-red{% elif item.timeline == 'upcoming' %}theme-green{% endif %}"></div>
 		    			<div class="relative">
-		      				<span class="date">{{ item.date }}</span>
+		      				<span class="date">{{ item.when }}</span>
 		      				<span class="circle"></span>
 		    			</div>
 			    		<div class="content">
 			    			<div class="legible-prose">{% if item.link %}<a href="{{ item.link }}">{% endif %}{{ item.title }}{% if item.link %}</a>{% endif %}</div>
 						    <div class="secondary-prose space-1q-top space-half-bottom">{{ item.venue }}</div>
-						    <p>{{ item.blurb }}</p>
+						    <p>{{ item.blurb|safe }}</p>
 			    		</div>
 			  		</li>
 				{%- endfor %}
