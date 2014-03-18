@@ -33,53 +33,58 @@
   </form>
 {% endmacro %}
 
-<section id="runup-event-{{ node.properties['event_id'] }}-rsvp" class="push-two clearfix{% if background %} fill-{{ background }}{% endif %}">
-  <div class="container">
-    <div class="row-fluid">
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <h2 class="extralarge all-caps text-center">RSVP</h2>
-        <div class="secondary-prose semibold text-center">
-          {%- if g.user %}            
-            {%- if node.can_rsvp(g.user) %}
-              {%- with status = node.get_status(g.user) %}
-                {%- if node.has_capacity() %}
-                  <p>
-                    Will you be attending "{{ event.title }}"?
-                  {{ rsvp_form(node, form, status=status) }}
-                {%- else %}
-                  {%- if node.allow_waitlisting %}
-                    <p>
-                      This session is fully booked, but you can place yourself in the wait list in case someone drops out.
-                    </p>
-                    {{ rsvp_form(node, form, waitlist=True, status=status) }}
-                  {%- else %}
-                    <p>This session is fully booked.</p>
-                    {%- if status in ['N', 'M'] %}
-                      {{ rsvp_form(node, form, hascapacity=False, status=status) }}
+{% set event = items[node.properties['event_id']|int] %}
+{% with %}
+  {% if event.timeline == 'upcoming' %}
+    <section id="runup-event-{{ node.properties['event_id'] }}-rsvp" class="push-two clearfix{% if background %} fill-{{ background }}{% endif %}">
+      <div class="container">
+        <div class="row-fluid">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <h2 class="extralarge all-caps text-center">RSVP</h2>
+            <div class="secondary-prose semibold text-center">
+              {%- if g.user %}            
+                {%- if node.can_rsvp(g.user) %}
+                  {%- with status = node.get_status(g.user) %}
+                    {%- if node.has_capacity() %}
+                      <p>
+                        Will you be attending "{{ event.title }}"?
+                      {{ rsvp_form(node, form, status=status) }}
+                    {%- else %}
+                      {%- if node.allow_waitlisting %}
+                        <p>
+                          This session is fully booked, but you can place yourself in the wait list in case someone drops out.
+                        </p>
+                        {{ rsvp_form(node, form, waitlist=True, status=status) }}
+                      {%- else %}
+                        <p>This session is fully booked.</p>
+                        {%- if status in ['N', 'M'] %}
+                          {{ rsvp_form(node, form, hascapacity=False, status=status) }}
+                        {%- endif %}
+                      {%- endif %}
                     {%- endif %}
-                  {%- endif %}
+                  {%- endwith %}
+                {%- else %}
+                  <p>
+                    We don’t have an email address on your profile matching your ticket.
+                    Please <a href="https://auth.hasgeek.com/profile/email/new" target="_blank">add the email address</a>
+                    you used when buying your ticket, <a href="{{ url_for('logout') }}">logout</a>
+                    and <a href="{{ url_for('login') }}">login</a> again.
+                  </p>
                 {%- endif %}
-              {%- endwith %}
-            {%- else %}
-              <p>
-                We don’t have an email address on your profile matching your ticket.
-                Please <a href="https://auth.hasgeek.com/profile/email/new" target="_blank">add the email address</a>
-                you used when buying your ticket, <a href="{{ url_for('logout') }}">logout</a>
-                and <a href="{{ url_for('login') }}">login</a> again.
-              </p>
-            {%- endif %}
-          {%- else %}
-            <p>
-              {#{% if node.capacity > 0 -%} The venue has limited capacity. {% endif -%}#}
-              Will you be attending "{{ event.title }}"? Please login. You can use your existing Twitter or Google account, and if you have previously voted on a session proposal or attended a hacknight, you already have a HasGeek account.
-            </p>
-            <p class="centered space-one-top">
-              <a href="{{ url_for('login') }}" class="button tiny semibold">Login with Twitter, Google or HasGeek id</a>
-            </p>
-          {%- endif %}
+              {%- else %}
+                <p>
+                  {#{% if node.capacity > 0 -%} The venue has limited capacity. {% endif -%}#}
+                  Will you be attending "{{ event.title }}"? Please login. You can use your existing Twitter or Google account, and if you have previously voted on a session proposal or attended a hacknight, you already have a HasGeek account.
+                </p>
+                <p class="centered space-one-top">
+                  <a href="{{ url_for('login') }}" class="button tiny semibold">Login with Twitter, Google or HasGeek id</a>
+                </p>
+              {%- endif %}
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
+  {% endif %}
+{% endwith %}
 

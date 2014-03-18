@@ -26,6 +26,12 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <p>{{ node.description }}</p>
                 </div>
+                {% if event.timeline == 'past' and event.hgtv %}
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <p class="regular-prose red">This event is over!</p>
+                    <p class="regular"><a href="{{ event.hgtv }}" class="button">Watch Videos on HasGeek TV</a></p>
+                </div>
+                {% endif %}
             </div>
         </div>
     </section>
