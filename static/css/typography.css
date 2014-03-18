@@ -5,24 +5,8 @@
 
 /*  Families  */
 
-/*body,
-.title-type     { font-family: "Adelle", sans-serif; }
-
-i,
-em,
-.prose-type     { font-family: "Adelle", serif; }
-*/
-
 body                   { font-family: 'Varela', 'Rosario', sans-serif; }
 .logo, .prose-type     { font-family: 'Inconsolata', serif; }
-/*.title-type { font-family: brandon-grotesque, "Brandon Grotesque", "Gill Sans", "Gill Sans MT", sans-serif; }
-i,
-em,
-.prose-type     { font-family: adobe-caslon-pro, "Adobe Caslon Pro", serif; }
-
-.board-type{ font-family: "Oswald", serif; }*/
-
-/*  Scale  */
 
 
 html                    { font-size: 16px;     line-height: 1.5; }
