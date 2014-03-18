@@ -10,8 +10,8 @@
     border-radius: 0.25em;
     border-bottom: 3px solid #359E5E;
 }
-a.button:hover  { background-color: #359E5E; border-bottom-color: #2C874F; }
-.button-inactive{ background-color: #E0DFDF; border-bottom-color: #C3C3C3; }
+a.button:hover  { background-color: #359E5E; color: #FFF; border-bottom: 3px solid #2C874F; }
+.button-inactive{ background-color: #E0DFDF; color: #FFF; border-bottom: 3px solid #C3C3C3; }
 .button-mini    { padding: 0.2em 0.6em; }
 .button-yellow  { background: #F0A40C; color: #000;}
 .button:focus   { text-decoration: none; }
