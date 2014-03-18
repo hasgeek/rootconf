@@ -475,3 +475,28 @@ body {
 	}
 
 }
+
+/* scrollback */
+.scrollback-title {
+	background-color: #212530 !important;
+	border-bottom-color: #3FBA70 !important;
+}
+.scrollback-icon {
+	background-color: #212530 !important;
+}
+.scrollback-icon-menu {
+	background-image: url('https://imgee.s3.amazonaws.com/imgee/df316e82debf4234ae24a6d1e22bec2e.png') !important;
+	background-size: 60%;
+}
+.scrollback-stream{
+	z-index: 9999 !important;
+}
+.scrollback-timeline, .scrollback-log {
+	background: #F7F9F9 !important;
+}
+.scrollback-nick, .scrollback-nick-guest {
+	background-color: #3FBA70 !important;
+	color: #FFF !important;
+}
+
+
