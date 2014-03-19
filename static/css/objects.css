@@ -672,7 +672,7 @@ a.button:hover  { background-color: #359E5E; color: #FFF; border-bottom: 3px sol
 .sponsor-logo:hover { background-color: #E5E5E5 !important; }
 .sponsor-logo img   { max-height: 100%; max-width: 100%; }
 .sponsor-logo, .link-silent a.sponsor-logo {
-    margin: auto 20px 0 20px;
+    margin: auto 20px 0 0px;
 }
 
 .sponsor-xl       .sponsor-logo { height: 6.67rem;  line-height: 4rem;    padding: 1.34rem; }
@@ -999,7 +999,7 @@ li.event-node{
   top: 50px;
   z-index: 1030;
 }
-#highlights ul, #sessions ul, .schedule ul, .featured-speakers ul, .sponsors ul, #tickets ul, .code-of-conduct ul, .event-summary ul, .sessions h3, .event-themes ul, .sessions h5, .venue ul{
+#highlights ul, #sessions ul, .schedule ul, .featured-speakers ul, #tickets ul, .code-of-conduct ul, .event-summary ul, .sessions h3, .event-themes ul, .sessions h5, .venue ul{
   margin-left: 0 !important;
   padding-left: 0 !important;
   margin-right: 0 !important;
