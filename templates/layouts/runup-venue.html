@@ -68,6 +68,20 @@
                     </div>
                 {% endif %}
             </section>
+            {% if event.sponsor_logo %}
+            <section class="push-two clearfix fill-gray">
+                <div class="row-fluid space-three-bottom container text-center">
+                    <h3 class="col-lg-12 col-md-12 col-sm-12 col-xs-12 large all-caps">Venue Sponsor</h3>
+                </div>
+                <div class="row-fluid space-three-bottom container text-center">
+                    <div class="col-lg-6 col-lg-offset-3">
+                    <a href="{{ event.sponsor_link }}" class="occupy sponsor-logo contain-width link-silent">
+                        <img src="{{ event.sponsor_logo }}" alt="{{ event.venue }}" width="200">
+                    </a>
+                    </div>
+                </div>
+            </section>
+            {% endif %}
         {% endif %}
     {% endif %}
 {% endwith %}
