@@ -1,10 +1,39 @@
-{% if node.content %}
-    <section class="event-description push-two clearfix{% if background %} fill-{{ background }}{% endif %}">
-      <div class="row-fluid container">
-        <h3 class="col-lg-12 col-md-12 col-sm-12 col-xs-12">Agenda</h3>
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          {{ node.content|safe }}
-        </div>
+{% set event = items[node.properties['event_id']|int] %}
+{% with %}
+	{% if event.schedule %}
+  <section class="runup-event push-two clearfix{% if background %} fill-{{ background }}{% endif %}">
+    <div class="container push-one-bottom">
+    	<div class="row-fluid">
+        <h3 class="col-lg-12 col-md-12 col-sm-12 col-xs-12 all-caps space-one-bottom large">Agenda</h3>
       </div>
-    </section>
-{% endif %}
+      <div class="row-fluid">
+      	{% for item in event.schedule %}
+      		<div class="row-fluid">
+						<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+							<h3>{{ item.slot }}</h3>
+						</div>
+						<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+							<h3{% if not item.speaker %} class="italic regular"{% endif %}>{{ item.title|safe }}</h3>
+							{% if item.speaker %}
+								{% if item.photo %}
+									<div class="pad-1q-right flushleft">
+										<img src="{{ item.photo }}" alt="{{ item.speaker }}" class="img-thumbnail" width="80" height="80" align="left" />
+									</div>
+								{% endif %}
+								<h4 class="green">{{ item.speaker }}<h4>
+								<div>
+									{% if item.linkedin %}<a class="link-silent" href="{{ item.linkedin }}" title="{{ item.speaker }} - LinkedIn" target="_blank"><i class="fa fa-linkedin-square"></i></a>{% endif %}
+									{% if item.twitter %}<a class="link-silent" href="https://twitter.com/{{ item.twitter }}" title="{{ item.speaker }} - twitter" target="_blank"><i class="fa fa-twitter-square"></i></a>{% endif %}
+									{% if item.github %}<a class="link-silent" href="https://github.com/{{ item.github }}" title="{{ item.speaker }} - twitter" target="_blank"><i class="fa fa-github-square"></i></a>{% endif %}
+								</div>
+								<h5 class="bold">{{ item.designation|safe }}</h5>
+								<p>{{ item.description|safe }}</p>
+							{% endif %}
+						</div>
+					</div>
+      	{% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+{% endwith %}
