@@ -36,7 +36,7 @@
                     <h3 class="col-lg-6 col-md-6 col-sm-6 col-xs-12 legible all-caps space-one-bottom">When</h3>
 
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 prose prose-type">
-                      <p class="legible-prose space-line-bottom">{{ event.when|safe }}</p>
+                      <p class="legible-prose space-line-bottom space-3q-top">{{ event.when|safe }}</p>
                       {% if event.instructions %}<div class="regular-prose">{{ event.instructions|safe }}</div>{% endif %}
                     </div>
                 </div>
@@ -45,11 +45,11 @@
                 <div class="row-fluid space-four-top container">
                 <h3 class="col-lg-6 col-md-6 col-sm-6 col-xs-12 legible all-caps space-one-bottom">Address</h3>
 
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 legible-prose prose prose-type">
-                  <div class="prose-type regular-prose space-three-bottom space-3q-top">
-                    <p>{{ venue.address|safe }}</p>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 legible-prose">
+                  <div class="regular-prose space-three-bottom space-3q-top">
+                    <p class="prose-type ">{{ venue.address|safe }}</p>
                     <p>
-                      <a href="{{ venue.map.google }}" class='tiny'>View on Google Maps</a>
+                      <a href="{{ venue.map.google }}" class='tiny button prose-type'>View on Google Maps</a>
                     </p>
                   </div>
                 </div>
@@ -57,12 +57,12 @@
 
                 {% if venue.directions %}
                     <div class="row-fluid container">
-                        <h3 class="col-lg-6 col-md-6 col-sm-6 col-xs-12 legible all-caps space-two-bottom">Location</h3>
+                        <h3 class="col-lg-6 col-md-6 col-sm-6 col-xs-12 legible all-caps space-two-bottom">Driving Directions</h3>
 
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 regular-prose prose prose-type">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 regular-prose">
                           {% for item in venue.directions %}
-                            <h4 class="{% if not loop.first %}space-1q-top {% endif %} bold legible-prose">{{ item.from }}</h4>
-                            {{ item.route|safe }}
+                            <h4 class="{% if not loop.first %}space-half-top {% endif %} bold legible-prose prose prose-type">From {{ item.from }}:</h4>
+                            <p class="tiny thin">{{ item.route|safe }}</p>
                           {% endfor %}
                         </div>
                     </div>
