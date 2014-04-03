@@ -16,7 +16,7 @@
             {% if displayed.append(post) %}{% endif %}
             {% if displayed|count <= 5%}
               <li>
-                <a href="post.url_for() }}">{{ post.title }}</a>
+                <a href="{{ url_for('node', folder=post.folder.name, node=post.name) }}">{{ post.title }}</a>
                 <small>
                   by {{ post.author or post.user.fullname }}<br>
                   {% if node.folder.name == 'blog' and post.folder.name != 'blog' %}Edition: {{ post.folder.name }}<br>{% endif %}
