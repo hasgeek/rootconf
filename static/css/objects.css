@@ -343,15 +343,22 @@ a.button:hover  { background-color: #359E5E; color: #FFF; border-bottom: 3px sol
   border-color: #EFEFEF;
 }
 }
+@media screen and (max-width: 768px){
+  header{
+    margin-top: -50px;
+  }
+}
 @media screen and (min-width: 768px) and (max-width: 992px){
-  .masthead-home{
-    margin-top: 10px; 
-    height: 560px;
+  .masthead-home{ 
+    height: 470px;
     width: 100%;
     background-color: #FFFFFF;
     background-image: url('https://imgee.s3.amazonaws.com/imgee/7cae7d9ce00d40e3b5dbec8a470122d1_w992_h475.jpeg');
     background-position: center;
   } 
+  #lamp {
+    height: 105px;
+  }
   #mast-img{
     background-image: url('https://imgee.s3.amazonaws.com/imgee/aed54c5746084c1ea66d09fd1a970c92.png');
     height: 175px;
@@ -365,13 +372,15 @@ a.button:hover  { background-color: #359E5E; color: #FFF; border-bottom: 3px sol
   }
 }
 @media screen and (min-width: 992px) and (max-width: 1200px){
-  .masthead-home{
-    margin-top: 10px; 
-    height: 550px;
+  .masthead-home{ 
+    height: 470px;
     width: 100%;
     background-color: #FFFFFF;
     background-image: url('https://imgee.s3.amazonaws.com/imgee/7cae7d9ce00d40e3b5dbec8a470122d1_w992_h475.jpeg');
     background-position: center;
+  }
+  #lamp {
+    height: 120px;
   }
   #mast-img{
     background-image: url('https://imgee.s3.amazonaws.com/imgee/aed54c5746084c1ea66d09fd1a970c92.png');
@@ -386,13 +395,15 @@ a.button:hover  { background-color: #359E5E; color: #FFF; border-bottom: 3px sol
   }
 }
 @media screen and (min-width: 1200px){
-  .masthead-home{
-    margin-top: 10px; 
-    height: 650px;
+  .masthead-home{ 
+    height: 570px;
     width: 100%;
     background-color: #FFFFFF;
     background-image: url('https://imgee.s3.amazonaws.com/imgee/7cae7d9ce00d40e3b5dbec8a470122d1_w1200_h574.jpeg');
     background-position: center;
+  }
+  #lamp {
+    height: 150px;
   }
 }
 @media screen and (max-width: 767px){
@@ -892,6 +903,10 @@ li.event-node{
   #nav-wrap{
     width: 200px;
   }
+}
+
+#nav-inner {
+  visibility: hidden;
 }
 
 .event-highlights li{

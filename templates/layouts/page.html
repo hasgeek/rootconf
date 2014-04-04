@@ -50,21 +50,20 @@
 </head>
 <body class="fill-greengray">
 
-<!-- <div class="fill-silver">
+<div class="fill-silver">
   {% block networkbar %}
-    {{ networkbar(siteid='events', login=false) }}
+    {{ networkbar(siteid='events', login=true) }}
   {% endblock %}
-</div> -->
+</div>
 
 
 <div id="page">
 
-{% block navtype %}
-<div id="nav-inner">
-{% endblock %}
+
 {% block nav %}
 <!-- <nav class="visible-phone mob-nav"><i class="icon-reorder icon-2x nav"></i></nav> -->
 
+<div id="nav-inner">
 <nav class="navbar navbar-inverse navbar-fixed-top" id="site-nav" role="navigation">
 
    <!-- Brand and toggle get grouped for better mobile display -->
@@ -98,7 +97,15 @@
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav navbar-right tiny">
       <li><a href="/2014/#funnel-proposals">Talks</a></li>
-      <li><a href="/2014/runup-events">Run-up Events</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Run-up Events <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="/2014/runup-bangalore">Bangalore</a></li>
+          <li><a href="/2014/runup-pune">Pune</a></li>
+          <li><a href="/2014/runup-delhi">Delhi</a></li>
+          <li><a href="/2014/runup-chennai">Chennai</a></li>
+        </ul>
+      </li>
       <!-- <li><a href="/2014/#highlights">Previous Editions</a></li> -->
       <li><a href="/2014/#venue">Venue</a></li>
       <li><a href="/2014/#about">About</a></li>
@@ -119,11 +126,11 @@
   </div><!-- /.navbar-collapse -->   
 
 </nav>
-{% endblock %}
 </div>
+{% endblock %}
 
 {% block banner %}
-<header class="fill-dark banner-internal push-two-bottom push-four-top resetcoords clearfix">
+<header class="fill-dark banner-internal push-two-bottom push-two-top resetcoords clearfix">
   <div class="container">
     <div class="row">
       <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
@@ -205,22 +212,15 @@ if (location.hostname == 'rootconf.in') {
     $(window).scroll(function () {
       var currentScroll = $(this).scrollTop();
       var checkPoint;
-      if(Modernizr.mq('only screen and (max-width: 45em)')){
-        checkPoint = 890;
-      } else if(Modernizr.mq('only screen and (min-width: 45em) and (max-width: 767px)')){
-        checkPoint = 1100;
+      if(Modernizr.mq('only screen and (max-width: 768px)')){
+        checkPoint = 100;
       } else {
-        checkPoint = 700;
+        checkPoint = 50;
       }
       if( currentScroll > checkPoint){
-        $('#nav-home').addClass('navbar-fixed-top');
+        $('#nav-inner').addClass('navbar-fixed-top').addClass('visible').removeClass('invisible');
       }  else {
-        $('#nav-home').removeClass('navbar-fixed-top');
-      }
-      if( currentScroll > 248){
-        $('#nav-inner').addClass('navbar-fixed-top');
-      }  else {
-        $('#nav-inner').removeClass('navbar-fixed-top');
+        $('#nav-inner').removeClass('navbar-fixed-top').removeClass('visible').addClass('invisible');
       }
     });
 </script>
