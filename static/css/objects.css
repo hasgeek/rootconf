@@ -8,6 +8,7 @@
     text-transform: uppercase;
     text-align: center;
     border-radius: 0.25em;
+    border: 0;
     border-bottom: 3px solid #359E5E;
 }
 a.button:hover  { background-color: #359E5E; color: #FFF; border-bottom: 3px solid #2C874F; }

@@ -490,6 +490,10 @@ body {
 }
 .scrollback-stream{
 	z-index: 9999 !important;
+	transition-property: none !important;
+	-webkit-transition-property: none !important;
+	-moz-transition-property: none !important;
+	-o-transition-property: none !important;
 }
 .scrollback-timeline, .scrollback-log {
 	background: #F7F9F9 !important;
