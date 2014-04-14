@@ -680,7 +680,7 @@ a.button:hover  { background-color: #359E5E; color: #FFF; border-bottom: 3px sol
 }
 .sponsor-compact > li:nth-child(3n+1) { margin-left: 0; }
 
-.sponsor-logo       { text-align: center; border-radius: 0.25rem; height: 5.34rem; line-height: 3.35rem; padding: .84rem; background-color: white;}
+.sponsor-logo       { text-align: center; border-radius: 0.25rem; height: 5.34rem; line-height: 4.5rem; padding: .3rem; background-color: white;}
 .sponsor-logo:hover { background-color: #E5E5E5 !important; }
 .sponsor-logo img   { max-height: 100%; max-width: 100%; }
 .sponsor-logo, .link-silent a.sponsor-logo {
@@ -689,7 +689,7 @@ a.button:hover  { background-color: #359E5E; color: #FFF; border-bottom: 3px sol
 
 .sponsor-xl       .sponsor-logo { height: 6.67rem;  line-height: 4rem;    padding: 1.34rem; }
 .sponsor-l        .sponsor-logo { height: 5.34rem;  line-height: 3.35rem; padding: .84rem;  }
-.sponsor-m        .sponsor-logo { height: 5.34rem;  line-height: 2.68rem; padding: 1.34rem; }
+.sponsor-m        .sponsor-logo { height: 5.34rem;  line-height: 4.5rem; padding: 0.34rem; }
 .sponsor-s        .sponsor-logo { height: 4rem;     line-height: 2rem;    padding: .84rem;  }
 .sponsor-compact  .sponsor-logo { height: 4rem;     line-height: 2rem;    padding: .84rem;  }
 
