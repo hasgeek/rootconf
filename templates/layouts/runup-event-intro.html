@@ -4,9 +4,8 @@
     {% if venue_id %}
         {% from theme("data/venues/%s.html" % venue_id) import venue %}
     {% endif %}
-    <section class="runup-event push-two clearfix{% if background %} fill-{{ background }}{% endif %}">
+    <section class="runup-event push-three clearfix{% if background %} fill-{{ background }}{% endif %}">
         <div class="container">
-            <div class="row-fluid">
                 {% set title = [] %}
                 {% if venue and venue.title %}
                     {% if title.append(venue.title) %}{% endif %}
@@ -15,24 +14,31 @@
                     {% endif %}
                 {% endif %}
                 {% set title = ", ".join(title) %}
-                <h2 class="col-lg-12 col-md-12 col-sm-12 col-xs-12">Run-up Event: {{ event.title }}</h2>
-                {% if event.when or title %}
-                    <h3 class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        {{ event.when }}
-                        {% if event.when and title %}&nbsp;&nbsp;|&nbsp;&nbsp;{% endif %}
-                        {{ title }}
-                    </h3>
-                {% endif %}
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <p>{{ node.description }}</p>
+
+            <div class="row">
+                <h2 class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">{{ event.title }}</h2>
+            </div>
+            {% if event.when or title %}
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 text-center space-one-bottom space-half-top">
+                    <span class="green regular">{{ event.when }}</span>&nbsp;&nbsp;
+                    <span class="gray regular">{{ title }}</span>
                 </div>
-                {% if event.timeline == 'past' and event.hgtv %}
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            </div>
+            {% endif %}
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-12 col-sm-12 col-xs-12">
+                    <p class="secondary-prose">{{ node.description }}</p>
+                </div>
+            </div>
+            {% if event.timeline == 'past' and event.hgtv %}
+            <div class="row text-center prose-type">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 space-one-top">
                     <p class="regular-prose red">This event is over!</p>
                     <p class="regular"><a href="{{ event.hgtv }}" class="button">Watch Videos on HasGeek TV</a></p>
                 </div>
-                {% endif %}
             </div>
+            {% endif %}
         </div>
     </section>
 {% endwith %}

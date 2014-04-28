@@ -344,11 +344,7 @@ a.button:hover  { background-color: #359E5E; color: #FFF; border-bottom: 3px sol
   border-color: #EFEFEF;
 }
 }
-@media screen and (max-width: 768px){
-  header{
-    margin-top: -50px;
-  }
-}
+
 @media screen and (min-width: 768px) and (max-width: 992px){
   .masthead-home{ 
     height: 470px;
@@ -517,19 +513,7 @@ a.button:hover  { background-color: #359E5E; color: #FFF; border-bottom: 3px sol
     background-size: contain;
     height: 0;
     width:       5.5rem;
-    padding-top: 5.5rem;
-    -webkit-transition: all 0.5s;
-       -moz-transition: all 0.5s;
-         -o-transition: all 0.5s;
-            transition: all 0.5s;
-}
-.banner-internal .logo:hover,
-.banner-internal .logo:focus {
-    -webkit-transform: rotate(360deg);
-       -moz-transform: rotate(360deg);
-        -ms-transform: rotate(360deg);
-         -o-transform: rotate(360deg);
-            transform: rotate(360deg);
+    padding-top: 3.5rem;
 }
 @media (max-width:767px) {
     .banner-internal .logo  { width: 1eem; }
@@ -751,21 +735,46 @@ li.event-node{
 
 
 .photo{
-  /*border-radius: 50%;*/
-  /*border-top: 5px solid;
-  border-right: 5px solid;*/
   width: 100%;
   overflow: hidden;
   z-index: 9;
-  /*border-radius: 50%;*/
   display: block;
+  border: 13px solid rgba(0,0,0, 0.1) !important;
+}
+.circle{
+  border-radius: 50%;
+  overflow: hidden;
+  width: auto;
 }
 .img-wrapper{
-  border: 13px solid rgba(0,0,0, 0.1) !important;
   display: block;
-  /*border-radius: 50%;*/
+  width: 100%;
+  clear: both;
   margin-left: auto;
   margin-right: auto;
+}
+.bg-photo{
+  height: 160px;
+  width: 160px;
+  display: block;
+  background-size: auto 100%;
+  background-position: center center;
+  margin: 0 auto;
+}
+
+.schedule-table td{
+  padding: 1em;
+}
+.schedule-table th{
+  padding: 1em;
+  background-color: #E9F0F3;
+  text-align: center;
+}
+.table-bordered.schedule-table{
+  border-color: #E9F0F3;
+}
+.schedule-slot{
+  width: 250px;
 }
 
 .featured-speakers h5{
@@ -1062,7 +1071,7 @@ li.event-node{
   display: block;
 }
 .table-bordered>thead>tr>th, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>tbody>tr>td, .table-bordered>tfoot>tr>td {
-  border: 1px solid #ccc;
+  border: 1px solid #E9F0F3;
 }
 
 .post-date{

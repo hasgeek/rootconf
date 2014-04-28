@@ -9,10 +9,12 @@
         ('runup-rsvp', 'dark'),
         ('runup-rsvp', 'gray'),
         ('runup-venue', 'dark'),
-        ('runup-events', 'white')
+        ('timeline', 'white')
     ]
   }
 %}
 {% if not node.content %}
   {% if page['sections'].pop(2) %}{% endif %}
 {% endif %}
+
+{% block pagetitle %}Run-up Event{% endblock %}
