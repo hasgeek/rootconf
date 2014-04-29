@@ -1352,6 +1352,7 @@ ul.navbar-brand>li>a{
   border-color: #DCE8ED;
   position: relative;
   background-color: #F6F9FA;
+  color: #444;
 }
 #htimeline .content:before, .content:after{
   content: "";

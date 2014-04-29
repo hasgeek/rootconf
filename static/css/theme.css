@@ -56,6 +56,7 @@ a.link-silent   { border-bottom: none; }
 .fill-lightgray { background-color: rgba(0,0,0,0.1) !important; color: #FCF3F3; }
 .fill-mediumgray { background-color: rgba(0,0,0,0.2) !important; color: #FCF3F3; }
 .fill-darkgray { background-color: rgba(0,0,0,0.3) !important; color: #FCF3F3; }
+.fill-darkblue { background-color: #171921 !important; color: #EEE; }
 
 .fill-gold      { background-color: rgba(204, 153, 0, 0.1); color: #333;}
 .fill-silver    { background-color: rgba(0, 0, 0, 0.1); color: #333;}
