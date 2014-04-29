@@ -6,36 +6,41 @@
     	<div class="row">
         <h3 class="col-lg-12 col-md-12 col-sm-12 col-xs-12 all-caps space-one-bottom large-prose text-center">Talks</h3>
       </div>
-      {% for item in event.schedule %}
-				{% if item.speaker %}
-      	<div class="row">
-					<div class="col-lg-5 col-lg-offset-2 col-md-6 col-md-offset-1 col-sm-6 col-xs-12">
-						<h4 class="green regular">{{ item.title|safe }}</h4>
-						<p>{{ item.description|safe }}</p>
-					</div>
-					<div class="col-lg-3 col-md-4 col-xs-12 col-sm-6 col-xs-12 text-center">
-						<div class="fill-gray push-3q-top push-half-bottom space-half pad-half">
-							{% if item.photo %}
-							<div class="row">
-								<div class="col-lg-12">
-									<div class="bg-photo circle" style="background-image: url({{ item.photo }})"></div>
-							</div>
-							{% endif %}
-							<h4 class="green">{{ item.speaker }}<h4>
-							<h5 class="bold">{{ item.designation|safe }}</h5>
-							<div class="regular-prose">
-								{% if item.linkedin %}<a class="link-silent" href="{{ item.linkedin }}" title="{{ item.speaker }} - LinkedIn" target="_blank"><i class="fa fa-linkedin-square"></i></a>{% endif %}
-								{% if item.twitter %}<a class="link-silent" href="https://twitter.com/{{ item.twitter }}" title="{{ item.speaker }} - twitter" target="_blank"><i class="fa fa-twitter-square"></i></a>{% endif %}
-								{% if item.github %}<a class="link-silent" href="https://github.com/{{ item.github }}" title="{{ item.speaker }} - twitter" target="_blank"><i class="fa fa-github-square"></i></a>{% endif %}
-							</div>
-						</div>					
-					</div>
-      	</div>
-      	<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12"><hr></div>
-				{% endif %}
-      {% endfor %}
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          {% for item in event.schedule %}
+            {% if item.speaker %}
+            <div class="row">
+              <div class="col-lg-5 col-lg-offset-2 col-md-6 col-md-offset-1 col-sm-6 col-xs-12">
+                <h4 class="green regular">{{ item.title|safe }}</h4>
+                <p>{{ item.description|safe }}</p>
+              </div>
+              <div class="col-lg-3 col-md-4 col-xs-12 col-sm-6 col-xs-12 text-center">
+                <div class="fill-gray push-3q-top push-half-bottom space-half pad-half">
+                  {% if item.photo %}
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="bg-photo circle" style="background-image: url({{ item.photo }})"></div>
+                  </div>
+                  {% endif %}
+                  <h4 class="green">{{ item.speaker }}<h4>
+                  <h5 class="bold">{{ item.designation|safe }}</h5>
+                  <div class="regular-prose">
+                    {% if item.linkedin %}<a class="link-silent" href="{{ item.linkedin }}" title="{{ item.speaker }} - LinkedIn" target="_blank"><i class="fa fa-linkedin-square"></i></a>{% endif %}
+                    {% if item.twitter %}<a class="link-silent" href="https://twitter.com/{{ item.twitter }}" title="{{ item.speaker }} - twitter" target="_blank"><i class="fa fa-twitter-square"></i></a>{% endif %}
+                    {% if item.github %}<a class="link-silent" href="https://github.com/{{ item.github }}" title="{{ item.speaker }} - twitter" target="_blank"><i class="fa fa-github-square"></i></a>{% endif %}
+                  </div>
+                </div>          
+              </div>
+            </div>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12"><hr></div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      
     	<div class="row">
-        <h3 class="col-lg-12 col-md-12 col-sm-12 col-xs-12 all-caps space-four-top space-line-bottom large-prose bold text-center">Schedule</h3>
+        <h3 class="col-lg-12 col-md-12 col-sm-12 col-xs-12 all-caps space-three-top space-line-bottom large-prose bold text-center">Schedule</h3>
       </div>
       <div class="row">
       	<div class="">
