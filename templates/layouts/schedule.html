@@ -38,7 +38,7 @@
             {% if item.track1 %}
               {% with item = sessions[item.track1] %}
                 <td class="text-right"><a href="#{{ item.id }}"><div class="secondary-prose green">{{ item.title|safe }}</div>
-                <h5 class="all-caps">{{ item.speaker }}</h5></a></td>
+                <h5 class="all-caps">{{ item.speaker|safe }}</h5></a></td>
 
               {% endwith %}
             {% else %}
@@ -49,7 +49,7 @@
             {% if item.track2 %}
               {% with item = sessions[item.track2] %}
                 <td><a href="#{{ item.id }}"><div class="secondary-prose green">{{ item.title|safe }}</div>
-                <h5 class="all-caps">{{ item.speaker }}</h5></a></td>
+                <h5 class="all-caps">{{ item.speaker|safe }}</h5></a></td>
 
               {% endwith %}
             {% else %}

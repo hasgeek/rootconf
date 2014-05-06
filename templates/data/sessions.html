@@ -1,223 +1,187 @@
 {%
   set talks = {
-    '996-faster-and-coincidentally-more-secure-webfonts': {
-        'id'          : '996-faster-and-coincidentally-more-secure-webfonts'
-      , 'speaker'     : 'Bram Pitoyo'
-      , 'title'       : 'Faster (and Coincidentally More Secure) Webfonts'
-      , 'designation' : 'UX Designer &amp; Typographer at Mozilla'
-      , 'place'       : 'Auckland, New Zealand'
-      , 'twitter'     : 'brampitoyo'
-      , 'blurb'       : '<p><ul><li>See how modern webfonts got here</li><li>Learn how to subset, embed, compress and precache your own webfonts</li><li>See benchmarks of different optimization methods</li><li>See at least one incredibly fun (though rather impractical) hack</li><li>Learn why the future looks even more exciting (and not just for webfonts)</li></ul></p>'
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/81b49f4ad2644f06a4d207597a6c312e_w210_h210.jpeg'
-      , 'preview'     : 'https://hasgeek.tv/metarefresh/2014-previews/836-meta-refresh-2014-faster-and-coincidentally-more-secure-webfonts'
+    '1067-building-elastic-infrastructures': {
+        'id'          : '1067-building-elastic-infrastructures'
+      , 'speaker'     : 'Pankaj Kaushal'
+      , 'title'       : 'Building Elastic Infrastructures'
+      , 'designation' : 'Master of disaster at Flipkart.com'
+      , 'place'       : 'Bangalore, India'
+      , 'linkedin'    : 'http://www.linkedin.com/in/pankajkaushal'
+      , 'blurb'       : '<p>Aim of this talk is to describe the current best practices and software to use when creating an auto scaling infrastructure. He will showcase an elastic infrastructure that is based on proven methods and open source software (Flipkart Hostdb and Puppet) which enables us to build a platform that inturn allows application engineers to create massively scalable web apps without losing sleep.</p>'
+      , 'requirements': '<p>Basic understanding of Virtualization and Puppet or Chef.</p>'
+      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/dd31670098fc48b8b7ce554777e8678c.jpeg'
+      , 'preview'     : ''
       , 'featured'    : true
     }
-    , '1021-what-we-learnt-at-ia-when-working-on-large-scale-d': {
-        'id'          : '1021-what-we-learnt-at-ia-when-working-on-large-scale-d'
-      , 'speaker'     : 'Chris Lüscher'
-      , 'title'       : 'What we learnt at iA when working on large-scale design projects'
-      , 'designation' : 'Co-founder of iA'
-      , 'place'       : 'Zurich, Switzerland'
-      , 'twitter'     : 'iA_Chris'
-      , 'sponsor'     : 'Swissnex India'
-      , 'sponsor_link' : 'https://twitter.com/swissnexindia'
-      , 'blurb'       : '<p>A large corporate presence, a news site, a complex backend tool, a SAAS platform: raw concept and design work is only part of what it takes to make large scale web design or redesign projects successful.</p><p>Projects that warrant the investment of hundreds of concept and design days usually take place in complex, sometimes entrenched corporate settings in which awareness building and change management, the quality of business, market and process analysis, the correct consideration of technological feasibility and technological agendas and, last but not least, the quality and depth of user research can make or break a project - or even the project owner’s business.</p><p>This presentation will describe a set of modules that help us successfully manage large scale design projects at <a href="http://ia.net/">iA</a>.</p><p>This talk targets project managers or product owners planning and and steering large scale web design projects, be it in an agency or on the client side. People who simply want to build design awareness within their company might find one or the other nugget too.</p>'
-      , 'preview'     : 'https://hasgeek.tv/metarefresh/2014-previews/829-what-we-learnt-at-ia-when-working-on-large-scale-design-projects'
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/cc71a042c6654c728a38c36691c75c0e.jpeg'
+    , '1108-quick-prototyping-with-lxc-and-puppet': {
+        'id'          : '1108-quick-prototyping-with-lxc-and-puppet'
+      , 'speaker'     : 'Benjamin Kero'
+      , 'title'       : 'Quick Prototyping with LXC and Puppet'
+      , 'designation' : 'Sr. Systems Administrator at Mozilla\'s Release Engineering team'
+      , 'place'       : 'Portland, OR'
+      , 'twitter'     : 'bkero'
+      , 'sponsor'     : 'Mozilla'
+      , 'sponsor_link' : 'https://www.mozilla.org/'
+      , 'blurb'       : '<p>The object for this presentation is to inform people about how they can better use container technologies to save time and resources compared to virtual machines, which in turn makes things such as continuous integration testing faster, and which can save them money on unnecessary resource usage. You\'ll also be able to understand the difference between Docker and LXC, and when it appropriate to use either tool.</p><p>In addition, He\'d like participants to leave the session with an understanding of what configuration management is, and how it can be used to automate or simplify some of their day-to-day activities.</p><p>He would also like to leave the participants with a basic understanding of how Linux cgroups and LXC work, and the ability to modify LXC templates to better suit their environment.</p>'
+      , 'requirements': '<p>Eyes and ears</p>'
+      , 'preview'     : ''
+      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/b16132577fbe4f94b6126a1654f732ba.jpeg'
       , 'featured'    : true
     }
-    , '969-components-now': {
-        'id'          : '969-components-now'
-      , 'speaker'     : 'Mikhail Davydov'
-      , 'title'       : 'Components now!'
-      , 'designation' : 'Front-End Еngineer at Yandex'
-      , 'place'       : 'Ekaterinburg, Russia'
-      , 'twitter'     : 'azproduction'
-      , 'sponsor'     : 'Yandex'
-      , 'sponsor_link' : 'http://www.yandex.com/'
-      , 'blurb'       : '<p>WebComponents is a great idea! The problem is that WebComponents API is in working draft...</p><p>Why we don\'t use just Components? Why we are waiting for that Web- prefix? We can use them right now and without havy polyfills! He will show you how to write Components today!</p>'
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/df435df797834f9ba26d6e49f00ef99d.jpeg'
-      , 'preview'     : 'https://hasgeek.tv/metarefresh/2014-previews/827-components-now'
+    , '1048-production-is-priority-self-fix-heal-techniques': {
+        'id'          : '1048-production-is-priority-self-fix-heal-techniques'
+      , 'speaker'     : 'Jabir Ahmed'
+      , 'title'       : 'Production is Priority - Self Fix / Heal Techniques'
+      , 'designation' : 'FHadoop Big Data Platform Team @ Inmobi'
+      , 'place'       : 'Bangalore, India'
+      , 'linkedin'    : 'http://www.linkedin.com/in/jabirahmed'
+      , 'blurb'       : '<p>To understand how to<ol><li>Monitor systems: a. Nagios b. Ganglia</li><li>Analyse Root cause</li><li>Automate the fix</li><li>Log / Record Incidents</li></ol></p>'
+      , 'requirements': '<p>Knowledge<ol><li>Nagios</li><li>Any flavor of Linux</li><li>Bash/Shell Scripting</li><li>Scripting Perl / Python</li><li>Programming / Automation</li><li>ActiveMQ added advantage.</li></ol></p>'
+      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/322e87c9a77d489b88046adde7ef6098.jpeg'
+      , 'preview'     : ''
       , 'featured'    : true
     }
-    , '987-a-front-end-architects-diary-rebuilding-freecharge': {
-        'id'          : '987-a-front-end-architects-diary-rebuilding-freecharge'
-      , 'speaker'     : 'Harish Sivaramakrishnan'
-      , 'title'       : 'A front end architect\'s diary - Rebuilding FreeCharge.in web experience'
-      , 'place'       : 'Bangalore, India'
-      , 'twitter'     : 'harish_io'
-      , 'designation' : 'Head of Front End Engineering &amp; UX at FreeCharge'
-      , 'blurb'       : '<p>A step by step account on what went into designing and architecting the new FreeCharge.in web experience. This session will throw light into what went into building a single page web app right from design to code to test.</p><p><ol><li>The design process - key considerations and how it evolved.</li><li>Choosing the front end stack</li><li>Building a true, full responsive experience</li><li>How many browsers can we realistically support?</li><li>Addressing the performance demons</li><li>The BIG SEO question</li><li></li><li>The mistakes, the learnings</li><li>The steps forward</li></ol></p>'
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/8dabfc3a608742488386ac91ce333ffb.jpeg'
-      , 'featured'    : true
-    }
-    , '971-playing-with-photoshop-files-for-fun-and-profit': {
-        'id'          : '971-playing-with-photoshop-files-for-fun-and-profit'
-      , 'speaker'     : 'Allagappan Muthuraman'
-      , 'title'       : 'Playing with Photoshop Files for fun and profit'
-      , 'designation' : 'Co-founder at Markupwand'
-      , 'place'       : 'Mountain View, California'
-      , 'twitter'     : 'alagu'
-      , 'blurb'       : '<p>This Talk will cover all the tech we learnt building Markupwand, a Product that converts PSD designs to HTML. This would help Frontend Engineers understand the PSD file format better and hack it for use..</p><p>Adobe\'s PSD format is a black box. But there are plenty of ways to open it up. We hacked and built tech to easily work with Photoshop documents.<ul><li>Case for Photoshop (Why people still use it)</li><li>What information you can get from a PSD file</li><li>Extracting out information using ExtendScript and psd.js</li><li>Automatically extracting out images</li><li>Having an interchange format (a JSON of your PSD)</li><li>Translating them to CSS3/SASS</li></ul>Extracting out information from PSD is useful and has multiple applications - versioning of images, automating your Frontend Workflow, Generating CSS, Finding out font requirements, Color Palettes.</p>'
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/a6fea551d81b44c2aacccdd08a55eb3f.jpeg'
-      , 'featured'    : false
-    }
-    , '1026-all-about-perceived-web-performance': {
-        'id'          : '1026-all-about-perceived-web-performance'
-      , 'title'       : 'All about perceived web performance'
-      , 'speaker'     : 'Aakash Bapna'
-      , 'designation' : 'Frontend Engineer at Flipkart'
-      , 'place'       : 'Bangalore, India'
-      , 'twitter'     : '_aakash'
-      , 'blurb'       : '<p>To understand perceived performance, measuring it, working with designers to fix it and making sure it doesn\'t deteriorate again.</p>'
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/011a0c7d080d4218ab6c8529b99d5aa5.jpeg'
-      , 'featured'    : false
-    }
-    , '986-data-driven-ux-decisions': {
-        'id'          : '986-data-driven-ux-decisions'
-      , 'speaker'     : 'Rajagopal Natarajan'
-      , 'title'       : 'Data driven UX decisions'
-      , 'designation' : 'Co-founder at Markupwand'
-      , 'place'       : 'Bangalore, India'
-      , 'twitter'     : 'haxplorer'
-      , 'blurb'       : '<p>Understand the principles of data driven decision making when it comes to User Experience. Explore a few examples around the topic.</p>'
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/17d92f5227304d02b1747aff20fe0d14.jpeg'
-      , 'preview'     : 'https://hasgeek.tv/metarefresh/2014-previews/831-data-driven-ux-decisions'
-      , 'featured'    : true
-    }
-    , '950-jank-busted-rendering': {
-        'id'          : '950-jank-busted-rendering'
-      , 'speaker'     : 'Amit Agarwal'
-      , 'title'       : 'Jank busted Rendering'
-      , 'designation' : 'Tech Lead at Yahoo!'
-      , 'place'       : 'Bangalore, India'
-      , 'twitter'     : 'alterjs'
-      , 'blurb'       : '<p>This talk is about super fast web page rendering. This talk will quickly show a number of tips which speed up rendering in a webpage. These tips will help you in various aspects of performance optimization like fast scrolling, reducing number of reflows, optmizing css expressions.</p>'
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/dc80cf69373a49348f84272c1368f789.jpeg'
-      , 'featured'    : false
-    }
-    , '957-how-viable-is-a-minimum-viable-product': {
-        'id'          : '957-how-viable-is-a-minimum-viable-product'
-      , 'speaker'     : 'Rajesh Bysani'
-      , 'title'       : 'How viable is a Minimum Viable Product?'
-      , 'designation' : 'Asst. Vice President, Product at FreeCharge.in'
-      , 'place'       : 'Bangalore, India'
-      , 'twitter'     : 'fartfree'
-      , 'blurb'       : '<p>If you are an entrepreneur or you work in a startup, you know that the most important thing is to ship fast. But more important than shipping fast is shipping right. The agile method helps us in building and shipping products quickly but how many times have you had to revert on a feature or redesign completely because that\'s not what the customers wanted?</p><p>In the session we will try to find out the best answers these questions.</p><p>How do you find out what is right for your customers? How do you get your hypothesis tested? How do you get your design tested? What is a minimum viable product? How do you build a minimum viable product?</p>'
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/51f6c8d021a94a4f847e193b0d51129d.jpeg'
-      , 'featured'    : false
-    }
-    , '989-books-browser-on-offline-reading-redefined': {
-        'id'          : '989-books-browser-on-offline-reading-redefined'
-      , 'speaker'     : 'Amarjeet Singh'
-      , 'title'       : 'Books + Browser + On/Offline = Reading Redefined'
-      , 'designation' : 'User Interface Engineer at Flipkart'
-      , 'place'       : 'Bangalore, India'
-      , 'twitter'     : ''
-      , 'blurb'       : '<p>Bringing Book Reading to a browser without compromising on native app reading experience - fast, free styling, secure and most importantly offline reading mode.</p>'
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/fd67c3938d024ae1926b9347f7d0f4a0.jpeg'
-      , 'featured'    : true
-    }
-    , '991-develop-to-design-a-guide-to-emergency-design-for-': {
-        'id'          : '991-develop-to-design-a-guide-to-emergency-design-for-'
-      , 'speaker'     : 'Rahul Chanila'
-      , 'title'       : 'Develop to Design - A guide to emergency design for front-end developers'
-      , 'designation' : 'Front-end developer at Unbxd'
-      , 'place'       : 'Bangalore, India'
-      , 'twitter'     : 'rahulcs'
-      , 'blurb'       : '<p>To help developers avoid making design mistakes that leads to jarring user experience. Design is hard and as developers we tend to focus more on functionality. But I believe we need to understand that design is more than making things pretty and goes a long way in developing to make your customer/user happy.</p>'
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/31684e94e64943a5a8c9a6911c3293b0.jpeg'
-      , 'preview'     : 'https://hasgeek.tv/metarefresh/2014-previews/833-develop-to-design-a-guide-to-emergency-design-for-front-end-developers'
-      , 'featured'    : false
-    }
-    , '1016-mobile-first-approach-the-key-to-cross-platform-in': {
-        'id'          : '1016-mobile-first-approach-the-key-to-cross-platform-in'
-      , 'speaker'     : 'Vivek Parihar '
-      , 'title'       : 'Mobile First Approach - The key to cross platform interface design'
+    , '1042-how-fast-can-you-onboard-a-new-team-member': {
+        'id'          : '1042-how-fast-can-you-onboard-a-new-team-member'
+      , 'speaker'     : 'Vivek Parihar'
+      , 'title'       : 'How fast can you onboard a new team member'
       , 'designation' : 'Asst. Vice President- Engineering at Webonise Lab'
       , 'place'       : 'Pune, India'
       , 'twitter'     : 'vparihar'
-      , 'blurb'       : '<p>Mobile first design has been taking centrestage in the consumer internet media stage. This makes it extremely important for the Design/development community to understand the intricacies, pitfalls and the right practices about it.</p><p>From his own experiments, speaker has elicited few interesting protcols and practices for the same. The presentation aims to share the results of the successful experiments and open up discussion on what the best way forward can be.</p>'
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/a52f48039a644846b040b634e6126c94.jpeg'
-      , 'featured'    : true
-    }
-    , '940-micro-interactions-designing-the-details': {
-        'id'          : '940-micro-interactions-designing-the-details'
-      , 'speaker'     : 'Praneet Koppula'
-      , 'title'       : 'Micro-interactions - Designing the Details'
-      , 'designation' : 'Head of UX &amp; Product team at Bang The Table'
-      , 'place'       : 'Bangalore, India'
-      , 'twitter'     : 'mphaxise'
-      , 'blurb'       : '<p>As professionals working on digital products, all of us aspire to build great products that address a great need and delight the users. Even if our products solve the need or the big picture; unless the details are also handled properly; the solution fails. The details control the moment-to-moment experience. The details if done right, take your product from being just good enough to great.</p><p>This talk will help you identify opportunities to look for these details, provide a framework to design them and finally tips on how to test and get them right.</p>'
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/6849b21094cd4b3f95a1dbd0451f6235.jpeg'
+      , 'linkedin'    : 'http://www.linkedin.com/in/pariharvivek'
+      , 'blurb'       : '<p>Automating Development Environments with Vagrant which ends "It works on my machine" and provides a fast or an easy way to have a local dev environment that resembles production environment.</p>'
+      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/8202605865c44d0b850176630ee07c22.jpeg'
       , 'featured'    : false
     }
-    , '1032-web-is-flux': {
-        'id'          : '1032-web-is-flux'
-      , 'speaker'     : 'Souvik Das Gupta'
-      , 'title'       : 'Web is flux'
-      , 'designation' : 'Co-founder of Miranj'
-      , 'place'       : 'New Delhi, India'
-      , 'twitter'     : 'souvikdg'
-      , 'blurb'       : '<p>To emphasise the changing nature of web, and to encourage adoption of progressive enhancement.</p><p>The amount of control that we as a community exercise on the web is unfortunate. The web is far more flexible and inclusive than we believe it to be. Let’s appreciate the beauty of the web and understand why we should adopt (and encourage) practices that uphold the spirit of the web.<blockquote>Is this going to be preachy?<br>Slightly.</blockquote></p>'
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/dc6bdbfc9f894c01a1e1bb842a75d8e1.jpeg'
+    , '1104-scale-anything-with-haproxy': {
+        'id'          : '1104-scale-anything-with-haproxy'
+      , 'speaker'     : 'Mohamed Imran K R'
+      , 'title'       : 'Scale anything with haproxy'
+      , 'place'       : 'Bangalore, India'
+      , 'twitter'     : 'mohamedimran_kr'
+      , 'designation' : 'COO of E2ENetworks'
+      , 'blurb'       : '<p><ul><li>Introduce haproxy as a webscale load-balancer capable of scaling any workloads</li><li>Demonstrate haproxy as a solution to scaling webservers, webservices, DB and discuss just about scaling any specific technology the audience wants to discuss</li><li>Discuss load-balancing strategies with an example</li><li>Discuss specific architecure solutions for magento, wordpress, drupal and elucidate how even a structureless/frameworkless app can be scaled</li><li>Introduce inotify based sync mechanism as an alternative to shared storage for use in load-balanced webservers</li><li>Introduce to security features of haproxy like rate-limiting and blackholing techniques to avoid webservers from being overwhelmed by specific attacks (should not be taken as DDoS protection schemes)</li><li>Demonstrate any audience query on load-balancing with an example (time permitting, we can do a full deployment)</li></ul></p>'
+      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/5db04e89aed048d1ab25ab22bf197970.jpeg'
+      , 'featured'    : true
+    }
+    , '1103-tsuru-serve-it-yourself': {
+        'id'          : '1103-tsuru-serve-it-yourself'
+      , 'title'       : 'Tsuru - Serve it yourself.'
+      , 'speaker'     : 'Rohit Nair'
+      , 'designation' : 'Senior System Adminstrator at Directi'
+      , 'place'       : 'Mumbai, India'
+      , 'linkedin'     : 'http://www.linkedin.com/in/rohitnair86'
+      , 'blurb'       : '<p>Tsuru is a open source PAAS system. It helps Sysads to create generic infrastructure and platform in place which comes into life once the developer pushes the code. This self servicing mechanism will be useful to reduce the layers like config management. Since Tsuru leverages the features of docker, it supports both - isolation and scaling. For not so adventurous sysads, who are not ready to risk a software which is in heavy development in production, tsuru can be integrated with the build system, the testing infrastructure can be containers which can be spawned and stopped as needed.</p>'
+      , 'requirements': 'Docker, Linux containers (LXC).'
+      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/a6842124190f4765b6c0b8d4869e8bfe.jpeg'
       , 'featured'    : false
     }
-    , '960-css-3-animations-and-transitional-interfaces': {
-        'id'          : '960-css-3-animations-and-transitional-interfaces'
-      , 'speaker'     : 'Raghu Nayyar'
-      , 'title'       : 'CSS 3 Animations and Transitional Interfaces'
-      , 'designation' : 'Open Source Contributor, ownCloud'
-      , 'place'       : 'New Delhi, India'
-      , 'twitter'     : 'raghunayyar'
-      , 'blurb'       : '<p>The main objective of the talk to give the audience an idea about one of the most important aspects of web design, transitions, and how they can be used to enhance the information architecture and flow of a web page.</p>'
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/300bc8f46b674143b025a95cc7b11d0e.jpeg'
-      , 'preview'     : 'https://hasgeek.tv/metarefresh/2014-previews/830-css3-animations-and-transitional-interfaces'
-      , 'featured'    : true
-    }
-    , '977-desktop-the-final-frontier': {
-        'id'          : '977-desktop-the-final-frontier'
-      , 'speaker'     : 'Anirudh Sanjeev'
-      , 'title'       : 'Desktop: The final frontier'
-      , 'designation' : 'Co-founder of RazorFlow'
+    , '1113-diggin-diamonds-from-a-coal-minex': {
+        'id'          : '1113-diggin-diamonds-from-a-coal-minex'
+      , 'speaker'     : 'Sudeep Agarwal'
+      , 'title'       : 'Diggin\' Diamonds from a Coal Mine'
+      , 'designation' : 'System Administrator at Directi'
       , 'place'       : 'Bangalore, India'
-      , 'twitter'     : ''
-      , 'blurb'       : '<p>This talk will help you understand the different frameworks to run your HTML/JS/CSS app as a first-class desktop application.</p><p>The platforms that intend to cover are:<ul><li>Chrome Embedded Framework</li><li>Chrome packaged apps</li><li>Webkit GTK+</li><li>Adobe AIR</li><li>Appjs</li><li>Tide SDK</li><li>node-webkit</li><li>QT\'s QHtml5Application</li><li>HeX</li><li>Bellite</li></ul></p>'
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/46703ad6c97e4fe4a4c3b4a203acf49d.jpeg'
+      , 'linkedin'     : 'http://www.linkedin.com/pub/sudeep-agarwal/65/547/3'
+      , 'blurb'       : '<p>To showcase how we at Directi, flesh out relevant information for people at all technical and managerial positions, from the events generated by our massive infrastructure in the form of service states, metrics and logs.</p>'
+      , 'photo'       : ''
+      , 'preview'     : ''
       , 'featured'    : true
     }
-    , '1031-designing-at-break-neck-speed': {
-        'id'          : '1031-designing-at-break-neck-speed'
-      , 'speaker'     : 'Anand A'
-      , 'title'       : 'Designing at break neck speed'
-      , 'designation' : 'UX Design Head at Cucumbertown'
-      , 'place'       : 'Chennai, India'
-      , 'twitter'     : ''
-      , 'blurb'       : '<p>A primar to the many challenges of working in a fast paced startup/agile environment for a designer and possible solutions to avoid common mistakes.</p>'
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/4174bccae4f1415884f5f181a01572e7.jpeg'
-      , 'preview'     : 'https://hasgeek.tv/metarefresh/2014-previews/832-designing-at-break-neck-speed'
-      , 'featured'    : true
-    }
-    , '999-save-time-and-your-brains-cpu-cycles-with-gulpjs': {
-        'id'          : '999-save-time-and-your-brains-cpu-cycles-with-gulpjs'
-      , 'speaker'     : 'Hage Yaapa'
-      , 'title'       : 'Save time and your brain\'s CPU cycles with Gulpjs'
-      , 'designation' : 'Partner at Sourcebits, Inc.'
+    , '1045-testing-infrastructure-code-using-test-kitchen-doc': {
+        'id'          : '1045-testing-infrastructure-code-using-test-kitchen-doc'
+      , 'speaker'     : 'Kamalika Majumder'
+      , 'title'       : 'Testing Infrastructure Code using Test-kitchen, Docker and Chef-Zero'
+      , 'designation' : 'Senior Consultant at Thoughtworks'
       , 'place'       : 'Bangalore, India'
-      , 'twitter'     : 'hacksparrow'
-      , 'blurb'       : '<p>To quickly introduce the concept of task running and automation in web development, and show how to do it using Gulpjs. Gulpjs is a new entrant in the field of task runners written in JavaScript. It is an alternative to the very popular Gruntjs.</p><p>After this session, those not familar with task running, will instantly fall in love with Gulpjs, and make task running with Gulpjs a part of their life; those using Gruntjs are likely to make a switch.</p>'
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/b459d55b703549888c89abfd1891446e.jpeg'
+      , 'twitter'     : 'mjkamalika'
+      , 'linkedin'    : 'http://in.linkedin.com/in/kamalikamajumder'
+      , 'blurb'       : '<p>With more and more use of automation for environment provision it has become very important that TDD is followed for Devops/Infrastructure code as it is followed application code.</p><p>The Session will describe how chef recipes,databags etc can be tested in local dev box environmnet before they are uploaded to chef server and used in deployments.</p><p>This session will aim towards using the combination of Test-kitchen gem with kitchen-docker plugin and chef-zero. This will help understanding test driven development of devops code in an private environment without interrupting the working environment.</p>'
+      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/c35043dd4fcd4739970dba96e1a316be.jpeg'
+      , 'featured'    : false
+    }
+    , '1115-when-the-internet-bleeded': {
+        'id'          : '1115-when-the-internet-bleeded'
+      , 'speaker'     : 'Anant Shrivastava'
+      , 'title'       : 'When the Internet Bleeded'
+      , 'designation' : 'Server Administrator / Information Security Consultant'
+      , 'place'       : 'Bangalore, India'
+      , 'linkedin'    : 'https://www.linkedin.com/in/anantshri'
+      , 'github'      : 'anantshri'
+      , 'blurb'       : '<p>The talk will talk about various TLS / SSL related bugs that are identified in past year.<ul><li>HeartBleed</li><li>GNUTLS Bug</li><li>Apple SSL Bug</li><li>Lucky 13</li><li>BEAST</li><li>CRIME</li></ul></p><p>These bugs have shaken the core premise of Secure communication. The talk will focus on bringing a basic understanding of these issues to the administrators or developers. Besides this the talk will also focus on some burning questions that are now raised in wild. Such as<ul><li>How secure are secure Socket Libraries?</li><li>Is opensource code really secure?</li><li>Is it really true that "given enough eyeballs, all bugs are shallow"?</li><li>Should we move towards higher abstract languages?</li></ul></p><p>and most important: What it really means for a Administrator / DevOps person</p>'
+      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/d75d7263111d4ec980268606c03cae27.jpeg'
+      , 'featured'    : false
+    }
+    , '1112-mesos-cluster-management-framework-and-its-role-at': {
+        'id'          : '1112-mesos-cluster-management-framework-and-its-role-at'
+      , 'speaker'     : 'Yagnik'
+      , 'title'       : 'Mesos: Cluster management framework and it\'s role at Shopify'
+      , 'designation' : 'Software developer at Shopify'
+      , 'place'       : 'Bangalore, India'
+      , 'linkedin'    : 'http://www.linkedin.com/in/yagnik'
+      , 'blurb'       : '<p>As applications get scaled across multiple server, there is a need to maximize resource utilization, minimize data replication across different applications by allowing applications/frameworks to share data centre. The talk will introduce Apache Mesos, a framework for sharing resources across nodes in a data centre along with details about it\’s architecture. It will also cover how Shopify uses Mesos to power its infrastructure and scale on demand.</p>'
+      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/3d02ae11328d4fe2b302ef52c2d6e911.jpeg'
       , 'featured'    : true
     }
-    , '964-modern-web-graphics-design-using-svg': {
-        'id'          : '964-modern-web-graphics-design-using-svg'
-      , 'speaker'     : 'Priyanka Herur'
-      , 'title'       : 'Modern web graphics design using SVG'
-      , 'designation' : 'Software Engineer at Adobe'
+    , '1041-building-orchestration-and-configuration-with-ansi': {
+        'id'          : '1041-building-orchestration-and-configuration-with-ansi'
+      , 'speaker'     : 'Aditya Patawari'
+      , 'title'       : 'Building Orchestration and Configuration with Ansible'
+      , 'designation' : 'Cloud and Infrastructure Engineer at BrowserStack.com'
       , 'place'       : 'Bangalore, India'
-      , 'twitter'     : ''
-      , 'blurb'       : '<p>This talk will cover all facets of designing assets through SVG. This will be covered with examples.</p><p>Things that will be discussed in detail:<ol><li>What, Why and where you need SVG?</li><li>Elements such as path along with properties such as backgrounds and patterns</li><li>Clipping, Masking and Blending</li><li>SVG filters and animation</li><li>SVG libraries such as Snap, Raphael, etc.,</li><li>Future of SVG</li></ol></p>'
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/f3000ccbea5247a2a363eaedf2e5c9e8.png'
+      , 'twitter'     : 'adityapatawari'
+      , 'linkedin'    : 'http://www.linkedin.com/in/adityapatawari'
+      , 'blurb'       : '<p>Ansible is a an agentless orchestration tool which does more or less what Puppet and Chef do. It relies on OpenSSH for transport and YAML for creating playbooks.</p><p>Playbook is essentially a list of rules which are applied to a (set of) server to put them in desired configuration.</p><p>In this talk, he will show how to execute ad hoc commands on one or more servers as well as create simple playbooks. I will also talk about the best practices to use Ansible in order to get maximum benefit out of it.</p><p>Lastly he will share their own story where Ansible really helped them in deploying Virtualization (Xen) Servers vs Pupppet whose compatibility gave them really hard time.</p>'
+      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/6ac37c61091c445785117e80ea9bc7b8.jpeg'
+      , 'preview'     : ''
+      , 'featured'    : false
+    }
+    , '1063-citoengine-alert-management-and-automation-tool': {
+        'id'          : '1063-citoengine-alert-management-and-automation-tool'
+      , 'speaker'     : 'Cyrus Dasadia'
+      , 'title'       : 'CitoEngine: Alert management and automation tool.'
+      , 'designation' : 'Sr. Tech Lead - Production Engineering (DevOps), Inmobi'
+      , 'place'       : 'Bangalore, India'
+      , 'twitter'     : 'ExtremeUnix'
+      , 'linkedin'    : 'http://www.linkedin.com/in/ministryofsillywalks'
+      , 'blurb'       : '<p>Get rid of pesky duplicate alerts and fiddling through the runbooks. Try the new CitoEngine! It eats up all your alerts, takes actions based on smart rules you define and helps the environment[citation_needed]</p>'
+      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/d49b9efd19184c9e878e26d3fd49ad42.jpeg'
+      , 'featured'    : true
+    }
+    , '1034-automation-using-robotframework-for-embedded-devic': {
+        'id'          : '1034-automation-using-robotframework-for-embedded-devic'
+      , 'speaker'     : 'Sriramkumar VH'
+      , 'title'       : 'Automation using RobotFramework for embedded device'
+      , 'designation' : 'Founder and CEO of Watchy Technology pvt ltd.'
+      , 'place'       : 'Bangalore, India'
+      , 'linkedin'     : 'http://www.linkedin.com/pub/srix-sriramkumar/a/419/a63'
+      , 'blurb'       : '<p>Understand Keydriven testing and data driven testing using examples.<br>Compare KDT and DDT testcases with manual testcases<br>Walkthrough on KDT and DDT using Robot framework.<br>Applying KDT and DDT on embedded/hardware projects<br>Extending Robotframework to support any language or tools like sikuli</p>'
+      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/69728455fbc24c71bb04d731cca3e1a9.jpeg'
+      , 'featured'    : false
+    }
+    , '1109-avoiding-single-point-of-failure-in-a-multi-servic': {
+        'id'          : '1109-avoiding-single-point-of-failure-in-a-multi-servic'
+      , 'speaker'     : 'Gurteshwar Singh'
+      , 'title'       : 'Avoiding single point of failure in a multi-services architecture'
+      , 'designation' : 'Product Engineer at Plivo Inc'
+      , 'place'       : 'Bangalore, India'
+      , 'twitter'     : 'GurteshwarSingh'
+      , 'linkedin'    : 'http://www.linkedin.com/in/grsingh'
+      , 'blurb'       : '<p>The audience would learn how we at Plivo avoid single point of failures, in a complex architecture that has lots of moving parts and is on the cloud as well as dedicated hardware.</p>'
+      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/ac550a773e1d434d896fa1cf275c123d.jpeg'
+      , 'featured'    : false
+    }
+    , '1123-scaling-databases-with-a-database-abstraction-laye': {
+        'id'          : '1123-scaling-databases-with-a-database-abstraction-laye'
+      , 'speaker'     : 'Gaurav Gupta'
+      , 'title'       : 'Scaling databases with a database abstraction layer'
+      , 'designation' : 'VP of Engineering at ScaleArc'
+      , 'place'       : 'Mumbai, India'
+      , 'github'      : 'gagupta'
+      , 'linkedin'    : 'http://www.linkedin.com/in/gagupta79'
+      , 'blurb'       : '<p>The objective of this session is to discuss an architecture to scale and manage the database tier by introducing a database abstraction layer. We will discuss various challenges of database scalability and then discuss few solutions.</p><p>He will be taking few references from the Facebook\'s WebscaleSQL project, Google\'s spanner paper and MySQL proxy.</p>'
+      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/86951c3b2a8840b992ccd974c008a0d5.jpeg'
+      , 'preview'     : ''
       , 'featured'    : true
     }
     , 'flash-talks':{
@@ -226,10 +190,10 @@
       , 'speaker'     : 'You!'
       , 'other'       : true
     }
-    , 'design-hacks':{
-        'id'          : 'design-hacks'
-      , 'title'       : 'Design Hacks'
-      , 'speaker'     : 'Design hacks'
+    , 'on-azure':{
+        'id'          : 'on-azure'
+      , 'title'       : 'On Azure'
+      , 'speaker'     : ''
       , 'other'       : true
     }
     , 'closing':{
