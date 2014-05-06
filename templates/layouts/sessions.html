@@ -1,48 +1,46 @@
 <section id="sessions" class="push-two clearfix{% if background %} fill-{{ background }}{% endif %}">
-  <div class="row-fluid container text-center">
-    <h2 class="offset1 extralarge all-caps space-two-bottom">Talks</h2>
+<div class="container">
+  <div class="row text-center">
+    <h2 class="offset1 extralarge all-caps space-two-bottom">{{ session.label }}</h2>
   </div>
-  {% for item in talks %}
-    <div id="{{ item.id }}" class="row-fluid container push-two">
-      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 legible space-two-bottom clearfix text-right">
-        <h3 class="all-caps nospace-top semibold">{{ item.title|safe }}</h3>
-        <img class="speaker-photo {% if item.type == 'app-demos' %}theme-green{% elif item.type == 'systems' %}theme-red{% elif item.type == 'business' %}theme-blue{% elif item.type == 'gaming' %}theme-orange{% elif item.type == 'ux' %}theme-violet{% endif %}" src="{{ item.photo }}" alt="">
-        <h4 class="prose-type calm italic"><span class="legible-prose">{{ item.speaker }}</span></h4>
-        <h5 class="italic">{{ item.designation|safe }}</h5>
-      </div>
-      <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 legible-prose prose prose-type">
-        <div class="prose-type regular-prose space-three-bottom">
-          {{ item.blurb|safe }}
-          <ul class="list-plain secondary prose space-one-top">
-            {% if item.funnel %}<li class="flushleft"><a href="{{ item.funnel }}">Funnel Proposal</a></li>{% endif %}
-            {% if item.preview %}<li class="flushright"><a href="{{ item.preview }}">Preview</a></li>{% endif %}
-          </ul>
+
+
+       <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          {% for item in session.list %}
+            {% if not item.other %}
+            <div class="row">
+              <div class="col-lg-5 col-lg-offset-2 col-md-6 col-md-offset-1 col-sm-6 col-xs-12">
+                <h4 class="green regular">{{ item.title|safe }}</h4>
+                <p>{{ item.blurb|safe }}</p>
+                <ul class="list-plain secondary prose space-one-top">
+                  <li class="flushleft"><a target="_blank" href="https://funnel.hasgeek.com/metarefresh2014/{{ item.id }}">Funnel Proposal</a></li>
+                  {% if item.preview %}<li class="flushright"><a target="_blank" href="{{ item.preview }}">Preview</a></li>{% endif %}
+                </ul>
+              </div>
+              <div class="col-lg-3 col-md-4 col-xs-12 col-sm-6 col-xs-12 text-center">
+                <div class="fill-gray push-3q-top push-half-bottom space-half pad-half">
+                  {% if item.photo %}
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="bg-photo circle" style="background-image: url({{ item.photo }})"></div>
+                    </div>
+                  </div>
+                  {% endif %}
+                  <h4 class="green">{{ item.speaker }}<h4>
+                  <h5 class="bold">{{ item.designation|safe }}</h5>
+                  <div class="regular-prose">
+                    {% if item.linkedin %}<a class="link-silent" href="{{ item.linkedin }}" title="{{ item.speaker }} - LinkedIn" target="_blank"><i class="fa fa-linkedin-square"></i></a>{% endif %}
+                    {% if item.twitter %}<a class="link-silent" href="https://twitter.com/{{ item.twitter }}" title="{{ item.speaker }} - twitter" target="_blank"><i class="fa fa-twitter-square"></i></a>{% endif %}
+                    {% if item.github %}<a class="link-silent" href="https://github.com/{{ item.github }}" title="{{ item.speaker }} - twitter" target="_blank"><i class="fa fa-github-square"></i></a>{% endif %}
+                  </div>
+                </div>          
+              </div>
+            </div>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12"><hr></div>
+            {% endif %}
+          {% endfor %}
         </div>
       </div>
-    </div>
-  {% endfor %}
-  <div class="row-fluid container text-center">
-    <h2 class="offset1 extralarge all-caps space-two-bottom">Panel Discussions</h2>
-  </div>
-  {% for item in paneldiscussions %}
-    <div id="{{ item.id }}" class="row-fluid container push-two">
-      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 legible space-two-bottom clearfix text-right">
-        <h3 class="all-caps nospace-top semibold">{{ item.title|safe }}</h3>
-        {% for member in item.panelists %}
-          <img class="speaker-photo {% if item.type == 'app-demos' %}theme-green{% elif item.type == 'systems' %}theme-red{% elif item.type == 'business' %}theme-blue{% elif item.type == 'gaming' %}theme-orange{% elif item.type == 'ux' %}theme-violet{% endif %}" src="{{ member.photo }}" alt="">
-          <h4 class="prose-type calm italic"><span class="legible-prose">{{ member.speaker }}</span></h4>
-          <h5 class="italic">{{ member.designation|safe }}</h5>
-        {% endfor %}     
       </div>
-      <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 legible-prose prose prose-type">
-        <div class="prose-type regular-prose space-three-bottom">
-          {{ item.blurb|safe }}
-          <ul class="list-plain secondary prose space-one-top">
-            {% if item.funnel %}<li class="flushleft"><a href="{{ item.funnel }}">Funnel Proposal</a></li>{% endif %}
-            {% if item.preview %}<li class="flushright"><a href="{{ item.preview }}">Preview</a></li>{% endif %}
-          </ul>
-        </div>
-      </div>
-    </div>
-  {% endfor %}
 </section>

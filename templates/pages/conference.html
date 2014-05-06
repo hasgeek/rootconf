@@ -1,20 +1,15 @@
 {% extends theme('layouts/page.html') %}
-{% from theme("data/conference-schedule-day1.html") import schedule as schedule_day1 %}
-{% from theme("data/conference-schedule-day2.html") import schedule as schedule_day2 %}
+{% from theme("data/conference-schedule.html") import schedule as schedule %}
 {%
   set page = {
       'title'       : 'Conference'
-    , 'description' : ''
+    , 'description' : '14 - 15 February 2014'
     , 'sections'    : [
-        ('conference-intro',          'green')
-      , ('conference-sessions', '')
-      , ('conference-schedule-day1',  'blue')
-      , ('color-index',  'blue')
-      , ('schedule-sponsor-banner', 'green')
-      , ('conference-schedule-day2',  'dark')
-      , ('conference-venue',          'green')
-      , ('sponsors-summary',          'blue')
+        ('conference-intro',          'gray')
+      , ('conference-schedule',  'dark')
+      , ('conference-sessions',  'white')
+      , ('conference-venue',          'dark')
+      , ('sponsors-summary',          'darkblue')
     ]
   }
 %}
-{% block pagetitle %}Conference{% endblock %}

@@ -1,64 +1,66 @@
-<section id="{{ schedule.id }}" class="schedule push-two clearfix{% if background %} fill-{{ background }}{% endif %}">
+<section id="{{ schedule.id }}" class="schedule push-three-top push-four-bottom clearfix{% if background %} fill-{{ background }}{% endif %}">
   <div class="row text-center">
-    <h2 class="col-lg-12 col-md-12 col-sm-12 col-xs-12 extralarge all-caps space-two-bottom">Schedule{% if schedule.date %} — {{ schedule.date|safe }}{% endif %}</h2>
+    {% if talks %}
+      {% set sessions = talks %}
+    {% elif workshops %}
+      {% set sessions = workshops %}
+    {% endif %}
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 extralarge semibold all-caps space-half-bottom">{{ schedule.type }} Schedule</div>
+    <div class="all-caps legible dark-gray space-two-bottom">{% if schedule.date %}{{ schedule.date|safe }}{% endif %} <button class="tiny-prose button white button-mini" data-toggle="modal" data-target="#myModal"><i class="icon-calendar"></i>&nbsp;&nbsp;Subscribe</button></div>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body dark">
+          <h3><i class="icon-calendar"></i>&nbsp;&nbsp;AngularJS Miniconf</h3>
+          <div class="tiny"><a href="webcal://funnel.hasgeek.com/angularjs-miniconf-2014/schedule/ical" class="button button-mini button-on-blue all-capitalize">Subscribe</a> <a href="https://www.google.com/calendar/render?cid=webcal%3A//funnel.hasgeek.com/angularjs-miniconf-2014/schedule/ical" target="_blank" class="button button-mini button-blue all-capitalize">Subscribe using Google Calender</a></div><br>
+          <h3><i class="icon-calendar"></i>&nbsp;&nbsp;Meta Refresh Workshops &amp; Conference</h3>
+          <div class="tiny"><a href="webcal://funnel.hasgeek.com/metarefresh2014/schedule/ical" class="button button-mini button-on-blue all-capitalize">Subscribe</a> <a href="https://www.google.com/calendar/render?cid=webcal%3A//funnel.hasgeek.com/metarefresh2014/schedule/ical" target="_blank" class="button button-mini button-blue all-capitalize">Subscribe using Google Calender</a></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-  <ul class="unstyled schedule ">
-    <li class="row">
-      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 nospace-bottom clearfix text-right theme-box-left theme-transparent">
-        <h3 class="nospace-top legible-prose prose-type"><span class="">Track 1</span></h3>
-      </div>
-      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 legible space-one-bottom clearfix text-center">
-        <h3 class="nospace-top legible-prose prose-type"><span class="">Starts at</span></h3>
-      </div>
-      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 nospace-bottom clearfix text-left theme-box-right theme-transparent">
-        <h3 class="nospace-top legible-prose prose-type"><span class="">Track 2</span></h3>
-      </div>
-    </li>
+          <table class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 table-bordered schedule-table table-responsive fill-white">
+            <thead class="all-caps">
+              <tr>
+                <th width="40%" class="text-right">Day 1</th>
+                <th class="text-center">Time</th>
+                <th width="40%">Day 2</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for item in schedule.list %}
+              <tr>
 
-  {% for item in schedule.list %}
-    <li id="{{ item.id }}" class="row">
-      {% if item.track1 %}
-      {% with item = sessions[item.track1] %}
-        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 nospace-bottom clearfix text-right theme-box-left {% if item.type == 'business' %}theme-blue{% elif item.type == 'systems' %}theme-red{% elif item.type == 'gaming' %}theme-orange{% elif item.type == 'app-demos' %}theme-green{% elif item.type == 'ux' %}theme-violet{% else %}theme-transparent{% endif %}">
-          <a class="{% if item.featured == true %}popover-left{% endif %}" data-content="{{ item.blurb|safe }}" title="" data-toggle="popover" data-original-title="{{ item.title|safe }}" href="{{ item.funnel }}"><h3 class="nospace-top legible-prose prose-type"><span class="{% if item.featured == false %}gray{% endif %}">{{ item.title|safe }}</span></h3></a>
-          {% if item.speaker or item.designation %}
-            <p class="prose-type tiny calm">
-              <span class="tiny {% if item.featured == false %}gray{% endif %}">{{ item.speaker | safe }}</span><span class="gray">{% if item.funnel %}<a href="{{ item.funnel }}"><i class="icon-filter"></i></a>{% endif %} {% if item.preview %}<a href="{{ item.preview }}"><i class="icon-youtube-play"></i></a>{% endif %}</span>
-            </p>
-          {% endif %}
-        </div>
-      {% endwith %}
-      {% else %}
-        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 legible-prose prose prose-type clearfix text-right theme-box-left theme-transparent">
-          <div class="push-1q-top"><span class="calm italic nospace-top regular-prose">{{ item.title|safe }}</span></div>
-        </div>
-      {% endif %}
-      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 legible space-one-bottom clearfix text-center">
-        <h3 class="all-caps nospace-top semibold">{{ item.slot|replace(' ', '&nbsp;')|safe }}</h3>
-      </div>
-    {% if item.track2 %}
-      {% with item = sessions[item.track2] %}
-        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 nospace-bottom clearfix text-left theme-box-right {% if item.type == 'business' %}theme-blue{% elif item.type == 'systems' %}theme-red{% elif item.type == 'gaming' %}theme-orange{% elif item.type == 'app-demos' %}theme-green{% elif item.type == 'ux' %}theme-violet{% else %}theme-transparent{% endif %}">
-          <a class="{% if item.featured == true %}popover-right{% endif %}" data-content="{{ item.blurb|safe }}" title="" data-toggle="popover" data-original-title="{{ item.title|safe }}" href="{{ item.funnel }}"><h3 class="nospace-top legible-prose prose-type"><span class="{% if item.featured == false %}gray{% endif %}">{{ item.title|safe }}</span>{% if item.sponsor %}<div class="green secondary-prose">Sponsored talk - {{ item.sponsor }}</div>{% endif %}</h3></a>
+                  {% if item.track1 %}
+                    {% with item = sessions[item.track1] %}
+                      <td class="text-right"><div class="secondary-prose green">{{ item.title|safe }}</div>
+                      <h5 class="all-caps">{{ item.speaker }}</h5></td>
 
-          {% if item.speaker or item.designation %}
-            <p class="prose-type tiny calm">
-                <span class="gray">{% if item.funnel %}<a href="{{ item.funnel }}"><i class="icon-filter"></i></a>{% endif %} {% if item.preview %}<a href="{{ item.preview }}"><i class="icon-youtube-play"></i></a>{% endif %}</span> 
-                <span class="tiny {% if item.featured == false %}gray{% endif %}">{{ item.speaker|safe }}</span>
-            </p>
-          {% endif %}
+                    {% endwith %}
+                  {% else %}
+                    <td class="text-right"><div class="tiny italic">{{ item.title|safe }}</div></td>
+                  {% endif %}
+                <td class="schedule-slot text-center bold"><div class="secondary-prose all-caps">{{ item.slot }}</div></td>
 
+                  {% if item.track2 %}
+                    {% with item = sessions[item.track2] %}
+                      <td><div class="secondary-prose green">{{ item.title|safe }}</div>
+                      <h5 class="all-caps">{{ item.speaker }}</h5></td>
+
+                    {% endwith %}
+                  {% else %}
+                    <td><div class="tiny italic">{{ item.title|safe }}</div></td>
+                  {% endif %}
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
         </div>
-      {% endwith %}
-      {% else %}
-        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 legible-prose prose prose-type clearfix text-left theme-box-right theme-transparent">
-          <div class="push-1q-top"><span class="calm italic nospace-top regular-prose">{{ item.title }}</span></div>
-        </div>
-      {% endif %}
-    </li>
-  {% endfor %}
-  </ul>
-</div>
 </section>
 

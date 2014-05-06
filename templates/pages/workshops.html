@@ -1,14 +1,16 @@
+
 {% extends theme('layouts/page.html') %}
-{% from theme("data/workshop-schedule.html") import schedule %}
+{% from theme("data/workshop-schedule.html") import schedule as schedule %}
 {%
   set page = {
       'title'       : 'Workshops'
-    , 'description' : 'Workshops in Droidcon India 2013'
+    , 'description' : '14 - 15 February 2014'
     , 'sections'    : [
-        ('workshop-intro',    'green')
-      , ('workshop-details', '')
-      , ('sponsors-summary',   'dark')
+        ('workshop-intro',          'gray')
+      , ('workshop-schedule',  'dark')
+      , ('workshop-sessions',  'white')
+      , ('workshop-venue',          'dark')
+      , ('sponsors-summary',          'darkblue')
     ]
   }
 %}
-{% block pagetitle %}Workshops{% endblock %}
