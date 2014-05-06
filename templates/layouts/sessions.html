@@ -9,10 +9,14 @@
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           {% for item in session.list %}
             {% if not item.other %}
-            <div class="row">
+            <div id="{{ item.id }}" class="row">
               <div class="col-lg-5 col-lg-offset-2 col-md-6 col-md-offset-1 col-sm-6 col-xs-12">
                 <h4 class="green regular">{{ item.title|safe }}</h4>
                 <p>{{ item.blurb|safe }}</p>
+                {% if item.requirements %}
+                  <h5 class="all-caps fill-gray pad-1q push-1q">Requirements:</h5>
+                  <p>{{ item.requirements|safe }}</p>
+                {% endif %}
                 <ul class="list-plain secondary prose space-one-top">
                   <li class="flushleft"><a target="_blank" href="https://funnel.hasgeek.com/metarefresh2014/{{ item.id }}">Funnel Proposal</a></li>
                   {% if item.preview %}<li class="flushright"><a target="_blank" href="{{ item.preview }}">Preview</a></li>{% endif %}
@@ -27,7 +31,7 @@
                     </div>
                   </div>
                   {% endif %}
-                  <h4 class="green">{{ item.speaker }}<h4>
+                  <h4 class="green">{{ item.speaker|safe }}<h4>
                   <h5 class="bold">{{ item.designation|safe }}</h5>
                   <div class="regular-prose">
                     {% if item.linkedin %}<a class="link-silent" href="{{ item.linkedin }}" title="{{ item.speaker }} - LinkedIn" target="_blank"><i class="fa fa-linkedin-square"></i></a>{% endif %}
