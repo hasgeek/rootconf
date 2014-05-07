@@ -15,7 +15,7 @@
                 <p>{{ item.blurb|safe }}</p>
                 {% if item.requirements %}
                   <h5 class="all-caps fill-gray pad-1q push-1q">Requirements:</h5>
-                  <p>{{ item.requirements|safe }}</p>
+                  <div class="forcewrap">{{ item.requirements|safe }}</div>
                 {% endif %}
                 <ul class="list-plain secondary prose space-one-top">
                   <li class="flushleft"><a target="_blank" href="https://funnel.hasgeek.com/metarefresh2014/{{ item.id }}">Funnel Proposal</a></li>
@@ -23,22 +23,46 @@
                 </ul>
               </div>
               <div class="col-lg-3 col-md-4 col-xs-12 col-sm-6 col-xs-12 text-center">
-                <div class="fill-gray push-3q-top push-half-bottom space-half pad-half">
-                  {% if item.photo %}
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <div class="bg-photo circle" style="background-image: url({{ item.photo }})"></div>
-                    </div>
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="fill-gray push-3q-top push-half-bottom space-half pad-half">
+                      {% if item.photo %}
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <div class="bg-photo circle" style="background-image: url({{ item.photo }})"></div>
+                        </div>
+                      </div>
+                      {% endif %}
+                      <h4 class="green">{{ item.speaker|safe }}<h4>
+                      <h5 class="bold">{{ item.designation|safe }}</h5>
+                      <div class="regular-prose">
+                        {% if item.linkedin %}<a class="link-silent" href="{{ item.linkedin }}" title="{{ item.speaker }} - LinkedIn" target="_blank"><i class="fa fa-linkedin-square"></i></a>{% endif %}
+                        {% if item.twitter %}<a class="link-silent" href="https://twitter.com/{{ item.twitter }}" title="{{ item.speaker }} - twitter" target="_blank"><i class="fa fa-twitter-square"></i></a>{% endif %}
+                        {% if item.github %}<a class="link-silent" href="https://github.com/{{ item.github }}" title="{{ item.speaker }} - twitter" target="_blank"><i class="fa fa-github-square"></i></a>{% endif %}
+                      </div>
+                    </div> 
+                  </div>
+                  {% if item.speaker_alt %}
+                  <div class="col-lg-12">
+                    <div class="fill-gray push-3q-top push-half-bottom space-half pad-half">
+                      {% if item.speaker_alt_photo %}
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <div class="bg-photo circle" style="background-image: url({{ item.speaker_alt_photo }})"></div>
+                        </div>
+                      </div>
+                      {% endif %}
+                      <h4 class="green">{{ item.speaker_alt|safe }}<h4>
+                      <h5 class="bold">{{ item.speaker_alt_designation|safe }}</h5>
+                      <div class="regular-prose">
+                        {% if item.speaker_alt_linkedin %}<a class="link-silent" href="{{ item.speaker_alt_linkedin }}" title="{{ item.speaker_alt }} - LinkedIn" target="_blank"><i class="fa fa-linkedin-square"></i></a>{% endif %}
+                        {% if item.speaker_alt_twitter %}<a class="link-silent" href="https://twitter.com/{{ item.speaker_alt_twitter }}" title="{{ item.speaker_alt }} - twitter" target="_blank"><i class="fa fa-twitter-square"></i></a>{% endif %}
+                        {% if item.speaker_alt_github %}<a class="link-silent" href="https://github.com/{{ item.speaker_alt_github }}" title="{{ item.speaker_alt }} - twitter" target="_blank"><i class="fa fa-github-square"></i></a>{% endif %}
+                      </div>
+                    </div> 
                   </div>
                   {% endif %}
-                  <h4 class="green">{{ item.speaker|safe }}<h4>
-                  <h5 class="bold">{{ item.designation|safe }}</h5>
-                  <div class="regular-prose">
-                    {% if item.linkedin %}<a class="link-silent" href="{{ item.linkedin }}" title="{{ item.speaker }} - LinkedIn" target="_blank"><i class="fa fa-linkedin-square"></i></a>{% endif %}
-                    {% if item.twitter %}<a class="link-silent" href="https://twitter.com/{{ item.twitter }}" title="{{ item.speaker }} - twitter" target="_blank"><i class="fa fa-twitter-square"></i></a>{% endif %}
-                    {% if item.github %}<a class="link-silent" href="https://github.com/{{ item.github }}" title="{{ item.speaker }} - twitter" target="_blank"><i class="fa fa-github-square"></i></a>{% endif %}
-                  </div>
-                </div>          
+                </div>         
               </div>
             </div>
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12"><hr></div>
