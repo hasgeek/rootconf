@@ -20,6 +20,18 @@
               <h5 class="all-caps dark">{{ item.place }}</h5>
               {% if item.preview %}<h5 class="link-silent orange"><a target="_blank" href="{{ item.preview }}"><i class="icon-youtube-play"></i> preview video</a></h5>{% endif %}
             </li>
+            {% if item.speaker_alt %}
+            <li class="col-lg-3 col-md-3 col-sm-6 col-xs-12 text-center">
+              <a href="/2014/workshops#{{ item.id }}"><span class="img-wrapper">
+                <!-- <img class="photo" src="{{ item.photo }}"> -->
+                <div class="featured-bg-photo circle" style="background: /* top, transparent #c7c575 */ linear-gradient(rgba(12, 165, 176, 0.2),rgba(12, 165, 176, 0.2)),/* bottom, image */url({{item.speaker_alt_photo}});"></div>
+              </span></a>
+              <h3>{{ item.speaker_alt }}</h3>
+              <h5 class="dark">{{ item.speaker_alt_designation|safe }}</h5>
+              <h5 class="all-caps dark">{{ item.speaker_alt_place }}</h5>
+              {% if item.preview %}<h5 class="link-silent orange"><a target="_blank" href="{{ item.preview }}"><i class="icon-youtube-play"></i> preview video</a></h5>{% endif %}
+            </li>
+            {% endif %}
       {% if loop.last %}
           </ul>
         </div>    
