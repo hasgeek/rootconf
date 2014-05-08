@@ -17,9 +17,9 @@
                   <h5 class="all-caps fill-gray pad-1q push-1q">Requirements:</h5>
                   <div class="forcewrap">{{ item.requirements|safe }}</div>
                 {% endif %}
-                <ul class="list-plain secondary prose space-one-top push-one-bottom">
-                  <li class="flushleft"><a target="_blank" href="https://funnel.hasgeek.com/metarefresh2014/{{ item.id }}">Funnel Proposal</a></li>
-                  {% if item.preview %}<li class="flushright"><a target="_blank" href="{{ item.preview }}">Preview</a></li>{% endif %}
+                <ul class="list-plain tiny-prose prose space-one-top push-one-bottom">
+                  <li class="flushleft"><a target="_blank" class="button" href="https://funnel.hasgeek.com/metarefresh2014/{{ item.id }}"><i class="fa fa-filter"></i>&nbsp;Funnel Proposal</a></li>
+                  {% if item.preview %}<li class="flushright"><a target="_blank" class="button" href="{{ item.preview }}">Preview</a></li>{% endif %}
                 </ul>
               </div>
               <div class="col-lg-3 col-md-4 col-xs-12 col-sm-6 col-xs-12 text-center">

@@ -38,7 +38,7 @@
               <tr>
                   {% if item.track1 %}
                     {% with item = sessions[item.track1] %}
-                      <td class="text-right">{% if not item.other %}<a href="#{{ item.id }}">{% endif %}<div class="secondary-prose green">{{ item.title|safe }}</div>
+                      <td class="text-right">{% if not item.other %}<a href="/2014/{{ schedule.type }}#{{ item.id }}">{% endif %}<div class="secondary-prose green">{{ item.title|safe }}</div>
                       <h5 class="all-caps">{{ item.speaker|safe }}{% if item.speaker_alt %}, {{ item.speaker_alt }}{% endif %}</h5>{% if not item.other %}</a>{% endif %}</td>
                     {% endwith %}
                   {% else %}
@@ -47,7 +47,7 @@
                 <td class="schedule-slot text-center bold"><div class="secondary-prose all-caps">{{ item.slot }}</div></td>
                   {% if item.track2 %}
                     {% with item = sessions[item.track2] %}
-                      <td>{% if not item.other %}<a href="#{{ item.id }}">{% endif %}<div class="secondary-prose green">{{ item.title|safe }}</div>
+                      <td>{% if not item.other %}<a href="/2014/{{ schedule.type }}#{{ item.id }}">{% endif %}<div class="secondary-prose green">{{ item.title|safe }}</div>
                       <h5 class="all-caps">{{ item.speaker|safe }}{% if item.speaker_alt %}, {{ item.speaker_alt }}{% endif %}</h5>{% if not item.other %}</a>{% endif %}</td>
                     {% endwith %}
                   {% else %}
