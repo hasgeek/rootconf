@@ -656,7 +656,7 @@ a.button:hover  { background-color: #359E5E; color: #FFF; border-bottom: 3px sol
 }
 .sponsor-compact > li:nth-child(3n+1) { margin-left: 0; }
 
-.sponsor-logo       { text-align: center; border-radius: 0.25rem; height: 5.34rem; line-height: 4.5rem; padding: .5rem; background-color: white;}
+.sponsor-logo       { text-align: center; border-radius: 0.25rem; height: 5.34rem; line-height: 4.5rem; padding: 0.3rem 0.5rem 0.5rem 0.5rem; background-color: white;}
 .sponsor-logo:hover { background-color: #E5E5E5 !important; }
 .sponsor-logo img   { max-height: 100%; max-width: 100%; }
 .sponsor-logo, .link-silent a.sponsor-logo {
