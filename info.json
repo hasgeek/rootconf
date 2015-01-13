@@ -1,9 +1,9 @@
 {
     "application": "eventframe",
-    "identifier": "rootconf2014",
-    "name": "Rootconf 2014",
+    "identifier": "rootconf2015",
+    "name": "Rootconf 2015",
     "author": "HasGeek",
-    "description": "Rootconf 2014 website template",
+    "description": "Rootconf 2015 website template",
     "license": "All rights reserved",
     "doctype": "html5",
     "options": {
