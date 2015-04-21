@@ -627,7 +627,20 @@ a.button:hover  { background-color: #9B7F30; border-bottom-color: #6E5C29; }
     .video-thumbnail h5 { padding: 0 1rem 0 1rem; max-width: 300px; }
 }
 
+/*.nav .navbar-nav .navbar-right > .active{
+    color: #000;
+   background: #e05f26;
+ }
+ .nav .navbar-nav .navbar-right > .active > a, 
+ .nav .navbar-nav .navbar-right > .active > a:hover, 
+ .nav .navbar-nav .navbar-right > .active > a:focus {
+      color: #000;
+      background: #e05f26;
+*/ 
 
+ul > .active > a {
+    background-color: #e05f26 !important;
+}
 
 .sponsor-m > li {
     float: left !important;
