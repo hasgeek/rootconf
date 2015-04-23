@@ -14,6 +14,31 @@
 		src: url("../fonts/ecoicons/ecoicons.eot?#iefix") format("embedded-opentype"), url("../fonts/ecoicons/ecoicons.woff") format("woff"), url("../fonts/ecoicons/ecoicons.ttf") format("truetype"), url("../fonts/ecoicons/ecoicons.svg#ecoicons") format("svg");
 }
 
+.jumbotron {
+	background-color: #161927;
+	color: #ffffff;
+}
+
+.jumbotron-header {
+	font-size: 32px;
+}
+
+.jumbotron-date{
+	font-size: 24px;
+}
+
+.jumbotron-tagline{
+	font-size: 22px;
+}
+
+#jumbotron-tickets {
+	height: 45px;
+	width: 300px;
+}
+
+#page {
+	background-color: #161927;
+}
 /* Icomoon.com */
 
 .gn-menu-main,
