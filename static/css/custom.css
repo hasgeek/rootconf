@@ -14,6 +14,15 @@
 		src: url("../fonts/ecoicons/ecoicons.eot?#iefix") format("embedded-opentype"), url("../fonts/ecoicons/ecoicons.woff") format("woff"), url("../fonts/ecoicons/ecoicons.ttf") format("truetype"), url("../fonts/ecoicons/ecoicons.svg#ecoicons") format("svg");
 }
 
+.featured-speaker-grayscale
+{
+   	-webkit-filter: grayscale(1); 
+	-moz-filter: grayscale(1);
+	filter: gray; 
+	filter: grayscale(1);
+}
+
+
 .jumbotron {
 	background-color: #161927;
 	color: #ffffff;
