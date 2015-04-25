@@ -53,6 +53,11 @@
 #page {
 	background-color: #161927;
 }
+
+#schedule-table {
+  width: 80%;
+}
+
 /* Icomoon.com */
 
 .gn-menu-main,
