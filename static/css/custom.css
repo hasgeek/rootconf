@@ -46,6 +46,10 @@
 	width: 220px;
 }
 
+.modal {
+  position: absolute;
+}
+
 #page {
 	background-color: #161927;
 }
