@@ -22,12 +22,6 @@
 	filter: grayscale(1);
 }
 
-.navbar-nav>li>a {
-  padding-top: 15px;
-  padding-bottom: 15px;
-  margin-right: 13px !important;
-}
-
 .jumbotron {
 	background-color: #161927;
 	color: #ffffff;
