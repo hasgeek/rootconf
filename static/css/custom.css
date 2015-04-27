@@ -22,6 +22,10 @@
 	filter: grayscale(1);
 }
 
+#featured-speaker-pics {
+	width: 60%;
+}
+
 .jumbotron {
 	background-color: #161927;
 	color: #ffffff;

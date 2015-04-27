@@ -11,7 +11,7 @@
     {% endif %}
           <li class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-center">
             <span class="{% if item.type == 'business' %}theme-blue{% elif item.type == 'systems' %}theme-red{% elif item.type == 'gaming' %}theme-orange{% elif item.type == 'app-demos' %}theme-green{% elif item.type == 'ux' %}theme-violet{% else %}theme-transparent{% endif %}">
-              <img src="{{ item.photo }}" style="width: 70%;" class="featured-speaker-grayscale">
+              <img id="featured-speaker-pics" src="{{ item.photo }}" class="featured-speaker-grayscale">
             </span>
             <h3>{{ item.speaker }}</h3>
             <h5>{{ item.designation }}</h5>
