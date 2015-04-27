@@ -255,6 +255,21 @@ if ( $(window).width() > 500) {
  
  
 </script>
+<script>(function() {
+ var _fbq = window._fbq || (window._fbq = []);
+ if (!_fbq.loaded) {
+   var fbds = document.createElement('script');
+   fbds.async = true;
+   fbds.src = '//connect.facebook.net/en_US/fbds.js';
+   var s = document.getElementsByTagName('script')[0];
+   s.parentNode.insertBefore(fbds, s);
+   _fbq.loaded = true;
+ }
+})();
+window._fbq = window._fbq || [];
+window._fbq.push(['track', '6026235347317', {'value':'0.00','currency':'INR'}]);
+</script>
+<noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6026235347317&amp;cd[value]=0.00&amp;cd[currency]=INR&amp;noscript=1" /></noscript>
 {% block footerscripts %}{% endblock %}
 <!-- Prompt IE 6 users to install Chrome Frame. -->
 <!-- chromium.org/developers/how-tos/chrome-frame-getting-started -->
