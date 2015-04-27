@@ -964,8 +964,12 @@ li.event-node{
 #site-nav{
   width: 100%;
 }
-#hg-btn{
+/*#hg-btn{
   border-right: 1px solid #EFEFEF;
+}*/
+
+#rc-brand {
+  border-left: 1px solid #EFEFEF;
 }
 
 #site-nav.visible{
