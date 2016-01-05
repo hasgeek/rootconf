@@ -395,13 +395,13 @@
     height: 150px;
   }
 }
-@media screen and (min-width: 1200px) and (min-height: 600px){
+@media (min-width: 1200px) and (max-width: 2000px) and (min-height: 600px) and (max-height: 850px){
   .masthead-home{ 
     height: 100vh;
   }
   .display-board-container {
     position: relative;
-    top: 12vh;
+    top: 10%;
   }
 }
 @media screen and (max-width: 767px){
@@ -626,18 +626,13 @@
   border-radius: 5px;
 }
 
-.video-thumbnails > li {
-    margin: auto;
-    width: 90% !important;
-}
-
 
 @media (min-width: 600px) {
-    .video-thumbnails > li { width: 60% !important; }
+    .video-thumbnails > li { float:left; width: 50% !important; height: 320px;}
 }
 
 @media (min-width: 768px) {
-    .video-thumbnails > li { float:left; width: 33.3% !important; margin: 0 !important; }
+    .video-thumbnails > li { float:left; width: 25% !important; margin: 0 !important; height: auto;}
     .video-thumbnail h4,
     .video-thumbnail h5 { padding: 0 1rem 0 1rem; max-width: 300px; }
 }
