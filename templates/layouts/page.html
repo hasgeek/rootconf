@@ -11,7 +11,7 @@
 <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}Rootconf: Conference on devop and cloud infrastructure in Bangalore, India{% endif %}">
 <meta name="author" content="HasGeek and friends">
 
-<meta property="og:title" content="Rootconf 2014{% if page.title %} — {{ page.title }}{% endif %}"/>
+<meta property="og:title" content="Rootconf 2016{% if page.title %} — {{ page.title }}{% endif %}"/>
 <meta property="og:image" content="{{ request.url_root[:-1] }}{{ theme_static('img/logo.png') }}"/>
 <meta property="og:url" content="{{ request.url }}"/>
 <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}Rootconf: Conference on devop and cloud infrastructure in Bangalore, India{% endif %}"/>
@@ -19,7 +19,7 @@
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
-<title>{% if page.title %}{{ page.title }} — {% endif %}Rootconf 2014</title>
+<title>{% if page.title %}{{ page.title }} — {% endif %}Rootconf 2016</title>
 
 {%- if _theme %}
   {% assets "css_" + _theme -%}
@@ -44,7 +44,7 @@
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
 </head>
-<body class="fill-greengray">
+<body class="fill-ghostwhite">
 
 <div class="fill-silver">
   {% block networkbar %}
@@ -55,87 +55,14 @@
 
 <div id="page">
 
-
-{% block nav %}
-<!-- <nav class="visible-phone mob-nav"><i class="icon-reorder icon-2x nav"></i></nav> -->
-
-<div id="nav-inner">
-<nav class="navbar navbar-inverse navbar-fixed-top" id="site-nav" role="navigation">
-
-   <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <ul class="navbar-brand nav">
-      <li class="dropdown">
-        <a id="hg-btn" href="#" class="dropdown-toggle navbar-brand" data-toggle="dropdown"><img src="https://hasgeek.com/static/img/hg-banner.png" width="25px" alt="HasGeek"> <b class="caret"></b></a>
-        <ul class="dropdown-menu block-dropdown">
-          <li><a href="https://hasgeek.tv/"><img src="https://imgee.s3.amazonaws.com/imgee/bd422b7a15cb42a7991b93a8d1b90398.png" width="100px" alt=""><br><small>HGTV</small></a></li>
-          <li><a href="https://funnel.hasgeek.com/"><img src="https://imgee.s3.amazonaws.com/imgee/41749464dc4f41bdaef7d7f426e6226e.png" width="100px" alt=""><br><small>Funnel</small></a></li>
-          <li><a href="https://hacknight.in/"><img src="https://imgee.s3.amazonaws.com/imgee/c35a01600d9b4750afb900d1ba8f7989.png" width="100px" alt=""><br><small>Hacknight</small></a></li>
-          <li><a href="https://hasgeek.com/"><img src="https://imgee.s3.amazonaws.com/imgee/df316e82debf4234ae24a6d1e22bec2e.png" width="100px" alt=""><br><small>HasGeek</small></a></li>
-
-          <li><a href="https://fifthelephant.in/"><img src="https://imgee.s3.amazonaws.com/imgee/2f384e0392094f87ae6991b51500e065.png" width="100px" alt=""><br><small>5el</small></a></li>
-          <li><a href="https://jsfoo.in/"><img src="https://imgee.s3.amazonaws.com/imgee/bac7f32ba12040d1a75834d79c6117c2.png" width="100px" alt=""><br><small>JSFoo</small></a></li>
-          <li><a href="https://droidcon.in/"><img src="https://imgee.s3.amazonaws.com/imgee/f3de23cbf830488da48387c822e912ae.png" width="100px" alt=""><br><small>Droidcon</small></a></li>
-          <li><a href="https://metarefresh.in/"><img src="https://imgee.s3.amazonaws.com/imgee/399be422a4b048c484d992e003330123.png" width="100px" alt=""><br><small>Meta Refresh</small></a></li>
-        </ul>
-      </li>
-    </ul>
-    <a class="navbar-brand" href="/2014/"><div class="logo"><img src="https://imgee.s3.amazonaws.com/imgee/6f57f459f97e47369b19e2b2815cf188.png" width="40px" alt="###">rootconf</div></a>
-  </div>
-
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse navbar-ex1-collapse">
-    <ul class="nav navbar-nav navbar-right tiny">
-      <li><a href="/2014/conference">Conference</a></li>
-      <li><a href="/2014/workshops">Workshops</a></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Run-up Events <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="/2014/runup-bangalore">Bangalore</a></li>
-          <li><a href="/2014/runup-pune">Pune</a></li>
-          <li><a href="/2014/runup-delhi">Delhi</a></li>
-          <li><a href="/2014/runup-chennai">Chennai</a></li>
-        </ul>
-      </li>
-      <li><a href="/2014/sponsors">Sponsors</a></li>
-      <li><a href="/2014/about">About</a></li>
-      <li><a href="/2014/tshirt">T-shirt</a></li>
-      <li><a href="/2014/blog">Blog</a></li>
-      <li><a class="green" href="/2014/#tickets">Tickets</a></li>
-      <!-- <li><a href="/2014/#highlights">Previous Editions</a></li> -->
-      <!-- <li><a href="/2014/venue">Venue</a></li>
-      <li><a href="/2014/#about">About</a></li> -->
-      <!-- <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="/2014/editorial-panel">Editorial Panel</a></li>
-          <li><a href="/2014/about">About HasGeek</a></li>
-          <li><a href="/2014/#highlights">Previous Editions</a></li>
-          <li><a href="/2014/code-of-conduct">Code of conduct</a></li>
-        </ul>
-      </li>
-      <li><a href="/2014/tshirt">T-shirt</a></li> -->
-    </ul>
-  </div><!-- /.navbar-collapse -->   
-
-</nav>
-</div>
-{% endblock %}
-
 {% block banner %}
 <header class="fill-dark banner-internal push-two-bottom push-two-top resetcoords clearfix">
   <div class="container">
     <div class="row">
       <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
         <div class="nospace">
-          <a class="ir logo link-silent" href="/2014">
-            Rootconf 2014
+          <a class="ir logo link-silent" href="/2016">
+            Rootconf 2016
           </a>
         </div>
         <div class="extrabold legible">Rootconf</div>
@@ -145,18 +72,19 @@
       </div>
 
       <div class="ticket-link-container col-lg-3 col-md-3 col-sm-4 col-xs-4">
-        <h3 class="calm tiny nospace-bottom all-caps text-right">
-          14&nbsp;-&nbsp;17&nbsp;May&nbsp;2014, Bangalore
-        </h3>
-        <p class="text-right space-half-top">
+        <h3 class="calm tiny nospace-bottom all-caps text-right">14 - 15 April 2016, Bangalore</h3>
+<!--         <p class="text-right space-half-top">
           <a class="button" href="http://rootconf.doattend.com/">
             <span class="hidden-xs">Buy Your</span> Ticket<span class="visible-xs">s</span>
           </a>
-        </p>
+        </p> -->
       </div>
     </div>
   </div>
 </header>
+{% endblock %}
+
+{% block navtype %}
 {% endblock %}
 
 {% block content %}
@@ -168,16 +96,25 @@
   {% endfor %}
 {% endblock %}
 
-<footer class="page-footer push-two fill-black clearfix">
-  <div class="text-center tiny">
-    <p class="gray">Copyright &copy; 2010–14. All rights reserved.</p>
-    <p><a href="mailto:info@hasgeek.com?subject=Hello Rootconf">info@hasgeek.com</a> /
-    <a href="tel:+918067684422" class="link-silent">+91-80-67684422</a></p>
-    <h3>
-      <a class="ir hasgeek-logo center-block space-one-top link-silent" href="//hasgeek.com">
-        HasGeek
-      </a>
-    </h3>
+<footer id="about" class="page-footer push-two fill-black clearfix">
+  <div class="text-center tiny gray container">
+    <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
+      <h3><a class="ir hasgeek-logo center-block space-one-top link-silent" href="//hasgeek.com">HasGeek</a></h3>
+      <p><a href="http://hasgeek.com/" target="_blank">HasGeek</a> helps people in technology meet each other, collaborate on new opportunities and advance the state of the art. We organize conferences, hacknights, workshops and geekups, and provide tools for communities to self-organize.</p>
+      <p>We’ve created conferences around the themes of <a href="http://metarefresh.in/" target="_blank">front end engineering</a>, <a href="http://fifthelephant.in/" target="_blank">big data and cloud computing</a>, <a href="http://jsfoo.in/" target="_blank">JavaScript</a>, <a href="http://droidcon.in/" target="_blank">Android</a>, <a href="http://cartonama.com/" target="_blank">location-aware services</a> and <a href="http://rootconf.in/" target="_blank">devops</a>. Our <a href="http://hasjob.co" target="_blank">Job Board</a> is used by thousands of geeks every month to find new opportunities.</p>
+      <p>HasGeek is a technology company in the media business, bringing software automation to a traditionally people-intensive operation. HasGeek has organized over two dozen conferences attended by thousands of technology professionals, made several thousand connections, and built open source tools that are now used by many communities.</p>
+      <p>Copyright &copy; 2010–16. All rights reserved.</p>
+      <p><a href="mailto:info@hasgeek.com?subject=Hello Rootconf">info@hasgeek.com</a> /
+      <a href="tel:+918067684422" class="link-silent">+91-80-67684422</a></p>
+      <div class="legible space-one centered gray">
+        <ul class="list-plain">
+          <li class="inline-block gap-1q"><a href="https://twitter.com/rootconf" target="_blank" class="silent link-silent"><i class="fa fa-twitter"></i></a></li>
+          <li class="inline-block gap-1q"><a href="https://www.facebook.com/rootconf" target="_blank" class="silent link-silent"><i class="fa fa-facebook"></i></a></li>
+          <li class="inline-block gap-1q"><a href="https://www.youtube.com/user/hasgeek" target="_blank" class="silent link-silent"><i class="fa fa-youtube"></i></a></li>
+          <li class="inline-block gap-1q"><a href="https://www.flickr.com/photos/hasgeek/sets/" target="_blank" class="silent link-silent"><i class="fa fa-flickr"></i></a></li>
+        </ul>
+      </div>
+    </div>
   </div>
 </footer>
 
@@ -207,28 +144,6 @@ if (location.hostname == 'rootconf.in') {
 </script>
 
 <script>
-    $(window).scroll(function () {
-      var currentScroll = $(this).scrollTop();
-      var checkPoint;
-      if(Modernizr.mq('only screen and (max-width: 768px)')){
-        checkPoint = 100;
-      } else {
-        checkPoint = 50;
-      }
-      if( currentScroll > checkPoint){
-        $('#nav-inner').addClass('navbar-fixed-top').addClass('visible').removeClass('invisible');
-      }  else {
-        $('#nav-inner').removeClass('navbar-fixed-top').removeClass('visible').addClass('invisible');
-      }
-    });
-</script>
-<script>
- window.scrollback = {
-  streams:["hasgeek"],
-  theme: 'light',
-  {%- if g.user %}nick: {{ g.user.username|tojson }},{% endif -%}
-  ticker: true
- };
  
  /***** don't edit below *****/
  (function(d,s,h,e){e=d.createElement(s);e.async=1;

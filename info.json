@@ -1,9 +1,9 @@
 {
     "application": "eventframe",
-    "identifier": "rootconf2014",
-    "name": "Rootconf 2014",
+    "identifier": "rootconf2016",
+    "name": "Rootconf 2016",
     "author": "HasGeek",
-    "description": "Rootconf 2014 website template",
+    "description": "Rootconf 2016 website template",
     "license": "All rights reserved",
     "doctype": "html5",
     "options": {
@@ -18,7 +18,8 @@
         ],
         "assets_js": [
             "js/vendor/bootstrap.min.js",
-            "js/maps.js"
+            "js/maps.js",
+            "js/main.js"
         ]
     }
 }

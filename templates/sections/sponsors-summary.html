@@ -3,14 +3,14 @@
     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 push-one-bottom">
       <h2 class="extralarge all-caps">Sponsors</h2>
     </div>
-     <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 legible-prose prose-type space-one-top">
+     <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 secondary space-one-top">
       <p>
         Showcase platforms, tools and APIs.<br>
         Engage the best developers and designers.
       </p>
       
       <p class="title-type secondary space-one-top">
-        <a class="button button" target="_blank" href="http://hsgk.in/NucSfd">Get Sponsorship Deck</a>
+        <a class="button button" target="_blank" href="http://hsgk.in/2015-sponsorship-deck">Get Sponsorship Deck</a>
       </p>
     </div>
   </div>
@@ -26,7 +26,7 @@
           <ul class="col-lg-7 col-md-7 col-sm-7 col-xs-12 nospace-bottom list-plain link-silent clearfix list-space-line sponsor-{{ type.size }} nospace-ul">
         {% endif %}
           <li>
-              <a href="{% if type.size == 'compact' %}{{ item.link }}{% else %}sponsors#{{ type.id }}-{{ item.id }}{% endif %}" class="occupy sponsor-logo {% if item.orientation == 'portrait' %}contain-height{% elif item.orientation == 'landscape' %}contain-width{% endif %}">
+              <a href="{% if type.size == 'compact' %}{{ item.link }}{% else %}sponsors#{{ type.id }}-{{ item.id }}{% endif %}" class="occupy sponsorlogo {% if item.orientation == 'portrait' %}contain-height{% elif item.orientation == 'landscape' %}contain-width{% endif %}">
                 <img alt="{{ item.title }}" src="{{ item.logo }}">
               </a>
           </li>

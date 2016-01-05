@@ -4,25 +4,49 @@
       'title'               : ''
     , 'description'         : ''
     , 'sections'            : [      
-       ('event-themes',          'white')
-      , ('timeline', 'white')
-      , ('tickets',              'gray')
-      , ('featured-speakers',         'white')
-      , ('featured-workshops',        'green')
-      , ('workshop-schedule',       'dark')
-      , ('conference-schedule',       'gray')
-      , ('past-highlights',           'dark')
-      , ('venue-summary',             'white')
-      , ('sponsors-summary',          'dark')
+      ('event-themes',          'ghostwhite'),
+      ('past-highlights',           'blue'),
+      ('venue-summary',             'white'),
+      ('sponsors-summary',          'dark')
     ]
   }
 %}
 {% block navtype %}
 <div id="nav-home">
+<nav class="navbar navbar-default" id="site-nav" role="navigation">
+  <div class="container sitebar">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand smooth-scroll" href="#header">Rootconf</a>
+    </div>
+
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="#annoucements" class="smooth-scroll">Announcements</a></li>
+        <li><a href="#highlights" class="smooth-scroll">Highlights</a></li>
+        <li><a href="#venue" class="smooth-scroll">Venue</a></li>
+        <li><a href="#sponsors" class="smooth-scroll">Sponsors</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+          <ul class="dropdown-menu">        
+            <li><a href="#about" class="smooth-scroll">About HasGeek</a></li>
+            <li><a href="code-of-conduct">Code of conduct</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>  
+  </div>
+</nav>
+</div>
 {% endblock %}
 
 {% block banner %}
-<header class="masthead-home push-two-bottom fill-dark">
+<header class="masthead-home push-two-bottom fill-dark" id="header">
   <div id="lamp">
     <div id="wire"></div>
       <div id="holder"></div>
@@ -30,27 +54,27 @@
       <div id="light"></div>
   </div>
   
-  <div class="display-board">
-    <div class="white extralarge push-line-top text-center">
-      <div class="link line2 text-center title-type push-3q-top">
-        <div class="logo"><img src="https://imgee.s3.amazonaws.com/imgee/769dc463009d4cf09be7352c8c7b3628.png" width="80px" alt="###">rootconf</div><div id="blink-wrapper"><span id="blink"></span></div>
+  <div class="display-board-container">
+    <div class="display-board">
+      <div class="white extralarge push-line-top text-center">
+        <div class="link line2 text-center title-type push-3q-top">
+          <div class="logo"><img src="https://imgee.s3.amazonaws.com/imgee/769dc463009d4cf09be7352c8c7b3628.png" width="80px" alt="###">rootconf</div><!-- <div id="blink-wrapper"><span id="blink"></span></div> -->
+        </div>
+        <p class="tiny prose-type space-half-top">Conference &amp; Workshops on DevOps and Cloud Infrastructure</p>
       </div>
-      <p class="tiny prose-type space-half-top">Conference &amp; Workshops on DevOps and Cloud Infrastructure</p>
-    </div>
 
-    <div class="intro row-fluid prose prose-type thin space-one-top text-center">
-      <div class="gray thin link-silent"><a><span class="green">Workshops:</span>&nbsp;&nbsp;<i class="fa fa-calendar violet"></i>&nbsp;14-15 May 2014&nbsp;&nbsp;<i class="fa fa-map-marker violet"></i>&nbsp;TERI, Domlur, Bangalore&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="invisible">.</span></a></div>
-      <div class="gray thin ink-silent"><a><span class="green">Conference:</span>&nbsp;&nbsp;<i class="fa fa-calendar violet"></i>&nbsp;16-17 May 2014&nbsp;&nbsp;<i class="fa fa-map-marker violet"></i>&nbsp;MLR Convention Centre, JP Nagar</a></div>
-    </div>
-    
-  </div> 
-  <div id="mast-img"></div> 
-  <div id="mast-floor">
-    <div class="masthead-test">
-      <img src="https://imgee.s3.amazonaws.com/imgee/ae4c466819ce4701bbdb851b8988ed1e_w992_h225.jpeg" alt="">
-    </div>
-  </div> 
-  
-  
+      <div class="intro row-fluid secondary prose prose-type thin space-one-top text-center">
+        14 - 15 April 2016 | MLR Convention Centre, JP Nagar
+      </div>
+      
+    </div> 
+    <div id="mast-img"></div> 
+    <div id="mast-floor">
+      <div class="masthead-test">
+        <img src="https://imgee.s3.amazonaws.com/imgee/ae4c466819ce4701bbdb851b8988ed1e_w992_h225.jpeg" alt="">
+      </div>
+    </div> 
+  </div>
+  <p class="large white scroll-down link-silent space-one text-right pad-two"><a href="#annoucements" class="smooth-scroll fa fa-chevron-down visible-lg white"></a></p>
 </header>
 {% endblock %}
