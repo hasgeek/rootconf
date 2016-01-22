@@ -866,17 +866,21 @@ li.event-node{
   border-top-color: #fff;
   border-bottom-color: #fff;
 }
-.navbar-default, .navbar-nav > li > .dropdown-menu, .navbar-default .navbar-nav > .open > a {
+.navbar-default, .navbar-nav > li > .dropdown-menu, .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav .open .dropdown-menu > li > a {
   background-color: #826995 !important;
   color: #fff;
 }
 .navbar .nav > li > a, .navbar-default .navbar-brand, .navbar .dropdown-menu > li > a {
   background-color: transparent !important;
-  color: #fff;
+  color: #fff !important;
 }
 .navbar .nav > li > a:hover, .navbar .nav > li > a:focus, .navbar .nav > li > a:active, .navbar-default .navbar-brand:hover, .navbar-default .dropdown-menu > li > a:hover {
   background-color: transparent !important;
   color: #eaa021 !important;
+}
+.navbar-default .navbar-nav > .dropdown > a:hover .caret, .navbar-default .navbar-nav > .dropdown > a:focus .caret {
+  border-top-color: #eaa021 !important;
+  border-bottom-color: #eaa021 !important;
 }
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
   background-color: #eaa021;
