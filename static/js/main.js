@@ -337,11 +337,9 @@ $(document).ready(function() {
   $(window).resize(function() {
     if($(window).width() < 768) {
       renderResponsiveTable();
-      siteNavTop = $("#nav-home").offset().top;
     }
     else{
       disableResponsiveTable();
-      siteNavTop = $("#nav-home").offset().top;
     }
   });
 
