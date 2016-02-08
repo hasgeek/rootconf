@@ -106,11 +106,8 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav navbar-right">
       <li><a href="/2015/#featured-speakers">Featured speakers</a></li>
-      <li><a href="https://rootconf.talkfunnel.com/2015/schedule" target="_blank">Schedule</a></li>
       <li><a href="/2015/#venue">Venue</a></li>
       <li><a href="/2015/sponsors">Sponsors</a></li>
-      <li class="active"><a href="https://in.explara.com/e/rootconf-2015" target="_blank" style="margin-right: 13px !important;">Tickets</a></li>
-      <li></li>
       <!--<li><a href="/2014/#sponsors">Sponsors</a></li>
       <li><a href="/2014/#editorial-panel">Community</a></li>-->
       <!-- <li class="dropdown">
@@ -149,14 +146,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm
           <br>
           Bangalore
         </h3>
-      </div>
-
-      <div class="ticket-link-container col-lg-3 col-md-3 col-sm-4 col-xs-4">
-        <p class="text-right space-line">
-          <a class="button" href="https://in.explara.com/e/rootconf-2015">
-            <span class="hidden-xs">Buy Your</span> Ticket<span class="visible-xs">s</span>
-          </a>
-        </p>
       </div>
     </div>
   </div>
@@ -237,20 +226,20 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm
     });
 </script>
 <script>
-if ( $(window).width() > 500) {      
-  window.scrollback = {
-  streams:["hasgeek"],
-  minimize: true,
-  theme: 'light',
-  {%- if g.user %}nick: {{ g.user.username|tojson }},{% endif -%}
-  ticker: true
- };
- /***** don't edit below *****/
- (function(d,s,h,e){e=d.createElement(s);e.async=1;
- e.src=h+'/client.min.js';scrollback.host=h;
- d.getElementsByTagName(s)[0].parentNode.appendChild(e);}
- (document,'script',(location.protocol=="https:"?"https:":"http:")+'//scrollback.io'));
-}
+// if ( $(window).width() > 500) {      
+//   window.scrollback = {
+//   streams:["hasgeek"],
+//   minimize: true,
+//   theme: 'light',
+//   {%- if g.user %}nick: {{ g.user.username|tojson }},{% endif -%}
+//   ticker: true
+//  };
+//  /***** don't edit below *****/
+//  (function(d,s,h,e){e=d.createElement(s);e.async=1;
+//  e.src=h+'/client.min.js';scrollback.host=h;
+//  d.getElementsByTagName(s)[0].parentNode.appendChild(e);}
+//  (document,'script',(location.protocol=="https:"?"https:":"http:")+'//scrollback.io'));
+// }
  
  
  

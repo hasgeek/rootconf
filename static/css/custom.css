@@ -29,19 +29,22 @@
 .jumbotron {
 	background-color: #161927;
 	color: #ffffff;
+  padding-bottom: 80px;
 }
 
 .jumbotron-header {
-	padding-top: 20px;
+	padding-top: 60px;
 	font-size: 34px;
 }
 
 .jumbotron-date{
 	font-size: 26px;
+  margin-bottom: 30px;
 }
 
 .jumbotron-tagline{
 	font-size: 24px;
+  margin-bottom: 20px;
 }
 
 #jumbotron-tickets {
@@ -537,3 +540,10 @@ body {
 	}
 
 }
+
+@media (min-width: 768px) {
+  .navbar-collapse {
+    padding-right: 15px !important;
+  }
+}
+
