@@ -1084,11 +1084,11 @@ li.event-node{
 }*/
 
 
-#tickets li{
+/*#tickets li{
   list-style-type: none;
   line-height: 25px;
   border-radius: 5px;
-}
+}*/
 @media (min-width: 1200px){
   #tickets li.offer-block{
     height: 222px;

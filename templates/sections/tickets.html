@@ -1,4 +1,6 @@
 {% with %}
-  {% from theme("data/tickets.html") import items %}
-  {% include theme("layouts/tickets.html") %}
+<section id="tickets" class="push-two clearfix{% if background %} fill-{{ background }}{% endif %}">
+    <h2 class="text-center push-1q-bottom large all-caps">Tickets</h2> 
+    <div id="boxoffice-widget"></div>
+</section>
 {% endwith %}
