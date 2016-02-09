@@ -145,11 +145,23 @@ if (location.hostname == 'rootconf.in') {
 
 <script>
   //Boxoffice widget
-  $.getScript("http://0.0.0.0:6500/static/js/boxoffice.js").done(function(){
+  var boxofficeUrl = "http://boxoffice.karthik.dev:6500";
+  var username = null;
+  var userphone = null;
+  var useremail = null;
+  {% if g.user %}
+  name = "{{ g.user.fullname }}";
+  phone = "{{ g.user.phone }}";
+  email = "{{ g.user.email }}";
+  {% endif %}
+  $.getScript(boxofficeUrl+"/static/js/boxoffice.js").done(function(){
     window.Boxoffice.init({
-      url: 'http://0.0.0.0:6500/rootconf/2016',
+      url: boxofficeUrl+'/rootconf/2016',
       inventory: 'Rootconf 2016',
-      apiKey: ''
+      apiKey: '',
+      name: username,
+      phone: userphone,
+      email: useremail,
     });
   });
 </script>
