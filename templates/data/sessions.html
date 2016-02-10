@@ -1,296 +1,31 @@
 {%
   set talks = {
-    '1067-building-elastic-infrastructures': {
-        'id'          : '1067-building-elastic-infrastructures'
-      , 'speaker'     : 'Pankaj Kaushal'
-      , 'title'       : 'Building Elastic Infrastructures'
-      , 'designation' : 'Master of disaster at Flipkart.com'
-      , 'place'       : 'Bangalore, India'
-      , 'linkedin'    : 'http://www.linkedin.com/in/pankajkaushal'
-      , 'blurb'       : '<p>Aim of this talk is to describe the current best practices and software to use when creating an auto scaling infrastructure. He will showcase an elastic infrastructure that is based on proven methods and open source software (Flipkart Hostdb and Puppet) which enables us to build a platform that inturn allows application engineers to create massively scalable web apps without losing sleep.</p>'
-      , 'requirements': '<p>Basic understanding of Virtualization and Puppet or Chef.</p>'
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/dd31670098fc48b8b7ce554777e8678c.jpeg'
-      , 'preview'     : ''
+    '9-continuous-deployment-at-scale': {
+        'id'          : '9-continuous-deployment-at-scale'
+      , 'speaker'     : 'Premshree Pillai'
+      , 'title'       : 'Continuous deployment at Scale'
+      , 'designation' : 'Senior engineer at Etsy'
+      , 'twitter'     : 'premshree'
+      , 'photo'       : 'https://images.hasgeek.com/embed/file/901c25cc4fb844e68e6bf74d511af8ad'
       , 'featured'    : true
-    }
-    , '1108-quick-prototyping-with-lxc-and-puppet': {
-        'id'          : '1108-quick-prototyping-with-lxc-and-puppet'
-      , 'speaker'     : 'Benjamin Kero'
-      , 'title'       : 'Quick Prototyping with LXC and Puppet'
-      , 'designation' : 'Sr. Systems Administrator at Mozilla\'s Release Engineering team'
-      , 'place'       : 'Portland, OR'
-      , 'twitter'     : 'bkero'
-      , 'sponsor'     : 'Mozilla'
-      , 'sponsor_link' : 'https://www.mozilla.org/'
-      , 'blurb'       : '<p>The object for this presentation is to inform people about how they can better use container technologies to save time and resources compared to virtual machines, which in turn makes things such as continuous integration testing faster, and which can save them money on unnecessary resource usage. You\'ll also be able to understand the difference between Docker and LXC, and when it appropriate to use either tool.</p><p>In addition, He\'d like participants to leave the session with an understanding of what configuration management is, and how it can be used to automate or simplify some of their day-to-day activities.</p><p>He would also like to leave the participants with a basic understanding of how Linux cgroups and LXC work, and the ability to modify LXC templates to better suit their environment.</p>'
-      , 'requirements': '<p>Eyes and ears</p>'
-      , 'preview'     : ''
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/b16132577fbe4f94b6126a1654f732ba.jpeg'
+    },
+    '25-lessons-in-moving-from-physical-hosts-to-mesos': {
+        'id'          : '25-lessons-in-moving-from-physical-hosts-to-mesos'
+      , 'speaker'     : 'Raj Shekhar'
+      , 'title'       : 'Lessons in moving from physical hosts to Mesos'
+      , 'designation' : 'Senior site seliability engineer at Etsy'
+      , 'twitter'     : 'ilunatech'
+      , 'photo'       : 'https://images.hasgeek.com/embed/file/a2755c104d494543a9d5075db68eb8ec'
       , 'featured'    : true
-    }
-    , '1137-ddos-mitigation-flipkart': {
-        'id'          : '1137-ddos-mitigation-flipkart'
-      , 'speaker'     : 'Sameer Garg'
-      , 'title'       : 'DDOS mitigation @flipkart'
-      , 'designation' : 'Senior Operations Engineer at Flipkart'
-      , 'place'       : 'Bangalore, India'
-      , 'linkedin'    : 'http://www.linkedin.com/in/sgarg1'
-      , 'blurb'       : '<p>DDOS Attacks have been on the rise all over the world. This include Volumetric i.e. Layer 4 TCP / UDP and Application i.e. Layer 7 HTTP, MySQL.Volumetric attacks are all about muscling out the attacker at the upstream / scrubbing farms. The same cannot be done for Layer 7 attacks.</p><p>Traditional DDoS systems cannot catch Layer7 attacks as they all work on layer 4. There are inline solutions such as WAF, etc which looks at traffic and make profiles like IDP. But at scale all that becomes resource intensive and affects latencies. At flipkart we devised a solution that looks at logs from various layers, detects patterns and automatically blocks the attacker at the perimeter.</p><p>In this talk we explore various types of attacks and what Flipkart does for mitigation.</p>'
-      , 'requirements': '<p>Basic understanding of TCP/IP and Internet Routing protocols</p>'
-      , 'preview'     : ''
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/92353a808f9147abafab4a4b0ac84723.jpeg'
-      , 'featured'    : false
-    }
-    , '1048-production-is-priority-self-fix-heal-techniques': {
-        'id'          : '1048-production-is-priority-self-fix-heal-techniques'
-      , 'speaker'     : 'Jabir Ahmed'
-      , 'title'       : 'Production is Priority - Self Fix / Heal Techniques'
-      , 'designation' : 'Hadoop Big Data Platform Team @ Inmobi'
-      , 'place'       : 'Bangalore, India'
-      , 'linkedin'    : 'http://www.linkedin.com/in/jabirahmed'
-      , 'blurb'       : '<p>To understand how to<ol><li>Monitor systems: a. Nagios b. Ganglia</li><li>Analyse Root cause</li><li>Automate the fix</li><li>Log / Record Incidents</li></ol></p>'
-      , 'requirements': '<p>Knowledge<ol><li>Nagios</li><li>Any flavor of Linux</li><li>Bash/Shell Scripting</li><li>Scripting Perl / Python</li><li>Programming / Automation</li><li>ActiveMQ added advantage.</li></ol></p>'
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/322e87c9a77d489b88046adde7ef6098.jpeg'
-      , 'preview'     : ''
-      , 'featured'    : false
-    }
-    , '1042-how-fast-can-you-onboard-a-new-team-member': {
-        'id'          : '1042-how-fast-can-you-onboard-a-new-team-member'
-      , 'speaker'     : 'Vivek Parihar'
-      , 'title'       : 'How fast can you onboard a new team member'
-      , 'designation' : 'Asst. Vice President- Engineering at Webonise Lab'
-      , 'place'       : 'Pune, India'
-      , 'twitter'     : 'vparihar'
-      , 'linkedin'    : 'http://www.linkedin.com/in/pariharvivek'
-      , 'blurb'       : '<p>Automating Development Environments with Vagrant which ends "It works on my machine" and provides a fast or an easy way to have a local dev environment that resembles production environment.</p>'
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/8202605865c44d0b850176630ee07c22.jpeg'
-      , 'featured'    : false
-    }
-    , '1104-scale-anything-with-haproxy': {
-        'id'          : '1104-scale-anything-with-haproxy'
-      , 'speaker'     : 'Mohamed Imran K R'
-      , 'title'       : 'Scale anything with haproxy'
-      , 'place'       : 'Bangalore, India'
-      , 'twitter'     : 'mohamedimran_kr'
-      , 'designation' : 'COO of E2ENetworks'
-      , 'blurb'       : '<p><ul><li>Introduce haproxy as a webscale load-balancer capable of scaling any workloads</li><li>Demonstrate haproxy as a solution to scaling webservers, webservices, DB and discuss just about scaling any specific technology the audience wants to discuss</li><li>Discuss load-balancing strategies with an example</li><li>Discuss specific architecure solutions for magento, wordpress, drupal and elucidate how even a structureless/frameworkless app can be scaled</li><li>Introduce inotify based sync mechanism as an alternative to shared storage for use in load-balanced webservers</li><li>Introduce to security features of haproxy like rate-limiting and blackholing techniques to avoid webservers from being overwhelmed by specific attacks (should not be taken as DDoS protection schemes)</li><li>Demonstrate any audience query on load-balancing with an example (time permitting, we can do a full deployment)</li></ul></p>'
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/5db04e89aed048d1ab25ab22bf197970.jpeg'
-      , 'featured'    : false
-    }
-    , '1103-tsuru-serve-it-yourself': {
-        'id'          : '1103-tsuru-serve-it-yourself'
-      , 'title'       : 'Tsuru - Serve it yourself.'
-      , 'speaker'     : 'Rohit Nair'
-      , 'designation' : 'Senior System Adminstrator at Directi'
-      , 'place'       : 'Mumbai, India'
-      , 'linkedin'     : 'http://www.linkedin.com/in/rohitnair86'
-      , 'blurb'       : '<p>Tsuru is a open source PAAS system. It helps Sysads to create generic infrastructure and platform in place which comes into life once the developer pushes the code. This self servicing mechanism will be useful to reduce the layers like config management. Since Tsuru leverages the features of docker, it supports both - isolation and scaling. For not so adventurous sysads, who are not ready to risk a software which is in heavy development in production, tsuru can be integrated with the build system, the testing infrastructure can be containers which can be spawned and stopped as needed.</p>'
-      , 'requirements': 'Docker, Linux containers (LXC).'
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/a6842124190f4765b6c0b8d4869e8bfe.jpeg'
-      , 'featured'    : false
-    }
-    , '1006-scaling-to-2000-request-per-second-with-mongodb': {
-        'id'          : '1006-scaling-to-2000-request-per-second-with-mongodb'
-      , 'title'       : 'Scaling to 2000 request per second with MongoDB'
-      , 'speaker'     : 'Suchit Puri'
-      , 'designation' : 'Application Developer, Senior Consultant at ThoughtWorks'
-      , 'place'       : 'New Delhi, India'
-      , 'linkedin'     : 'http://www.linkedin.com/in/suchitpuri'
-      , 'blurb'       : '<p>The Objective of this session is to showcase my experiences with developing, scalling to 2000 req/sec and performance testing the website for one of the biggest media houses of the UK.</p>'
-      , 'requirements': 'Docker, Linux containers (LXC).'
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/d70fb867b0414e81b2b6e94b163155ec.jpeg'
-      , 'featured'    : false
-    }
-    , '1113-diggin-diamonds-from-a-coal-minex': {
-        'id'          : '1113-diggin-diamonds-from-a-coal-minex'
-      , 'speaker'     : 'Sudeep Agarwal'
-      , 'title'       : 'Diggin\' Diamonds from a Coal Mine'
-      , 'designation' : 'System Administrator at Directi'
-      , 'place'       : 'Bangalore, India'
-      , 'linkedin'     : 'http://www.linkedin.com/pub/sudeep-agarwal/65/547/3'
-      , 'blurb'       : '<p>To showcase how we at Directi, flesh out relevant information for people at all technical and managerial positions, from the events generated by our massive infrastructure in the form of service states, metrics and logs.</p>'
-      , 'photo'       : ''
-      , 'preview'     : ''
-      , 'featured'    : false
-    }
-    , '1045-testing-infrastructure-code-using-test-kitchen-doc': {
-        'id'          : '1045-testing-infrastructure-code-using-test-kitchen-doc'
-      , 'speaker'     : 'Kamalika Majumder'
-      , 'title'       : 'Testing Infrastructure Code using Test-kitchen, Docker and Chef-Zero'
-      , 'designation' : 'Senior Consultant at Thoughtworks'
-      , 'place'       : 'Bangalore, India'
-      , 'twitter'     : 'mjkamalika'
-      , 'linkedin'    : 'http://in.linkedin.com/in/kamalikamajumder'
-      , 'blurb'       : '<p>With more and more use of automation for environment provision it has become very important that TDD is followed for Devops/Infrastructure code as it is followed application code.</p><p>The Session will describe how chef recipes,databags etc can be tested in local dev box environmnet before they are uploaded to chef server and used in deployments.</p><p>This session will aim towards using the combination of Test-kitchen gem with kitchen-docker plugin and chef-zero. This will help understanding test driven development of devops code in an private environment without interrupting the working environment.</p>'
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/c35043dd4fcd4739970dba96e1a316be.jpeg'
-      , 'featured'    : false
-    }
-    , '1115-when-the-internet-bleeded': {
-        'id'          : '1115-when-the-internet-bleeded'
-      , 'speaker'     : 'Anant Shrivastava'
-      , 'title'       : 'When the Internet Bleeded'
-      , 'designation' : 'Server Administrator / Information Security Consultant'
-      , 'place'       : 'Bangalore, India'
-      , 'linkedin'    : 'https://www.linkedin.com/in/anantshri'
-      , 'github'      : 'anantshri'
-      , 'blurb'       : '<p>The talk will talk about various TLS / SSL related bugs that are identified in past year.<ul><li>HeartBleed</li><li>GNUTLS Bug</li><li>Apple SSL Bug</li><li>Lucky 13</li><li>BEAST</li><li>CRIME</li></ul></p><p>These bugs have shaken the core premise of Secure communication. The talk will focus on bringing a basic understanding of these issues to the administrators or developers. Besides this the talk will also focus on some burning questions that are now raised in wild. Such as<ul><li>How secure are secure Socket Libraries?</li><li>Is opensource code really secure?</li><li>Is it really true that "given enough eyeballs, all bugs are shallow"?</li><li>Should we move towards higher abstract languages?</li></ul></p><p>and most important: What it really means for a Administrator / DevOps person</p>'
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/d75d7263111d4ec980268606c03cae27.jpeg'
+    },
+    '1-working-in-and-with-open-source-communities': {
+        'id'          : '1-working-in-and-with-open-source-communities'
+      , 'speaker'     : 'Bernd Erk'
+      , 'title'       : 'Working in and with Open Source Communities'
+      , 'designation' : 'CEO at Netways <br>&amp; co-founder of the Icinga Project'
+      , 'twitter'     : 'gethash'
+      , 'photo'       : 'https://images.hasgeek.com/embed/file/a292f38775514b20bf96e50c70200534'
       , 'featured'    : true
-    }
-    , '1112-mesos-cluster-management-framework-and-its-role-at': {
-        'id'          : '1112-mesos-cluster-management-framework-and-its-role-at'
-      , 'speaker'     : 'Yagnik Khanna'
-      , 'title'       : 'Mesos: Cluster management framework and it\'s role at Shopify'
-      , 'designation' : 'Software developer at Shopify'
-      , 'place'       : 'Toronto, Canada'
-      , 'linkedin'    : 'http://www.linkedin.com/in/yagnik'
-      , 'blurb'       : '<p>As applications get scaled across multiple server, there is a need to maximize resource utilization, minimize data replication across different applications by allowing applications/frameworks to share data centre. The talk will introduce Apache Mesos, a framework for sharing resources across nodes in a data centre along with details about it\’s architecture. It will also cover how Shopify uses Mesos to power its infrastructure and scale on demand.</p>'
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/3d02ae11328d4fe2b302ef52c2d6e911.jpeg'
-      , 'featured'    : true
-    }
-    , '1041-building-orchestration-and-configuration-with-ansi': {
-        'id'          : '1041-building-orchestration-and-configuration-with-ansi'
-      , 'speaker'     : 'Aditya Patawari'
-      , 'title'       : 'Building Orchestration and Configuration with Ansible'
-      , 'designation' : 'Cloud and Infrastructure Engineer at BrowserStack.com'
-      , 'place'       : 'Bangalore, India'
-      , 'twitter'     : 'adityapatawari'
-      , 'linkedin'    : 'http://www.linkedin.com/in/adityapatawari'
-      , 'blurb'       : '<p>Ansible is a an agentless orchestration tool which does more or less what Puppet and Chef do. It relies on OpenSSH for transport and YAML for creating playbooks.</p><p>Playbook is essentially a list of rules which are applied to a (set of) server to put them in desired configuration.</p><p>In this talk, he will show how to execute ad hoc commands on one or more servers as well as create simple playbooks. I will also talk about the best practices to use Ansible in order to get maximum benefit out of it.</p><p>Lastly he will share their own story where Ansible really helped them in deploying Virtualization (Xen) Servers vs Pupppet whose compatibility gave them really hard time.</p>'
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/6ac37c61091c445785117e80ea9bc7b8.jpeg'
-      , 'preview'     : ''
-      , 'featured'    : false
-    }
-    , '1063-citoengine-alert-management-and-automation-tool': {
-        'id'          : '1063-citoengine-alert-management-and-automation-tool'
-      , 'speaker'     : 'Cyrus Dasadia'
-      , 'title'       : 'CitoEngine: Alert management and automation tool.'
-      , 'designation' : 'Sr. Tech Lead - Production Engineering (DevOps), Inmobi'
-      , 'place'       : 'Bangalore, India'
-      , 'twitter'     : 'ExtremeUnix'
-      , 'linkedin'    : 'http://www.linkedin.com/in/ministryofsillywalks'
-      , 'blurb'       : '<p>Get rid of pesky duplicate alerts and fiddling through the runbooks. Try the new CitoEngine! It eats up all your alerts, takes actions based on smart rules you define and helps the environment[citation_needed]</p>'
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/d49b9efd19184c9e878e26d3fd49ad42.jpeg'
-      , 'featured'    : true
-    }
-    , '1034-automation-using-robotframework-for-embedded-devic': {
-        'id'          : '1034-automation-using-robotframework-for-embedded-devic'
-      , 'speaker'     : 'Sriramkumar VH'
-      , 'title'       : 'Automation using RobotFramework for embedded device'
-      , 'designation' : 'Founder and CEO of Watchy Technology pvt ltd.'
-      , 'place'       : 'Bangalore, India'
-      , 'linkedin'     : 'http://www.linkedin.com/pub/srix-sriramkumar/a/419/a63'
-      , 'blurb'       : '<p>Understand Keydriven testing and data driven testing using examples.<br>Compare KDT and DDT testcases with manual testcases<br>Walkthrough on KDT and DDT using Robot framework.<br>Applying KDT and DDT on embedded/hardware projects<br>Extending Robotframework to support any language or tools like sikuli</p>'
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/69728455fbc24c71bb04d731cca3e1a9.jpeg'
-      , 'featured'    : false
-    }
-    , '1109-avoiding-single-point-of-failure-in-a-multi-servic': {
-        'id'          : '1109-avoiding-single-point-of-failure-in-a-multi-servic'
-      , 'speaker'     : 'Gurteshwar Singh'
-      , 'title'       : 'Avoiding single point of failure in a multi-services architecture'
-      , 'designation' : 'Product Engineer at Plivo Inc'
-      , 'place'       : 'Bangalore, India'
-      , 'twitter'     : 'GurteshwarSingh'
-      , 'linkedin'    : 'http://www.linkedin.com/in/grsingh'
-      , 'blurb'       : '<p>The audience would learn how we at Plivo avoid single point of failures, in a complex architecture that has lots of moving parts and is on the cloud as well as dedicated hardware.</p>'
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/ac550a773e1d434d896fa1cf275c123d.jpeg'
-      , 'featured'    : true
-    }
-    , '1131-microsoft-azure-infrastructure-services-foundation': {
-        'id'          : '1131-microsoft-azure-infrastructure-services-foundation'
-      , 'speaker'     : 'M.S.Anand'
-      , 'title'       : 'Microsoft Azure Infrastructure Services foundation (sponsored)'
-      , 'designation' : 'Technical Architect at Microsoft Technology Center'
-      , 'place'       : 'Bangalore, India'
-      , 'linkedin'    : 'http://www.linkedin.com/pub/ms-anand/2/415/b91'
-      , 'blurb'       : '<p>This session will give you a better understanding of the basics of configuring Microsoft Azure Infrastructure services including Microsoft Azure Virtual Machines and Virtual Networks.</p><p>Building the foundation for Microsoft Azure Infrastructure as a Service (IaaS) is mostly undermined and can later cause trouble if not planned correctly. Learn about the essential Microsoft Azure Infrastructure foundation concepts in this session &amp; a tour of the features that make up the Microsoft Azure Virtual Machines and Virtual Networks offerings, which collectively make up Microsoft Azure\'s IaaS.</p>'
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/3fd6a81dd67a44c191b89dad22064191.jpeg'
-      , 'preview'     : ''
-      , 'featured'    : true
-    }
-    , '1123-scaling-databases-with-a-database-abstraction-laye': {
-        'id'          : '1123-scaling-databases-with-a-database-abstraction-laye'
-      , 'speaker'     : 'Gaurav Gupta'
-      , 'title'       : 'Scaling databases with a database abstraction layer'
-      , 'designation' : 'VP of Engineering <br>at ScaleArc'
-      , 'place'       : 'Mumbai, India'
-      , 'github'      : 'gagupta'
-      , 'linkedin'    : 'http://www.linkedin.com/in/gagupta79'
-      , 'blurb'       : '<p>The objective of this session is to discuss an architecture to scale and manage the database tier by introducing a database abstraction layer. We will discuss various challenges of database scalability and then discuss few solutions.</p><p>He will be taking few references from the Facebook\'s WebscaleSQL project, Google\'s spanner paper and MySQL proxy.</p>'
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/86951c3b2a8840b992ccd974c008a0d5.jpeg'
-      , 'preview'     : ''
-      , 'featured'    : true
-    }
-    , '1039-continuous-multi-stack-deployments-on-cloud-using-': {
-        'id'          : '1039-continuous-multi-stack-deployments-on-cloud-using-'
-      , 'speaker'     : 'Vinothini Raju'
-      , 'title'       : 'Continuous Multi-stack Deployments on Cloud using Docker'
-      , 'designation' : 'Founder &amp; Director at Trov IT Consulting &amp; Services Pvt Ltd.'
-      , 'place'       : 'Bangalore, India'
-      , 'twitter'     : 'vinothiniraju'
-      , 'blurb'       : '<p>Overview of how docker can be integrated with Jenkins to deploy and configure multi-stack applications on clouds.</p><p>Docker provides a mechanism to lift, shit and fit an environment across various stages of software delivery cycles. By integrating with Jenkins, Docker provides a quick and repeatable software delivery on Cloud.</p>'
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/c1cdf87398354706b24a8a89a0df8ff0.jpeg'
-      , 'preview'     : ''
-      , 'featured'    : false
-    }
-    , '1114-how-we-reduced-the-launch-of-a-60-node-production-': {
-        'id'          : '1114-how-we-reduced-the-launch-of-a-60-node-production-'
-      , 'speaker'     : 'Sriharsha Chillara'
-      , 'title'       : 'How we reduced the launch of a 60 node production cluster on the cloud from 3 days to 2 hours'
-      , 'designation' : 'Developer at Capillary Technologies'
-      , 'place'       : 'Bangalore, India'
-      , 'linkedin'     : 'http://www.linkedin.com/pub/sriharsha-chillara/54/846/147'
-      , 'blurb'       : '<p>To discuss the approach and the processes followed around system topology, configuration management, database versioning and automated deployment to optimize the setup time of a new cluster.</p>'
-      , 'photo'       : 'https://images.hasgeek.com/embed/file/1525fc165b80484e8e0d40b5bda21f01'
-      , 'preview'     : ''
-      , 'featured'    : false
-    }
-    , '1062-postgresql-as-nosql': {
-        'id'          : '1062-postgresql-as-nosql'
-      , 'speaker'     : 'Himanchali'
-      , 'title'       : 'PostgreSQL as NoSQL'
-      , 'designation' : 'Senior DB Engineer at Inmobi'
-      , 'place'       : 'Bangalore, India'
-      , 'linkedin'    : 'http://www.linkedin.com/pub/himanchali/2a/828/7bb'
-      , 'blurb'       : '<p>To help participants to understand that PostgreSQL can also be used as a NoSQL database. Also, while doing this how the application can gain benefit of both SQL and NoSQL environment. Performance analysis between PostgreSQL NoSQL and a NoSQL DB.</p>'
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/b837336952184826b4d068d1af5b800e.jpeg'
-      , 'preview'     : ''
-      , 'featured'    : false
-    }
-    , 'flash-talks':{
-        'id'          : 'flash-talks'
-      , 'title'       : 'Flash talks'
-      , 'speaker'     : 'You!'
-      , 'other'       : true
-    }
-    , 'tba':{
-        'id'          : 'tba'
-      , 'title'       : 'TBA'
-      , 'speaker'     : 'TBA'
-      , 'other'       : true
-    }
-    , 'dinner':{
-        'id'          : 'dinner'
-      , 'title'       : 'Networking dinner'
-      , 'speaker'     : 'Sponsored by&nbsp;&nbsp;<a href="/2014/sponsors#dinner-sequoia-capital"><img src="https://imgee.s3.amazonaws.com/imgee/2a955d660a0749edbb7949245540bfb6.png" alt="Sequoia Capital" height="15" style="margin-top: -3px"></a>'
-      , 'other'       : true
-    }
-    , 'closing':{
-        'id'          : 'closing'
-      , 'title'       : 'Closing'
-      , 'speaker'     : 'Feedback &amp; comments'
-      , 'other'       : true
-    }
-    , 'lunch-day1':{
-        'id'          : 'lunch-day1'
-      , 'title'       : '<span class="dark italic tiny thin">Lunch</span>'
-      , 'speaker'     : 'Powered by&nbsp;&nbsp;<a href="/2014/sponsors#gold-flipkart"><img src="https://imgee.s3.amazonaws.com/imgee/aa05875025af4cb391485e9d372b8860_w100_h31.png" alt="Flipkart" height="25" style="margin-top: -3px"></a>'
-      , 'other'       : true
-    }
-    , 'lunch-day2':{
-        'id'          : 'lunch-day2'
-      , 'title'       : '<span class="dark italic tiny thin">Lunch</span>'
-      , 'other'       : true
     }
   }
 %}

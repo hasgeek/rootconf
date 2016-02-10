@@ -738,7 +738,6 @@ li.event-node{
   overflow: hidden;
   z-index: 9;
   display: block;
-  border: 13px solid rgba(0,0,0, 0.1) !important;
 }
 .circle{
   border-radius: 50%;
@@ -747,10 +746,18 @@ li.event-node{
 }
 .img-wrapper{
   display: block;
-  width: 100%;
+  width: 70%;
   clear: both;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #453750 !important;
+}
+@media (min-width: 768px) {
+  .img-wrapper{
+    width: 60%;
+  }
 }
 .bg-photo{
   height: 160px;
@@ -798,38 +805,13 @@ li.event-node{
   text-decoration: none;
 }
 
-@media (min-width: 980px) and (max-width: 1200px){
-  .featured-speakers li, .program-committee-summary li{    
-    height: 300px;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 979px){
-  .featured-speakers li, .program-committee-summary li{    
-    height: 280px;
-  }
-}
-
 @media (max-width: 767px){
   .photo{
     width: 100%;
   }
-  .img-wrapper{
-    width: 200px;
-  }
   .featured-speakers li, .program-committee-summary li{
     padding-bottom: 20px;
-    height: 300px;
-  }
-}
-@media (max-width: 45em){
-  .img-wrapper{
-    width: 200px;
-  }
-}
-@media (max-width: 35em){
-  .img-wrapper{
-    width: 50%;
+    /*height: 300px;*/
   }
 }
 
