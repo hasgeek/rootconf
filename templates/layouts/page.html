@@ -145,7 +145,7 @@ if (location.hostname == 'rootconf.in') {
 
 <script>
   //Boxoffice widget
-  var boxofficeUrl = "http://boxoffice.karthik.dev:6500";
+  var boxofficeUrl = "http://boxoffice.vidya.dev:6500";
   var username = null;
   var userphone = null;
   var useremail = null;
@@ -154,7 +154,7 @@ if (location.hostname == 'rootconf.in') {
   phone = "{{ g.user.phone }}";
   email = "{{ g.user.email }}";
   {% endif %}
-  $.getScript(boxofficeUrl+"/static/js/boxoffice.js").done(function(){
+  $.getScript(boxofficeUrl+"/boxoffice.js").done(function(){
     window.Boxoffice.init({
       url: boxofficeUrl+'/rootconf/2016',
       inventory: 'Rootconf 2016',
