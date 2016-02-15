@@ -172,13 +172,15 @@ if (location.hostname == 'rootconf.in') {
 <script>
   //Boxoffice widget
   var boxofficeUrl = "http://boxoffice.vidya.dev:6500";
-  var username = null;
-  var userphone = null;
-  var useremail = null;
+  var username, userphone, useremail;
   {% if g.user %}
-  name = "{{ g.user.fullname }}";
-  phone = "{{ g.user.phone }}";
-  email = "{{ g.user.email }}";
+    {% if g.user.fullname %}
+      username = "{{ g.user.fullname }}";
+    {% endif %}
+    {% if g.user.phone %}
+      userphone = "{{ g.user.phone }}";
+    {% endif %}
+    useremail = "{{ g.user.email }}";
   {% endif %}
   $.getScript(boxofficeUrl+"/boxoffice.js").done(function(){
     window.Boxoffice.init({
