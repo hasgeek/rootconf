@@ -143,6 +143,32 @@ if (location.hostname == 'rootconf.in') {
 }
 </script>
 
+<style type="text/css">
+  #boxoffice-widget .boxoffice-button-action {
+    background-color: #E05F26;
+    border-color:  #B94C1D;
+  }
+  #boxoffice-widget .boxoffice-button-info {
+    background-color: #5BC0DE;
+    border-color: #2A9CBE;
+  }
+  #boxoffice-widget .payment-stages-bg {
+    background-color: #463850;
+  }
+  #boxoffice-widget .category a {
+    color: #E05F26;
+  }
+  #boxoffice-widget .category.active a {
+    color: #463850;
+  }
+  #boxoffice-widget .category:not(.active):hover a {
+    background-color: rgba(238, 238, 255, 0.4);
+  }
+  #boxoffice-widget .category::after {
+    background-color: #463850;
+  }
+</style>
+
 <script>
   //Boxoffice widget
   var boxofficeUrl = "http://boxoffice.vidya.dev:6500";
