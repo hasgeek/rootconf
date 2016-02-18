@@ -873,7 +873,12 @@ li.event-node{
 
 }
 @media screen and (min-width: 768px) and (max-width: 991px){
-
+  .navbar .nav > li > a, .navbar-default .navbar-brand, .navbar .dropdown-menu > li > a {
+    font-size: 12px;
+  }
+  .navbar .dropdown-menu {
+    left: -34px;
+  }
 }
 
 @media screen and (max-width: 768px){
