@@ -664,10 +664,12 @@
 .sponsor-compact > li:nth-child(3n+1) { margin-left: 0; }
 
 .sponsorlogo       { text-align: center; border-radius: 0.25rem; height: 5.34rem; line-height: 4.5rem; padding: 0.3rem 0.5rem 0.5rem 0.5rem; background-color: white;}
-.sponsorlogo:hover { background-color: #E5E5E5 !important; }
+.sponsorlogo:hover { background-color: #E5E5E5 !important; border: 0;}
 .sponsorlogo img   { max-height: 100%; max-width: 100%; }
 .sponsorlogo, .link-silent a.sponsor-logo {
     margin: auto 20px 0 0px;
+    display: inline-block;
+    width: 100%;
 }
 
 .sponsor-xl       .sponsorlogo { height: 6.67rem;  line-height: 4rem;    padding: 1.34rem; }
