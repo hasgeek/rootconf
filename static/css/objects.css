@@ -141,8 +141,8 @@
   background-image: url('https://imgee.s3.amazonaws.com/imgee/afdb2a809e6a4035b6a2f2fc9032ff7a_w500_h249.png');
   background-position: center center;
   background-size: 100%;
-  width: 600px;
-  height: 300px;
+  width: 720px;
+  height: 360px;
   display: block;
   position: relative;
   margin: 10px auto 100px;
@@ -335,9 +335,9 @@
 }
 }
 
-@media screen and (min-width: 768px) and (max-width: 992px){
+@media screen and (min-width: 768px) and (max-width: 1199px){
   .masthead-home{ 
-    height: 470px;
+    height: 480px;
     width: 100%;
     background-color: #FFFFFF;
     background-image: url('https://imgee.s3.amazonaws.com/imgee/7cae7d9ce00d40e3b5dbec8a470122d1_w992_h475.jpeg');
@@ -345,7 +345,10 @@
     overflow: hidden;
   } 
   #lamp {
-    height: 105px;
+    height: 50px;
+  }
+  #wire{
+    height: 43px;
   }
   #mast-img{
     background-image: url('https://imgee.s3.amazonaws.com/imgee/aed54c5746084c1ea66d09fd1a970c92.png');
@@ -355,74 +358,40 @@
   }
   .display-board{
     background-image: url('https://imgee.s3.amazonaws.com/imgee/afdb2a809e6a4035b6a2f2fc9032ff7a.png');
-    width: 500px;
-    height: 250px;
+    width: 617px;
+    height: 310px;
   }
 }
-@media screen and (min-width: 992px) and (max-width: 1200px){
-  .masthead-home{ 
-    height: 470px;
-    width: 100%;
-    background-color: #FFFFFF;
-    background-image: url('https://imgee.s3.amazonaws.com/imgee/7cae7d9ce00d40e3b5dbec8a470122d1_w992_h475.jpeg');
-    background-position: center;
-    overflow: hidden;
-  }
-  #lamp {
-    height: 120px;
-  }
-  #mast-img{
-    background-image: url('https://imgee.s3.amazonaws.com/imgee/aed54c5746084c1ea66d09fd1a970c92.png');
-    height: 175px;
-    width: 620px;
-    margin: -161px auto -160px;
-  }
-  .display-board{
-    background-image: url('https://imgee.s3.amazonaws.com/imgee/afdb2a809e6a4035b6a2f2fc9032ff7a.png');
-    width: 500px;
-    height: 246px;
-  }
-}
+
 @media screen and (min-width: 1200px){
   .masthead-home{ 
     width: 100%;
     background-color: #FFFFFF;
     background-image: url('https://imgee.s3.amazonaws.com/imgee/7cae7d9ce00d40e3b5dbec8a470122d1_w1200_h574.jpeg');
-    /*background-position: center;*/
-    overflow: hidden
+    overflow: hidden;
+    height: 97vh;
   }
   #lamp {
     height: 150px;
   }
-}
-@media (min-width: 1200px) and (max-width: 2000px) and (min-height: 600px) and (max-height: 850px){
-  .masthead-home{ 
-    height: 100vh;
+  #mast-floor{
+    height: 280px;
   }
-  .display-board-container {
-    position: relative;
-    top: 10%;
+  .masthead-test img {
+    height: 280px;
+    margin-top: -40px;
+    width: 160%;
+    transform: rotateX(70deg);
+    -webkit-transform: rotateX(70deg);
+    margin-left: -25%;
   }
 }
 @media screen and (max-width: 767px){
   #masthead-test, #mast-floor{
     display: none;
   }
-
 }
 
-
-@media screen and (max-width: 35em){
-
-}
-
-
-/*@media (min-width: 768px) and (max-width: 979px){
-  .masthead-home .logo{
-    margin-top: 15em;
-    margin: 15em auto 0 auto;
-  }
-}*/
 @media (max-width: 767px) {
   .masthead-home .col-lg-8.text-right{
     text-align: center;
@@ -582,9 +551,10 @@
     top:   0.55rem;
 }
 .js .leaflet-map {
-    float: right;
     height: 555px;
     color: black;
+    width: 80%;
+    margin: auto;
 }
 .js .leaflet-map a { border-bottom: none; }
 .js .venue-home .city-level    { width: 65%; border-left: 1px solid #444;}
@@ -1753,36 +1723,10 @@ ul.navbar-brand>li>a{
 }
 
 .scroll-down {
-  position: relative;
+  position: absolute;
+  bottom: 20px;
+  right: 0;
   z-index: 3;
-  -webkit-animation: 1s linear 0s normal none infinite bounce;
-  animation: 1s linear 0s normal none infinite bounce;
-}
-@-webkit-keyframes bounce {
-  0% {
-  top: -5px;
-  opacity: 0;
-  }
-  50% {
-  top: 0px;
-  opacity: 1;
-  }
-  100% {
-  top: -5px;
-  opacity: 0;
-  }
-}
-@keyframes bounce {
-  0% {
-  top: -5px;
-  opacity: 0;
-  }
-  50% {
-  top: 0px;
-  opacity: 1;
-  }
-  100% {
-  top: -5px;
-  opacity: 0;
-  }
+  animation: blink infinite alternate 0.7s;
+  -webkit-animation: blink infinite alternate 0.7s;
 }
