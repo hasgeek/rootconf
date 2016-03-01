@@ -48,7 +48,7 @@
 
 <div class="fill-silver">
   {% block networkbar %}
-    {{ networkbar(siteid='events', login=false) }}
+    {{ networkbar(siteid='events', login=true) }}
   {% endblock %}
 </div>
 
@@ -147,25 +147,26 @@ if (location.hostname == 'rootconf.in') {
   #boxoffice-widget .boxoffice-button-action {
     background-color: #E05F26;
     border-color:  #B94C1D;
+    color: #fff;
   }
   #boxoffice-widget .boxoffice-button-info {
     background-color: #5BC0DE;
     border-color: #2A9CBE;
+    color: #fff;
   }
   #boxoffice-widget .payment-stages-bg {
     background-color: #463850;
   }
-  #boxoffice-widget .category a {
-    color: #E05F26;
+  #boxoffice-widget .progress-indicator>li {
+    color: #bbb;
   }
-  #boxoffice-widget .category.active a {
-    color: #463850;
+  #boxoffice-widget .category-heading {
+    background-color: #f0a40c;
+    border-bottom: 3px solid #d5920d;
+    color: #fff;
   }
-  #boxoffice-widget .category:not(.active):hover a {
-    background-color: rgba(238, 238, 255, 0.4);
-  }
-  #boxoffice-widget .category::after {
-    background-color: #463850;
+  #boxoffice-widget .category-heading:after {
+    border-color: #f0a40c transparent #f0a40c #f0a40c;
   }
 </style>
 
@@ -184,12 +185,12 @@ if (location.hostname == 'rootconf.in') {
   {% endif %}
   $.getScript(boxofficeUrl+"/boxoffice.js").done(function(){
     window.Boxoffice.init({
-      url: boxofficeUrl+'/rootconf/2016',
-      inventory: 'Rootconf 2016',
-      apiKey: '',
-      name: username,
-      phone: userphone,
-      email: useremail,
+      org: 'rootconf',
+      itemCollection: '2016',
+      user_name: username,
+      user_phone: userphone,
+      user_email: useremail,
+      paymentDesc: 'Rootconf 2016'
     });
   });
 </script>
