@@ -5,44 +5,47 @@
     , 'description'         : ''
     , 'sections'            : [      
       ('event-themes',          'ghostwhite'),
+      ('featured-speakers',         'white'),
       ('past-highlights',           'blue'),
       ('tickets',                  'white'),
-      ('venue-summary',             'white')
+      ('venue-summary',             'blue'),
+      ('sponsors-summary',          'dark')
     ]
   }
 %}
 {% block navtype %}
 <div id="nav-home">
-<nav class="navbar navbar-default" id="site-nav" role="navigation">
-  <div class="container sitebar">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand smooth-scroll" href="#header">Rootconf</a>
-    </div>
+  <nav class="navbar navbar-default" id="site-nav" role="navigation">
+    <div class="sitebar">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand smooth-scroll" href="#header">Rootconf</a>
+      </div>
 
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
-      <ul class="nav navbar-nav">
-        <li><a href="#annoucements" class="smooth-scroll">Announcements</a></li>
-        <li><a href="#highlights" class="smooth-scroll">Highlights</a></li>
-        <li><a href="#tickets" class="smooth-scroll">Tickets</a></li>
-        <li><a href="#venue" class="smooth-scroll">Venue</a></li>
-<!--         <li><a href="#sponsors" class="smooth-scroll">Sponsors</a></li> -->
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
-          <ul class="dropdown-menu">        
-            <li><a href="#about" class="smooth-scroll">About HasGeek</a></li>
-            <li><a href="code-of-conduct">Code of conduct</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>  
-  </div>
-</nav>
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="#annoucements" class="smooth-scroll">Announcements</a></li>
+          <li><a href="#highlights" class="smooth-scroll">Featured speakers</a></li>
+          <li><a href="#past-editions" class="smooth-scroll">Past editions</a></li>
+          <li><a href="#tickets" class="smooth-scroll">Tickets</a></li>
+          <li><a href="#venue" class="smooth-scroll">Venue</a></li>
+          <li><a href="#sponsors" class="smooth-scroll">Sponsors</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+            <ul class="dropdown-menu">   
+              <li><a href="#about" class="smooth-scroll">About HasGeek</a></li>
+              <li><a href="code-of-conduct">Code of conduct</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 </div>
 {% endblock %}
 
@@ -56,26 +59,30 @@
   </div>
   
   <div class="display-board-container">
-    <div class="display-board">
-      <div class="white extralarge push-line-top text-center">
+
+    <div class="display-board push-one">
+      <div class="white extralarge text-center">
         <div class="link line2 text-center title-type push-3q-top">
           <div class="logo"><img src="https://imgee.s3.amazonaws.com/imgee/769dc463009d4cf09be7352c8c7b3628.png" width="80px" alt="###">rootconf</div><!-- <div id="blink-wrapper"><span id="blink"></span></div> -->
         </div>
         <p class="tiny prose-type space-half-top">Conference &amp; Workshops on DevOps and Cloud Infrastructure</p>
+        <div class="intro row-fluid secondary prose prose-type thin space-one-top text-center">
+          <p class="nospace">14 - 15 April 2016 | MLR Convention Centre, JP Nagar</p>
+        </div>
       </div>
-
-      <div class="intro row-fluid secondary prose prose-type thin space-one-top text-center">
-        14 - 15 April 2016 | MLR Convention Centre, JP Nagar
+      <div class="push-one text-center">
+        <a href="#tickets" class="button smooth-scroll" onClick="ga('send', { hitType: 'event', eventCategory: 'ticketing', eventAction: 'buy button click', eventLabel: 'Buy tickets'});">Buy tickets</a>
       </div>
-      
     </div> 
+
     <div id="mast-img"></div> 
     <div id="mast-floor">
       <div class="masthead-test">
         <img src="https://imgee.s3.amazonaws.com/imgee/ae4c466819ce4701bbdb851b8988ed1e_w992_h225.jpeg" alt="">
       </div>
     </div> 
+    <p class="large white scroll-down link-silent nospace text-right pad-two"><a href="#annoucements" class="smooth-scroll fa fa-chevron-down visible-lg white"></a></p>
+
   </div>
-  <p class="large white scroll-down link-silent nospace text-right pad-two"><a href="#annoucements" class="smooth-scroll fa fa-chevron-down visible-lg white"></a></p>
 </header>
 {% endblock %}
