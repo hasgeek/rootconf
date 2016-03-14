@@ -247,6 +247,7 @@ function parseJson(data) {
       sessions.forEach(function(session, sessionindex) {
         if(session.room) {
           schedules[scheduleindex].slots[slotindex].sessions[sessionindex].track = getTrack(session.room, rooms);
+          schedules[scheduleindex].slots[slotindex].sessions[sessionindex].roomTitle = getAudiTitle(session.room)
         }
       });
     });
@@ -343,13 +344,13 @@ $(document).ready(function() {
     }
   });
 
-  $('#conferenceschedule, #workshopschedule').on('click', 'table td .expand', function() {
-    if($(this).hasClass('icon-chevron-sign-down')) {
-      $(this).removeClass('icon-chevron-sign-down').addClass('icon-chevron-sign-up');
+  $('#conferenceschedule, #workshopschedule').on('click', 'table td .js-expand', function() {
+    if($(this).hasClass('fa-chevron-circle-down')) {
+      $(this).removeClass('fa-chevron-circle-down').addClass('fa-chevron-circle-up');
       $(this).parents('td').find('.description-text').slideDown();
     }
     else {
-      $(this).removeClass('icon-chevron-sign-up').addClass('icon-chevron-sign-down');
+      $(this).removeClass('fa-chevron-circle-up').addClass('fa-chevron-circle-down');
       $(this).parents('td').find('.description-text').slideUp();
     }
   });

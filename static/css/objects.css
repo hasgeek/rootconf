@@ -1730,3 +1730,118 @@ ul.navbar-brand>li>a{
   animation: blink infinite alternate 0.7s;
   -webkit-animation: blink infinite alternate 0.7s;
 }
+
+/* Schedule */
+.schedule-container { max-width: 1000px; }
+.schedule-table { background-color: #fff; border-collapse: separate; height: 100%;}
+
+.schedule-table thead th.time   { 
+  width: 12%;
+  background-color: transparent;
+  padding: 0;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 5px 10px 0;
+}
+.schedule-table thead th.time div {
+  color: #fff;
+  background-color: #826995; 
+  box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+  padding: 10px 5px;
+  font-size: 10px;
+  border-radius: 4px;
+}
+.schedule-table th.track0,
+.schedule-table th.track1 { 
+  border-color: #fff; 
+  border-style: solid; 
+  border-width: 0 5px 10px 0; 
+  background-color: transparent;
+  padding: 0;
+}
+.schedule-table th.track1 { 
+  border-width: 0 0 10px; 
+}
+.schedule-table th.track0 div,
+.schedule-table th.track1 div {
+  opacity: 0.4;
+  margin: 0 0.2rem;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+  border-radius: 4px;
+  padding: 10px 5px;
+  font-size: 10px;
+}
+.schedule-table th.track0 div {
+  color: #333;
+  background-color: #b3cbb9;
+}
+.schedule-table th.track1 div {
+  color: #fff;
+  background-color: #84a9c0;
+}
+.schedule-table th.track0.tab-active div,
+.schedule-table th.track1.tab-active  div {
+  opacity: 1;
+}
+@media(min-width: 480px) {
+  .schedule-table thead th.time div,
+  .schedule-table th.track0 div,
+  .schedule-table th.track1 div {
+    padding: 1rem .5rem;
+    font-size: inherit;
+  }
+}
+.schedule-table th.tab-active { color: #FFF; background-color: transparent;}
+.schedule-table tbody { height: 100%;}
+.schedule-table tbody td { display: none; vertical-align: top; text-align: center; border: 0; height: 100%; border: 5px solid #fff;}
+.schedule-table tbody td.time     { display: table-cell; color: #826995;  border-color: #826995; border-color-right: #826995; border-style: solid; border-width: 0 3px 0 0; width: 12%; padding: 2rem 1rem; margin: 0; line-height: 1; max-height: 15px; vertical-align: center; }
+.schedule-table tbody td.time p { line-height: 1; padding: 0; margin: 0; }
+.schedule-table tbody td.time-hide { padding: 0; background-color: transparent; border-bottom: 1px solid #ccc; }
+.schedule-table tbody tr:nth-last-child(2) td.time-hide:last-child { border-bottom: transparent; }
+.schedule-table tbody td.time-hide p  { visibility: hidden; }
+.schedule-table td.track-0  { width: 44%; background-color: transparent; padding: 0;}
+.schedule-table td.track-1  { width: 44%; background-color: transparent; padding: 0;}
+.schedule-table td.track-1 a:hover { color: #893;}
+.schedule-table tbody td h4 { margin: 0; }
+.schedule-table tbody td.centered { background-color: transparent; display: table-cell; padding: 0;}
+.schedule-table tbody td .content{
+  padding: 1%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.4);
+  border-radius: 4px;
+  height: 100%;
+}
+.schedule-table tbody td.centered div {
+  background-color: #ddd8b8;
+}
+.schedule-table td.track-0 div {
+  background-color: #b3cbb9;
+}
+.schedule-table td.track-1 div {
+  background-color: #84a9c0;
+  color: #fff;
+}
+.schedule-table tbody td.tab-active { display: table-cell; }
+.js .funnel-schedule-link { display: none; }
+.no-js .schedule-table .js-expand { display: none; }
+.schedule-table .js-expand { cursor: pointer; margin: 0 5px;}
+.js .schedule-table .description-text { display: none; }
+.js .schedule-table .description-text.show-text { display: block; }
+.schedule-table .expand { display: block; }
+
+@media (max-width: 479px) {
+  .schedule-table tbody td h4 { font-size: .8rem; }
+  .schedule-table tbody td p { font-size: .6rem; }
+}
+@media only screen and (min-width: 768px) {
+  .schedule-table thead th.time   { width: 12%; display: none;}
+  .schedule-table thead th.track0  { width: 54%; display: none;}
+  .schedule-table thead th.track1  { width: 34%; display: none;}
+  .schedule-table tbody td.time    { width: 12%; padding: 2rem 1rem 1rem}
+  .schedule-table td.track-0  { width: 54%; background-color: transparent; display: table-cell;}
+  .schedule-table td.track-1  { width: 34%; background-color: transparent; display: table-cell; }
+  .schedule-table td.track-empty  { width: 34%; background-color: #FFF; display: table-cell;}
+  .schedule-table .js-expand { display: inline-block; }
+}
+@media only screen and (min-width: 1024px) {
+  .schedule-table tbody td .content { padding: 2%; }
+}
