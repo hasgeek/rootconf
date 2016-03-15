@@ -19,7 +19,10 @@
     {{#slots}}
       {{#issession}}
       <tr>
-        <td class="time" scope="row"><p class="regular bold">{{slot}}</p></td>
+        <td class="time" scope="row">
+          <div class="time-icon"></div>
+          <p class="regular bold">{{slot}}</p>
+        </td>
         {{#sessions}}
         {{#is_break}}
         <td colspan="2" class="centered" rowspan={{rowspan}}>
@@ -58,7 +61,7 @@
               <p class="space-1q secondary-prose"><em>{{start}} - {{end}}</em></p>
               {{/title}}
               {{#roomTitle}}
-              <p class="space-1q secondary-prose"><i class="fa fa-map-marker"></i> {{roomTitle}}</p>
+              <p class="space-1q tiny"><i class="fa fa-map-marker"></i> {{roomTitle}}, MLR Convention Centre</p>
               {{/roomTitle}}
             </div>
           </td>
