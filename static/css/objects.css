@@ -1755,24 +1755,25 @@ ul.navbar-brand>li>a{
 }
 .schedule-table th.track0 div,
 .schedule-table th.track1 div {
-  opacity: 0.4;
   margin: 0 0.2rem;
   box-shadow: 0 1px 2px rgba(0,0,0,0.25);
   border-radius: 4px;
   padding: 10px 5px;
   font-size: 10px;
+  color: #fff;
+  background-color: #826995; 
 }
-.schedule-table th.track0 div {
-  color: #333;
-  background-color: #b3cbb9;
+/*.schedule-table th.track0 div {
+  color: #fff;
+  background-color: #EBAE5D;
 }
 .schedule-table th.track1 div {
   color: #fff;
-  background-color: #84a9c0;
-}
+  background-color: #eb931f;
+}*/
 .schedule-table th.track0.tab-active div,
 .schedule-table th.track1.tab-active  div {
-  opacity: 1;
+  opacity: 0.4;
 }
 @media(min-width: 480px) {
   .schedule-table thead th.time div,
@@ -1862,14 +1863,15 @@ ul.navbar-brand>li>a{
   height: 100%;
 }
 .schedule-table tbody td.centered div {
-  background-color: #ddd8b8;
+  background-color: #F0DAAB;
 }
 .schedule-table td.track-0 div {
-  background-color: #b3cbb9;
+  background-color: #EBAE5D;
 }
 .schedule-table td.track-1 div {
-  background-color: #84a9c0;
+  background-color: #eb931f;
   color: #fff;
+  padding-top: 25%;
 }
 /*.schedule-table td.track-1 a:hover { color: #893;}*/
 .schedule-table tbody td h4 { 
