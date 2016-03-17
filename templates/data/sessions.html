@@ -32,98 +32,105 @@
 
 {%
   set workshops = {
-    '1120-introduction-to-go-continuous-delivery-software':{
-        'id'          : '1120-introduction-to-go-continuous-delivery-software'
-      , 'title'       : 'Introduction to Go Continuous Delivery Software'
-
-      , 'speaker'     : 'Praveen S'
-      , 'designation' : 'Go Developer, ThoughtWorks'
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/88dc140e27234d6490cd96dcd60d41eb.jpeg'
-      , 'place'       : 'Bangalore, India'
-
-      , 'speaker_alt'     : 'Md Ali Ejaz'
-      , 'speaker_alt_designation' : 'Go Developer, ThoughtWorks'
-      , 'speaker_alt_photo'       : 'https://imgee.s3.amazonaws.com/imgee/30969b49623a42f183457d0e6e14fd9a.jpeg'
-      , 'speaker_alt_linkedin'    : 'http://in.linkedin.com/in/mdaliejaz'
-      , 'speaker_alt_twitter'     : 'mdaliejaz'
-      , 'speaker_alt_place'       : 'Bangalore, India'
-
-      , 'blurb'       : '<p>Takeway from the workshop:<ol><li>Learn how to use Go for continuous deployment/delivery of your application.</li><li>Get to know some of the powerful and differentiating features of Go.</li><li>Understand high level architecture of Go and get familiar with Go codebase.</li></ol></p>'
-      , 'requirements': '<p>Software Requirements<ol><li>Vagrant 1.4 or higher</li><li>VirtualBox 4.3.4 or higher</li></ol></p><p>Note : Each Participant will be handed over a pen drive which will have Ubuntu virtualbox which is fully configured Go development environment. However if someone wants to setup development environment upfront then follow link <a href="https://github.com/gocd/documentation/blob/master/3/3.1.md">https://github.com/gocd/documentation/blob/master/3/3.1.md</a></p><p>Things which can be done before workshop<ol><li>learn Intellij keyboard shortcuts. Carry shortcut cheat sheet if required <a href="http://www.jetbrains.com/idea/docs/IntelliJIDEA_ReferenceCard.pdf">http://www.jetbrains.com/idea/docs/IntelliJIDEA_ReferenceCard.pdf</a></li><li>Basics of git <a href="http://git-scm.com/book/en/Git-Basics-Getting-a-Git-Repository">http://git-scm.com/book/en/Git-Basics-Getting-a-Git-Repository</a></li><li>Building Go <a href="https://github.com/gocd/documentation/blob/master/3/3.1.md#313-building-via-intellij-idea">https://github.com/gocd/documentation/blob/master/3/3.1.md#313-building-via-intellij-idea</a></li><li>Concepts in Go <a href="http://www.thoughtworks.com/products/docs/go/current/help/concepts_in_go.html">http://www.thoughtworks.com/products/docs/go/current/help/concepts_in_go.html</a></li></ol></p>'
-      , 'preview'     : ''
+    '55-miles-to-go-golang-workshop':{
+        'id'          : '55-miles-to-go-golang-workshop'
+      , 'title'       : 'Miles to Go: Golang Workshop'
+      , 'speaker'     : 'Baiju Muthukadan'
+      , 'designation' : ''
+      , 'place'       : ''
+      , 'twitter'     : 'baijum'
+      , 'objective'   : '<p>The primary objective of this workshop is to teach fundamentals of Go programming language.  The workshop will include setting up environment for Go development, explanation about syntax &amp; concepts and solving problems.  The participants will be able to write idiomatic and effective Go code after the session.</p>'
+      , 'bio'         : '<p>Baiju Muthukadan is a DevOps engineer working at ZeOmega, Bangalore. He has contributed to many Free/Open source softwares including Zope, Koha and Salt. He founded the Swathanthra Malayalam Computing project in 2001 while studying at REC, Calicut. He was also employed by Free Software Foundation of India in 2002-2003. He received the first Kenneth Gonsalves award in recognition of his many contributions to Python language community in India. He had conducted a 4 hour Go workshop at NIT Calicut as part of FOSSMeet&lsquo;16 program. He is also writing a book about <a href="http://golang.muthukadan.net" target="_blank">Go</a>.</p>'
+      , 'description'  : '<p>This workshop will teach all the fundamental topics related Go programming.  The participants are expected to have good programming skill with any other programming language (Python, Ruby, Java, C# etc.). Participants can ask questions throughout the workshop time. If the explanation requires more time and if it affects the the timeline, the discussion will be advanced to the end of session.  Here is a brief outline of the session:</p>\n<p>Total duration: 6 hours excluding lunch &amp; tea breaks</p>\n<p><b>Introduction (Time: 30 mins)</b></p>\n<ul>\n<li>Welcome message: &ldquo;Miles to Go: Golang Workshop&rdquo;</li>\n<li>About Me - Why presenting this workshop? - My background &amp; experience with Go</li>\n<li>Participants introductions</li>\n<li>Software developer skills (5 minute group discussion) - Make participants to speak (Icebreaker)</li>\n<li>Explain the plan for the workshop - briefly go through the agenda for the day</li>\n<li>Few basic facts about Go - motivational speech comparing with other languages (10 mins)</li>\n<li>Hello world program - show and run hello world from browser - explain the program structure</li>\n<li>More reasons to use Go: Simplicity, Consistency, Readability, Safety (Type safety, Memory safety), Speed</li>\n</ul>\n<p><b>Development Environment (Time: 30 mins)</b></p>\n<ul>\n<li>Installation - high level overview of installation - environment variables: GOROOT &amp; GOPATH</li>\n<li>Building and running Go - go run - go build - environment variable: GOOS &amp; GOARCH</li>\n<li>Organizing code - workspace directory structure ($GOPATH) - project folder structure hosted in Github</li>\n<li>Getting third party code - &ldquo;go get&rdquo; command</li>\n<li>Formatting Go code - &ldquo;go fmt&rdquo; command</li>\n</ul>\n<p><b>Fundamentals (Time: 1 hr)</b></p>\n<ul>\n<li>Comments - C style - C++ style</li>\n<li>Primitive types</li>\n<li>Variables</li>\n<li>Constants</li>\n<li>Pointers</li>\n<li>Interface</li>\n<li>Errors</li>\n<li>Command line arguments</li>\n<li>Packages</li>\n</ul>\n<p><b>Control structures (Time: 30 mins)</b></p>\n<ul>\n<li>If Conditions</li>\n<li>For Loop</li>\n<li>Switch statement</li>\n<li>Defer statement</li>\n<li>Exercise</li>\n</ul>\n<p><b>Data Structures (Time: 30 mins)</b></p>\n<ul>\n<li>Structs</li>\n<li>Slices and Arrays</li>\n<li>Maps</li>\n<li>Exercise</li>\n</ul>\n<p><b>Functions &amp; Methods (Time: 45 mins)</b></p>\n<ul>\n<li>Type declarations</li>\n<li>Function declarations</li>\n<li>Method declaration</li>\n<li>Exercise</li>\n</ul>\n<p><b>Interfaces (Time: 45 mins)</b></p>\n<ul>\n<li>Defining interface</li>\n<li>Exercise</li>\n</ul>\n<p><b>Concurrency (Time: 1 hr)</b></p>\n<ul>\n<li>Goroutines</li>\n<li>Channels - send &amp; receive</li>\n<li>Mutex</li>\n<li>WaitGroup</li>\n<li>Exercise</li>\n</ul>\n<p><b>Q&amp;A (Time: 30 mins)</b></p>\n<p>This time will be used for further clarification about any topic that is discussed during the session.  </p>'
+      , 'requirements' : '<p>Knowledge and skills expected about participants:</p>\n<ul>\n<li>Participants should have few years of experience in some other programming language (Python, Ruby, Java, C# etc.)</li>\n<li>Participants should know how to use <a href="http://git-scm.com/doc" target="_blank">Git version control system</a></li>\n<li>Participants should be comfortable with one shell (Bash, Zsh, PowerShell etc.)</li>\n<li>Participants should be comfortable with one text editor (Vim, Emacs, VS Code etc.)</li>\n</ul>\n<p>Other requirements:</p>\n<ul>\n<li>Participants should bring a laptop with power adaptor, convertors and other peripherals</li>\n<li>Internet connectivity should be ensured</li>\n<li>The laptop should have an operating system with Go support (GNU/Linux or Mac OS or Windows)</li>\n<li>The Go 1.6 compiler should be installed. Refer this <a href="http://muthukadan.net/golang/an-introduction-to-go-programming.html" target="_blank">blog post.</a></li>\n<li>Text editors like Vim, Emacs or VS Code should be installed with all required plugins and it should be ready to use</li>\n</ul>\n<p>Text editor configuration:</p>\n<ul>\n<li>Vim users can refer this  <a href="http://muthukadan.net/article/golang-vim.html" target="_blank">article</a> for configuration.</li>\n<li>Emacs users can refer this <a href="http://tleyden.github.io/blog/2014/05/22/configure-emacs-as-a-go-editor-from-scratch/" target="_blank">blog post</a> for configuration.</li>\n<li>VS Code users can use the Go plugin available in the <a href="https://marketplace.visualstudio.com/items?itemName=lukehoban.Go" target="_blank">marketplace</a>.</li>\n<li>Other editor users should find and install appropriate plugins to work with Go.</li>\n</ul>'
+      , 'photos'      : ['https://images.hasgeek.com/embed/file/a27398a922494d4684ee28c35c81928d']
       , 'featured'    : true
-    }
-    , '1079-selinux-for-the-uninitiated':{
-        'id'          : '1079-selinux-for-the-uninitiated'
-      , 'title'       : 'SELinux for the Uninitiated'
-      , 'speaker'     : 'Rejy M Cyriac'
-      , 'designation' : 'Quality Engineer, Red Hat'
-      , 'place'       : 'Bangalore, India'
+      , 'date'        : 'April 16, 2016'
+      , 'time'        : ''
+      , 'venue'       : ''
+      , 'price'       : 'Rs. 2500'
+      , 'count'       : 1
+      , 'links'       : [{'title': 'Slides', 'url': "http://go-talks.appspot.com/github.com/baijum/presentation/golang_workshop/presentation.slide"}, {'title': "Exercises with answers for this workshop", 'url': "https://dl.dropboxusercontent.com/u/37164281/exercises.pdf"}, {'title': "Source for slides and exercises and all Go programs used for this workshop", 'url':"https://github.com/baijum/presentation/tree/gh-pages/golang_workshop"}, {'title': "My website and blog", 'url':"http://muthukadan.net"}, {'url': "https://www.youtube.com/watch?v=bFSQ8yb7xRo", 'title': "Flash talk @ Rootconf'14"}, {'url': "https://www.youtube.com/watch?v=LeuQ409r1hg", 'title': "A talk at PyCon India 2015"}, {'url': "https://www.youtube.com/watch?v=UEMjz5A_M5o", 'title': "Lightning talk at PyCON 2011, Atlanta"}, {'url': "https://www.youtube.com/watch?v=rpbQSR-mPT8", 'title': "Screencast about interfaces in Go"}]
+    },
+    '64-best-practices-for-mysql-high-availability':{
+        'id'          : '64-best-practices-for-mysql-high-availability'
+      , 'title'       : 'Best Practices for MySQL High Availability'
+      , 'speaker'     : 'Colin Charles'
+      , 'designation' : ''
+      , 'place'       : ''
+      , 'twitter'     : 'bytebot'
+      , 'objective'   : '<p>The MySQL ecosystem is 21 years old which means there are plenty of solutions for you to use, or stuff that you may have used. Learn from best practices over the years, and use tools that are current for your next deployment.</p>'
+      , 'bio'         : '<p>Colin Charles works on the MariaDB Server at MariaDB Corporation. He has been the Chief Evangelist for MariaDB since 2009, with work ranging from speaking engagements to consultancy and engineering works around MariaDB. He lives in Kuala Lumpur, Malaysia and had worked at MySQL since 2005, and been a MySQL user since 2000. Before joining MySQL, he worked actively on the Fedora and OpenOffice.org projects. He&rsquo;s well known within open source communities in APAC, and has spoken at many conferences to boot.</p>'
+      , 'description' : '<p>The MySQL world is full of tradeoffs and choosing a High Availability (HA) solution is no exception. This session aims to look at all of the alternatives in an unbiased nature. Preference is of course only given to opensource solutions. </p>\n<p>How do you choose between: MySQL replication, MHA, DRBD, Tungsten, Galera Cluster? Do you integrate Pacemaker and Heartbeat like Percona Replication Manager? Is NDB Cluster right for your workload? The cloud brings even more fun as geographical redundancy is rolled into this. There are now even &ldquo;modern&rdquo; tools to assist in automation like Orchestrator, Consul, MariaDB MaxScale &amp; MySQL Router.</p>\n<p>This and more will be covered in a walkthrough of MySQL HA options and when you will apply them.</p>'
+      , 'requirements' : '<p>Ideally, a Linux or Mac laptop which can run MySQL Sandbox so you can install a few instances of MySQL or MariaDB Server. If we have access to a fast Internet connection, this can be then done in EC2 or a cloud provider, so access to one of those accounts.</p>'
+      , 'photos'       : ['https://images.hasgeek.com/embed/file/cfa1d08cbce24aff85b12ab5dc0f50ea']
+      , 'featured'    : true
+      , 'date'        : 'April 16, 2016'
+      , 'time'        : ''
+      , 'venue'       : ''
+      , 'price'       : 'Rs. 2500'
+      , 'count'       : 1
+      , 'links'       : []
+    },
+    '33-comparing-how-different-container-orchestration-to':{
+        'id'          : '33-comparing-how-different-container-orchestration-to'
+      , 'title'       : 'Comparing how different container orchestration tools scale to production'
+      , 'speaker'     : 'Aditya Patawari'
+      , 'designation' : ''
+      , 'place'       : ''
+      , 'twitter'     : 'adityapatawari'
+      , 'objective'   : '<p>To setup and understand scaling pratices of various Docker Orchestration tools</p>'
+      , 'bio'         : '<p>Aditya Patawari is a consultant and trainer specializing in container technologies. He has given talks and workshops on containers and related technolgies in India and abroad (including FOSDEM, Flock and Rootconf). He is a contributor to Kubernetes project and to Fedora Project. </p>'
+      , 'description' : '<p>In this workshop we&rsquo;ll learn how to setup and benchmark different container orchestration tools. We&rsquo;ll take a real world example of a web application with database backend. We will setup a few contianer orchestration tools including Docker compose and swarm, Kubernetes and Mesos and see how they build and scale containers to meet ever-increasing traffic.</p>'
+      , 'requirements': '<p>Primary goal of the workshop is to gain hands-on experience on various Docker orchestration systems and then have an educated debate on what orchestration systems would fit a given environment. So audience for the workshop should have hands-on experience on deploying and managing applications, but not necessarily containerized. We will containerize an application as a part of the workshop itself.<br>\nAdditionally, audience should have basic hands-on experience on running following three commands:<br>\n1. docker run<br>\n2. docker ps<br>\n3. docker images</p>\n<p>Audience would also need:</p>\n<ul>\n<li>Internet</li>\n<li>Laptop with Linux and a fresh running Linux virtual machine Or a Laptop with two Linux vitual machines, preferably Centos.</li>\n</ul>'
+      , 'photos'      : ['https://images.hasgeek.com/embed/file/90602c729a654247833b1163f128e358']
+      , 'featured'    : true
+      , 'date'        : 'April 17, 2016'
+      , 'time'        : ''
+      , 'venue'       : ''
+      , 'price'       : 'Rs. 2500'
+      , 'count'       : 1
+      , 'links'       : [{'title': "Slides", 'url': "https://github.com/adimania/docker-magento-orchestration"}, {'title': "Fault tolerance with kubernetes", 'url': "https://video.fosdem.org/2016/ua2114/fault-tolerance-with-kubernetes.mp4"}]
+    },
+    '53-workshop-puppet-in-production':{
+        'id'          : '53-workshop-puppet-in-production'
+      , 'title'       : 'Workshop Puppet in Production'
+      , 'speaker'     : 'Walter Heck'
+      , 'designation' : ''
+      , 'place'       : ''
+      , 'twitter'     : 'walterheck'
+      , 'objective'   : '<p>The objective of this workshop is to show attendees how to run a puppet setup in a production environment</p>'
+      , 'bio'         : '<p>Walter Heck is the founder and CTO of OlinData. He is organiser of the configuration management devroom at FOSDEM and co-organiser of the config management camp. Walter has more then a decade of background in Programming, MySQL Databases and more recently Puppet and all the tools that come with it. Walter has spoken at many international conferences on 3 continents over the past 6 years.</p>'
+      , 'description' : '<p>In this workshop we&rsquo;ll be going through some simple exercises to set up and deploy open source puppet ready for a real world deployment. Git, hiera, r10k, all with best practices and in an extensible way.</p>'
+      , 'requirements': '<p>You should have a basic idea of puppet, know what git is and be able to manage yourself on a linux command line.</p>'
+      , 'photos'      : ['https://images.hasgeek.com/embed/file/98f034f9cb2c46519ff72af35a5391b6']
+      , 'featured'    : true
+      , 'date'        : 'April 17, 2016'
+      , 'time'        : ''
+      , 'venue'       : ''
+      , 'price'       : 'Rs. 2500'
+      , 'count'       : 1
+      , 'links'       : []
+    },
+    '2-dnssec-workshop':{
+        'id'          : '2-dnssec-workshop'
+      , 'title'       : 'DNSSEC workshop'
+      , 'speaker'     : 'Philip Paeps'
+      , 'designation' : ''
+      , 'place'       : ''
       , 'twitter'     : ''
-      , 'blurb'       : '<p>Lack of knowledge about the basics of SELinux leads to many SysAdmins/DevOps disabling SELinux on production servers, and inadvertently losing out on the security benefits.</p><p>The session is aimed at presenting the basics of SELinux in an easy to understand way, so that SysAdmins/DevOps would have strong foundational information to start using SELinux, and to progress at one\'s own pace to advanced usage.</p>'
-      , 'requirements': '<p>Only an open mind</p>'
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/a53589019c67467288a1b9053d731914.jpeg'
-      , 'preview'     : ''
+      , 'objective'   : '<p>At the end of this course, participants will be familiar with the Domain Name System and Security Extensions to the Domain Name System (DNSSEC).  The course is taught &ldquo;hands-on&rdquo; in a virtualized FreeBSD environment using the BIND, NSD and Unbound name server implementations.  Participants will configure authoritative and recursive domain name servers and will learn to analyse and debug common misconfigurations and bugs.</p>'
+      , 'bio'         : '<p>Philip Paeps (&ldquo;trouble&rdquo;) is an independent consultant and contractor based in Belgium.  He provides research and development on low-level software and operating systems, particularly in an embedded or real-time context.  His main interests are bootloaders, device drivers and high-performance networking.  He can also be convinced to teach courses and workshops on a variety of networking-related topics.</p>\n<p>In his so-called free time, Philip is a FreeBSD committer contributing mainly to the kernel and a member of the FreeBSD security team.  He was one of the main organisers of FOSDEM, the largest annual open source software conference in Europe, from the early 2000s until 2015.  He denies having any involvement with amateur radio or tabletop role playing games.</p>'
+      , 'description' : '<p>Hands on DNS and DNSSEC.<br>\nThree day course.</p>'
+      , 'requirements': '<p>Participants should be familiar with Unix-style operating systems.  The course is taught on FreeBSD but the environment will be familiar to people with a systems administration background on Linux or Solaris.  Participants should bring their own laptops.  The virtualised lab environment is hosted on a server in Germany.  Reliable internet connectivity with reasonable latency is required.</p>'
+      , 'photos'      : ['https://images.hasgeek.com/embed/file/75378f8beabf45cbb506317b8f359a70']
       , 'featured'    : true
-    }
-    , '1130-continuous-deployment-with-fabric':{
-        'id'          : '1130-continuous-deployment-with-fabric'
-      , 'title'       : 'Continuous deployment with Fabric'
-      , 'speaker'     : 'Akshar Raaj'
-      , 'designation' : 'Web developer at Agiliq'
-      , 'place'       : 'Bangalore, India'
-      , 'github'      : 'akshar-raaj'
-      , 'blurb'       : '<p>People attending this talk will leave with an understanding of continous deployment and continous deployment tools in general and Fabric in particular.</p><p>They will appreciate the usefulness of a continous deployment tool like Fabric. Essentially they will realise the time they save by using a single step build process. By the time they leave, they would have learned how to write a Fabric script which can automate deployment.</p>'
-      , 'requirements' : '<p>A laptop with Python installed on it.</p>'
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/426a551a122e4499bf96637d62868337.jpeg'
-      , 'preview'     : ''
-      , 'featured'    : true
-    }
-    , '1036-linux-containers-lxc-and-future-of-software-delive':{
-        'id'          : '1036-linux-containers-lxc-and-future-of-software-delive'
-      , 'title'       : 'Linux containers (LXC) and future of software delivery'
-      , 'speaker'     : 'Neependra Khare'
-      , 'designation' : 'Performance Engineer, Red Hat'
-      , 'place'       : 'Bangalore, India'
-      , 'twitter'     : 'neependra'
-      , 'blurb'       : '<p>Understand what Linux containers are and how to package a given software using them. We would use docker (https://www.docker.io) to do that.</p>'
-      , 'requirements': '<p><ul><li>Linux distribution with kernel > 3.8</li><li>For RHEL, kernel > 2.6.32-431</li></ul></p>'
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/19638cb43e4148489bb63fcaa3065836.jpeg'
-      , 'preview'     : ''
-      , 'featured'    : true
-    }
-    , '1121-ansible-with-puppet-at-scale':{
-        'id'          : '1121-ansible-with-puppet-at-scale'
-      , 'title'       : 'Ansible with Puppet at Scale'
-      , 'speaker'     : 'Madhurranjan Mohaan'
-      , 'designation' : 'DevOps Engineer, Apigee'
-      , 'place'       : 'Bangalore, India'
-      , 'twitter'     : 'madhurranjan'
-      , 'linkedin'    : 'http://in.linkedin.com/pub/madhurranjan-mohaan/a/740/927'
-      , 'blurb'       : '<p>Attendees will benefit from things like:<ol><li>How to run Ansible and puppet at scale. What problems you face and how these tools work with each other</li><li>How to use new cool tools like etcd in the mix to solve problems</li><li>How to automate almost everything and make sure everyone across the organization uses the same tools.</li><li>Alerting and logging practices to follow when you build Ops/Support tools</li><li>How python can be a really cool ops language</li></ol></p>'
-      , 'requirements': '<p>An eager ear to listen and question the speakers</p>'
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/812573d7fd44401da9eccb1871cdf8dc.jpeg'
-      , 'preview'     : ''
-      , 'featured'    : true
-    }
-    , '1071-continuous-delivery-using-jenkins':{
-        'id'          : '1071-continuous-delivery-using-jenkins'
-      , 'title'       : 'Continuous Delivery using Jenkins'
-      , 'speaker'     : 'Leena S N'
-      , 'designation' : 'Head of Engineering at Multunus Software'
-      , 'photo'       : 'https://imgee.s3.amazonaws.com/imgee/4014bdd8f2314a0f920e0a667f09ac91.jpeg'
-      , 'twitter'     : 'leenasn'
-      , 'place'       : 'Bangalore, India'
-
-      , 'speaker_alt'     : 'Akshay S Murthy'
-      , 'speaker_alt_designation' : 'Product Developer at Multunus Software'
-      , 'speaker_alt_photo'       : 'https://imgee.s3.amazonaws.com/imgee/d97093e5070c49d0b27625b7131a6d9a.jpeg'
-      , 'speaker_alt_linkedin'     : 'http://www.linkedin.com/in/akshaysmurthy'
-      , 'speaker_alt_place'       : 'Bangalore, India'
-
-      , 'blurb'       : '<p>It does not matter how good our design or architecture is, at the end of the day what matters is whether our code is ready for production. But the question is, how we make sure that our code is always production ready. As described by Jez Humble [Co-author of Continuous Delivery book] Continuous Delivery [CD] is fast, automated feedback for production readiness of our code when any change that happens to the code or DB or config or the infrastructure.</p><p>During this workshop, we will give an overview of Continuous Integration[CI] and Continuous Delivery[CD] and also talk about the practices that are required for implementing CI and CD such as:<ul><li>Mainline Development</li><li>Feature Toggles</li><li>Build Automation</li><li>Deployment Automation</li></ul></p><p>We will also walk you through setting up CD using Jenkins and its Build Pipeline Plugin. We will also briefly touch upon open source tools that help with deployment automation such as Chef/Puppet, Capistrano etc.</p>'
-      , 'preview'     : ''
-      , 'featured'    : true
+      , 'date'        : '22-24 April, 2016'
+      , 'time'        : ''
+      , 'venue'       : ''
+      , 'price'       : 'Rs. 2500'
+      , 'count'       : 1
+      , 'links'       : [{'title': "Slides", 'url': "https://trouble.is/~philip/2015-08-DNSSEC-SdNOG/DNSSEC-course.pdf"}, {'title': "Bio", 'url': "https://trouble.is/bio"}]
     }
   }
 %}

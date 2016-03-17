@@ -54,7 +54,6 @@ fbq('track', "PageView");</script>
 src="https://www.facebook.com/tr?id=1673537442887544&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Facebook Pixel Code -->
-
 </head>
 <body class="fill-ghostwhite">
 
@@ -79,11 +78,11 @@ src="https://www.facebook.com/tr?id=1673537442887544&ev=PageView&noscript=1"
         </div>
         <div class="extrabold legible">Rootconf</div>
       </div>
-      <div class="col-lg-7 col-md-7 col-sm-5 col-xs-5">
+      <div class="col-lg-7 col-md-7 col-sm-5 col-xs-4">
         <h2 class="space-one-top push-3q-top large">{% block pagetitle %}{% endblock %}</h2>
       </div>
 
-      <div class="ticket-link-container col-lg-3 col-md-3 col-sm-4 col-xs-4">
+      <div class="ticket-link-container col-lg-3 col-md-3 col-sm-4 col-xs-5">
         <h3 class="calm tiny nospace-bottom all-caps text-right">14 - 15 April 2016, Bangalore</h3>
         <p class="text-right space-half-top">
           <a class="button" href="https://in.explara.com/e/rootconf-2016/checkout" target="_blank" onClick="ga('send', { hitType: 'event', eventCategory: 'ticketing', eventAction: 'buy button click', eventLabel: 'Buy your ticket'});">
@@ -166,6 +165,21 @@ if (location.hostname == 'rootconf.in') {
   <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
   <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
 <![endif]-->
+
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+</script>
+
+<div id="fb-root"></div>
+<script>
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
 
 </body>
 </html>

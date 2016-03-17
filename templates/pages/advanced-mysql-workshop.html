@@ -1,0 +1,22 @@
+{% extends theme('layouts/page.html') %}
+{%
+  set page = {
+      'title'       : 'Advanced MySQL Workshop'
+    , 'description' : 'Workshops in Rootconf 2016'
+  }
+%}
+{% block content %}
+{% with %}
+  {% from theme("data/sessions.html") import workshops %}
+  {% 
+    set session = {
+        'id'    : ''
+      , 'label' : ''
+      , 'link'  : 'workshops#sessions'
+      , 'list'  : [workshops['64-best-practices-for-mysql-high-availability']]
+      , 'types' : types
+    }
+  %}
+  {% include theme("layouts/sessions.html") %}
+{% endwith %}
+{% endblock %}

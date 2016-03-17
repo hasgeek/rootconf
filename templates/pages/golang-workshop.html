@@ -1,0 +1,22 @@
+{% extends theme('layouts/page.html') %}
+{%
+  set page = {
+      'title'       : 'Golang Workshop'
+    , 'description' : 'Workshops in Rootconf 2016'
+  }
+%}
+{% block content %}
+{% with %}
+  {% from theme("data/sessions.html") import workshops %}
+  {% 
+    set session = {
+        'id'    : ''
+      , 'label' : ''
+      , 'link'  : 'workshops#sessions'
+      , 'list'  : [workshops['55-miles-to-go-golang-workshop']]
+      , 'types' : types
+    }
+  %}
+  {% include theme("layouts/sessions.html") %}
+{% endwith %}
+{% endblock %}
