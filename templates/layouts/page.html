@@ -40,8 +40,6 @@
 
 <script src="{{ theme_static('js/vendor/modernizr-2.6.2.js') }}"></script>
 
-<!-- <script type="text/javascript" src="//use.typekit.net/ewq6otu.js"></script>
-<script type="text/javascript">try{Typekit.load();}catch(e){}</script> -->
 <script>
     (function(_,e,rr,s){_errs=[s];var c=_.onerror;_.onerror=function(){var a=arguments;_errs.push(a);
     c&&c.apply(this,a)};var b=function(){var c=e.createElement(rr),b=e.getElementsByTagName(rr)[0];
@@ -204,7 +202,7 @@ if (location.hostname == 'rootconf.in') {
       useremail = "{{ g.user.email }}";
     {% endif %}
     $.ajax({
-      url: boxofficeUrl+"/boxoffice.js",
+      url: boxofficeUrl+"/api/1/boxoffice.js",
       crossDomain: true,
       headers: {'X-Requested-With': 'XMLHttpRequest'}
     }).done(function(data) {
@@ -212,8 +210,8 @@ if (location.hostname == 'rootconf.in') {
       boxofficeScript.innerHTML = data;
       document.getElementsByTagName('body')[0].appendChild(boxofficeScript);
       window.Boxoffice.init({
-        org: 'rootconf',
-        itemCollection: '2016',
+        org: 'hasgeek',
+        itemCollection: 'rootconf-2016',
         user_name: username,
         user_phone: userphone,
         user_email: useremail,
