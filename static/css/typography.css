@@ -39,7 +39,7 @@ html                    { font-size: 16px;     line-height: 1.5; }
     .large-prose        { font-size: 1.200rem; line-height: 1.54; }
     .regular-prose      { font-size: 1.000rem; line-height: 1.50; }
     .secondary-prose    { font-size: 0.690rem; line-height: 1.49; }
-    .tiny               { font-size: 0.650rem; line-height: 1.49; }
+    /*.tiny               { font-size: 0.650rem; line-height: 1.49; }*/
 }
 @media only screen and (min-width: 55em) {
 /*    .huge.body-type     { font-size: 3.500rem; line-height: 0.95; }*/

@@ -1,74 +1,45 @@
-<section id="sessions" class="push-two clearfix{% if background %} fill-{{ background }}{% endif %}">
-<div class="container">
-  <div class="row text-center">
-    <h2 class="offset1 extralarge all-caps space-two-bottom">{{ session.label }}</h2>
-  </div>
-
-
-       <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          {% for item in session.list %}
-            {% if not item.other %}
-            <div id="{{ item.id }}" class="row">
-              <div class="col-lg-5 col-lg-offset-2 col-md-6 col-md-offset-1 col-sm-6 col-xs-12">
-                <h4 class="green regular">{{ item.title|safe }}</h4>
-                <p>{{ item.blurb|safe }}</p>
-                {% if item.requirements %}
-                  <h5 class="all-caps fill-gray pad-1q push-1q">Requirements:</h5>
-                  <div class="forcewrap">{{ item.requirements|safe }}</div>
-                {% endif %}
-                <ul class="list-plain tiny-prose prose space-one-top push-one-bottom">
-                  <li class="flushleft"><a target="_blank" class="button" href="https://funnel.hasgeek.com/metarefresh2014/{{ item.id }}"><i class="fa fa-filter"></i>&nbsp;Funnel Proposal</a></li>
-                  {% if item.preview %}<li class="flushright"><a target="_blank" class="button" href="{{ item.preview }}">Preview</a></li>{% endif %}
-                </ul>
-              </div>
-              <div class="col-lg-3 col-md-4 col-xs-12 col-sm-6 col-xs-12 text-center">
-                <div class="row">
-                  <div class="col-lg-12">
-                    <div class="fill-gray push-3q-top push-half-bottom space-half pad-half">
-                      {% if item.photo %}
-                      <div class="row">
-                        <div class="col-lg-12">
-                          <div class="bg-photo circle" style="background-image: url({{ item.photo }})"></div>
-                        </div>
-                      </div>
-                      {% endif %}
-                      <h4 class="green">{{ item.speaker|safe }}<h4>
-                      <h5 class="bold">{{ item.designation|safe }}</h5>
-                      <div class="regular-prose">
-                        {% if item.linkedin %}<a class="link-silent" href="{{ item.linkedin }}" title="{{ item.speaker }} - LinkedIn" target="_blank"><i class="fa fa-linkedin-square"></i></a>{% endif %}
-                        {% if item.twitter %}<a class="link-silent" href="https://twitter.com/{{ item.twitter }}" title="{{ item.speaker }} - twitter" target="_blank"><i class="fa fa-twitter-square"></i></a>{% endif %}
-                        {% if item.github %}<a class="link-silent" href="https://github.com/{{ item.github }}" title="{{ item.speaker }} - twitter" target="_blank"><i class="fa fa-github-square"></i></a>{% endif %}
-                      </div>
-                    </div> 
-                  </div>
-                  {% if item.speaker_alt %}
-                  <div class="col-lg-12">
-                    <div class="fill-gray push-3q-top push-half-bottom space-half pad-half">
-                      {% if item.speaker_alt_photo %}
-                      <div class="row">
-                        <div class="col-lg-12">
-                          <div class="bg-photo circle" style="background-image: url({{ item.speaker_alt_photo }})"></div>
-                        </div>
-                      </div>
-                      {% endif %}
-                      <h4 class="green">{{ item.speaker_alt|safe }}<h4>
-                      <h5 class="bold">{{ item.speaker_alt_designation|safe }}</h5>
-                      <div class="regular-prose">
-                        {% if item.speaker_alt_linkedin %}<a class="link-silent" href="{{ item.speaker_alt_linkedin }}" title="{{ item.speaker_alt }} - LinkedIn" target="_blank"><i class="fa fa-linkedin-square"></i></a>{% endif %}
-                        {% if item.speaker_alt_twitter %}<a class="link-silent" href="https://twitter.com/{{ item.speaker_alt_twitter }}" title="{{ item.speaker_alt }} - twitter" target="_blank"><i class="fa fa-twitter-square"></i></a>{% endif %}
-                        {% if item.speaker_alt_github %}<a class="link-silent" href="https://github.com/{{ item.speaker_alt_github }}" title="{{ item.speaker_alt }} - twitter" target="_blank"><i class="fa fa-github-square"></i></a>{% endif %}
-                      </div>
-                    </div> 
-                  </div>
-                  {% endif %}
-                </div>         
-              </div>
-            </div>
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12"><hr></div>
-            {% endif %}
-          {% endfor %}
+<section id="{{ session.id }}" class="clearfix{% if background %} fill-{{ background }}{% endif %}">
+<div class="container-fluid">
+  {% if session.label %}<h2 class="large all-caps text-center push-one">{{ session.label }}</h2>{% endif %}
+  {% for item in session.list|sort(attribute='count') %}
+  <div id="{{ item.id }}" class="row push-two-bottom pad-3q session">
+    <div class="row-fluid">
+      <h3 class="legible nospace-top medium push-one-top pad-half darkblue bold text-center">{{ item.title|safe }}</h3>
+      <div class="col-md-4 col-xs-12 speaker-bio">
+        {% if item.photos %}<div class="clearfix nospace-top push-one-top space-half-bottom text-center">{% for photo in item.photos %}<img src="{{photo}}" alt="" class="center-block speaker-photo {% if item.photos|length > 1 %} speaker-photo-small {% endif %}">{% endfor %}</div>{% endif %}
+        <h4 class="regular calm all-caps space-1q-top nospace-bottom darkblue bold text-center">{{ item.speaker|safe }}</h4>
+        {% if item.twitter %}<div class="link-silent regular-prose space-1q-top nospace-bottom text-center"><a class="twitter-blue" href="https://twitter.com/{{ item.twitter }}" target="_blank">@{{ item.twitter }}</a></div>{% endif %}
+        {% if item.designation %}<p class="secondary italic space-1q-top nospace-bottom darkyellow text-center">{{ item.designation|safe }}</p>{% endif %}
+        {% if item.bio %}<div class="secondary space-1q-top nospace-bottom text-center">{{ item.bio|safe }}</div>{% endif %}
+        {% if item.sponsor %}<div class="lightblue secondary-prose space-1q-top nospace-bottom link-silent"><em>Sponsored session by <a href="{{ item.sponsor_link }}" target="_blank">{{ item.sponsor }}</a></em></div>{% endif %}
+      </div>
+      <div class="col-md-8 col-xs-12">
+        {% if item.banner %}<div class="regular nospace-top push-one-top pad-half"><img src="{{ item.banner[0]|safe }}" alt="{{ item.banner[0]|safe }}"/><p class="tiny space-1q-top">{{ item.banner[1]|safe }}</p></div>{% endif %}
+        {% if item.objective %}<div class="regular nospace-top push-one-top pad-half"><h2 class="legible semibold nospace-top space-half-bottom">Objective</h2>{{ item.objective|safe }}</div>{% endif %}
+        {% if item.preview %}<div class="pad-half"> {{ item.preview|safe }} </div>{% endif %}
+        {% if item.description %}<div class="regular space-one pad-half link-silent"><h2 class="legible semibold space-half">Description</h2>{{ item.description|safe }}</div>{% endif %}
+        {% if item.requirements %}<div class="regular space-one pad-half"><h2 class="legible semibold space-half">Requirements</h2>{{ item.requirements|safe }}</div>{% endif %}
+        {% if item.previewphotos %}<div class="regular space-one-top pad-half link-silent">{% for link in item.previewphotos %}<img src="{{ link }}" class="preview-photos"/>{% endfor %}</div>{% endif %}
+        {% if item.links %}<div class="regular space-one-top pad-half link-silent session-links"><p class="legible semibold">Links</p><ul>{% for link in item.links %}<li><a class="orange" href="{{ link.url }}" target="_blank">{{ link.title }}</a></li>{% endfor %}</ul></div>{% endif %}
+        <div class="regular space-one pad-half session-links"><p class="regular nospace"><i class="fa fa-filter"></i> <a class="link-silent" target="_blank" href="https://rootconf.talkfunnel.com/2016/{{ item.id }}">Read workshop proposal</a></p></div>
+        <div class="fb-share-button pad-half" data-href="https://rootconf.in/2016/{{item.url}}" data-layout="button"></div>
+        <span class="tweet-button">
+        <a href="https://twitter.com/intent/tweet?text={{item.title}} by {{item.speaker}}&url=https://rootconf.in/2016/{{item.url}}&hashtags=Rootconf,HasGeek" 
+        class="twitter-hashtag-button" data-url="https://rootconf.in/2016/{{item.url}}">Tweet</a>
+        </span>
+        <ul class="list-plain regular space-one-top pad-half">
+          {% if item.date %}<li class="space-1q">{{ item.date|safe }}</li>{% endif %}
+          {% if item.time %}<li class="space-1q">{{ item.time|safe }}</li>{% endif %}
+          {% if item.venue %}<li class="space-1q"><i class="fa fa-map-marker"></i>&nbsp; {{ item.venue|safe }}</li>{% endif %}
+          {% if item.price %}<li class="large space-1q bold">{{ item.price|safe }}</li>{% endif %}
+        </ul>
+        <div class="space-one-top pad-half regular">
+          <a href="https://in.explara.com/e/rootconf-2016/checkout" class="button" target="_blank" onClick="ga('send', { hitType: 'event', eventCategory: 'ticketing', eventAction: 'buy button click', eventLabel: 'Buy tickets for {{item.title}}'});">Buy tickets</a>
         </div>
+        </ul>
       </div>
-      </div>
+    </div>
+  </div>
+  {% endfor %}
+  </div>
 </section>

@@ -13,6 +13,9 @@
 
 <meta property="og:title" content="Rootconf 2016{% if page.title %} — {{ page.title }}{% endif %}"/>
 <meta property="og:image" content="{{ request.url_root[:-1] }}{{ theme_static('img/logo.png') }}"/>
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="350" />
+<meta property="og:image:height" content="350" />
 <meta property="og:url" content="{{ request.url }}"/>
 <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}Rootconf: Conference on devop and cloud infrastructure in Bangalore, India{% endif %}"/>
 
@@ -40,6 +43,7 @@
 
 <script src="{{ theme_static('js/vendor/modernizr-2.6.2.js') }}"></script>
 
+<!-- errorception -->
 <script>
     (function(_,e,rr,s){_errs=[s];var c=_.onerror;_.onerror=function(){var a=arguments;_errs.push(a);
     c&&c.apply(this,a)};var b=function(){var c=e.createElement(rr),b=e.getElementsByTagName(rr)[0];
@@ -47,6 +51,21 @@
     _.addEventListener?_.addEventListener("load",b,!1):_.attachEvent("onload",b)})
     (window,document,"script","56dd5a118660eb0d3400025e");
 </script>
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '1673537442887544');
+fbq('track', "PageView");</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1673537442887544&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
 </head>
 
 <body class="fill-ghostwhite">
@@ -72,17 +91,17 @@
         </div>
         <div class="extrabold legible">Rootconf</div>
       </div>
-      <div class="col-lg-7 col-md-7 col-sm-5 col-xs-5">
+      <div class="col-lg-7 col-md-7 col-sm-5 col-xs-4">
         <h2 class="space-one-top push-3q-top large">{% block pagetitle %}{% endblock %}</h2>
       </div>
 
-      <div class="ticket-link-container col-lg-3 col-md-3 col-sm-4 col-xs-4">
+      <div class="ticket-link-container col-lg-3 col-md-3 col-sm-4 col-xs-5">
         <h3 class="calm tiny nospace-bottom all-caps text-right">14 - 15 April 2016, Bangalore</h3>
-<!--         <p class="text-right space-half-top">
-          <a class="button" href="http://rootconf.doattend.com/">
+        <p class="text-right space-half-top">
+          <a class="button" href="https://in.explara.com/e/rootconf-2016/checkout" target="_blank" onClick="ga('send', { hitType: 'event', eventCategory: 'ticketing', eventAction: 'buy button click', eventLabel: 'Buy your ticket'});">
             <span class="hidden-xs">Buy Your</span> Ticket<span class="visible-xs">s</span>
           </a>
-        </p> -->
+        </p>
       </div>
     </div>
   </div>
@@ -130,6 +149,7 @@
 {%- endif %}
 <script>window.jQuery || document.write('<script src="{{ theme_static('js/vendor/jquery-2.2.0.min.js') }}"><\/script>')</script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.6.3/leaflet.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/2.1.3/mustache.min.js"></script>
 
 
 {%- if _theme %}
@@ -202,7 +222,7 @@ if (location.hostname == 'rootconf.in') {
       document.getElementsByTagName('body')[0].appendChild(boxofficeScript);
       window.Boxoffice.init({
         org: 'hasgeek',
-        itemCollection: 'rootconf-2016',
+        itemCollection: '40fc461c-ef40-11e5-ae92-457529b5226a',
         user_name: username,
         user_phone: userphone,
         user_email: useremail,
@@ -221,6 +241,21 @@ if (location.hostname == 'rootconf.in') {
   <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
   <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
 <![endif]-->
+
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+</script>
+
+<div id="fb-root"></div>
+<script>
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
 
 </body>
 </html>
