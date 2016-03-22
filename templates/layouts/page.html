@@ -203,7 +203,7 @@ if (location.hostname == 'rootconf.in') {
 <script>
   $(function(){
     //Boxoffice widget
-    var boxofficeUrl = "http://boxoffice.vidya.dev:6500";
+    var boxofficeUrl = "https://boxoffice.hasgeek.com";
     var username, userphone, useremail;
     {% if g.user %}
       {% if g.user.fullname %}
@@ -223,7 +223,7 @@ if (location.hostname == 'rootconf.in') {
       document.getElementsByTagName('body')[0].appendChild(boxofficeScript);
       window.Boxoffice.init({
         org: 'hasgeek',
-        itemCollection: '1ea7206b-f021-11e5-922e-151dba36bfdb',
+        itemCollection: 'abadefca-f03f-11e5-90b2-518d23581800',
         user_name: username,
         user_phone: userphone,
         user_email: useremail,
