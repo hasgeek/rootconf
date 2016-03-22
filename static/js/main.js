@@ -316,7 +316,7 @@ $(document).ready(function() {
     var section = $(this).attr('href');
     var sectionPos = $(""+section).offset().top - $(".navbar-header").height();
     $('html,body').animate({scrollTop:sectionPos}, '900');
-    if ($('.navbar-toggle').css('display') !='none'){
+    if ($('.navbar-toggle').css('display') !='none' && $('.navbar-toggle').hasClass('collapsed') ){
       $(".navbar-toggle").trigger( "click" );
     }
   });

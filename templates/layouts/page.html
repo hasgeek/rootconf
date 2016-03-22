@@ -10,6 +10,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}Rootconf: Conference on devop and cloud infrastructure in Bangalore, India{% endif %}">
 <meta name="author" content="HasGeek and friends">
+<meta name="referrer" content="origin">
 
 <meta property="og:title" content="Rootconf 2016{% if page.title %} — {{ page.title }}{% endif %}"/>
 <meta property="og:image" content="{{ request.url_root[:-1] }}{{ theme_static('img/logo.png') }}"/>
@@ -49,8 +50,9 @@
     c&&c.apply(this,a)};var b=function(){var c=e.createElement(rr),b=e.getElementsByTagName(rr)[0];
     c.src="//beacon.errorception.com/"+s+".js";c.async=!0;b.parentNode.insertBefore(c,b)};
     _.addEventListener?_.addEventListener("load",b,!1):_.attachEvent("onload",b)})
-    (window,document,"script","56dd5a118660eb0d3400025e");
+    (window,document,"script","56f13edc2777d31309000c21");
 </script>
+
 
 <!-- Facebook Pixel Code -->
 <script>
@@ -212,17 +214,16 @@ if (location.hostname == 'rootconf.in') {
       {% endif %}
       useremail = "{{ g.user.email }}";
     {% endif %}
-    $.ajax({
+    $.get({
       url: boxofficeUrl+"/api/1/boxoffice.js",
-      crossDomain: true,
-      headers: {'X-Requested-With': 'XMLHttpRequest'}
+      crossDomain: true
     }).done(function(data) {
       var boxofficeScript = document.createElement('script');
-      boxofficeScript.innerHTML = data;
+      boxofficeScript.innerHTML = data.script;
       document.getElementsByTagName('body')[0].appendChild(boxofficeScript);
       window.Boxoffice.init({
         org: 'hasgeek',
-        itemCollection: '40fc461c-ef40-11e5-ae92-457529b5226a',
+        itemCollection: '1ea7206b-f021-11e5-922e-151dba36bfdb',
         user_name: username,
         user_phone: userphone,
         user_email: useremail,
@@ -241,21 +242,6 @@ if (location.hostname == 'rootconf.in') {
   <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
   <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
 <![endif]-->
-
-<script>
-!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-</script>
-
-<div id="fb-root"></div>
-<script>
-(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-</script>
 
 </body>
 </html>
