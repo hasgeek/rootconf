@@ -1033,11 +1033,11 @@ li.event-node{
 }*/
 
 
-#tickets li{
+/*#tickets li{
   list-style-type: none;
   line-height: 25px;
   border-radius: 5px;
-}
+}*/
 @media (min-width: 1200px){
   #tickets li.offer-block{
     height: 222px;
@@ -1729,16 +1729,63 @@ ul.navbar-brand>li>a{
   -webkit-animation: blink infinite alternate 0.7s;
 }
 
+.expand-cancel-form {
+  display: inline-block;
+}
+.expand-cancel-form:focus,
+.expand-cancel-form:active {
+  outline: none;
+}
+.cancel-tickets, .cancelticket-status {
+  display: none;
+}
+.cancel-tickets .radio-box {
+  text-align: left;
+}
+@media (min-width: 768px) {
+  .cancel-tickets .radio-box {
+    text-align: right;
+  }
+}
+.help-text {
+  padding-left: 0;
+}
+@media (min-width: 768px) {
+  .help-text {
+    padding-left: 10px;
+  }
+}
+
+@media (max-width: 479px) {
+  #ticket-email, #cancel-ticket-email {
+    font-size: 0.6rem;
+  }
+}
+
+.submit-loader {
+  padding: 0px 10px 5px;
+  display: none;
+}
+
+.transfer-form {
+  padding-top: 70px;
+}
+
+.submit-loader {
+  padding: 0px 10px 5px;
+  display: none;
+}
+
 /* Schedule */
 /* Schedule */
 .schedule-container { max-width: 1000px; }
-.schedule-table { background-color: #fff; border-collapse: separate; height: 100%;}
+.schedule-table { background-color: transparent; border-collapse: separate; height: 100%;}
 
 .schedule-table thead th.time   { 
   width: 12%;
   background-color: transparent;
   padding: 0;
-  border-color: #fff;
+  border-color: transparent;
   border-style: solid;
   border-width: 0 5px 10px 0;
 }
@@ -1752,7 +1799,7 @@ ul.navbar-brand>li>a{
 }
 .schedule-table th.track0,
 .schedule-table th.track1 { 
-  border-color: #fff; 
+  border-color: transparent; 
   border-style: solid; 
   border-width: 0 5px 10px 0; 
   background-color: transparent;
@@ -1843,7 +1890,7 @@ ul.navbar-brand>li>a{
   background-color: transparent; 
   display: table-cell; 
   padding: 0;
-  border-color: #fff;   
+  border-color: transparent;   
   border-style: solid;
   border-width: 5px 5px 5px 20px;
   overflow: hidden;
@@ -1852,7 +1899,7 @@ ul.navbar-brand>li>a{
   width: 44%; 
   background-color: transparent; 
   padding: 0;
-  border-color: #fff;   
+  border-color: transparent;   
   border-style: solid;
   border-width: 5px 5px 5px 20px;
 }
@@ -1860,7 +1907,7 @@ ul.navbar-brand>li>a{
   width: 44%; 
   background-color: transparent; 
   padding: 0;
-  border-color: #fff;   
+  border-color: transparent;   
   border-style: solid;
   border-width: 5px 5px 5px 20px;
 }

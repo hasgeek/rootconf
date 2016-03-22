@@ -22,11 +22,6 @@
         {% if item.previewphotos %}<div class="regular space-one-top pad-half link-silent">{% for link in item.previewphotos %}<img src="{{ link }}" class="preview-photos"/>{% endfor %}</div>{% endif %}
         {% if item.links %}<div class="regular space-one-top pad-half link-silent session-links"><p class="legible semibold">Links</p><ul>{% for link in item.links %}<li><a class="orange" href="{{ link.url }}" target="_blank">{{ link.title }}</a></li>{% endfor %}</ul></div>{% endif %}
         <div class="regular space-one pad-half session-links"><p class="regular nospace"><i class="fa fa-filter"></i> <a class="link-silent" target="_blank" href="https://rootconf.talkfunnel.com/2016/{{ item.id }}">Read workshop proposal</a></p></div>
-        <div class="fb-share-button pad-half" data-href="https://rootconf.in/2016/{{item.url}}" data-layout="button"></div>
-        <span class="tweet-button">
-        <a href="https://twitter.com/intent/tweet?text={{item.title}} by {{item.speaker}}&url=https://rootconf.in/2016/{{item.url}}&hashtags=Rootconf,HasGeek" 
-        class="twitter-hashtag-button" data-url="https://rootconf.in/2016/{{item.url}}">Tweet</a>
-        </span>
         <ul class="list-plain regular space-one-top pad-half">
           {% if item.date %}<li class="space-1q">{{ item.date|safe }}</li>{% endif %}
           {% if item.time %}<li class="space-1q">{{ item.time|safe }}</li>{% endif %}
@@ -34,7 +29,7 @@
           {% if item.price %}<li class="large space-1q bold">{{ item.price|safe }}</li>{% endif %}
         </ul>
         <div class="space-one-top pad-half regular">
-          <a href="https://in.explara.com/e/rootconf-2016/checkout" class="button" target="_blank" onClick="ga('send', { hitType: 'event', eventCategory: 'ticketing', eventAction: 'buy button click', eventLabel: 'Buy tickets for {{item.title}}'});">Buy tickets</a>
+          <a href="https://rootconf.in/2016/#tickets" class="button" onClick="ga('send', { hitType: 'event', eventCategory: 'ticketing', eventAction: 'buy button click', eventLabel: 'Buy tickets for {{item.title}}'});">Buy tickets</a>
         </div>
         </ul>
       </div>

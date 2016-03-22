@@ -316,7 +316,7 @@ $(document).ready(function() {
     var section = $(this).attr('href');
     var sectionPos = $(""+section).offset().top - $(".navbar-header").height();
     $('html,body').animate({scrollTop:sectionPos}, '900');
-    if ($('.navbar-toggle').css('display') !='none'){
+    if ($('.navbar-toggle').css('display') !='none' && $('.navbar-toggle').hasClass('collapsed') ){
       $(".navbar-toggle").trigger( "click" );
     }
   });
@@ -400,12 +400,12 @@ $(document).ready(function() {
     if(formDataValid) {
       if(formData["type"] === "Cancel") {
         formTarget = "cancelticket";
-        postData =  { "Order no.": formData["order-no"], "Ticket no." : formData["ticket-no"],  "Email" : formData["ticket-email"], "Type" : formData["type"], "Event" : "rootconf 2016" };
+        postData =  { "Order no.": formData["order-no"], "Ticket no." : formData["ticket-no"],  "Email" : formData["ticket-email"], "Type" : formData["type"], "Event" : "Rootconf 2016", "Client": formData["client"] };
       }
       else {
         formTarget = "transferticket";
         postData = { "Order no.": formData["order-no"], "Ticket no." : formData["ticket-no"],  "Email" : formData["ticket-email"], "Type" : formData["type"], 
-                      "Transferee name" :formData["transferee-name"], "Transferee email" : formData["transferee-email"] , "Transferee phone" : formData["transferee-phone"], "Event" : "rootconf 2016" };
+                      "Transferee name" :formData["transferee-name"], "Transferee email" : formData["transferee-email"] , "Transferee phone" : formData["transferee-phone"], "Event" : "Rootconf 2016" };
       }
       p = "Are you sure you want to " + formData["type"] + " your ticket?";
       var result = window.confirm(p);
@@ -419,7 +419,8 @@ $(document).ready(function() {
           timeout: 5000,
           complete: function(response, textStatus) {
             $('.submit-loader').hide();
-            if(response.status === 200) {
+            console.log("response", response);
+            if(response.readyState === 4 || response.status === 200) {
               $("#" + formTarget)[0].reset();
               if(formTarget === "cancelticket") {
                 $('.cancelticket-status').show().html(cancelSuccessMessage);
