@@ -1,0 +1,76 @@
+{% raw %}
+<script id="scheduletemplate" type="text/x-mustache-template">
+  <h4 class="text-left space-two legible"><i class="fa fa-calendar"></i> {{date}}</h4>
+  <table class="schedule-table" id="{{tableid}}">
+    <thead>
+      <tr>
+        <th class="time semi-bold text-center regular"><div>Time</div></th>
+        {{#rooms}}
+        {{#track}}
+          <th class="track{{track}} semi-bold text-center regular" data-td="track-{{track}}"><div>{{title}}</div></th>
+        {{/track}}
+        {{^track}}
+          <th class="track{{track}} semi-bold tab-active text-center regular" data-td="track-{{track}}"><div>{{title}}</div></th>
+        {{/track}}
+        {{/rooms}}
+      </tr>
+    </thead>
+    <tbody>
+    {{#slots}}
+      {{#issession}}
+      <tr>
+        <td class="time" scope="row">
+          <div class="time-icon"></div>
+          <p class="regular bold">{{slot}}</p>
+        </td>
+        {{#sessions}}
+        {{#is_break}}
+        <td colspan="2" class="centered" rowspan={{rowspan}}>
+          <div class="content">
+            <h4 class="space-1q secondary-prose">{{title}}</h4>
+            <p class="space-1q tiny"><em>{{start}} - {{end}}</em></p> 
+          </div>
+        </td>       
+        {{/is_break}}
+        {{^is_break}}
+        {{#track}}
+          <td class="track-{{track}}" rowspan={{rowspan}}>
+        {{/track}}
+        {{^track}}
+          <td class="track-{{track}} tab-active" rowspan={{rowspan}}>
+        {{/track}}
+            <div class="content">
+              <h4 class="link-silent space-1q secondary-prose">
+                {{#proposal_url}}
+                <a href="{{proposal_url}}" target="_blank" class="orange">{{title}}</a>
+                {{/proposal_url}}
+                {{^proposal_url}}
+                {{title}}
+                {{/proposal_url}}
+                {{#description}}
+                <i class="fa fa-chevron-circle-down js-expand tiny lightgray"></i>
+                {{/description}}
+              </h4>
+              {{#description}}
+              <div class="space-1q tiny description-text text-left">{{{description}}}</div>
+              {{/description}}
+              {{#speaker}}
+              <p class="space-1q secondary-prose bold">{{speaker}}</p>
+              {{/speaker}}
+              {{#title}}
+              <p class="space-1q tiny"><em>{{start}} - {{end}}</em></p>
+              {{/title}}
+              {{#roomTitle}}
+              <p class="space-1q tiny"><i class="fa fa-map-marker"></i> {{roomTitle}}, MLR Convention Centre</p>
+              {{/roomTitle}}
+            </div>
+          </td>
+        {{/is_break}}
+        {{/sessions}}
+      </tr>
+      {{/issession}}
+    {{/slots}}
+    </tbody>
+  </table>
+</script>
+{% endraw %}

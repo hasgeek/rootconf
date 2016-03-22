@@ -1,0 +1,20 @@
+{% extends theme('layouts/page.html') %}
+{% from theme("data/conference-schedule-day1.html") import schedule as schedule_day1 %}
+{% from theme("data/conference-schedule-day2.html") import schedule as schedule_day2 %}
+{%
+  set page = {
+      'title'       : 'Schedule'
+    , 'description' : ''
+    , 'sections'    : [
+        ('schedule-index',  'green')
+      , ('conference-schedule-day1',  '')
+      , ('color-index',  '')
+      , ('schedule-sponsor-banner', 'green')
+      , ('conference-schedule-day2',  'dark')
+      , ('speaker-connect', 'green')
+      , ('hackathon-summary', '')
+      , ('sponsors-summary',  'blue')
+    ]
+  }
+%}
+{% block pagetitle %}Schedule{% endblock %}

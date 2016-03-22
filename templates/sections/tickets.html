@@ -1,0 +1,99 @@
+{% with %}
+<section id="tickets" class="push-two clearfix{% if background %} fill-{{ background }}{% endif %}">
+    <h2 class="text-center push-1q-bottom large all-caps">Tickets</h2> 
+    <div id="boxoffice-widget"><p class="text-center regular">Loading...</p></div>
+    <div class="col-xs-12 transfer-form" id="request-form">
+      <div class="text-center regular space-one-bottom">
+        <p>If you need to <a href="https://docs.google.com/a/hasgeek.in/forms/d/1HwTmcgu6Zc8QxmPUmfsrx3lt_QClvHW0_YJAUX65KM8/viewform" class="expand-cancel-form button dark secondary-prose" data-target="#transferticket">transfer</a> or <a href="https://docs.google.com/a/hasgeek.in/forms/d/1HwTmcgu6Zc8QxmPUmfsrx3lt_QClvHW0_YJAUX65KM8/viewform" class="expand-cancel-form button dark secondary-prose" data-target="#cancelticket">cancel</a> your ticket, submit the details and we will process your request within 7 days.</p>
+      </div>
+      <form class="form-horizontal cancel-tickets nospace" id='transferticket' action="" role="form" autocomplete="off">
+        <h4 class="text-center medium regular">Transfer ticket form</h4>
+        <div class="form-group">
+          <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <input type="text" class="form-control secondary" id="order-no" name="order-no" required placeholder="Order No."/>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <input type="text" class="form-control secondary" id="ticket-no" name="ticket-no" required placeholder="Ticket No."/>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <input type="email" class="form-control secondary" id="ticket-email" name="ticket-email" required placeholder="Specify the email that you used to buy the ticket"/>
+          </div>
+        </div>
+        <input type="hidden" value="Transfer" name="type" />
+        <div class="form-group">
+          <p class="secondary space-1q text-left col-md-9 col-md-offset-3 col-sm-10 col-sm-offset-2">Enter the details of the person the ticket is being transferred to</p>
+          <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <input type="text" class="form-control secondary" id="transferee-name" name="transferee-name" required placeholder="Name"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <input type="email" class="form-control secondary" id="transferee-email" name="transferee-email" required placeholder="Email"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <input type="tel" class="form-control secondary" id="transferee-phone" name="transferee-phone" required placeholder="Phone"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 text-left ">
+            <button type="submit" class="button secondary dark">Submit</button>
+            <button class="button secondary dark close-form gap-half">Close</button>
+            <img src="{{ theme_static('img/ajax-loader.gif') }}" class="submit-loader"/>
+          </div>
+        </div>
+      </form>
+
+      <form class="form-horizontal cancel-tickets nospace" id='cancelticket' action="" role="form" autocomplete="off">
+        <h4 class="text-center medium regular">Cancel ticket form</h4>
+        <div class="form-group">
+          <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <input type="text" class="form-control secondary" id="cancel-order-no" name="order-no" required placeholder="Order No."/>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <input type="text" class="form-control secondary" id="cancel-ticket-no" name="ticket-no" required placeholder="Ticket No."/>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <input type="email" class="form-control secondary" id="cancel-ticket-email" name="ticket-email" required placeholder="Specify the email that you used to buy the ticket"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <p class="form-control-static secondary">Ticket was purchased from</p>
+            <div class="radio">
+              <label>
+                <input type="radio" name="client" value="rootconf-website" checked>
+                Rootconf website
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="client" value="explara">
+                Explara
+              </label>
+            </div>
+          </div>
+        </div>
+        <input type="hidden" value="Cancel" name="type"/>
+        <div class="form-group">
+          <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 text-left">
+            <button type="submit" class="button secondary dark">Submit</button>
+            <button class="button secondary dark close-form gap-half">Close</button>
+            <img src="{{ theme_static('img/ajax-loader.gif') }}" class="submit-loader"/>
+          </div>
+        </div>
+      </form> 
+
+      <div class="secondary nospace text-left col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 help-text"><p class="cancelticket-status"></p></div>       
+    </div>
+</section>
+{% endwith %}

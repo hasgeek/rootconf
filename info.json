@@ -1,0 +1,25 @@
+{
+    "application": "eventframe",
+    "identifier": "rootconf2016",
+    "name": "Rootconf 2016",
+    "author": "HasGeek",
+    "description": "Rootconf 2016 website template",
+    "license": "All rights reserved",
+    "doctype": "html5",
+    "options": {
+        "assets_css": [
+            "css/vendor/bootstrap.min.css",
+            "css/font-awesome.min.css",
+            "css/typography.css",
+            "css/layout.css",
+            "css/theme.css",
+            "css/objects.css",
+            "css/custom.css"
+        ],
+        "assets_js": [
+            "js/vendor/bootstrap.min.js",
+            "js/maps.js",
+            "js/main.js"
+        ]
+    }
+}

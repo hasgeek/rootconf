@@ -1,0 +1,14 @@
+{% extends theme('layouts/page.html') %}
+{%
+  set page = {
+      'title'       : 'Venue + Local Info'
+    , 'description' : 'Venue and Local Information for Droidcon India 2013'
+    , 'sections'    : [
+        ('conference-venue',  'gary')
+      , ('hotels',            'green')
+      , ('sponsors-summary',  'dark')
+    ]
+  }
+%}
+
+{% block pagetitle %}Venue &amp; Local Info{% endblock %}

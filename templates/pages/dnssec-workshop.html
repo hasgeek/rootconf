@@ -1,0 +1,22 @@
+{% extends theme('layouts/page.html') %}
+{%
+  set page = {
+      'title'       : 'DNSSEC Workshop'
+    , 'description' : 'DNSSEC Workshop by Philip Paeps(trouble), Rootconf 2016'
+  }
+%}
+{% block content %}
+{% with %}
+  {% from theme("data/sessions.html") import workshops %}
+  {% 
+    set session = {
+        'id'    : ''
+      , 'label' : ''
+      , 'link'  : 'workshops#sessions'
+      , 'list'  : [workshops['2-dnssec-workshop']]
+      , 'types' : types
+    }
+  %}
+  {% include theme("layouts/sessions.html") %}
+{% endwith %}
+{% endblock %}

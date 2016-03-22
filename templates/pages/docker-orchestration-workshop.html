@@ -1,0 +1,22 @@
+{% extends theme('layouts/page.html') %}
+{%
+  set page = {
+      'title'       : 'Docker Orchestration Workshop'
+    , 'description' : 'Docker Orchestration Workshop by Aditya Patawari, Rootconf 2016'
+  }
+%}
+{% block content %}
+{% with %}
+  {% from theme("data/sessions.html") import workshops %}
+  {% 
+    set session = {
+        'id'    : ''
+      , 'label' : ''
+      , 'link'  : 'workshops#sessions'
+      , 'list'  : [workshops['33-comparing-how-different-container-orchestration-to']]
+      , 'types' : types
+    }
+  %}
+  {% include theme("layouts/sessions.html") %}
+{% endwith %}
+{% endblock %}

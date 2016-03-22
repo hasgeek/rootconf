@@ -1,0 +1,52 @@
+{% 
+  set event = {
+      'title' : 'Conference'
+    , 'id'    : 'talks'
+    , 'blurb' : 'Rootconf 2014 conference spans over two days, which feature a single track on both days. This conference is targeted at individuals, teams and companies that are seeking to scale the effectiveness of their developer teams and performance of their web stacks, thereby increase the Cadence of their software delivery.'
+    , 'when'  : '16 - 17 May 2014'
+    , 'venue' : '&nbsp;MLR Convention Centre, JP Nagar, Bangalore'
+  }
+%}
+{% from theme("data/conference-schedule.html") import schedule as schedule %}
+{% if schedule is defined %}
+  {% 
+    set nav = [
+      {
+          'display' : 'Schedule'
+        , 'link'    : 'conference#schedule'
+      }
+      , {
+          'display' : 'Talks'
+        , 'link'    : 'conference#sessions'
+      }
+      , {
+          'display' : 'Venue'
+        , 'link'    : 'conference#conference-venue'
+      }
+    ] 
+  %}
+{% else %}
+  {% 
+    set nav = [
+        {
+          'display' : 'Talks'
+        , 'link'    : 'conference#sessions'
+      }
+      , {
+          'display' : 'Venue'
+        , 'link'    : 'conference#conference-venue'
+      }
+    ] 
+  %}
+{% endif %}
+
+{% from theme("data/sessions.html") import talks, types %}
+{% 
+  set session = {
+      'id'    : 'sessions'
+    , 'label' : 'Talks'
+    , 'link'  : 'conference#sessions'
+    , 'list'  : talks.values()
+    , 'types' : types
+  }
+%}

@@ -1,0 +1,49 @@
+{% set event = items[node.properties['event_id']|int] %}
+{% with %}
+    {% set venue_id = node.properties['venue'] %}
+    {% if venue_id %}
+        {% from theme("data/venues/%s.html" % venue_id) import venue %}
+    {% endif %}
+    <section class="runup-event push-three clearfix{% if background %} fill-{{ background }}{% endif %}">
+        <div class="container">
+                {% set title = [] %}
+                {% if venue and venue.title %}
+                    {% if title.append(venue.title) %}{% endif %}
+                    {% if venue.subtitle %}
+                        {% if title.append(venue.subtitle) %}{% endif %}
+                    {% endif %}
+                {% endif %}
+                {% set title = ", ".join(title) %}
+
+            <div class="row">
+                <h2 class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">{{ event.title }}</h2>
+            </div>
+            {% if event.when or title %}
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 text-center space-one-bottom space-half-top">
+                    <span class="green regular">{{ event.when }}</span>&nbsp;&nbsp;
+                    <span class="gray regular">{{ title }}</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 text-left regular-prose space-one-bottom space-half-top">
+                    <p>{{ event.blurb|safe }}</p>
+                </div>
+            </div>
+            {% endif %}
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-12 col-sm-12 col-xs-12">
+                    <p class="secondary-prose">{{ node.description }}</p>
+                </div>
+            </div>
+            {% if event.timeline == 'past' and event.hgtv %}
+            <div class="row text-center prose-type">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 space-one-top">
+                    <p class="regular-prose red">This event is over!</p>
+                    <p class="regular"><a href="{{ event.hgtv }}" class="button">Watch Videos on HasGeek TV</a></p>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </section>
+{% endwith %}

@@ -1,0 +1,13 @@
+{% extends theme('layouts/page.html') %}
+{%
+  set page = {
+      'title'       : 'Blog'
+    , 'description' : 'Blog for Rootconf ' + (node.folder.name if node.folder.name != 'blog' else '')
+    , 'sections'    : [
+        ('blog', 'white')
+      , ('sponsors-summary', 'dark')
+    ]
+  }
+%}
+{{ node }}
+{% block pagetitle %}Blog{% endblock %}
