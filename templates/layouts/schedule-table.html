@@ -42,10 +42,10 @@
             <div class="content">
               <h4 class="link-silent space-1q secondary-prose">
                 {{#proposal_url}}
-                <a href="{{proposal_url}}" target="_blank" class="orange">{{title}}</a>
+                <a href="{{proposal_url}}" target="_blank" class="black">{{title}}</a>
                 {{/proposal_url}}
                 {{^proposal_url}}
-                {{title}}
+                <span class="black">{{title}}</span>
                 {{/proposal_url}}
                 {{#description}}
                 <i class="fa fa-chevron-circle-down js-expand tiny lightgray"></i>
