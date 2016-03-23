@@ -1916,7 +1916,7 @@ ul.navbar-brand>li>a{
   border-radius: 4px;
   display: block;
   min-height: 100%;
-  height: auto !important;
+  height: 100% !important;
 }
 .schedule-table tbody td.centered div {
   background-color: #F0DAAB;
