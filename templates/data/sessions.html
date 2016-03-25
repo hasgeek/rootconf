@@ -63,7 +63,22 @@
       , 'twitter'     : 'bytebot'
       , 'objective'   : '<p>The MySQL ecosystem is 21 years old which means there are plenty of solutions for you to use, or stuff that you may have used. Learn from best practices over the years, and use tools that are current for your next deployment.</p>'
       , 'bio'         : '<p>Colin Charles works on the MariaDB Server at MariaDB Corporation. He has been the Chief Evangelist for MariaDB since 2009, with work ranging from speaking engagements to consultancy and engineering works around MariaDB. He lives in Kuala Lumpur, Malaysia and had worked at MySQL since 2005, and been a MySQL user since 2000. Before joining MySQL, he worked actively on the Fedora and OpenOffice.org projects. He&rsquo;s well known within open source communities in APAC, and has spoken at many conferences to boot.</p>'
-      , 'description' : '<p>The MySQL world is full of tradeoffs and choosing a High Availability (HA) solution is no exception. This session aims to look at all of the alternatives in an unbiased nature. Preference is of course only given to opensource solutions. </p>\n<p>How do you choose between: MySQL replication, MHA, DRBD, Tungsten, Galera Cluster? Do you integrate Pacemaker and Heartbeat like Percona Replication Manager? Is NDB Cluster right for your workload? The cloud brings even more fun as geographical redundancy is rolled into this. There are now even &ldquo;modern&rdquo; tools to assist in automation like Orchestrator, Consul, MariaDB MaxScale &amp; MySQL Router.</p>\n<p>This and more will be covered in a walkthrough of MySQL HA options and when you will apply them.</p>'
+      , 'description' : '<p>The MySQL world is full of tradeoffs and choosing a High Availability (HA) solution is no exception. This session aims to look at all of the alternatives in an unbiased nature. Preference is of course only given to opensource solutions. </p>\n<p>How do you choose between: MySQL replication, MHA, DRBD, Tungsten, Galera Cluster? Do you integrate Pacemaker and Heartbeat like Percona Replication Manager? Is NDB Cluster right for your workload? The cloud brings even more fun as geographical redundancy is rolled into this. There are now even &ldquo;modern&rdquo; tools to assist in automation like Orchestrator, Consul, MariaDB MaxScale &amp; MySQL Router.</p><p>The workshop will be 3 hours long excluding lunch &amp; tea breaks.<p>The workshop will cover:</p><ul> 
+      <li>Choosing the right High Availability (HA) solution</li>
+      <li>Discuss replication, handling failure, MHA, DRBD, Tungsten, Galera Cluster</li>
+      <li>HA in the cloud, geographical redundancy</li>
+      <li>Sharding solutions</li>
+      <li>MySQL 5.6 features + Fabric</li>
+      <li>Deep-dives: MHA, Tungsten Replicator, Galera Cluster</li>
+      <li>The new stuff: Orchestrator, Consul, MariaDB MaxScale, MySQL Router</li></ul>
+      <p>Hand\'s on:</p><ul>
+      <li>Install MySQL Sandbox</li>
+      <li>Create a replicated environment within the sandbox</li>
+      <li>Understand the various logs MySQL provides (which is different in MariaDB Server)</li>
+      <li>Try semi-sync replication</li>
+      <li>Investigate START TRANSACTION WITH CONSISTENT SNAPSHOT (and see how different it is from FLUSH TABLES WITH READ LOCK)</li>
+      <li>Understand the differences between GTIDs in MySQL and MariaDB Server and Percona Server (step_mode)</li>
+      <li>Monitoring replication</li></ul>'
       , 'requirements' : '<p>Ideally, a Linux or Mac laptop which can run MySQL Sandbox so you can install a few instances of MySQL or MariaDB Server. If we have access to a fast Internet connection, this can be then done in EC2 or a cloud provider, so access to one of those accounts.</p>'
       , 'photos'       : ['https://images.hasgeek.com/embed/file/cfa1d08cbce24aff85b12ab5dc0f50ea']
       , 'featured'    : true
