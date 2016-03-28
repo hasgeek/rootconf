@@ -345,12 +345,12 @@ $(document).ready(function() {
   });
 
   $('#conferenceschedule, #workshopschedule').on('click', 'table td .js-expand', function() {
-    if($(this).hasClass('fa-chevron-circle-down')) {
-      $(this).removeClass('fa-chevron-circle-down').addClass('fa-chevron-circle-up');
+    if($(this).hasClass('fa-caret-right')) {
+      $(this).removeClass('fa-caret-right').addClass('fa-caret-down');
       $(this).parents('td').find('.description-text').slideDown();
     }
     else {
-      $(this).removeClass('fa-chevron-circle-up').addClass('fa-chevron-circle-down');
+      $(this).removeClass('fa-caret-down').addClass('fa-caret-right');
       $(this).parents('td').find('.description-text').slideUp();
     }
   });
