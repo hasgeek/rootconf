@@ -8,7 +8,7 @@
   {% from theme("data/sponsors.html") import types, items %}
   {% for type in types %}
     {% set outer = loop %}
-    {% for item in items if item.type == type.id and type.size != 'compact'  %}
+    {% for item in items if item.type == type.id and type.size != 's'  %}
       {% if loop.first %}
       <section class="sponsor-platinum {{ fill_cycler.next() }} clearfix">
         <div class="row-fluid container">
