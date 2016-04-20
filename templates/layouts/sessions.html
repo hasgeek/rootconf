@@ -28,10 +28,6 @@
           {% if item.venue %}<li class="space-1q"><i class="fa fa-map-marker"></i>&nbsp; {{ item.venue|safe }}</li>{% endif %}
           {% if item.price %}<li class="large space-1q bold">{{ item.price|safe }}</li>{% endif %}
         </ul>
-        <div class="space-one-top pad-half regular">
-          <a href="https://rootconf.in/2016/#tickets" class="button" onClick="ga('send', { hitType: 'event', eventCategory: 'ticketing', eventAction: 'buy button click', eventLabel: 'Buy tickets for {{item.title}}'});">Buy tickets</a>
-        </div>
-        </ul>
       </div>
     </div>
   </div>
