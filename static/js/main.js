@@ -448,7 +448,7 @@ $(document).ready(function() {
       $('.subscribe-status').html('Please enter an email id');
     }
     else {
-      postData = { "Email": $('#subscribe-email').val(), "Event" : "rootconf 2016" };
+      postData = { "Email": $('#subscribe-email').val(), "Event" : "rootconf 2017" };
       $('.ajax-loader').css('visibility', 'visible');
       $.ajax({
         type: 'post',
