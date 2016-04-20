@@ -1,18 +1,18 @@
 <section id="annoucements" class="push-three-top push-one-bottom clearfix{% if background %} fill-{{ background }}{% endif %}">
   <div class="row-fluid container">
     <div class="regular text-justify">
-    	<p>Rootconf is India’s principal conference where systems and operations engineers share real world knowledge about building resilient and scalable systems. This year's edition is on 14 - 15 April 2016 at MLR Convention Center, JP Nagar, Bangalore.</p>
-      <p>The theme for this edition will be learning from failure. We are keen to explore how DevOps think about failure when designing, building and scaling their systems. We invite presentations related to failure in database systems, servers and network infrastructure. </p>
-      <p>We encourage presentations that relate to failure not only in terms of avoidance but also in terms of mitigation and education. How do we decide which parts of our systems cannot fail? What measures do we take to mitigate failure when it does inevitably happen? And most importantly: what lessons can be learned from failure? <a href="#schedule" class="smooth-scroll link-silent">Browse full schedule of conference talks</a>.</p>
-      <p class="space-one-top">This year, we have workshops on</p>
-      <ol class="regular">
-        <li><a href="golang-workshop">Golang</a></li>
-        <li><a href="advanced-mysql-workshop">Advanced MySQL</a></li>
-        <li><a href="puppet-in-production-workshop">Puppet in production</a></li>
-        <li><a href="docker-orchestration-workshop">Docker orchestration</a></li>
-        <li><a href="dtrace-workshop">Introduction to DTrace</a></li>
-        <li><a href="dnssec-workshop">DNSSEC</a></li>
-      </ul>
+    	<p>Rootconf is India’s principal conference where systems and operations engineers share real world knowledge about building resilient and scalable systems. The theme for this edition was learning from failure.</p>
+      <p>The 2016 edition is over and Rootconf will be back next year on 11 and 12 May, at the MLR Convention Centre, Bangalore</p>
+      <p>For more updates, follows us on <a href="https://www.facebook.com/rootconf" target="_blank">Facebook</a> and <a href="https://twitter.com/rootconf" target="_blank">Twitter</a>.</p>
+      <p class="space-half text-center">Sign up to receive updates</p>    
+      <form class="form-horizontal nospace" id='subscribe' action="" role="form" autocomplete="off">    
+       <div class="text-center secondary">   
+         <input type="email" class="subscribe-input" id="subscribe-email" name="subscribe-email" required placeholder="Email"/>    
+         <button type="submit" class="button subscribe-button all-caps">Subscribe</button>   
+         <img src="{{ theme_static('img/ajax-loader.gif') }}" class="ajax-loader"/>    
+       </div>    
+      </form>   
+      <div class="secondary text-center helptext"><p class="subscribe-status nospace"></p></div>
     </div>
   </div>
 </section>
