@@ -126,7 +126,7 @@ src="https://www.facebook.com/tr?id=1673537442887544&ev=PageView&noscript=1"
       <p>HasGeek is a technology company in the media business, bringing software automation to a traditionally people-intensive operation. HasGeek has organized over two dozen conferences attended by thousands of technology professionals, made several thousand connections, and built open source tools that are now used by many communities.</p>
       <div class="credits space-two">  
         <h2 class="calm">The Team</h2>
-        <p>Editorial Panel: Pankaj Kaushal, Trouble and Zainab Bawa</p>
+        <p>Editorial Panel: Pankaj Kaushal, Trouble and Zainab Bawa.</p>
         <p>HasGeek Team: Anish TP, Beli Bopaiah, Hari C M, Jyothsna Madabusi, Karthik Balakrishnan, Kiran Jonnalagadda, Manjunath AK, Murali Krishnan, Shreyas Satish, Sindhu S, Vidya Ramakrishnan and Zainab Bawa.</p>
         <p>A special thanks to all the volunteers. Adarsh Chandran, Aditya Bhushan Dwivedi, Aditya Kathpalia, Anusanthya S, Ashok Sahoo, Harshal Bhatia, Jessy James, Nikhil Prakash, Pankaj Manali, Rahul Rayaprolu, Rhythm Walia, Sai Charan, Santosh Rajan, Shashank Mehta, Shruthi, Vinod Pillai and Vishnu.</p>
       </div>
@@ -172,68 +172,6 @@ if (location.hostname == 'rootconf.in') {
   ga('create', 'UA-19123154-21', 'auto');
   ga('send', 'pageview');
 }
-</script>
-
-<style type="text/css">
-  #boxoffice-widget .boxoffice-button-action {
-    background-color: #E05F26;
-    border-color:  #B94C1D;
-    color: #fff;
-  }
-  #boxoffice-widget .boxoffice-button-info {
-    background-color: #5BC0DE;
-    border-color: #2A9CBE;
-    color: #fff;
-  }
-  #boxoffice-widget .payment-stages-bg {
-    background-color: #463850;
-  }
-  #boxoffice-widget .progress-indicator>li {
-    color: #bbb;
-  }
-  #boxoffice-widget .category-heading {
-    background-color: #f0a40c;
-    border-bottom: 3px solid #d5920d;
-    color: #fff;
-  }
-  #boxoffice-widget .category-heading:after {
-    border-color: #f0a40c transparent #f0a40c #f0a40c;
-  }
-</style>
-
-<script>
-  $(function(){
-    //Boxoffice widget
-    var boxofficeUrl = "https://boxoffice.hasgeek.com";
-    var username, userphone, useremail;
-    {% if g.user %}
-      {% if g.user.fullname %}
-        username = "{{ g.user.fullname }}";
-      {% endif %}
-      {% if g.user.phone %}
-        userphone = "{{ g.user.phone }}";
-      {% endif %}
-      useremail = "{{ g.user.email }}";
-    {% endif %}
-    $.get({
-      url: boxofficeUrl+"/api/1/boxoffice.js",
-      crossDomain: true
-    }).done(function(data) {
-      var boxofficeScript = document.createElement('script');
-      boxofficeScript.innerHTML = data.script;
-      document.getElementsByTagName('body')[0].appendChild(boxofficeScript);
-      window.Boxoffice.init({
-        org: 'hasgeek',
-        itemCollection: 'abadefca-f03f-11e5-90b2-518d23581800',
-        user_name: username,
-        user_phone: userphone,
-        user_email: useremail,
-        paymentDesc: 'Rootconf 2016'
-      });
-    }).fail(function(response) {
-      $('#boxoffice-widget p').html('Unable to connect. Please try again.');
-    });
-  });
 </script>
 
 {% block footerscripts %}{% endblock %}
