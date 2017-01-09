@@ -1,0 +1,36 @@
+<section id="sponsors" class="sponsors push-two clearfix{% if background %} fill-{{ background }}{% endif %}">
+  <div class="row-fluid container">
+    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 push-one-bottom">
+      <h2 class="extralarge all-caps">Sponsors</h2>
+    </div>
+     <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 secondary space-one-top">
+      {% with f = fragment('2017', 'about-sponsorship') %}
+        {{ f.content }}
+      {% endwith %}
+    </div>
+  </div>
+  {% with %}
+    {% set types = getnode(path='2017-sponsors').data['types'] %}
+    {% set items = getnode(path='2017-sponsors').data['items'] %}
+    {% for type in types %}
+      {% set outer = loop %}
+      {% for item in items if item.type == type.id  %}
+        {% if loop.first %}
+        <div id="sponsors-{{ type.id }}" class="row-fluid container space-two-top">
+          <h3 class="col-lg-5 col-md-5 col-sm-5 col-xs-12 legible all-caps space-one-bottom">{{ type.title }}</h3>
+
+          <ul class="col-lg-7 col-md-7 col-sm-7 col-xs-12 nospace-bottom list-plain link-silent clearfix list-space-line sponsor-{{ type.size }} nospace-ul">
+        {% endif %}
+          <li>
+              <a href="{% if type.size == 's' %}{{ item.link }}{% else %}sponsors#{{ type.id }}-{{ item.id }}{% endif %}" {% if type.size == 's' %}target="_blank"{% endif %} class="occupy sponsorlogo {% if item.orientation == 'portrait' %}contain-height{% elif item.orientation == 'landscape' %}contain-width{% endif %}">
+                <img alt="{{ item.title }}" src="{{ item.logo }}">
+              </a>
+          </li>
+        {% if loop.last %}
+          </ul>
+        </div>
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  {% endwith %}
+</section>

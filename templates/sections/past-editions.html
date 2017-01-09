@@ -1,0 +1,38 @@
+<section id="past-editions" class="push-two nopush-bottom clearfix{% if background %} fill-{{ background }}{% endif %}">
+  <div class="container">
+    <div class="row-fluid"> 
+      <div class="regular space-one-top">
+        <h2 class="text-center push-1q-bottom large all-caps">Past editions</h2> 
+        {% with f = fragment('2017', 'past-editions') %}
+          {{ f.content }}
+        {% endwith %}
+
+        <div class="clearboth">
+          <ul class="contain-width list-space-line list-plain link-silent video-thumbnails clearfix">
+          {% for talk in getnode(path='past-featured-talks').data['talks'] %}
+            <li class="push-one-bottom text-center">
+              <article class="video-thumbnail secondary">
+                <p>
+                  <a href="{{talk.video_url}}" target="_blank" data-label="{{talk.title}}" data-target="{{talk.video_url}}">
+                    <img alt="{{talk.title}}" src="{{talk.banner}}">
+                  </a>
+                </p>
+                <h4>
+                  <a href="{{talk.video_url}}" target="_blank" data-label="{{talk.title}}" data-target="{{talk.video_url}}">
+                    {{talk.title}}
+                  </a>
+                </h4>
+                <h5>{{talk.speaker}}</h5>
+              </article>
+            </li>
+          {% endfor %}
+          </ul>
+        </div>
+
+        <div class="push-two-bottom text-center">
+          <a target="_blank" href="https://hasgeek.tv/rootconf" class="button regular-prose" target="_blank">More videos on HasGeek TV</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

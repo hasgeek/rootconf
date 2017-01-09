@@ -1,0 +1,35 @@
+<section id="venue" class="venue push-two clearfix{% if background %} fill-{{ background }}{% endif %}">
+  <div class="container">
+    <div class="row">
+        <h2 class="text-center push-1q-bottom large all-caps">Venue</h2>
+    </div>
+    <div class="row">
+      <div class="pad-line">
+          <div class="legible-prose text-center">
+            <div class="regular-prose space-one">
+              <p class="legible semibold">{{ venue.title|safe }}</p>
+              <p class="legible">{{ venue.address|safe }}</p>
+            </div>
+          </div>
+      </div>
+      <div class="no-js-hidden space-one clearfix">
+          <h3 class="visuallyhidden">Map</h3>
+          <div class="legible-prose prose prose-type clearfix">
+              <div
+                class="border-one leaflet-map" id="toner" class="map"
+                data-label="{{ venue.map.osm.label }}"
+                data-zoom="{{ venue.map.osm.zoom }}"
+                data-marker="{{ venue.map.osm.marker }}">
+                <p class="text-center regular">Loading ...</p>
+              </div>
+          </div>
+      </div>
+
+      {% if venue.moreinfolink %}
+      <div class="space-one text-center">
+        <p class="regular semibold"><a href="{{ venue.moreinfolink|safe }}" class="button secondary dark heading"target="_blank">Find directions</a></p>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,189 @@
+{% from "baseframe/components.html" import networkbar with context -%}
+
+<!DOCTYPE html>
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9">     <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" class="no-js{%- if config['DEBUG'] %} wf-active{% endif %}">        <!--<![endif]-->
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="{{ node.description }}">
+<meta name="author" content="HasGeek and friends">
+<meta name="referrer" content="origin">
+
+<meta property="og:title" content="{{ website.title }} {{ node.title }}"/>
+<meta property="og:image" content="{{ request.url_root[:-1] }}{{ theme_static('img/logo.png') }}"/>
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="350" />
+<meta property="og:image:height" content="350" />
+<meta property="og:url" content="{{ request.url }}"/>
+<meta property="og:description" content="{{ node.description }}"/>
+
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+<title>{{ website.title }} {{ node.title }}</title>
+
+{%- if _theme %}
+  {% assets "css_" + _theme -%}
+    <link rel="stylesheet" href="{{ ASSET_URL }}"/>
+  {% endassets -%}
+{%- endif %}
+
+<!-- Leaflet -->
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.6.3/leaflet.min.css" />
+<!--[if lte IE 8]>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.6.3/leaflet.ie.css" />
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" />
+<link href='//fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Varela' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Rosario:400' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="/_baseframe/css/networkbar.css">
+
+<script src="{{ theme_static('js/vendor/modernizr-2.6.2.js') }}"></script>
+
+<!-- errorception -->
+<script>
+    (function(_,e,rr,s){_errs=[s];var c=_.onerror;_.onerror=function(){var a=arguments;_errs.push(a);
+    c&&c.apply(this,a)};var b=function(){var c=e.createElement(rr),b=e.getElementsByTagName(rr)[0];
+    c.src="//beacon.errorception.com/"+s+".js";c.async=!0;b.parentNode.insertBefore(c,b)};
+    _.addEventListener?_.addEventListener("load",b,!1):_.attachEvent("onload",b)})
+    (window,document,"script","56f13edc2777d31309000c21");
+</script>
+
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '1673537442887544');
+fbq('track', "PageView");</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1673537442887544&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+</head>
+
+<body class="fill-ghostwhite">
+
+<div class="fill-silver">
+  {% block networkbar %}
+    {{ networkbar(siteid='events', login=true) }}
+  {% endblock %}
+</div>
+
+
+<div id="page">
+
+{% block banner %}
+<header class="fill-dark banner-internal push-two-bottom push-two-top resetcoords clearfix">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
+        <div class="nospace">
+          <a class="ir logo link-silent" href="/2017">
+            {{ website.title }} {{ node.title }}
+          </a>
+        </div>
+        <div class="extrabold legible">Rootconf</div>
+      </div>
+      <div class="col-lg-7 col-md-7 col-sm-5 col-xs-4">
+        <h2 class="space-one-top push-3q-top large">{% block pagetitle %}{% endblock %}</h2>
+      </div>
+
+      <div class="ticket-link-container col-lg-3 col-md-3 col-sm-4 col-xs-5">
+        <h3 class="calm tiny nospace-bottom all-caps text-right">11–15 May 2017, Bangalore</h3>
+      </div>
+    </div>
+  </div>
+</header>
+{% endblock %}
+
+{% block navtype %}
+{% endblock %}
+
+{% block content %}
+  {% for item in page.sections  %}
+    {% with %}
+      {% if item is string %} {% set section = item %} {% else %} {% set section, background = item %} {% endif %}
+      {% include theme('sections/'+section+'.html') %}
+    {% endwith %}
+  {% endfor %}
+{% endblock %}
+
+
+<footer id="about" class="page-footer push-two fill-black clearfix">
+  <div class="text-center secondary gray container">
+    <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
+      <h3><a class="ir hasgeek-logo center-block space-one-top link-silent" href="//hasgeek.com">HasGeek</a></h3>
+      {% with f = fragment('2017', 'about-hasgeek') %}
+        {{ f.content }}
+      {% endwith %}
+
+      {% with f = fragment('2017', 'credits') %}
+      <div class="credits space-two">
+        <h2 class="calm">{{ f.title }}</h2>
+        {{ f.content }}
+      </div>
+      {% endwith %}
+      
+      <p>Copyright &copy; 2010–17. All rights reserved.</p>
+      <p><a href="mailto:info@hasgeek.com?subject=Hello Rootconf">info@hasgeek.com</a> /
+      <a href="tel:+918067684422" class="link-silent">+91-80-67684422</a></p>
+      <div class="legible space-one centered gray">
+        <ul class="list-plain">
+          <li class="inline-block gap-1q"><a href="https://twitter.com/rootconf" target="_blank" class="silent link-silent"><i class="fa fa-twitter"></i></a></li>
+          <li class="inline-block gap-1q"><a href="https://www.facebook.com/rootconf" target="_blank" class="silent link-silent"><i class="fa fa-facebook"></i></a></li>
+          <li class="inline-block gap-1q"><a href="https://www.youtube.com/user/hasgeek" target="_blank" class="silent link-silent"><i class="fa fa-youtube"></i></a></li>
+          <li class="inline-block gap-1q"><a href="https://www.flickr.com/photos/hasgeek/sets/" target="_blank" class="silent link-silent"><i class="fa fa-flickr"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+</div><!-- #page -->
+{%- if not config['DEBUG'] %}
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+{%- endif %}
+<script>window.jQuery || document.write('<script src="{{ theme_static('js/vendor/jquery-2.2.0.min.js') }}"><\/script>')</script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.6.3/leaflet.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/2.1.3/mustache.min.js"></script>
+
+
+{%- if _theme %}
+  {% assets "js_" + _theme -%}
+    <script src="{{ ASSET_URL }}"></script>
+  {% endassets -%}
+{%- endif %}
+
+<script>
+// Google Analytics
+if (location.hostname == 'rootconf.in') {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-19123154-21', 'auto');
+  ga('send', 'pageview');
+}
+</script>
+
+{% block footerscripts %}{% endblock %}
+<!-- Prompt IE 6 users to install Chrome Frame. -->
+<!-- chromium.org/developers/how-tos/chrome-frame-getting-started -->
+<!--[if lt IE 7 ]>
+  <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+  <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+<![endif]-->
+
+</body>
+</html>
