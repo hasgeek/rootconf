@@ -2,16 +2,14 @@
   <div class="row-fluid container">
     <h2 class="extralarge all-caps space-one-bottom">Sponsors</h2>
   </div>
-</section>
 
-{% with fill_cycler = cycler('fill-blue', 'fill-gray') %}
   {% set types = getnode(path='2017-sponsors').data['types'] %}
   {% set items = getnode(path='2017-sponsors').data['items'] %}
   {% for type in types %}
     {% set outer = loop %}
     {% for item in items if item.type == type.id and type.size != 's'  %}
       {% if loop.first %}
-      <section class="sponsor-platinum {{ fill_cycler.next() }} clearfix">
+      <article class="sponsor-platinum clearfix">
         <div class="row-fluid container">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 push-one-top">
             <h2 class="legible all-caps space-one-bottom">{{ type.title }}</h2>
@@ -22,7 +20,7 @@
           <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 legible space-two-bottom clearfix clearboth">
             <p class="clearfix space-two-bottom">
               <a href="{{ item.link }}" target="_blank" class="occupy fill-white sponsorlogo contain-height flushleft">
-                <img alt=" " src="{{ item.logo }}">
+                <img alt="{{ item.title }}" src="{{ item.logo }}">
               </a>
             </p>
             
@@ -45,8 +43,8 @@
           </div>
         </div>
       {% if loop.last %}
-      </section>
+      </article>
       {% endif %}
     {% endfor %}
   {% endfor %}
-{% endwith %}
+</section>
