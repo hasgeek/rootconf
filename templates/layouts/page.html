@@ -82,14 +82,24 @@ src="https://www.facebook.com/tr?id=1673537442887544&ev=PageView&noscript=1"
             {{ website.title }} {{ node.title }}
           </a>
         </div>
-        <div class="extrabold legible">Rootconf</div>
+        <div class="extrabold legible">{{ website.title }}</div>
       </div>
-      <div class="col-lg-7 col-md-7 col-sm-5 col-xs-4">
-        <h2 class="space-one-top push-3q-top large">{% block pagetitle %}{% endblock %}</h2>
+      <div class="col-lg-7 col-md-7 col-sm-5 col-xs-9">
+        <h2 class="space-one-bottom large">
+          {% if node.properties.tagline %}
+            {{ node.properties.tagline }}
+          {% else %}
+            Conference &amp; Workshops on DevOps and Cloud Infrastructure
+          {% endif %}
+        </h2>
       </div>
 
-      <div class="ticket-link-container col-lg-3 col-md-3 col-sm-4 col-xs-5">
-        <h3 class="calm tiny nospace-bottom all-caps text-right">11–15 May 2017, Bangalore</h3>
+      <div class="ticket-link-container col-lg-3 col-md-3 col-sm-4 col-xs-12">
+        <h3 class="calm tiny nospace-bottom all-caps text-right">
+          {% if node.properties.date %}
+            {{ node.properties.date }}
+          {% endif %}
+        </h3>
       </div>
     </div>
   </div>

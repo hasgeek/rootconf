@@ -6,7 +6,7 @@
     , 'sections'            : [      
       ('announcement',          'ghostwhite'),
       ('past-highlight',          'blue'),
-      ('venue',             'ghostwhite'),
+      ('venue',             ''),
       ('sponsors-summary',          'dark')
     ]
   }
@@ -59,12 +59,31 @@
 
     <div class="display-board push-one">
       <div class="white extralarge text-center">
-        <div class="link line2 text-center title-type push-3q-top">
+        <div class="link line2 text-center title-type push-2q-top">
           <div class="logo"><img src="https://imgee.s3.amazonaws.com/imgee/769dc463009d4cf09be7352c8c7b3628.png" width="80px" alt="###">rootconf</div><!-- <div id="blink-wrapper"><span id="blink"></span></div> -->
         </div>
-        <p class="tiny prose-type space-half-top">Conference &amp; Workshops on DevOps and Cloud Infrastructure</p>
-        <div class="intro row-fluid secondary prose prose-type thin space-one-top text-center">
-          <p class="nospace">11–15 May 2017 | MLR Convention Centre, JP Nagar</p>
+        <p class="secondary prose-type space-half-top">
+          {% if node.properties.tagline %}
+            {{ node.properties.tagline }}
+          {% else %}
+            Conference &amp; Workshops on DevOps and Cloud Infrastructure
+          {% endif %}
+        </p>
+        <div class="intro row-fluid secondary prose prose-type thin space-half-top text-center">
+          <p class="nospace">
+            {% if node.properties.date %}
+              {{ node.properties.date }}
+            {% endif %}
+          </p>
+        </div>
+        <div class="intro row-fluid secondary prose prose-type thin space-half-top text-center">
+          <p class="nospace">
+            {% if node.properties.venue %}
+              {{ node.properties.venue }}
+            {% else %}
+              MLR Convention Centre, JP Nagar
+            {% endif %}
+          </p>
         </div>
       </div>
       {% if node.properties.buy_ticket %}
