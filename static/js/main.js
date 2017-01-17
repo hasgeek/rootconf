@@ -321,20 +321,6 @@ $(document).ready(function() {
 
   initLeaflets();
 
-  // For conference and workshop schedule
-  var funnelurl = 'https://rootconf.talkfunnel.com/2016/schedule/json';
-  //If schedule divs are present on the page, then make the ajax call.
-  if(($('#conferenceschedule').length) || ($('#workshopschedule').length)) {
-    $.ajax({
-      type: 'GET',
-      dataType: 'jsonp',
-      url: funnelurl,
-      success: function(data) {
-        parseJson(data);
-      }
-    });//eof ajax call
-  }
-
   $(window).resize(function() {
     if($(window).width() < 768) {
       renderResponsiveTable();

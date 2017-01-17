@@ -31,6 +31,7 @@
         <ul class="nav navbar-nav">
           <li><a href="#annoucements" class="smooth-scroll">Announcements</a></li>
           <li><a href="#highlights" class="smooth-scroll">Past highlight</a></li>
+          <li><a href="#runup-events" class="smooth-scroll">Runup events</a></li>
           <li><a href="#venue" class="smooth-scroll">Venue</a></li>
           <li><a href="#sponsors" class="smooth-scroll">Sponsors</a></li>
           <li class="dropdown">
@@ -91,9 +92,9 @@
         <div class="push-one text-center">
           <a href="#tickets" class="button smooth-scroll">Buy tickets</a>
         </div>
-      {% else %}
+      {% elif node.properties.propose_talk %}
         <div class="push-one text-center">
-          <a href="https://rootconf.talkfunnel.com/2017/" class="button">Propose a talk</a>
+          <a href="{{ node.properties.propose_talk }}" class="button">Propose a talk</a>
         </div>
       {% endif %}
     </div> 
@@ -108,4 +109,24 @@
 
   </div>
 </header>
+{% endblock %}
+
+{% block footerscripts %}
+<script>
+$(document).ready(function() {  
+  // For conference and workshop schedule
+  var funnelurl = {{ node.properties.propose_talk }} + "schedule/json";
+  //If schedule divs are present on the page, then make the ajax call.
+  if(($('#conferenceschedule').length) || ($('#workshopschedule').length)) {
+    $.ajax({
+      type: 'GET',
+      dataType: 'jsonp',
+      url: funnelurl,
+      success: function(data) {
+        parseJson(data);
+      }
+    });//eof ajax call
+  }
+});
+</script>
 {% endblock %}

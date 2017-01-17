@@ -99,6 +99,15 @@ src="https://www.facebook.com/tr?id=1673537442887544&ev=PageView&noscript=1"
           {% if node.properties.date %}
             {{ node.properties.date }}
           {% endif %}
+          {% if node.properties.buy_ticket %}
+            <div class="push-one text-center">
+              <a href="/#tickets" class="button" target="_blank">Buy tickets</a>
+            </div>
+          {% elif node.properties.propose_talk %}
+            <div class="push-one text-center">
+              <a href="{{ node.properties.propose_talk }}" class="button" target="_blank">Propose a talk</a>
+            </div>
+          {% endif %}
         </h3>
       </div>
     </div>
