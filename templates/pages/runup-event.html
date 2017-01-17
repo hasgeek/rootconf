@@ -46,8 +46,12 @@
 <section id="annoucement" class="push-one clearfix">
   <div class="row-fluid container">
     <div class="regular text-justify">
-      <h3>{{ event.title|safe }}</h3>
+      <h2>{{ event.title|safe }}</h2>
       <div>{{ event.content }}</div>
+      <p>Date: {{ event.start_datetime.strftime('%d %B %Y') }}</p>
+      <p>Time: {{ event.start_datetime.strftime('%H:%M') }} - {{ event.end_datetime.strftime('%H:%M') }}</p>
+      <p>Venue: {{ event.location_name }}</p>
+      <p>{{ event.location_address }}</p>
     </div>
   </div>
   <div class="container">
