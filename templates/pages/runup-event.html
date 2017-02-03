@@ -5,6 +5,9 @@
 {% set title = 'Run-up events' %}
 {% set description = node.description %}
 
+{% block networkbar %}
+  {{ networkbar(siteid='events', login=true) }}
+{% endblock %}
 
 {% macro rsvp_form(node, form, waitlist=False, hascapacity=True, status='U') %}
   <form id="rsvp" action="{{ node.url_for('rsvp') }}" class="form-inline" method="POST">
@@ -46,14 +49,17 @@
 <section id="annoucement" class="push-one clearfix">
   <div class="row-fluid container">
     <div class="regular text-justify">
-      <h2>{{ event.title|safe }}</h2>
+      <h2 class="space-one">{{ event.title|safe }}</h2>
       <div>{{ event.content }}</div>
-      <p>Date: {{ event.start_datetime.strftime('%d %B %Y') }}</p>
-      <p>Time: {{ event.start_datetime.strftime('%H:%M') }} - {{ event.end_datetime.strftime('%H:%M') }}</p>
-      <p>Venue: {{ event.location_name }}</p>
-      <p>{{ event.location_address }}</p>
+      <div class="space-one">
+        <p><b>Date</b>: {{ event.start_datetime.strftime('%d %B %Y') }}</p>
+        <p><b>Time</b>: {{ event.start_datetime.strftime('%H:%M') }} - {{ event.end_datetime.strftime('%H:%M') }}</p>
+        <p><b>Venue</b>: {{ event.location_name }}</p>
+        <p>{{ event.location_address }}</p>
+      </div>
     </div>
   </div>
+  {%- if not node.properties.rsvp %}
   <div class="container">
     <article class="regular">
       <h3 class="centered calm space-one">RSVP</h3>
@@ -103,6 +109,7 @@
       </div> 
     </article>
   </div>
+  {%- endif %}
 </section>
 
 {% set schedule = node.properties.schedule %}
