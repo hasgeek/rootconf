@@ -4,18 +4,18 @@
   <div class="row-fluid text-center space-three-bottom">
     <h2>{{ getnode(path='runup-events-list').title }}</h2>
     
-    <ul id='htimeline'>
+    <ul id="htimeline">
       {% for event in events %}
-        <li class='work'>
-          <input class='radio {% if event.featured %}theme-red{% else %}theme-green{% endif %}' id='work4' name='works' type='radio'>
+        <li class="work">
+          <input class="radio {% if event.featured %}theme-red{% else %}theme-green{% endif %}" id="work4" name="works" type="radio">
           <div class="relative">
-            <span class='date'>{{ event.date }}</span>
-            <span class='circle'></span>
+            <span class="date tiny">{{ event.date }}</span>
+            <span class="circle"></span>
           </div>
           <a class="link-silent" href="{{ event.url }}">
-            <div class='content'>
+            <div class="content secondary">
               <p>{{ event.title }}</p>
-              <p><i class="fa fa-map-marker"></i> {{ event.city }}</p>
+              <p class="tiny"><i class="fa fa-map-marker"></i> {{ event.city }}</p>
             </div>
           </a>
         </li>

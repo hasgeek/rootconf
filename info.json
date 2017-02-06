@@ -18,6 +18,10 @@
         ],
         "assets_js": [
             "js/vendor/bootstrap.min.js",
+            "js/vendor/jquery.mobile.custom.min.js",
+            "js/vendor/jquery.mousewheel.js",
+            "js/vendor/jquery.mCustomScrollbar.min.js",
+            "js/vendor/ractive.min.js",
             "js/maps.js",
             "js/main.js"
         ]

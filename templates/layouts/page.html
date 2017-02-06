@@ -61,7 +61,7 @@ src="https://www.facebook.com/tr?id=1673537442887544&ev=PageView&noscript=1"
 <!-- End Facebook Pixel Code -->
 </head>
 
-<body class="fill-ghostwhite">
+<body>
 
 <div class="fill-silver">
   {% block networkbar %}
@@ -119,12 +119,6 @@ src="https://www.facebook.com/tr?id=1673537442887544&ev=PageView&noscript=1"
 {% endblock %}
 
 {% block content %}
-  {% for item in page.sections  %}
-    {% with %}
-      {% if item is string %} {% set section = item %} {% else %} {% set section, background = item %} {% endif %}
-      {% include theme('sections/'+section+'.html') %}
-    {% endwith %}
-  {% endfor %}
 {% endblock %}
 
 

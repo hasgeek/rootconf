@@ -1,17 +1,26 @@
 {% extends theme('layouts/page.html') %}
-{%
-  set page = {
-      'title'               : ''
-    , 'description'         : ''
-    , 'sections'            : [      
-      ('announcement',          'ghostwhite'),
-      ('past-highlight',          'blue'),
-      ('runup-events-list', ''),
-      ('venue',             'blue'),
-      ('sponsors-summary',          'dark')
-    ]
-  }
-%}
+
+{% block content %}
+{% include theme("sections/announcement.html") %}
+{% if node.properties.past_highlights %}
+  {% include theme("sections/past-highlight.html") %}
+{% endif %}
+{% if node.properties.featured_talks %}
+  {% include theme("sections/featured-talks.html") %}
+{% endif %}
+{% if node.properties.runup_events_list %}
+  {% include theme("sections/runup-events-list.html") %}
+{% endif %}
+{% if node.properties.proposals %}
+  {% include theme("sections/proposals.html") %}
+{% endif %}
+{% if node.properties.tickets %}
+  {% include theme("sections/tickets.html") %}
+{% endif %}
+{% include theme("sections/venue.html") %}
+{% include theme("sections/sponsors-summary.html") %}
+{% endblock %}
+
 
 {% block navtype %}
 <div id="nav-home">
@@ -30,8 +39,21 @@
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav">
           <li><a href="#annoucements" class="smooth-scroll">Announcements</a></li>
-          <li><a href="#highlights" class="smooth-scroll">Past highlight</a></li>
-          <li><a href="#runup-events" class="smooth-scroll">Runup events</a></li>
+          {% if node.properties.past_highlights %}
+            <li><a href="#highlights" class="smooth-scroll">Past highlight</a></li>
+          {% endif %}
+          {% if node.properties.featured_talks %}
+            <li><a href="#featured-talks" class="smooth-scroll">Featured talks</a></li>
+          {% endif %}
+          {% if node.properties.runup_events_list %}
+            <li><a href="#runup-events" class="smooth-scroll">Runup events</a></li>
+          {% endif %}
+          {% if node.properties.proposals %}
+            <li><a href="#proposals" class="smooth-scroll">Proposals</a></li>
+          {% endif %}
+          {% if node.properties.tickets %}
+            <li><a href="#tickets" class="smooth-scroll">Tickets</a></li>
+          {% endif %}
           <li><a href="#venue" class="smooth-scroll">Venue</a></li>
           <li><a href="#sponsors" class="smooth-scroll">Sponsors</a></li>
           <li class="dropdown">
@@ -112,10 +134,38 @@
 {% endblock %}
 
 {% block footerscripts %}
+<style type="text/css">        
+  #boxoffice-widget .boxoffice-button-action {        
+    background-color: #E05F26;        
+    border-color:  #B94C1D;       
+    color: #fff;        
+  }       
+  #boxoffice-widget .boxoffice-button-info {        
+    background-color: #5BC0DE;        
+    border-color: #2A9CBE;        
+    color: #fff;        
+  }       
+  #boxoffice-widget .payment-stages-bg {        
+    background-color: #463850;        
+  }       
+  #boxoffice-widget .progress-indicator>li {        
+    color: #bbb;        
+  }       
+  #boxoffice-widget .category-heading {       
+    background-color: #f0a40c;        
+    border-bottom: 3px solid #d5920d;       
+    color: #fff;     
+    line-height: 1.1;     
+  }       
+  #boxoffice-widget .category-heading:after {       
+    border-color: #f0a40c #fff #f0a40c #f0a40c; 
+  }   
+</style> 
+
 <script>
 $(document).ready(function() {  
   // For conference and workshop schedule
-  var funnelurl = {{ node.properties.propose_talk }} + "schedule/json";
+  var funnelurl = "{{ node.properties.propose_talk }}" + "schedule/json";
   //If schedule divs are present on the page, then make the ajax call.
   if(($('#conferenceschedule').length) || ($('#workshopschedule').length)) {
     $.ajax({
@@ -127,6 +177,52 @@ $(document).ready(function() {
       }
     });//eof ajax call
   }
+
+    // For proposals
+  var proposals_url = "{{ node.properties.propose_talk }}" + 'json';
+
+  //If funnel-proposals divs is present on the page, then make the ajax call.
+  if(($('#funnel-proposals').length)) {
+    $.ajax({
+      type: 'GET',
+      dataType: 'jsonp',
+      url: proposals_url,
+      success: function(data) {
+        parseProposalJson(data);
+      }
+    });//eof ajax call
+  }
+
+  var boxofficeUrl = "http://boxoffice.vidya.dev:6500";  
+
+  $.get({       
+    url: boxofficeUrl+"/api/1/boxoffice.js",    
+    crossDomain: true       
+  }).done(function(data) {        
+    var boxofficeScript = document.createElement('script');       
+    boxofficeScript.innerHTML = data.script;        
+    document.getElementsByTagName('body')[0].appendChild(boxofficeScript);        
+    window.Boxoffice.init({       
+      org: 'hasgeek',       
+      itemCollection: "{{ node.properties.item_collection }}",     
+      paymentDesc: "{{ node.properties.payment_desc }}"       
+    });       
+  }).fail(function(response) {        
+    var error_msg;    
+    if (response.readyState === 4) {    
+      error_msg = "Server error, please try again later";   
+    }   
+    else if (response.readyState === 0) {   
+      if(!navigator.onLine) {   
+        error_msg = "Unable to connect. There is no network!";    
+      }   
+      else {    
+        error_msg = "<p>Unable to connect. If you are behind a firewall or using any script blocking extension (like Privacy Badger).<p></p> Please ensure your browser can load boxoffice.hasgeek.com, api.razorpay.com and checkout.razorpay.com</p>";    
+      }   
+    }   
+    $('#boxoffice-widget p').html(error_msg);   
+  }); 
+
 });
 </script>
 {% endblock %}

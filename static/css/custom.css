@@ -342,10 +342,6 @@ input.gn-search:focus {
 	font-style: normal;
 }
 
-body {
-	background: #636260;
-}
-
 .container > header,
 .codrops-top {
 	color: #fff;
