@@ -1,5 +1,5 @@
-<section id="featured-talks" class="featured-speakers push-three-top push-one-bottom clearfix">
-  <h2 class="text-center push-1q-bottom large all-caps">Featured talks</h2>
+<section id="featured-talks" class="featured-speakers push-three-top push-two-bottom clearfix">
+  <h2 class="calm centered space-one large text-center">Featured talks</h2>
   {% for item in getnode(path='featured-talks').data['talks']|sort(attribute='speaker') -%}
     {% if item.featured %}
       {% if loop.first %}

@@ -1,24 +1,27 @@
 {% extends theme('layouts/page.html') %}
 
 {% block content %}
-{% include theme("sections/announcement.html") %}
-{% if node.properties.past_highlights %}
-  {% include theme("sections/past-highlight.html") %}
-{% endif %}
-{% if node.properties.featured_talks %}
-  {% include theme("sections/featured-talks.html") %}
-{% endif %}
-{% if node.properties.runup_events_list %}
-  {% include theme("sections/runup-events-list.html") %}
-{% endif %}
-{% if node.properties.proposals %}
-  {% include theme("sections/proposals.html") %}
-{% endif %}
-{% if node.properties.tickets %}
-  {% include theme("sections/tickets.html") %}
-{% endif %}
-{% include theme("sections/venue.html") %}
-{% include theme("sections/sponsors-summary.html") %}
+  {% include theme("sections/announcement.html") %}
+  {% if node.properties.past_highlights %}
+    {% include theme("sections/past-highlight.html") %}
+  {% endif %}
+  {% if node.properties.featured_talks %}
+    {% include theme("sections/featured-talks.html") %}
+  {% endif %}
+  {% if node.properties.runup_events_list %}
+    {% include theme("sections/runup-events-list.html") %}
+  {% endif %}
+  {% if node.properties.proposals %}
+    {% include theme("sections/proposals.html") %}
+  {% endif %}
+  {% if node.properties.schedule %}
+    {% include theme("sections/schedule.html") %}
+  {% endif %}
+  {% if node.properties.tickets %}
+    {% include theme("sections/tickets.html") %}
+  {% endif %}
+  {% include theme("sections/venue.html") %}
+  {% include theme("sections/sponsors-summary.html") %}
 {% endblock %}
 
 
@@ -50,6 +53,9 @@
           {% endif %}
           {% if node.properties.proposals %}
             <li><a href="#proposals" class="smooth-scroll">Proposals</a></li>
+          {% endif %}
+          {% if node.properties.schedule %}
+            <li><a href="#schedule" class="smooth-scroll">Schedule</a></li>
           {% endif %}
           {% if node.properties.tickets %}
             <li><a href="#tickets" class="smooth-scroll">Tickets</a></li>
@@ -203,7 +209,7 @@ $(document).ready(function() {
     boxofficeScript.innerHTML = data.script;        
     document.getElementsByTagName('body')[0].appendChild(boxofficeScript);        
     window.Boxoffice.init({       
-      org: 'hasgeek',       
+      org: "hasgeek",       
       itemCollection: "{{ node.properties.item_collection }}",     
       paymentDesc: "{{ node.properties.payment_desc }}"       
     });       

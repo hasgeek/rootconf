@@ -1,17 +1,12 @@
 {% extends theme('layouts/page.html') %}
-{%
-  set page = {
-      'title'               : 'Sponsor'
-    , 'description'         : ''
-    , 'sections'            : [
-      ('event-highlights', 'white'),
-      ('sponsorship-catalogue', ''),
-      ('testimonials', 'white'),
-      ('venue',             'blue'),
-      ('sponsors', 'dark')
-    ]
-  }
-%}
+
+{% block content %}
+  {% include theme("sections/event-highlights.html") %}
+  {% include theme("sections/sponsorship-catalogue.html") %}
+  {% include theme("sections/testimonials.html") %}
+  {% include theme("sections/venue.html") %}
+  {% include theme("sections/sponsors.html") %}
+{% endblock %}
 
 {% block navtype %}
 <div id="nav-home">
@@ -148,9 +143,9 @@
       outreachScript.innerHTML = data.script;
       document.getElementsByTagName('body')[0].appendChild(outreachScript);
       window.outreach_widget.init({
-        orgName: 'hasgeek',
-        itemCollection: '407d34a3-ab35-11e6-ae30-3556346076db',
-        eventName: 'rootconf 2017'
+        orgName: "hasgeek",
+        itemCollection: "{{ node.properties.outreach_item_collection }}",
+        eventName: "{{ node.properties.event_name }}"
       });
 
     }).fail(function(response) {
