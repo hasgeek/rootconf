@@ -10,8 +10,8 @@
     </div>
   </div>
   {% with %}
-    {% set types = getnode(path='2017-sponsors').data['types'] %}
-    {% set items = getnode(path='2017-sponsors').data['items'] %}
+    {% set types = getnode(path='2017-sponsors-types').data['types'] %}
+    {% set items = getnode(path='2017-sponsors').data['sponsors'] %}
     {% for type in types %}
       {% set outer = loop %}
       {% for item in items if item.type == type.id  %}
