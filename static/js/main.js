@@ -1,3 +1,11 @@
+window.Rootconf = {};
+
+Rootconf.sendGA = function(category, action, label) {
+  if (typeof ga !== "undefined") {
+    ga('send', { hitType: 'event', eventCategory: category, eventAction: action, eventLabel: label});
+  }
+};
+
 // For conference and workshop schedule
 //dateStr is expected in the format 2015-07-16", then returns "Thu Jul 16 2015"
 var getDateString = function(dateStr) {
@@ -67,9 +75,13 @@ var getTotalMins = function(time) {
   return (hr * 60) + min;
 }
 
-//roomName is "nimhans-convention-center/audi-1" return "AUDI-1"
 var getAudiTitle = function(roomName) {
-  return roomName.substring(roomName.indexOf('/')+1).toUpperCase();
+  return roomName.substring(roomName.indexOf('/')+1).replace(/-/g, ' ')  + ", " + roomName.substring(0, roomName.indexOf('/')).replace(/-/g, ' ');
+}
+
+//roomName is "nimhans-convention-center/audi-1" return "AUDI-1"
+var getShortAudiTitle = function(roomName) {
+  return roomName.substring(roomName.indexOf('/')+1).replace(/-/g, ' ');
 }
 
 //audiName is AUDI-2 returns track 1.
@@ -154,28 +166,24 @@ var checkColumns = function(schedule) {
 }
 
 var renderResponsiveTable = function() {
-  $('td.tab-active').attr('colspan', 2);
+  $('td.tab-active').attr('colspan', 3);
 }
 
 var disableResponsiveTable = function() {
   $('td').not('.centered').attr('colspan', "");
 }
 
-var renderScheduleTable = function(schedules, eventType) {
+var renderScheduleTable = function(schedules, eventType, divContainer) {
   schedules.forEach(function(schedule) {
     var tableTemplate = $('#scheduletemplate').html();
+
     if (eventType === 'conference') {
-      $('#conferenceschedule').append(Mustache.render(tableTemplate, schedule));
+      $(divContainer).append(Mustache.render(tableTemplate, schedule));
       $(".schedule-table-container p.loadingtxt").hide();
     }
-    else if ($('#workshopschedule').length) {
-      var workshopDates = $('#workshopschedule').attr('data-date');
-      workshopDates = workshopDates.split('-');
-      var date = schedule.date.substr(8, 2);
-      if (workshopDates.indexOf(date) > -1) {
-        $('#workshopschedule').append(Mustache.render(tableTemplate, schedule));
-        $(".schedule-table-container p.loadingtxt").hide();
-      }
+    else {
+      $(divContainer).append(Mustache.render(tableTemplate, schedule));
+      $(".schedule-table-container p.loadingtxt").hide();
     }
   });
   if ($(window).width() < 768){
@@ -183,13 +191,12 @@ var renderScheduleTable = function(schedules, eventType) {
   }
 }
 
-function parseJson(data) {
+function parseJson(data, eventType, divContainer) {
   var schedules = data.schedule;
   var workshopSchedule = [];
   var conferenceSchedule = [];
   var conferenceScheduleCounter = 0;
   var workshopScheduleCounter = 0;
-
   //Create rows at 5min intervals
   schedules.forEach(function(eachSchedule, scheduleindex, schedules) {        
     var rooms = [];
@@ -209,16 +216,11 @@ function parseJson(data) {
         schedules[scheduleindex].end = getIST(getTimeString(slot.sessions[sessions.length-1].end));
       }
       sessions.forEach(function(session, sessionindex, sessions) {
-        //Type of schedule-
-        if (session.room === "mlr-convention-centre-j-p-nagar/auditorium") {
-          schedules[scheduleindex].type = 'conference';
-        }
-        else if (session.section_name && (session.section_name.toLowerCase().indexOf('workshop') !== -1)) {
+        //Type of schedule
+        if (session.section_name && session.section_name.toLowerCase().indexOf('workshop') !== -1) {
           schedules[scheduleindex].type = 'workshop';
         }
-        else if (session.room === "teri-domlur/auditorium") {
-          schedules[scheduleindex].type = 'workshop';
-        }
+
         //Tracks or No:of auditorium
         if (session.room && (rooms.indexOf(session.room) === -1)) {
             rooms.push(session.room);
@@ -227,6 +229,7 @@ function parseJson(data) {
         schedules[scheduleindex].slots[slotindex].sessions[sessionindex].start = getIST(getTimeString(session.start));
         schedules[scheduleindex].slots[slotindex].sessions[sessionindex].end = getIST(getTimeString(session.end));
       }); //eof sessions loop
+
       if (schedules[scheduleindex].type !== 'workshop') {
         schedules[scheduleindex].type = 'conference';
       }
@@ -237,7 +240,7 @@ function parseJson(data) {
 
     //Add title and track to each room. Eg: room: "nimhans-convention-center/audi-1", title: "Audi 1", track: 0
     rooms.forEach(function(room, index, rooms) {
-      rooms[index] = { name: room, title: getAudiTitle(room), track: index};
+      rooms[index] = { name: room, title: getAudiTitle(room), shorttitle: getShortAudiTitle(room), track: index};
     });
     schedules[scheduleindex].rooms = rooms;
 
@@ -291,8 +294,12 @@ function parseJson(data) {
       workshopScheduleCounter += 1;
     }
   }); //eof schedules loop
-  renderScheduleTable(conferenceSchedule, 'conference');
-  renderScheduleTable(workshopSchedule, 'workshop');
+
+  if (eventType === 'conference') {
+    renderScheduleTable(conferenceSchedule, 'conference', divContainer);
+  } else {
+    renderScheduleTable(workshopSchedule, 'workshop', divContainer);
+  }
 }
 
 var updateFontSize = function(elem) {
@@ -339,7 +346,7 @@ function parseProposalJson(json) {
       $('#funnel-proposals .click, #funnel-proposals .btn').click(function(event) {
         var action = $(this).data('label');
         var target = $(this).data('target');
-        sendGA('click', action, target);
+        Rootconf.sendGA('click', action, target);
       });
     }
   });
@@ -406,12 +413,12 @@ $(document).ready(function() {
   $('.button').click(function(event) {
     var button = $(this).html();
     var section = $(this).attr('href');
-    sendGA('click', button, section);
+    Rootconf.sendGA('click', button, section);
   });
 
   $('.click').click(function(event) {
     var target = $(this).data('target');
     var action = $(this).data('label');
-    sendGA('click', action, target);
+    Rootconf.sendGA('click', action, target);
   });
 });

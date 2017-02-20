@@ -179,7 +179,7 @@ $(document).ready(function() {
       dataType: 'jsonp',
       url: funnelurl,
       success: function(data) {
-        parseJson(data);
+        parseJson(data, 'conference', '#conferenceschedule');
       }
     });//eof ajax call
   }

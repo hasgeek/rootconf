@@ -2239,6 +2239,10 @@ ul.navbar-brand>li>a{
   padding: 0;
 }
 
+.proposal-card .description img {
+  width: 100%;
+}
+
 .proposal-card .description ul,
 .proposal-card .description ol {
   margin: 0;
@@ -2260,6 +2264,10 @@ ul.navbar-brand>li>a{
 .modal-description-title {
   font-weight: bold;
   margin: 0 0 10px;
+}
+
+.modal-body img {
+  width: 100%;
 }
 
 .modal-description {
