@@ -375,9 +375,6 @@ $(document).ready(function() {
     $('html,body').animate({scrollTop:sectionPos}, '900');
   });
 
-
-  initLeaflets();
-
   $(window).resize(function() {
     if($(window).width() < 768) {
       renderResponsiveTable();

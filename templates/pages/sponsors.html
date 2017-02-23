@@ -4,3 +4,11 @@
   {% include theme("sections/sponsors.html") %}
   {% include theme("sections/venue.html") %}
 {% endblock %}
+
+{% block footerscripts %}
+<script>
+  $(document).ready(function() {
+    initLeaflets();
+  });
+</script>
+{% endblock %}

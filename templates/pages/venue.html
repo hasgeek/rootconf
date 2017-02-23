@@ -4,3 +4,11 @@
   {% include theme("sections/venue-summary.html") %}
   {% include theme("sections/hotels.html") %}
 {% endblock %}
+
+{% block footerscripts %}
+<script>
+  $(document).ready(function() {
+    initLeaflets();
+  });
+</script>
+{% endblock %}

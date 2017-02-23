@@ -36,10 +36,10 @@
             
           </div>
           <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 regular-prose prose prose-type space-three-bottom">
-            <div class="legible space-half-bottom"><a href="{{ item.link }}" target="_blank">{{ item.title }}</a></div>
-              {% with f = fragment('2017', item.blurb) %}
-                {{ f.content }}
-              {% endwith %}
+            <div class="legible space-half-bottom">
+              <p class="nospace-top space-one-bottom"><a href="{{ item.link }}" target="_blank" class="large">{{ item.title }}</a></p>
+              {{ item.blurb|safe }}
+            </div>
           </div>
         </div>
       {% if loop.last %}

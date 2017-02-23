@@ -170,64 +170,90 @@
 
 <script>
 $(document).ready(function() {  
-  // For conference and workshop schedule
-  var funnelurl = "{{ node.properties.propose_talk }}" + "schedule/json";
-  //If schedule divs are present on the page, then make the ajax call.
-  if(($('#conferenceschedule').length) || ($('#workshopschedule').length)) {
-    $.ajax({
-      type: 'GET',
-      dataType: 'jsonp',
-      url: funnelurl,
-      success: function(data) {
-        parseJson(data, 'conference', '#conferenceschedule');
-      }
-    });//eof ajax call
-  }
-
-    // For proposals
-  var proposals_url = "{{ node.properties.propose_talk }}" + 'json';
-
-  //If funnel-proposals divs is present on the page, then make the ajax call.
-  if(($('#funnel-proposals').length)) {
-    $.ajax({
-      type: 'GET',
-      dataType: 'jsonp',
-      url: proposals_url,
-      success: function(data) {
-        parseProposalJson(data);
-      }
-    });//eof ajax call
-  }
-
   var boxofficeUrl = "https://boxoffice.hasgeek.com";
 
-  $.get({       
-    url: boxofficeUrl+"/api/1/boxoffice.js",    
-    crossDomain: true       
-  }).done(function(data) {        
-    var boxofficeScript = document.createElement('script');       
-    boxofficeScript.innerHTML = data.script;        
-    document.getElementsByTagName('body')[0].appendChild(boxofficeScript);        
-    window.Boxoffice.init({       
-      org: "hasgeek",       
-      itemCollection: "{{ node.properties.item_collection }}",     
-      paymentDesc: "{{ node.properties.payment_desc }}"       
-    });       
-  }).fail(function(response) {        
-    var error_msg;    
-    if (response.readyState === 4) {    
-      error_msg = "Server error, please try again later";   
-    }   
-    else if (response.readyState === 0) {   
-      if(!navigator.onLine) {   
-        error_msg = "Unable to connect. There is no network!";    
-      }   
-      else {    
-        error_msg = "<p>Unable to connect. If you are behind a firewall or using any script blocking extension (like Privacy Badger).<p></p> Please ensure your browser can load boxoffice.hasgeek.com, api.razorpay.com and checkout.razorpay.com</p>";    
-      }   
-    }   
-    $('#boxoffice-widget p').html(error_msg);   
-  }); 
+  $.get({
+    url: boxofficeUrl + "/api/1/boxoffice.js",   
+    crossDomain: true,
+    timeout: 8000,
+    retries: 5,
+    retryInterval: 8000,
+    success: function(data) {
+      var boxofficeScript = document.createElement('script');
+      boxofficeScript.innerHTML = data.script;
+      document.getElementsByTagName('body')[0].appendChild(boxofficeScript);
+      window.Boxoffice.init({
+        org: "hasgeek",
+        itemCollection: "{{ node.properties.item_collection }}",
+        paymentDesc: "{{ node.properties.payment_desc }}"
+      });
+      loadProposals();
+      initLeaflets();
+    },
+    error: function(response) {
+      var ajaxLoad = this;
+      ajaxLoad.retries -= 1;
+      var errorMsg;
+      if (response.readyState === 4) {
+        errorMsg = "Server error, please try again later.";
+        logError(errorMsg);
+      }
+      else if (response.readyState === 0) {
+        if (ajaxLoad.retries < 0) {
+          if(!navigator.onLine) {
+            errorMsg = "Unable to connect. There is no network!";
+            logError(errorMsg);
+          }
+          else {
+            errorMsg = "<p>Unable to connect. If you are behind a firewall or using any script blocking extension (like Privacy Badger).<p></p> Please ensure your browser can load boxoffice.hasgeek.com, api.razorpay.com and checkout.razorpay.com .</p>";
+            logError(errorMsg);
+          }
+        } else {
+          setTimeout(function() {
+            $.get(ajaxLoad);
+          }, ajaxLoad.retryInterval);
+        }
+      }
+    }
+  });
+
+  var logError = function (errorMsg) {
+    $('#boxoffice-widget p').html(errorMsg);
+    Rootconf.sendGA('error', 'boxoffice load error', errorMsg);
+    loadProposals();
+    initLeaflets();
+  }
+
+  var loadProposals = function () {
+    // For conference and workshop schedule
+    var funnelurl = "{{ node.properties.propose_talk }}" + "schedule/json";
+    //If schedule divs are present on the page, then make the ajax call.
+    if(($('#conferenceschedule').length) || ($('#workshopschedule').length)) {
+      $.ajax({
+        type: 'GET',
+        dataType: 'jsonp',
+        url: funnelurl,
+        success: function(data) {
+          parseJson(data, 'conference', '#conferenceschedule');
+        }
+      });//eof ajax call
+    }
+
+      // For proposals
+    var proposals_url = "{{ node.properties.propose_talk }}" + 'json';
+
+    //If funnel-proposals divs is present on the page, then make the ajax call.
+    if(($('#funnel-proposals').length)) {
+      $.ajax({
+        type: 'GET',
+        dataType: 'jsonp',
+        url: proposals_url,
+        success: function(data) {
+          parseProposalJson(data);
+        }
+      });//eof ajax call
+    }
+  }
 
 });
 </script>
