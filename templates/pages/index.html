@@ -219,6 +219,16 @@ $(document).ready(function() {
 
   var logError = function (errorMsg) {
     $('#boxoffice-widget p').html(errorMsg);
+    {% if g.user %}
+      Raven.setUserContext({
+        email: "{{ g.user.email }}",
+        id: "{{ g.user.username }}"
+      });
+    {% endif %}
+    Raven.captureMessage(errorMsg, {
+      level: 'error',
+      logger: 'boxoffice'
+    });
     Rootconf.sendGA('error', 'boxoffice load error', errorMsg);
     loadProposals();
     initLeaflets();

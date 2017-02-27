@@ -2,8 +2,9 @@
 {% from "baseframe/forms.html" import ajaxform %}
 {% set event = node %}
 
-{% set title = 'Run-up events' %}
-{% set description = node.description %}
+{% block title %}
+<title>{{ node.title }}</title>
+{% endblock %}
 
 {% block networkbar %}
   {{ networkbar(siteid='events', login=true) }}
