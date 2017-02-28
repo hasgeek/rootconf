@@ -53,8 +53,6 @@
 <link href='//fonts.googleapis.com/css?family=Rosario:400' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="/_baseframe/css/networkbar.css">
 
-<script src="{{ theme_static('js/vendor/modernizr-2.6.2.js') }}"></script>
-
 
 <!-- Facebook Pixel Code -->
 <script>
@@ -161,6 +159,8 @@ src="https://www.facebook.com/tr?id=1673537442887544&ev=PageView&noscript=1"
 
 </div><!-- #page -->
 
+<script src="{{ theme_static('js/vendor/modernizr-2.6.2.js') }}"></script>
+
 <!-- Included JS Files -->
 <!--[if lt IE 9]>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -173,8 +173,6 @@ src="https://www.facebook.com/tr?id=1673537442887544&ev=PageView&noscript=1"
   environment: 'production',
   tags: {event_edition: '{{ node.title }}', item_collection: "{{ node.properties.item_collection }}"}
 }).install()</script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.6.3/leaflet.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/2.1.3/mustache.min.js"></script>
 
 
 {%- if _theme %}
