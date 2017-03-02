@@ -181,7 +181,9 @@
 </section>
 {% endif %}
 
+{%- if not node.properties.announcement %}
 {% include theme("sections/announcement.html") %}
+{% endif %}
 
 {% endblock %}
 
