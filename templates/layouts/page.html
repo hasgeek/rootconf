@@ -86,7 +86,7 @@ src="https://www.facebook.com/tr?id=1673537442887544&ev=PageView&noscript=1"
   <div class="container">
     <div class="row">
       <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
-        <div class="extrabold legible logo">rootconf</div>
+        <a class="silent link-silent" href="/" target="_blank"><p class="extrabold legible logo">rootconf</p>
       </div>
       <div class="col-lg-7 col-md-7 col-sm-5 col-xs-9">
         <h2 class="space-one-bottom large">
@@ -96,23 +96,6 @@ src="https://www.facebook.com/tr?id=1673537442887544&ev=PageView&noscript=1"
             Conference &amp; Workshops on DevOps and Cloud Infrastructure
           {% endif %}
         </h2>
-      </div>
-
-      <div class="ticket-link-container col-lg-3 col-md-3 col-sm-4 col-xs-12">
-        <h3 class="calm tiny nospace-bottom all-caps text-right">
-          {% if node.properties.date %}
-            {{ node.properties.date }}
-          {% endif %}
-          {% if node.properties.buy_ticket %}
-            <div class="push-one text-right">
-              <a href="/#tickets" class="button">Buy tickets</a>
-            </div>
-          {% elif node.properties.propose_talk %}
-            <div class="push-one text-right">
-              <a href="{{ node.properties.propose_talk }}" class="button" target="_blank">Propose a talk</a>
-            </div>
-          {% endif %}
-        </h3>
       </div>
     </div>
   </div>
