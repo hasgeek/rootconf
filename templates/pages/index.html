@@ -2,8 +2,8 @@
 
 {% block content %}
   {% include theme("sections/announcement.html") %}
-  {% if node.properties.past_highlights %}
-    {% include theme("sections/past-highlight.html") %}
+  {% if node.properties.past_editions %}
+    {% include theme("sections/past-editions.html") %}
   {% endif %}
   {% if node.properties.featured_talks %}
     {% include theme("sections/featured-talks.html") %}
@@ -42,8 +42,8 @@
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav">
           <li><a href="#annoucements" class="smooth-scroll">Announcements</a></li>
-          {% if node.properties.past_highlights %}
-            <li><a href="#highlights" class="smooth-scroll">Past highlight</a></li>
+          {% if node.properties.past_editions %}
+            <li><a href="#past-editions" class="smooth-scroll">Past editions</a></li>
           {% endif %}
           {% if node.properties.featured_talks %}
             <li><a href="#featured-talks" class="smooth-scroll">Featured talks</a></li>
