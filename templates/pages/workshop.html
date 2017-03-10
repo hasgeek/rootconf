@@ -5,7 +5,9 @@
   {% if node.properties.tickets %}
     {% include theme("sections/tickets.html") %}
   {% endif %}
-  {% include theme("sections/venue.html") %}
+  {% if node.properties.venue %}
+    {% include theme("sections/venue.html") %}
+  {% endif %}
   {% include theme("sections/sponsors-summary.html") %}
 {% endblock %}
 
