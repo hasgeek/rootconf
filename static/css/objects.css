@@ -1927,12 +1927,12 @@ ul.navbar-brand>li>a{
 
 .schedule-table td.track-0 div {
   background-color: #EBAE5D;
-  color: #333;
+  color: #fff;
 }
 
 .schedule-table td.track-1 div {
   background-color: #eb931f;
-  color: #333;
+  color: #fff;
 }
 
 .schedule-table td.track-2 div {
@@ -1970,21 +1970,25 @@ ul.navbar-brand>li>a{
 }
 
 .schedule-table tbody td .duration {
-  font-size: 12px;
+  font-size: 14px;
   font-style: italic;
   color: #666;
 }
 
 .schedule-table tbody td .venue {
-  font-size: 12px;
+  font-size: 14px;
   color: #666;
   padding-bottom: 10px;
 }
 
 .schedule-table tbody td .description-text {
   padding: 2px 5px;
-  font-size: 12px;
-  color: #666;
+  font-size: 16px;
+}
+
+.schedule-table tbody td .description-text ul, 
+.schedule-table tbody td .description-text ol {
+  padding 2px 15px;
 }
 
 .schedule-table tbody td.tab-active {
@@ -2010,15 +2014,6 @@ ul.navbar-brand>li>a{
   display: block;
 }
 
-@media (max-width: 479px) {
-  .schedule-table tbody td h4 {
-    font-size: .8rem;
-  }
-
-  .schedule-table tbody td p {
-    font-size: .6rem;
-  }
-}
 @media only screen and (min-width: 768px) {
   .schedule-table thead th.time {
     width: 12%;
