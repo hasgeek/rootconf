@@ -1757,12 +1757,19 @@ ul.navbar-brand>li>a{
   display: none;
 }
 
-/* Schedule */
-/* Schedule */
-.schedule-container { max-width: 1000px; }
-.schedule-table { background-color: transparent; border-collapse: separate; height: 100%;}
 
-.schedule-table thead th.time   { 
+/* Schedule */
+.schedule-container {
+  max-width: 1000px;
+}
+
+.schedule-table {
+  background-color: transparent;
+  border-collapse: separate;
+  height: 100%;
+}
+
+.schedule-table thead th.time {
   width: 12%;
   background-color: transparent;
   padding: 0;
@@ -1770,78 +1777,99 @@ ul.navbar-brand>li>a{
   border-style: solid;
   border-width: 0 5px 10px 0;
 }
+
 .schedule-table thead th.time div {
   color: #fff;
-  background-color: #826995; 
-  box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+  background-color: #826995;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
   padding: 10px 5px;
   font-size: 10px;
   border-radius: 4px;
 }
+
 .schedule-table th.track0,
-.schedule-table th.track1 { 
-  border-color: transparent; 
-  border-style: solid; 
-  border-width: 0 5px 10px 0; 
+.schedule-table th.track1,
+.schedule-table th.track2 {
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0 5px 10px 0;
   background-color: transparent;
   padding: 0;
 }
-.schedule-table th.track1 { 
-  border-width: 0 0 10px; 
+
+.schedule-table th.track1 {
+  border-width: 0 0 10px;
 }
+
 .schedule-table th.track0 div,
-.schedule-table th.track1 div {
+.schedule-table th.track1 div,
+.schedule-table th.track2 div {
   margin: 0 0.2rem;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
   border-radius: 4px;
   padding: 10px 5px;
   font-size: 10px;
   color: #fff;
-  background-color: #826995; 
+  background-color: #826995;
 }
+
 .schedule-table th.track0.tab-active div,
-.schedule-table th.track1.tab-active  div {
+.schedule-table th.track1.tab-active div,
+.schedule-table th.track2.tab-active div {
   opacity: 0.4;
 }
-@media(min-width: 480px) {
+
+@media (min-width: 480px) {
   .schedule-table thead th.time div,
   .schedule-table th.track0 div,
-  .schedule-table th.track1 div {
+  .schedule-table th.track1 div,
+  .schedule-table th.track2 div  {
     padding: 1rem .5rem;
     font-size: inherit;
   }
 }
-.schedule-table th.tab-active { color: #FFF; background-color: transparent;}
-.schedule-table tbody { height: 100%;}
-.schedule-table tbody td { 
-  display: none; 
-  vertical-align: top; 
-  text-align: center; 
+.schedule-table th.tab-active {
+  color: #FFF;
+  background-color: transparent;
+}
+
+.schedule-table tbody {
   height: 100%;
 }
+
+.schedule-table tbody td {
+  display: none;
+  vertical-align: top;
+  text-align: center;
+  height: 100%;
+}
+
 .schedule-table tbody tr:nth-last-child(2) td.time-hide:last-child {
   border-bottom: transparent;
 }
+
 .schedule-table tbody td.time {
-  display: table-cell; 
-  color: #826995;  
-  border-color: #826995; 
-  border-style: solid; 
-  border-width: 0 3px 0 0; 
-  width: 12%; 
-  padding: 2rem 1rem; 
-  margin: 0; 
-  line-height: 1; 
-  max-height: 15px; 
-  vertical-align: center; 
+  display: table-cell;
+  color: #826995;
+  border-color: #826995;
+  border-style: solid;
+  border-width: 0 3px 0 0;
+  width: 12%;
+  padding: 2rem 1rem;
+  margin: 0;
+  line-height: 1;
+  max-height: 15px;
+  vertical-align: center;
   position: relative;
 }
+
 .schedule-table tbody td.time .time-text {
-  line-height: 1; 
-  padding: 0; 
+  line-height: 1;
+  padding: 0;
   margin: 0;
   font-size: 17px;
 }
+
 .schedule-table .time-icon {
   width: 6px;
   height: 6px;
@@ -1852,153 +1880,179 @@ ul.navbar-brand>li>a{
   right: -5px;
   margin: 4px 0;
 }
+
 .schedule-table tbody td.time-hide {
-  padding: 0; 
-  background-color: transparent; 
-  border-bottom: 1px solid #ccc; 
-}
-.schedule-table tbody td.time-hide .time-text { 
-  visibility: hidden; 
-}
-.schedule-table tbody td.centered { 
-  background-color: transparent; 
-  display: table-cell; 
   padding: 0;
-  border-color: transparent;   
+  background-color: transparent;
+  border-bottom: 1px solid #ccc;
+}
+
+.schedule-table tbody td.time-hide .time-text {
+  visibility: hidden;
+}
+
+.schedule-table tbody td.break {
+  background-color: transparent;
+  display: table-cell;
+  padding: 0;
+  border-color: transparent;
   border-style: solid;
   border-width: 5px 5px 5px 20px;
 }
-.schedule-table td.track-0  { 
-  width: 44%; 
-  background-color: transparent; 
+
+.schedule-table td.track-0,
+.schedule-table td.track-1,
+.schedule-table td.track-2 {
+  width: 33%;
+  background-color: transparent;
   padding: 0;
-  border-color: transparent;   
+  border-color: transparent;
   border-style: solid;
   border-width: 5px 5px 5px 20px;
 }
-.schedule-table td.track-1  { 
-  width: 44%; 
-  background-color: transparent; 
+
+.schedule-table tbody td .schedule-talk {
   padding: 0;
-  border-color: transparent;   
-  border-style: solid;
-  border-width: 5px 5px 5px 20px;
-}
-.schedule-table tbody td .content{
-  padding: 0;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.4);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
   border-radius: 4px;
   display: block;
   min-height: 100%;
   height: 100% !important;
 }
-.schedule-table tbody td.centered div {
+
+.schedule-table tbody td.break div {
   background-color: #F0DAAB;
   padding: 15px 0;
 }
+
 .schedule-table td.track-0 div {
   background-color: #EBAE5D;
+  color: #333;
 }
+
 .schedule-table td.track-1 div {
   background-color: #eb931f;
+  color: #333;
+}
+
+.schedule-table td.track-2 div {
+  background-color: #826995;
   color: #fff;
 }
-.schedule-table tbody td h4 { 
+
+.schedule-table tbody td h4 {
   margin: 0 !important;
   padding: 10px 10px 5px;
 }
-.schedule-table tbody td.track-1 h4 {
-  padding-top: 25%;
+
+.schedule-table tbody td.track-0 h4,
+.schedule-table tbody td.track-1 h4,
+.schedule-table tbody td.track-2 h4  {
+  padding-top: 15px;
 }
-.schedule-table tbody td p { 
+
+.schedule-table tbody td p {
   margin: 0 !important;
   padding: 4px 10px 4px;
 }
-.schedule-table tbody td .title,  
+
+.schedule-table tbody td .title,
 .schedule-table tbody td .expand-icon {
   font-size: 16px;
   font-weight: bold;
   color: #000 !important;
   line-height: 1.3;
 }
+
 .schedule-table tbody td .speaker {
   font-size: 14px;
   color: #444;
 }
+
 .schedule-table tbody td .duration {
   font-size: 12px;
   font-style: italic;
   color: #666;
 }
+
 .schedule-table tbody td .venue {
   font-size: 12px;
   color: #666;
   padding-bottom: 10px;
 }
+
 .schedule-table tbody td .description-text {
   padding: 2px 5px;
   font-size: 12px;
   color: #666;
 }
-.schedule-table tbody td.tab-active { display: table-cell; }
+
+.schedule-table tbody td.tab-active {
+  display: table-cell;
+}
 
 .js .funnel-schedule-link,
 .js .schedule-table .description-text,
-.js .schedule-table .description-text.show-text  { 
-  display: none; 
+.js .schedule-table .description-text.show-text {
+  display: none;
 }
-.no-js .schedule-table .js-expand { 
-  display: none; 
+
+.no-js .schedule-table .js-expand {
+  display: none;
 }
-.schedule-table .js-expand { 
-  cursor: pointer; 
+
+.schedule-table .js-expand {
+  cursor: pointer;
   margin: 0 5px;
 }
-.schedule-table .expand { display: block; }
+
+.schedule-table .expand {
+  display: block;
+}
 
 @media (max-width: 479px) {
-  .schedule-table tbody td h4 { 
-    font-size: .8rem; 
+  .schedule-table tbody td h4 {
+    font-size: .8rem;
   }
+
   .schedule-table tbody td p {
-    font-size: .6rem; 
+    font-size: .6rem;
   }
 }
 @media only screen and (min-width: 768px) {
-  .schedule-table thead th.time   { 
-    width: 12%; 
+  .schedule-table thead th.time {
+    width: 12%;
     display: none;
   }
-  .schedule-table thead th.track0  { 
-    width: 54%; 
+
+  .schedule-table thead th.track0,
+  .schedule-table thead th.track1,
+  .schedule-table thead th.track2 {
+    width: 33%;
     display: none;
   }
-  .schedule-table thead th.track1  { 
-    width: 34%; 
-    display: none;
+
+  .schedule-table tbody td.time {
+    width: 12%;
+    padding: 2rem 10px 1rem 1rem;
   }
-  .schedule-table tbody td.time    { 
-    width: 12%; 
-    padding: 2rem 10px 1rem 1rem
-  }
-  .schedule-table td.track-0  { 
-    width: 54%; 
-    background-color: transparent; 
+
+  .schedule-table td.track-0,
+  .schedule-table td.track-1,
+  .schedule-table td.track-2 {
+    width: 33%;
+    background-color: transparent;
     display: table-cell;
   }
-  .schedule-table td.track-1  { 
-    width: 34%; 
-    background-color: transparent; 
-    display: table-cell;
-    border-width: 5px;
-  }
-  .schedule-table td.track-empty  { 
-    width: 34%; 
-    background-color: #FFF; 
+
+  .schedule-table td.track-empty {
+    width: 33%;
+    background-color: #FFF;
     display: table-cell;
   }
-  .schedule-table .js-expand { 
-    display: inline-block; 
+
+  .schedule-table .js-expand {
+    display: inline-block;
   }
 }
 @media only screen and (min-width: 1024px) {
@@ -2008,19 +2062,24 @@ ul.navbar-brand>li>a{
     box-shadow: 0 0 0 5px #826995;
     right: -7px;
   }
-  .schedule-table tbody td .title,  
+
+  .schedule-table tbody td .title,
   .schedule-table tbody td .expand-icon {
     font-size: 18px;
   }
+
   .schedule-table tbody td .speaker {
     font-size: 16px;
   }
+
   .schedule-table tbody td .duration {
     font-size: 14px;
   }
+
   .schedule-table tbody td .venue {
     font-size: 14px;
   }
+
   .schedule-table tbody td .description-text {
     font-size: 14px;
   }
