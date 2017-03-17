@@ -122,7 +122,7 @@
         </div>
       {% elif node.properties.propose_talk %}
         <div class="push-one text-center">
-          <a href="{{ node.properties.propose_talk }}" class="button" target="_blank">Propose a talk</a>
+          <a href="{{ node.properties.funnel_url }}" class="button" target="_blank">Propose a talk</a>
         </div>
       {% endif %}
     </div> 
@@ -236,7 +236,7 @@ $(document).ready(function() {
 
   var loadProposals = function () {
     // For conference and workshop schedule
-    var funnelurl = "{{ node.properties.propose_talk }}" + "schedule/json";
+    var funnelurl = "{{ node.properties.funnel_url }}" + "schedule/json";
     //If schedule divs are present on the page, then make the ajax call.
     if(($('#conferenceschedule').length) || ($('#workshopschedule').length)) {
       $.ajax({
@@ -250,7 +250,7 @@ $(document).ready(function() {
     }
 
       // For proposals
-    var proposals_url = "{{ node.properties.propose_talk }}" + 'json';
+    var proposals_url = "{{ node.properties.funnel_url }}" + 'json';
 
     //If funnel-proposals divs is present on the page, then make the ajax call.
     if(($('#funnel-proposals').length)) {

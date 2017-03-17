@@ -8,10 +8,10 @@
           <ul class="space-half-top list-space-line list-plain list-silent row">
       {% endif %}
             <li class="col-sm-4 col-xs-12 text-center">
-              <a href=" https://rootconf.talkfunnel.com/2016/{{ item.id }}" target="_blank"><span class="img-wrapper">
+              <a href="{{ item.funnel }}" target="_blank"><span class="img-wrapper">
                 <img class="photo featured-speaker-grayscale circle" src="{{ item.photo }}">
               </span></a> 
-              <h2 class="secondary space-half-top space-1q-bottom"><a href=" https://rootconf.talkfunnel.com/2016/{{ item.id }}" target="_blank">{{ item.title }}</a></h2>
+              <h2 class="secondary space-half-top space-1q-bottom"><a href="{{ item.funnel }}" target="_blank">{{ item.title }}</a></h2>
               <h3 class="regular semibold space-1q-top nospace-bottom">{{ item.speaker }}</h3>
               {% if item.twitter %}<p class="nopsace-top space-1q-bottom secondary"><a  class="twitter-blue secondary-prose" href="https://twitter.com/{{ item.twitter }}" target="_blank">@{{ item.twitter }}</a></p>{% endif %}
               <h5 class="gray space-1q secondary-prose">{{ item.designation|safe }}</h5>

@@ -4,8 +4,8 @@
     <div class="text-center" id="conference-schedule">
       <h2 class="calm centered space-one large text-center">Conference Schedule</h2>
       <div class="schedule-table-container text-center" id="conferenceschedule">
-        {% if node.properties.propose_talk %}
-          <p class="text-center loadingtxt"><a class="button dark regular" href="{{node.properties.propose_talk}}/schedule" target="_blank">View Schedule</a></p>
+        {% if node.properties.funnel_url %}
+          <p class="text-center loadingtxt"><a class="button dark regular" href="{{node.properties.funnel_url}}/schedule" target="_blank">View Schedule</a></p>
         {% endif %}
       </div>
     </div>
