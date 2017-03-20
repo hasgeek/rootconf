@@ -32,6 +32,11 @@
               {% if item.url %}<li class="space-1q"><a class="orange" target="_blank" href="{{ item.url }}">Read workshop proposal</a></li>{% endif %}
             </ul>
           </div>
+          {% if node.properties.buy_ticket %}
+            <div class="push-one pad-helf text-left">
+              <a href="/#tickets" class="button smooth-scroll">Buy tickets</a>
+            </div>
+          {% endif %}
         </div>
       </div>
     {% endfor %}
