@@ -4,8 +4,9 @@
   {% include theme("sections/event-highlights.html") %}
   {% include theme("sections/sponsorship-catalogue.html") %}
   {% include theme("sections/testimonials.html") %}
-  {% include theme("sections/venue.html") %}
-  {% include theme("sections/sponsors.html") %}
+  {% if node.properties.sponsors %}
+    {% include theme("sections/sponsors.html") %}
+  {% endif %}
 {% endblock %}
 
 {% block navtype %}
@@ -25,10 +26,11 @@
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav">
           <li><a href="#event-highlights" class="smooth-scroll">Highlights</a></li>
-          <li><a href="#sponsorship" class="smooth-scroll">Become a sponsor</a></li>
+          <li><a href="#become-a-sponsor" class="smooth-scroll">Become a sponsor</a></li>
           <li><a href="#testimonials" class="smooth-scroll">Testimonials</a></li>
-          <li><a href="#venue" class="smooth-scroll">Venue</a></li>
-          <li><a href="#sponsors" class="smooth-scroll">Sponsors</a></li>
+          {% if node.properties.sponsors %}
+            <li><a href="#sponsors" class="smooth-scroll">Sponsors</a></li>
+          {% endif %}
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
             <ul class="dropdown-menu">   
@@ -57,7 +59,7 @@
     <div class="display-board push-one">
       <div class="white extralarge text-center">
         <div class="link line2 text-center title-type push-2q-top">
-          <div class="logo"><img src="https://imgee.s3.amazonaws.com/imgee/769dc463009d4cf09be7352c8c7b3628.png" width="80px" alt="###">rootconf</div><!-- <div id="blink-wrapper"><span id="blink"></span></div> -->
+          <a class="logo silent link-silent" href="/"><img src="https://imgee.s3.amazonaws.com/imgee/769dc463009d4cf09be7352c8c7b3628.png" width="80px" alt="###">rootconf</a><!-- <div id="blink-wrapper"><span id="blink"></span></div> -->
         </div>
         <p class="secondary prose-type space-half-top">
           {% if node.properties.tagline %}

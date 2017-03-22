@@ -2096,17 +2096,16 @@ ul.navbar-brand>li>a{
 
 @media (min-width: 768px) {
   .speech-bubble {
-    margin: 0 2.5% 40px 0;
+    margin: 0 2.25% 40px;
     width: 45%;
   }
 }
 
 .rectangle-speech-border {
   position:relative;
-  padding:25px;
-  margin:1em 0 2.4em;
+  padding:15px;
+  margin: 10px 0 30px;
   border:10px solid #c9a866;
-  text-align:center;
   color:#333;
   background:#fff;
   /* css3 */
@@ -2121,14 +2120,14 @@ ul.navbar-brand>li>a{
   content:"";
   position:absolute;
   z-index:10;
-  bottom:-40px;
+  bottom:-30px;
   left: 59px;
   width: 51px;
   height:30px;
   border-style:solid;
   border-width:0 10px 10px 0;
   border-color:#fff #c9a866 #c9a866 #c9a866;
-  background:transparent;
+  background:#fff;
   /* css3 */
   -webkit-border-bottom-right-radius:80px 50px;
   -moz-border-radius-bottomright:80px 50px;
@@ -2142,14 +2141,14 @@ ul.navbar-brand>li>a{
   content:"";
   position:absolute;
   z-index:10;
-  bottom:-40px;
+  bottom:-30px;
   left:56px;
   width:20px;
   height:30px;
   border-style:solid;
-  border-width:0 10px 10px 0;
+  border-width:10px 10px 10px 0;
   border-color:#c9a866;
-  background:transparent;
+  background:#fff;
   /* css3 */
   -webkit-border-bottom-right-radius:40px 50px;
   -moz-border-radius-bottomright:40px 50px;
@@ -2187,7 +2186,7 @@ ul.navbar-brand>li>a{
 .speech-bubble p.attendee {
   font-size: 15px;
   line-height: 1.6;
-  margin-left: 50px;
+  margin-left: 10px;
 }
 
 /* Proposal section */

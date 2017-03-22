@@ -1,8 +1,8 @@
 <section id="event-highlights" class="push-three-top push-two-bottom clearfix">
-  <div class="row-fluid container">
-    <div class="regular text-justify">
+  <div class="container">
+    <div class="regular text-justify row">
       {% with f = fragment('2017', 'event-highlights') %}
-        {{ f.content }}
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2">{{ f.content }}</div>
       {% endwith %}
     </div>
   </div>

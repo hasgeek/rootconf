@@ -1,10 +1,10 @@
 <section id="past-editions" class="push-three-top push-two-bottom clearfix">
   <div class="container">
-    <div class="row-fluid"> 
+    <div class="row"> 
       <div class="regular space-one-top">
         <h2 class="calm centered space-one large text-center">Past editions</h2> 
         {% with f = fragment('2017', 'past-editions') %}
-          {{ f.content }}
+          <div class="col-xs-12 col-sm-8 col-sm-offset-2">{{ f.content }}</div>
         {% endwith %}
 
         <div class="clearboth">
