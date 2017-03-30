@@ -1809,7 +1809,6 @@ ul.navbar-brand>li>a{
   border-radius: 4px;
   padding: 10px 5px;
   font-size: 10px;
-  color: #fff;
   background-color: #826995;
 }
 
@@ -1927,17 +1926,14 @@ ul.navbar-brand>li>a{
 
 .schedule-table td.track-0 div {
   background-color: #EBAE5D;
-  color: #fff;
 }
 
 .schedule-table td.track-1 div {
   background-color: #eb931f;
-  color: #fff;
 }
 
 .schedule-table td.track-2 div {
   background-color: #826995;
-  color: #fff;
 }
 
 .schedule-table tbody td h4 {
