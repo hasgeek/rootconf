@@ -66,7 +66,7 @@
 }
 
 
-@media (max-width: 767px) { #hg-bar { padding: 0 20px; } }
+@media (max-width: 480px) { #hg-bar { padding-left: 5px; } }
 
 .logo{
   display: inline-block;
@@ -1761,6 +1761,37 @@ ul.navbar-brand>li>a{
 /* Schedule */
 .schedule-container {
   max-width: 1000px;
+  min-height: 7030px;
+}
+
+@media (min-width: 480px) {
+  .schedule-container {
+    min-height: 5700px;
+  }
+}
+
+@media (min-width: 768px) {
+  .schedule-container {
+    min-height: 4730px;
+  }
+}
+
+@media (min-width: 980px) {
+  .schedule-container {
+    min-height: 4600px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .schedule-container {
+    min-height: 4770px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .schedule-container {
+    min-height: 4810px;
+  }
 }
 
 .schedule-table {
