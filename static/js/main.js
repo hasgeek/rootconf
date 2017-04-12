@@ -451,7 +451,7 @@ $(document).ready(function() {
           var ticketPos = $("#" + ticketId).offset().top;
           $('html,body').animate({scrollTop:ticketPos}, '900');
         }
-      }, 5000);
+      }, 2000);
     }
   });
 
