@@ -60,7 +60,6 @@ $(document).ready(function() {
         itemCollection: "{{ node.properties.item_collection }}",
         paymentDesc: "{{ node.properties.payment_desc }}"
       });
-      loadProposals();
       initLeaflets();
     },
     error: function(response) {
