@@ -6,6 +6,29 @@ Rootconf.sendGA = function(category, action, label) {
   }
 };
 
+Rootconf.getQueryParams = function() {
+  // Returns an array of query parameters
+  // Eg: "?code=xxx&cody=yyy" -> ["code=xxx", "code=yyy"]
+  var searchStr = window.location.search.split('?');
+  if (searchStr.length > 1) {
+    return searchStr[1].split('&');
+  }
+  return [];
+};
+
+Rootconf.getTicketId = function() {
+  // Returns an array of codes used
+  //Eg: "?code=xxx&cody=yyy" -> ["xxx", "yyy"]
+  return Rootconf.getQueryParams().map(function(param){
+    var paramSplit = param.split('=');
+    if (paramSplit[0] === 'ticket') {
+      return paramSplit[1];
+    }
+  }).filter(function(val){
+    return typeof val !== 'undefined' && val !== "";
+  });
+};
+
 // For conference and workshop schedule
 //dateStr is expected in the format 2015-07-16", then returns "Thu Jul 16 2015"
 var getDateString = function(dateStr) {
@@ -418,4 +441,18 @@ $(document).ready(function() {
     var action = $(this).data('label');
     Rootconf.sendGA('click', action, target);
   });
+
+  $("#tickets #boxoffice-selectItems").ready(function() {
+    var tickets = Rootconf.getTicketId();
+    if(tickets.length > 0) {
+      window.setTimeout(function() {
+        var ticketId = tickets[0];
+        if ($("#" + ticketId).offset()) {
+          var ticketPos = $("#" + ticketId).offset().top;
+          $('html,body').animate({scrollTop:ticketPos}, '900');
+        }
+      }, 5000);
+    }
+  });
+
 });
