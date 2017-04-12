@@ -394,7 +394,7 @@ $(document).ready(function() {
   $('.smooth-scroll').click(function(event) {
     event.preventDefault();
     var section = $(this).attr('href');
-    var sectionPos = $(""+section).offset().top - $('.site-navbar').height();
+    var sectionPos = $(""+section).offset().top - $('#site-nav').height();
     $('html,body').animate({scrollTop:sectionPos}, '900');
   });
 
@@ -430,25 +430,29 @@ $(document).ready(function() {
   });
 
   // Function that tracks a click button in Google Analytics.
-  $('.button').click(function(event) {
+  $('.button').click(function (event) {
     var button = $(this).html();
     var section = $(this).attr('href');
     Rootconf.sendGA('click', button, section);
   });
 
-  $('.click').click(function(event) {
+  $('.click').click(function (event) {
     var target = $(this).data('target');
     var action = $(this).data('label');
     Rootconf.sendGA('click', action, target);
   });
 
-  $("#tickets #boxoffice-selectItems").ready(function() {
+  $("#tickets #boxoffice-selectItems").ready(function () {
     var tickets = Rootconf.getTicketId();
     if(tickets.length > 0) {
-      window.setTimeout(function() {
-        var ticketId = tickets[0];
+      window.setTimeout(function () {
+        var ticketId = tickets[0],
+            ticketPos;
         if ($("#" + ticketId).offset()) {
-          var ticketPos = $("#" + ticketId).offset().top;
+          ticketPos = $("#" + ticketId).offset().top;
+          if ($('#site-nav').length) {
+            ticketPos -= 70;
+          }
           $('html,body').animate({scrollTop:ticketPos}, '900');
         }
       }, 5000);
