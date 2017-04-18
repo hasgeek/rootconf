@@ -7,7 +7,6 @@
     color: #FFF;
     line-height: 1.4;
     padding: 0.5em 1.5em 0.4em;
-    text-transform: uppercase;
     text-align: center;
     border-radius: 0.25em;
     border: 0;
@@ -2360,4 +2359,37 @@ body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom
 
 .share-btns .fb-share-button {
   top: 0!important;
+}
+
+.workshop-card {
+  display: inline-block;
+  vertical-align: top;
+  box-shadow: 0 0 2px rgba(0,0,0,0.6);
+  border-radius: 5px;
+  padding: 0;
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+  max-width: 350px;
+}
+
+.workshop-title {
+  margin: 0 0 65px;
+  padding: 25px 20px 0;
+  height: 165px;
+  background: #816894;
+  color: #fff;
+  font-size: 18px
+}
+
+.instructor {
+  position: absolute;
+  top: 92px;
+  right: 0;
+  left: 0;
+  width: 130px;
+}
+
+.workshop-objective {
+  padding: 0 20px 5px;
 }

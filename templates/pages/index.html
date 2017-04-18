@@ -8,6 +8,9 @@
   {% if node.properties.featured_talks %}
     {% include theme("sections/featured-talks.html") %}
   {% endif %}
+  {% if node.properties.workshops %}
+    {% include theme("sections/workshops.html") %}
+  {% endif %}
   {% if node.properties.runup_events_list %}
     {% include theme("sections/runup-events-list.html") %}
   {% endif %}
@@ -47,6 +50,9 @@
           {% endif %}
           {% if node.properties.featured_talks %}
             <li><a href="#featured-talks" class="smooth-scroll">Featured talks</a></li>
+          {% endif %}
+          {% if node.properties.workshops %}
+            <li><a href="#workshops" class="smooth-scroll">Workshops</a></li>
           {% endif %}
           {% if node.properties.runup_events_list %}
             <li><a href="#runup-events" class="smooth-scroll">Runup events</a></li>
