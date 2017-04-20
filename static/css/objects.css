@@ -2393,3 +2393,10 @@ body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom
 .workshop-objective {
   padding: 0 20px 5px;
 }
+
+.popover {
+  max-width: 200px;
+}
+.popover img{
+  width: 100%;
+}
