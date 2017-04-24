@@ -722,6 +722,7 @@ li.event-node{
   margin-left: auto;
   margin-right: auto;
   border-radius: 50%;
+  margin: 10px;
   overflow: hidden;
   border: 4px solid #453750 !important;
 }
@@ -1955,15 +1956,18 @@ ul.navbar-brand>li>a{
 }
 
 .schedule-table td.track-0 div {
-  background-color: #EBAE5D;
+  background-color: #efa30d;
+  color: white;
 }
 
 .schedule-table td.track-1 div {
-  background-color: #eb931f;
+  background-color: #f77c2f;
+  color: white;
 }
 
 .schedule-table td.track-2 div {
-  background-color: #826995;
+  background-color: #f9d102;
+  color: white;
 }
 
 .schedule-table tbody td h4 {
@@ -2361,6 +2365,24 @@ body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom
   top: 0!important;
 }
 
+
+.hack-equal-height > [class*='col-'] {
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+}
+
+@media (min-width: 768px) {
+  .table-row {
+    display: table;
+    table-layout: fixed;
+  }
+
+  .table-row [class^="col-"] {
+    display: table-cell;
+    float: none;
+  }
+}
+
 .workshop-card {
   display: inline-block;
   vertical-align: top;
@@ -2373,11 +2395,13 @@ body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom
   max-width: 350px;
 }
 
-.workshop-title {
-  margin: 0 0 65px;
-  padding: 25px 20px 0;
-  height: 165px;
+.workshop-header {
+  margin: 0;
+  padding: 10px;
   background: #816894;
+}
+
+.workshop-title {
   color: #fff;
   font-size: 18px
 }
