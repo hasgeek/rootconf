@@ -1,4 +1,4 @@
-<section id="workshops" class="featured-speakers push-three-top push-two-bottom clearfix">
+<section id="workshops" class="featured-speakers clearfix">
   <h2 class="calm centered space-one large text-center">Workshops</h2>
   {% for item in getnode(path='workshops').data['workshops'] -%}
       {% if loop.first %}
@@ -6,18 +6,25 @@
         <div class="row">
           <ul class="space-half-top list-space-line list-plain list-silent row">
       {% endif %}
-            <li class="col-xs-12 col-sm-6 col-lg-4 text-center">
+            <li class="col-xs-12 col-sm-6 col-lg-4 text-left">
               <div class="workshop-card">
-                <h2 class="secondary workshop-title">{{ item.title }}</h2>
-                <div class="img-wrapper instructor">
-                  <img class="photo featured-speaker circle" src="{{ item.photo }}">
+                <div class="workshop-header">
+                  <h2 class="secondary workshop-title">{{ item.title }}</h2>
                 </div>
-                <h3 class="regular semibold space-two-top nospace-bottom">{{ item.fullname }}</h3>
+                <div class="row no-gutter">
+                  <div class="col-xs-4">
+                    <div class="img-wrapper" style="float:right;">
+                      <img class="photo featured-speaker circle" src="{{ item.photo }}">
+                    </div>
+                  </div>
+                  <div class="col-xs-8">
+                    <h3 class="regular semibold nospace-bottom">{{ item.fullname }}</h3>
                 {% if item.twitter %}<p class="nopsace-top space-1q-bottom secondary"><a  class="twitter-blue secondary-prose" href="https://twitter.com/{{ item.twitter }}" target="_blank">{{ item.twitter }}</a></p>{% endif %}
-                <h5 class="space-1q secondary-prose workshop-objective text-left">{{ item.objective|safe }}</h5>
-                <div class="push-one-bottom text-center">
-                  <a class="button secondary smooth-scroll" href="#tickets">Attend</a>
+                  </div>
                 </div>
+                <h5 class="space-1q secondary-prose workshop-objective text-left">{{ item.objective|safe }}
+                  <p><a class="button-mini secondary smooth-scroll" href="#tickets">Get tickets</a><a class="button-mini secondary smooth-scroll" href="{{ item.details }}">View details</a></p>
+                </h5>
               </div>
             </li>
       {% if loop.last %}
