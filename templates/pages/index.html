@@ -2,6 +2,7 @@
 
 {% block content %}
   {% include theme("sections/announcement.html") %}
+  {% include theme("sections/community.html") %}
   {% if node.properties.past_editions %}
     {% include theme("sections/past-editions.html") %}
   {% endif %}
@@ -31,7 +32,7 @@
 {% block navtype %}
 <div id="nav-home">
   <nav class="navbar navbar-default" id="site-nav" role="navigation">
-    <div class="sitebar">
+    <div class="sitebar container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
           <span class="sr-only">Toggle navigation</span>
@@ -39,7 +40,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand smooth-scroll" href="#header">Rootconf</a>
+        <a class="navbar-brand smooth-scroll" href="#header"><img src="https://imgee.s3.amazonaws.com/imgee/769dc463009d4cf09be7352c8c7b3628.png" width="50px" alt="###" style="margin-right: 6px; color: #FFFFFF; filter: grayscale(100%) brightness(0) brightness(100%) invert(100);"></a>
       </div>
 
       <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -193,7 +194,6 @@ $(document).ready(function() {
         itemCollection: "{{ node.properties.item_collection }}",
         paymentDesc: "{{ node.properties.payment_desc }}"
       });
-      loadProposals();
       initLeaflets();
     },
     error: function(response) {
@@ -236,21 +236,63 @@ $(document).ready(function() {
       logger: 'boxoffice'
     });
     Rootconf.sendGA('error', 'boxoffice load error', errorMsg);
-    loadProposals();
     initLeaflets();
   }
 
   var loadProposals = function () {
     // For conference and workshop schedule
+    console.log("im here");
+
     var funnelurl = "{{ node.properties.funnel_url }}" + "schedule/json";
+
+    var rootconfUrl = "https://rootconf.talkfunnel.com/2017/schedule/json";
+    var devConfUrl = "https://rootconf.talkfunnel.com/devconf-2017/schedule/json";
     //If schedule divs are present on the page, then make the ajax call.
-    if(($('#conferenceschedule').length) || ($('#workshopschedule').length)) {
+    if(($('#conference-schedule').length) || ($('#workshopschedule').length)) {
       $.ajax({
         type: 'GET',
         dataType: 'jsonp',
-        url: funnelurl,
-        success: function(data) {
-          parseJson(data, 'conference', '#conferenceschedule');
+        url: rootconfUrl,
+        success: function(rootconfData) {
+
+          $.ajax({
+            type: 'GET',
+            dataType: 'jsonp',
+            url: devConfUrl,
+            success: function(devConfData) {
+
+              var schedule = rootconfData['schedule'];
+
+              for (var i = 0; i < devConfData['schedule'].length; i++) {
+                devConfDay = devConfData['schedule'][i];
+                var flag = false;
+                for (var k = 0; k < schedule.length; k++) {
+                  scheduleDay = schedule[k];
+                  if (devConfDay['date'] == scheduleDay['date']) {
+                    scheduleDay['slots'] = scheduleDay['slots'].concat(devConfDay['slots']);
+                    flag = true;
+                  }
+                }
+                if (flag == false) {
+                  schedule.push(devConfDay);
+                }
+              }
+
+              var data = {
+                'schedule': schedule,
+                'rooms': rootconfData['rooms'].concat(devConfData['rooms']),
+                'venues': rootconfData['venues'].concat(devConfData['venues'])
+              }
+
+              parseJson(data, 'conference', '#conferenceschedule');
+            },
+            error: function(err) {
+              console.log("Error inside");
+            }
+          });
+        },
+        error: function(err) {
+          console.log("Error");
         }
       });//eof ajax call
     }
@@ -270,6 +312,8 @@ $(document).ready(function() {
       });//eof ajax call
     }
   }
+
+  loadProposals();
 
 });
 </script>
