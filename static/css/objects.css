@@ -1895,6 +1895,8 @@ ul.navbar-brand>li>a{
   max-height: 15px;
   vertical-align: center;
   position: relative;
+
+  display: none;
 }
 
 .schedule-table tbody td.time .time-text {

@@ -251,6 +251,17 @@ function parseJson(data, eventType, divContainer) {
         //set IST time
         schedules[scheduleindex].slots[slotindex].sessions[sessionindex].start = getIST(getTimeString(session.start));
         schedules[scheduleindex].slots[slotindex].sessions[sessionindex].end = getIST(getTimeString(session.end));
+
+        var startHr = parseInt(getHrMin(session.start)[0]);
+        var startMin = parseInt(getHrMin(session.start)[1]);
+        var startTime = getdateObject(startHr, startMin);
+
+        var endHr = parseInt(getHrMin(session.end)[0]);
+        var endMin = parseInt(getHrMin(session.end)[1]);
+        var endTime = getdateObject(endHr, endMin);
+
+
+        schedules[scheduleindex].slots[slotindex].sessions[sessionindex].duration = parseInt(Math.abs(endTime-startTime)/(1000 * 60));
       }); //eof sessions loop
 
       if (schedules[scheduleindex].type !== 'workshop') {
