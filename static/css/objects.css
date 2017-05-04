@@ -1820,7 +1820,8 @@ ul.navbar-brand>li>a{
 
 .schedule-table th.track0,
 .schedule-table th.track1,
-.schedule-table th.track2 {
+.schedule-table th.track2,
+.schedule-table th.track3 {
   border-color: transparent;
   border-style: solid;
   border-width: 0 5px 10px 0;
@@ -1834,7 +1835,8 @@ ul.navbar-brand>li>a{
 
 .schedule-table th.track0 div,
 .schedule-table th.track1 div,
-.schedule-table th.track2 div {
+.schedule-table th.track2 div,
+.schedule-table th.track3 div {
   margin: 0 0.2rem;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
   border-radius: 4px;
@@ -1845,7 +1847,8 @@ ul.navbar-brand>li>a{
 
 .schedule-table th.track0.tab-active div,
 .schedule-table th.track1.tab-active div,
-.schedule-table th.track2.tab-active div {
+.schedule-table th.track2.tab-active div,
+.schedule-table th.track3.tab-active div  {
   opacity: 0.4;
 }
 
@@ -1853,7 +1856,8 @@ ul.navbar-brand>li>a{
   .schedule-table thead th.time div,
   .schedule-table th.track0 div,
   .schedule-table th.track1 div,
-  .schedule-table th.track2 div  {
+  .schedule-table th.track2 div,
+  .schedule-table th.track3 div  {
     padding: 1rem .5rem;
     font-size: inherit;
   }
@@ -1932,8 +1936,9 @@ ul.navbar-brand>li>a{
 
 .schedule-table td.track-0,
 .schedule-table td.track-1,
-.schedule-table td.track-2 {
-  width: 33%;
+.schedule-table td.track-2,
+.schedule-table td.track-3 {
+  width: 25%;
   background-color: transparent;
   padding: 0;
   border-color: transparent;
@@ -1948,6 +1953,10 @@ ul.navbar-brand>li>a{
   display: block;
   min-height: 100%;
   height: 100% !important;
+}
+
+.schedule-table tbody td .track-empty .schedule-talk {
+  box-shadow: none;
 }
 
 .schedule-table tbody td.break div {
@@ -1970,6 +1979,11 @@ ul.navbar-brand>li>a{
   color: white;
 }
 
+.schedule-table td.track-3 div {
+  background-color: #dfef0d;
+  color: white;
+}
+
 .schedule-table tbody td h4 {
   margin: 0 !important;
   padding: 10px 10px 5px;
@@ -1977,7 +1991,8 @@ ul.navbar-brand>li>a{
 
 .schedule-table tbody td.track-0 h4,
 .schedule-table tbody td.track-1 h4,
-.schedule-table tbody td.track-2 h4  {
+.schedule-table tbody td.track-2 h4,
+.schedule-table tbody td.track-3 h4  {
   padding-top: 15px;
 }
 
@@ -2052,8 +2067,9 @@ ul.navbar-brand>li>a{
 
   .schedule-table thead th.track0,
   .schedule-table thead th.track1,
-  .schedule-table thead th.track2 {
-    width: 33%;
+  .schedule-table thead th.track2,
+  .schedule-table thead th.track3 {
+    width: 25%;
     display: none;
   }
 
@@ -2064,14 +2080,15 @@ ul.navbar-brand>li>a{
 
   .schedule-table td.track-0,
   .schedule-table td.track-1,
-  .schedule-table td.track-2 {
-    width: 33%;
+  .schedule-table td.track-2,
+  .schedule-table td.track-3 {
+    width: 25%;
     background-color: transparent;
     display: table-cell;
   }
 
   .schedule-table td.track-empty {
-    width: 33%;
+    width: 25%;
     background-color: #FFF;
     display: table-cell;
   }
