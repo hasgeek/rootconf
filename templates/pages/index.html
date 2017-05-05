@@ -21,6 +21,7 @@
   {% if node.properties.schedule %}
     {% include theme("sections/schedule.html") %}
   {% endif %}
+  {% include theme("sections/party.html") %}
   {% if node.properties.tickets %}
     {% include theme("sections/tickets.html") %}
   {% endif %}
@@ -64,6 +65,7 @@
           {% if node.properties.schedule %}
             <li><a href="#schedule" class="smooth-scroll">Schedule</a></li>
           {% endif %}
+            <li><a href="#social" class="smooth-scroll">Social</a></li>
           {% if node.properties.tickets %}
             <li><a href="#tickets" class="smooth-scroll">Tickets</a></li>
           {% endif %}
