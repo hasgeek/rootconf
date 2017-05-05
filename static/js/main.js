@@ -221,8 +221,9 @@ function parseJson(data, eventType, divContainer) {
   var conferenceScheduleCounter = 0;
   var workshopScheduleCounter = 0;
   //Create rows at 5min intervals
-  schedules.forEach(function(eachSchedule, scheduleindex, schedules) {        
+  schedules.forEach(function(eachSchedule, scheduleindex, schedules) {      
     var rooms = [];
+    var scheduleEndTime = "";
     schedules[scheduleindex].date = getDateString(eachSchedule.date);
     schedules[scheduleindex].tableid = 'table-' + scheduleindex;
 
@@ -251,6 +252,9 @@ function parseJson(data, eventType, divContainer) {
         //set IST time
         schedules[scheduleindex].slots[slotindex].sessions[sessionindex].start = getIST(getTimeString(session.start));
         schedules[scheduleindex].slots[slotindex].sessions[sessionindex].end = getIST(getTimeString(session.end));
+        if ( !scheduleEndTime || getTotalMins(session.end) > getTotalMins(scheduleEndTime)){
+          scheduleEndTime = session.end;
+        }
 
         var startHr = parseInt(getHrMin(session.start)[0]);
         var startMin = parseInt(getHrMin(session.start)[1]);
@@ -290,12 +294,12 @@ function parseJson(data, eventType, divContainer) {
     });
 
     if (schedules[scheduleindex].type === 'conference') {
-      conferenceSchedule.push({date: schedules[scheduleindex].date, tableid: schedules[scheduleindex].tableid, rooms: schedules[scheduleindex].rooms, start: schedules[scheduleindex].start, end: schedules[scheduleindex].end});
+      conferenceSchedule.push({date: schedules[scheduleindex].date, tableid: schedules[scheduleindex].tableid, rooms: schedules[scheduleindex].rooms, start: schedules[scheduleindex].start, end: scheduleEndTime});
       createTable(conferenceSchedule[conferenceScheduleCounter]);
       conferenceScheduleCounter += 1;
     }
     else {
-      workshopSchedule.push({date:schedules[scheduleindex].date, rooms: schedules[scheduleindex].rooms, start: schedules[scheduleindex].start, end: schedules[scheduleindex].end});
+      workshopSchedule.push({date:schedules[scheduleindex].date, rooms: schedules[scheduleindex].rooms, start: schedules[scheduleindex].start, end: scheduleEndTime});
       createTable(workshopSchedule[workshopScheduleCounter]);
       workshopScheduleCounter += 1;
     }
